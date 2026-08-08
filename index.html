@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="日経ブル・ベア" />
+<meta name="theme-color" content="#0b1830" />
+<title>日経平均 ブル・ベア判断ツール</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>" />
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1: #fcfcfb;
+    --surface-2: #f9f9f7;
+    --card: #ffffff;
+    --text-primary: #0b1830;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --grid: #e1e0d9;
+    --border: rgba(11,11,11,0.10);
+    --navy: #0b1830;
+    --navy-2: #142a52;
+    --bull: #d0342c;      /* 日本の相場慣習: 上昇=赤 */
+    --bear: #2a5fd6;      /* 下降=青 */
+    --neutral: #6b6f76;
+    --warn-bg: #fff4e0;
+    --warn-border: #eda100;
+    --warn-text: #7a5400;
+    --series-sma25: #eb6834;
+    --series-sma75: #1baf7a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface-1: #0d0d0d;
+      --surface-2: #141414;
+      --card: #1a1a19;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --grid: #2c2c2a;
+      --border: rgba(255,255,255,0.10);
+      --navy: #16294f;
+      --navy-2: #1f3a70;
+      --bull: #e66767;
+      --bear: #6f9bef;
+      --neutral: #9a9da3;
+      --warn-bg: #2a2210;
+      --warn-border: #c98500;
+      --warn-text: #f0c060;
+      --series-sma25: #d95926;
+      --series-sma75: #199e70;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-1: #0d0d0d;
+    --surface-2: #141414;
+    --card: #1a1a19;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --grid: #2c2c2a;
+    --border: rgba(255,255,255,0.10);
+    --navy: #16294f;
+    --navy-2: #1f3a70;
+    --bull: #e66767;
+    --bear: #6f9bef;
+    --neutral: #9a9da3;
+    --warn-bg: #2a2210;
+    --warn-border: #c98500;
+    --warn-text: #f0c060;
+    --series-sma25: #d95926;
+    --series-sma75: #199e70;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--navy), var(--navy-2));
+    color: #fff;
+    padding: calc(20px + env(safe-area-inset-top)) 20px 22px;
+  }
+  header h1 {
+    margin: 0 0 4px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  header .updated {
+    font-size: 15px;
+    color: #c9d4ee;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .signal-card { text-align: center; padding: 28px 20px; }
+  .signal-badge {
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 900;
+    padding: 10px 22px;
+    border-radius: 999px;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .signal-badge.bull { background: var(--bull); }
+  .signal-badge.bear { background: var(--bear); }
+  .signal-badge.wait { background: var(--neutral); }
+  .signal-caution-tag {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--warn-text);
+  }
+  .signal-rationale {
+    margin-top: 16px;
+    font-size: 17px;
+    color: var(--text-secondary);
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .stat-tile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .stat-tile .label {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .stat-tile .value {
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-tile .sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .up { color: var(--bull); }
+  .down { color: var(--bear); }
+
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-text);
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .warn-box .title { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+
+  .card h2 {
+    font-size: 18px;
+    margin: 0 0 12px;
+    font-weight: 800;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+
+  #chartWrap { position: relative; touch-action: pan-y; }
+  #tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    line-height: 1.5;
+    transform: translate(-50%, -110%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.1s;
+    z-index: 5;
+  }
+
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4px 20px 24px;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .loading, .error {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>📈 日経平均 ブル・ベア判断ツール</h1>
+  <div class="updated" id="updatedLine">読み込み中...</div>
+</header>
+
+<main id="app">
+  <div class="loading">データを読み込んでいます…</div>
+</main>
+
+<footer>
+  ※本ツールは日経平均株価(^N225)のテクニカル指標をもとに機械的に算出した参考情報であり、投資助言ではありません。レバレッジ型・インバース型の投資信託は原指数に完全連動しない場合があり、特にボラティリティが高い局面では基準価額が長期的に目減りする「逓減」が起こりやすい特性があります。実際の売買判断はご自身の責任で行ってください。データは無料の株価情報(Yahoo Finance)から毎日自動取得しています。
+</footer>
+
+<template id="tmplApp">
+  <div class="card signal-card">
+    <span class="signal-badge" id="badge"></span>
+    <span class="signal-caution-tag" id="cautionTag" hidden></span>
+    <div class="signal-rationale" id="rationale"></div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-tile">
+      <div class="label">日経平均 終値</div>
+      <div class="value" id="statPrice"></div>
+      <div class="sub" id="statAsOf"></div>
+    </div>
+    <div class="stat-tile">
+      <div class="label">25日線からの乖離率</div>
+      <div class="value" id="statDeviation"></div>
+      <div class="sub">プラス=上振れ / マイナス=下振れ</div>
+    </div>
+    <div class="stat-tile">
+      <div class="label">RSI (14日)</div>
+      <div class="value" id="statRsi"></div>
+      <div class="sub" id="statRsiSub"></div>
+    </div>
+    <div class="stat-tile">
+      <div class="label">ボラティリティ (年率換算)</div>
+      <div class="value" id="statVol"></div>
+      <div class="sub" id="statVolSub"></div>
+    </div>
+  </div>
+
+  <div class="warn-box" id="crossBox" hidden>
+    <div class="title">⚡ クロスシグナル発生</div>
+    <div id="crossText"></div>
+  </div>
+
+  <div class="warn-box" id="volBox" hidden>
+    <div class="title">⚠️ 高ボラティリティ注意</div>
+    <div>値動きが大きい局面です。レバレッジ型投信は変動が大きいほど基準価額が逓減しやすいため、保有期間は短めに検討してください。</div>
+  </div>
+
+  <div class="card">
+    <h2>日経平均の推移 (直近 約6か月)</h2>
+    <div class="legend">
+      <span><i style="background:var(--text-primary)"></i>終値</span>
+      <span><i style="background:var(--series-sma25)"></i>25日移動平均</span>
+      <span><i style="background:var(--series-sma75)"></i>75日移動平均</span>
+    </div>
+    <div id="chartWrap"></div>
+  </div>
+</template>
+
+<script>
+const SIGNAL_META = {
+  bull:         { cls: "bull", label: "ブル型優勢", caution: null },
+  bull_caution: { cls: "bull", label: "ブル型優勢", caution: "⚠ 過熱感あり(買われすぎ)" },
+  bear:         { cls: "bear", label: "ベア型優勢", caution: null },
+  bear_caution: { cls: "bear", label: "ベア型優勢", caution: "⚠ 過熱感あり(売られすぎ)" },
+  wait:         { cls: "wait", label: "様子見", caution: null },
+};
+
+function fmtNum(n, digits = 0) {
+  return n.toLocaleString("ja-JP", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+}
+
+function fmtDateJp(iso) {
+  const [y, m, d] = iso.split("-");
+  return `${y}年${Number(m)}月${Number(d)}日`;
+}
+
+async function load() {
+  const app = document.getElementById("app");
+  try {
+    const res = await fetch("./data/latest.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("data fetch failed");
+    const data = await res.json();
+    render(data);
+  } catch (err) {
+    app.innerHTML = `<div class="error">データの取得に失敗しました。時間をおいて再度お試しください。<br><small>${err.message}</small></div>`;
+  }
+}
+
+function render(data) {
+  const app = document.getElementById("app");
+  const tmpl = document.getElementById("tmplApp");
+  app.innerHTML = "";
+  app.appendChild(tmpl.content.cloneNode(true));
+
+  document.getElementById("updatedLine").textContent =
+    `基準日: ${fmtDateJp(data.asOfDate)} の終値時点`;
+
+  const meta = SIGNAL_META[data.signal] || SIGNAL_META.wait;
+  const badge = document.getElementById("badge");
+  badge.textContent = meta.label;
+  badge.classList.add(meta.cls);
+
+  if (meta.caution) {
+    const tag = document.getElementById("cautionTag");
+    tag.textContent = meta.caution;
+    tag.hidden = false;
+  }
+  document.getElementById("rationale").textContent = data.rationale;
+
+  document.getElementById("statPrice").textContent = fmtNum(data.price, 2) + " 円";
+  document.getElementById("statAsOf").textContent = fmtDateJp(data.asOfDate);
+
+  const devEl = document.getElementById("statDeviation");
+  devEl.textContent = (data.deviationPct >= 0 ? "+" : "") + data.deviationPct.toFixed(2) + "%";
+  devEl.classList.add(data.deviationPct >= 0 ? "up" : "down");
+
+  document.getElementById("statRsi").textContent = data.rsi14.toFixed(1);
+  document.getElementById("statRsiSub").textContent =
+    data.overheat === "overbought" ? "買われすぎ水準(目安70以上)" :
+    data.overheat === "oversold" ? "売られすぎ水準(目安30以下)" : "中立圏";
+
+  document.getElementById("statVol").textContent =
+    data.vol25AnnualizedPct != null ? data.vol25AnnualizedPct.toFixed(1) + "%" : "—";
+  document.getElementById("statVolSub").textContent = data.highVol ? "高ボラティリティ" : "平常水準";
+
+  if (data.crossSignal) {
+    const box = document.getElementById("crossBox");
+    box.hidden = false;
+    document.getElementById("crossText").textContent =
+      (data.crossSignal.type === "golden"
+        ? `${fmtDateJp(data.crossSignal.date)}に25日線が75日線を上抜ける「ゴールデンクロス」が発生しました。`
+        : `${fmtDateJp(data.crossSignal.date)}に25日線が75日線を下抜ける「デッドクロス」が発生しました。`);
+  }
+
+  if (data.highVol) {
+    document.getElementById("volBox").hidden = false;
+  }
+
+  window.__lastHistory = data.history;
+  drawChart(data.history);
+}
+
+function drawChart(history) {
+  const wrap = document.getElementById("chartWrap");
+  const width = wrap.clientWidth || 320;
+  const height = 260;
+  const padL = 44, padR = 8, padT = 10, padB = 24;
+  const plotW = width - padL - padR;
+  const plotH = height - padT - padB;
+
+  const allVals = [];
+  history.forEach(d => { allVals.push(d.close); if (d.sma25 != null) allVals.push(d.sma25); if (d.sma75 != null) allVals.push(d.sma75); });
+  const min = Math.min(...allVals);
+  const max = Math.max(...allVals);
+  const pad = (max - min) * 0.08 || 1;
+  const yMin = min - pad, yMax = max + pad;
+
+  const n = history.length;
+  const x = i => padL + (plotW * i) / (n - 1);
+  const y = v => padT + plotH - ((v - yMin) / (yMax - yMin)) * plotH;
+
+  function pathFor(key) {
+    let d = "";
+    let started = false;
+    history.forEach((pt, i) => {
+      const v = pt[key];
+      if (v == null) { started = false; return; }
+      d += (started ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1) + " ";
+      started = true;
+    });
+    return d.trim();
+  }
+
+  const gridLines = 4;
+  let gridSvg = "";
+  for (let i = 0; i <= gridLines; i++) {
+    const gy = padT + (plotH * i) / gridLines;
+    const val = yMax - ((yMax - yMin) * i) / gridLines;
+    gridSvg += `<line x1="${padL}" y1="${gy}" x2="${width - padR}" y2="${gy}" stroke="var(--grid)" stroke-width="1"/>`;
+    gridSvg += `<text x="${padL - 6}" y="${gy + 4}" text-anchor="end" font-size="11" fill="var(--text-muted)">${Math.round(val).toLocaleString("ja-JP")}</text>`;
+  }
+
+  const svg = `
+    <svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" style="display:block">
+      ${gridSvg}
+      <path d="${pathFor('sma75')}" fill="none" stroke="var(--series-sma75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${pathFor('sma25')}" fill="none" stroke="var(--series-sma25)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${pathFor('close')}" fill="none" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="crosshair" opacity="0">
+        <line id="chLine" x1="0" y1="${padT}" x2="0" y2="${padT + plotH}" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3,3"/>
+        <circle id="chDotClose" r="4" fill="var(--text-primary)"/>
+        <circle id="chDotSma25" r="4" fill="var(--series-sma25)"/>
+        <circle id="chDotSma75" r="4" fill="var(--series-sma75)"/>
+      </g>
+      <rect id="hitArea" x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="transparent"/>
+    </svg>
+    <div id="tooltip"></div>
+  `;
+  wrap.innerHTML = svg;
+
+  const svgEl = wrap.querySelector("svg");
+  const hitArea = wrap.querySelector("#hitArea");
+  const crosshair = wrap.querySelector("#crosshair");
+  const chLine = wrap.querySelector("#chLine");
+  const chDotClose = wrap.querySelector("#chDotClose");
+  const chDotSma25 = wrap.querySelector("#chDotSma25");
+  const chDotSma75 = wrap.querySelector("#chDotSma75");
+  const tooltip = wrap.querySelector("#tooltip");
+
+  function handleMove(clientX) {
+    const rect = svgEl.getBoundingClientRect();
+    const scale = width / rect.width;
+    const px = (clientX - rect.left) * scale;
+    let idx = Math.round(((px - padL) / plotW) * (n - 1));
+    idx = Math.max(0, Math.min(n - 1, idx));
+    const pt = history[idx];
+    crosshair.setAttribute("opacity", "1");
+    const cx = x(idx);
+    chLine.setAttribute("x1", cx); chLine.setAttribute("x2", cx);
+    chDotClose.setAttribute("cx", cx); chDotClose.setAttribute("cy", y(pt.close));
+    if (pt.sma25 != null) { chDotSma25.style.display = ""; chDotSma25.setAttribute("cx", cx); chDotSma25.setAttribute("cy", y(pt.sma25)); }
+    else chDotSma25.style.display = "none";
+    if (pt.sma75 != null) { chDotSma75.style.display = ""; chDotSma75.setAttribute("cx", cx); chDotSma75.setAttribute("cy", y(pt.sma75)); }
+    else chDotSma75.style.display = "none";
+
+    tooltip.style.opacity = "1";
+    tooltip.style.left = (cx / width * 100) + "%";
+    tooltip.style.top = (y(pt.close) / height * 100) + "%";
+    tooltip.innerHTML = `${fmtDateJp(pt.date)}<br>終値: ${fmtNum(pt.close, 0)}` +
+      (pt.sma25 != null ? `<br>25日線: ${fmtNum(pt.sma25, 0)}` : "") +
+      (pt.sma75 != null ? `<br>75日線: ${fmtNum(pt.sma75, 0)}` : "");
+  }
+
+  function hide() {
+    crosshair.setAttribute("opacity", "0");
+    tooltip.style.opacity = "0";
+  }
+
+  hitArea.addEventListener("pointermove", e => handleMove(e.clientX));
+  hitArea.addEventListener("pointerdown", e => handleMove(e.clientX));
+  hitArea.addEventListener("pointerleave", hide);
+}
+
+load();
+window.addEventListener("resize", () => { if (window.__lastHistory) drawChart(window.__lastHistory); });
+</script>
+</body>
+</html>

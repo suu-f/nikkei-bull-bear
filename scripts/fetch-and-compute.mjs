@@ -5,6 +5,70 @@ import { writeFile } from "node:fs/promises";
 const SYMBOL = "%5EN225"; // ^N225 (日経平均)
 const API_URL = `https://query1.finance.yahoo.com/v8/finance/chart/${SYMBOL}?range=2y&interval=1d`;
 
+// マクロ指標(参考情報): 為替・米国株・投資家心理は日経平均の地合いに影響するため補助的に表示する
+const MACRO_SYMBOLS = {
+  usdjpy: "JPY=X",
+  sp500: "%5EGSPC",
+  vix: "%5EVIX",
+};
+
+async function fetchDailySeries(symbolEncoded, range = "10d") {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbolEncoded}?range=${range}&interval=1d`;
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+    },
+  });
+  if (!res.ok) throw new Error(`fetch failed for ${symbolEncoded}: ${res.status}`);
+  const json = await res.json();
+  const result = json?.chart?.result?.[0];
+  if (!result) throw new Error(`unexpected response for ${symbolEncoded}`);
+  const timestamps = result.timestamp;
+  const closes = result.indicators.quote[0].close;
+  const out = [];
+  for (let i = 0; i < timestamps.length; i++) {
+    if (closes[i] == null) continue;
+    out.push(closes[i]);
+  }
+  return out;
+}
+
+async function fetchMacro() {
+  const macro = {};
+  for (const [key, symbol] of Object.entries(MACRO_SYMBOLS)) {
+    try {
+      const closes = await fetchDailySeries(symbol);
+      const last = closes.length - 1;
+      const value = closes[last];
+      const prev = closes[last - 1];
+      const changePct = ((value - prev) / prev) * 100;
+      macro[key] = { value: Number(value.toFixed(3)), changePct: Number(changePct.toFixed(2)) };
+    } catch (err) {
+      console.error(`macro fetch failed for ${key}:`, err.message);
+      macro[key] = null;
+    }
+  }
+  return macro;
+}
+
+function assessMacro(macro) {
+  const votes = [];
+  if (macro.usdjpy) votes.push(macro.usdjpy.changePct > 0 ? "bull" : "bear"); // 円安=追い風, 円高=向かい風
+  if (macro.sp500) votes.push(macro.sp500.changePct > 0 ? "bull" : "bear"); // 米国株高=追い風
+
+  let bias = "mixed";
+  if (votes.length === 2 && votes[0] === votes[1]) bias = votes[0] === "bull" ? "supportive_bull" : "supportive_bear";
+
+  let vixStatus = "calm";
+  if (macro.vix) {
+    if (macro.vix.value >= 25) vixStatus = "risk_off";
+    else if (macro.vix.value >= 20) vixStatus = "caution";
+  }
+
+  return { bias, vixStatus };
+}
+
 function sma(values, period, endIndex) {
   if (endIndex + 1 < period) return null;
   let sum = 0;
@@ -112,6 +176,9 @@ async function main() {
 
   const highVol = vol25 !== null && vol25 >= 25; // 年率25%を高ボラの目安に
 
+  const macro = await fetchMacro();
+  const macroAssessment = assessMacro(macro);
+
   // 総合判定
   let signal, headline, rationale;
   if (trend === "up" && overheat !== "overbought") {
@@ -134,6 +201,18 @@ async function main() {
     signal = "wait";
     headline = "様子見(トレンド不明瞭)";
     rationale = "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。";
+  }
+
+  // テクニカル判定とマクロ地合いが逆方向を示していないかチェック
+  let macroNote = null;
+  const technicalLeansBull = signal === "bull" || signal === "bull_caution";
+  const technicalLeansBear = signal === "bear" || signal === "bear_caution";
+  if (technicalLeansBull && macroAssessment.bias === "supportive_bear") {
+    macroNote = "テクニカルはブル型優勢ですが、為替・米国株など外部環境は逆風気味です。";
+  } else if (technicalLeansBear && macroAssessment.bias === "supportive_bull") {
+    macroNote = "テクニカルはベア型優勢ですが、為替・米国株など外部環境は逆風気味です。";
+  } else if (macroAssessment.vixStatus === "risk_off") {
+    macroNote = "VIX(米国の恐怖指数)が高水準で、市場全体がリスクオフ気味です。値動きが荒くなりやすい点に注意してください。";
   }
 
   // 次に何が起きればシグナルが変わるか(様子見/過熱時の目安)
@@ -182,6 +261,9 @@ async function main() {
     highVol,
     crossSignal,
     nextTrigger,
+    macro,
+    macroAssessment,
+    macroNote,
     signal,
     headline,
     rationale,

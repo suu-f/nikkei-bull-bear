@@ -282,6 +282,12 @@
     </div>
   </div>
 
+  <div class="card">
+    <h2>🌏 マクロ環境チェック</h2>
+    <div class="stat-grid" id="macroGrid"></div>
+    <div id="macroNoteBox" class="warn-box" style="margin-top:12px;" hidden></div>
+  </div>
+
   <div class="card" id="triggerCard" hidden>
     <h2>🎯 次のアクションの目安</h2>
     <div id="triggerText" style="font-size:17px; color:var(--text-secondary);"></div>
@@ -374,6 +380,35 @@ function render(data) {
   document.getElementById("statVol").textContent =
     data.vol25AnnualizedPct != null ? data.vol25AnnualizedPct.toFixed(1) + "%" : "—";
   document.getElementById("statVolSub").textContent = data.highVol ? "高ボラティリティ" : "平常水準";
+
+  const macroGrid = document.getElementById("macroGrid");
+  const macroTiles = [
+    { key: "usdjpy", label: "ドル円", unit: "円", digits: 2, hint: "円安=追い風 / 円高=向かい風" },
+    { key: "sp500", label: "S&P500(米国株)", unit: "", digits: 1, hint: "前日終値比" },
+    { key: "vix", label: "VIX(恐怖指数)", unit: "", digits: 1, hint: "20超=警戒 / 25超=リスクオフ" },
+  ];
+  macroTiles.forEach(t => {
+    const m = data.macro && data.macro[t.key];
+    const tile = document.createElement("div");
+    tile.className = "stat-tile";
+    if (!m) {
+      tile.innerHTML = `<div class="label">${t.label}</div><div class="value">—</div>`;
+    } else {
+      const sign = m.changePct >= 0 ? "+" : "";
+      const cls = m.changePct >= 0 ? "up" : "down";
+      tile.innerHTML = `
+        <div class="label">${t.label}</div>
+        <div class="value">${fmtNum(m.value, t.digits)}${t.unit}</div>
+        <div class="sub ${cls}">${sign}${m.changePct}% <span style="color:var(--text-muted)">(${t.hint})</span></div>`;
+    }
+    macroGrid.appendChild(tile);
+  });
+
+  if (data.macroNote) {
+    const box = document.getElementById("macroNoteBox");
+    box.hidden = false;
+    box.innerHTML = `<div class="title">🌐 参考: 外部環境との整合性</div><div>${data.macroNote}</div>`;
+  }
 
   if (data.nextTrigger) {
     const t = data.nextTrigger;

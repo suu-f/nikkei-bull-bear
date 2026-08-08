@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T13:42:56.350Z",
+  "updatedAt": "2026-08-08T15:16:52.228Z",
   "asOfDate": "2026-08-07",
   "price": 65606.71,
   "sma25": 65968.71,
@@ -18,6 +18,25 @@
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
+  "macro": {
+    "usdjpy": {
+      "value": 157.745,
+      "changePct": -0.42
+    },
+    "sp500": {
+      "value": 7757.64,
+      "changePct": 0.62
+    },
+    "vix": {
+      "value": 14.9,
+      "changePct": -1.65
+    }
+  },
+  "macroAssessment": {
+    "bias": "mixed",
+    "vixStatus": "calm"
+  },
+  "macroNote": null,
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T13:17:43.521Z",
+  "updatedAt": "2026-08-08T13:42:56.350Z",
   "asOfDate": "2026-08-07",
   "price": 65606.71,
   "sma25": 65968.71,
@@ -11,6 +11,13 @@
   "overheat": "neutral",
   "highVol": true,
   "crossSignal": null,
+  "nextTrigger": {
+    "direction": "above",
+    "level": 65968.71,
+    "distancePct": 0.55,
+    "resultingSignal": "bull",
+    "note": "終値が25日線を上抜けるとブル型優勢に転換します"
+  },
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",

@@ -282,6 +282,11 @@
     </div>
   </div>
 
+  <div class="card" id="triggerCard" hidden>
+    <h2>🎯 次のアクションの目安</h2>
+    <div id="triggerText" style="font-size:17px; color:var(--text-secondary);"></div>
+  </div>
+
   <div class="warn-box" id="crossBox" hidden>
     <div class="title">⚡ クロスシグナル発生</div>
     <div id="crossText"></div>
@@ -369,6 +374,16 @@ function render(data) {
   document.getElementById("statVol").textContent =
     data.vol25AnnualizedPct != null ? data.vol25AnnualizedPct.toFixed(1) + "%" : "—";
   document.getElementById("statVolSub").textContent = data.highVol ? "高ボラティリティ" : "平常水準";
+
+  if (data.nextTrigger) {
+    const t = data.nextTrigger;
+    const card = document.getElementById("triggerCard");
+    card.hidden = false;
+    const dirLabel = t.direction === "above" ? "上抜け" : "下抜け";
+    const signalLabel = t.resultingSignal === "bull" ? "ブル型優勢" : "ベア型優勢";
+    document.getElementById("triggerText").innerHTML =
+      `日経平均が <b>${fmtNum(t.level, 0)}円</b>(現値から${t.distancePct >= 0 ? "+" : ""}${t.distancePct}%)を<b>${dirLabel}</b>すると「<b>${signalLabel}</b>」に転換します。<br><span style="color:var(--text-muted); font-size:14px;">${t.note}</span>`;
+  }
 
   if (data.crossSignal) {
     const box = document.getElementById("crossBox");

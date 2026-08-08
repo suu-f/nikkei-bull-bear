@@ -136,6 +136,27 @@ async function main() {
     rationale = "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。";
   }
 
+  // 次に何が起きればシグナルが変わるか(様子見/過熱時の目安)
+  let nextTrigger = null;
+  const structureUp = sma25 > sma75; // 短期線が長期線より上=中期的には上向きの構造
+  if (structureUp && !(price > sma25)) {
+    nextTrigger = {
+      direction: "above",
+      level: Number(sma25.toFixed(2)),
+      distancePct: Number((((sma25 - price) / price) * 100).toFixed(2)),
+      resultingSignal: "bull",
+      note: "終値が25日線を上抜けるとブル型優勢に転換します",
+    };
+  } else if (!structureUp && !(price < sma25)) {
+    nextTrigger = {
+      direction: "below",
+      level: Number(sma25.toFixed(2)),
+      distancePct: Number((((price - sma25) / price) * 100).toFixed(2)),
+      resultingSignal: "bear",
+      note: "終値が25日線を下抜けるとベア型優勢に転換します",
+    };
+  }
+
   const history = [];
   const histStart = Math.max(0, n - 130);
   for (let i = histStart; i <= last; i++) {
@@ -160,6 +181,7 @@ async function main() {
     overheat,
     highVol,
     crossSignal,
+    nextTrigger,
     signal,
     headline,
     rationale,

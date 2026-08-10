@@ -1,52 +1,40 @@
 {
-  "updatedAt": "2026-08-08T15:16:52.228Z",
-  "asOfDate": "2026-08-07",
-  "price": 65606.71,
-  "sma25": 65968.71,
-  "sma75": 65309.32,
-  "deviationPct": -0.55,
-  "rsi14": 54.9,
-  "vol25AnnualizedPct": 34.4,
-  "trend": "mixed",
+  "updatedAt": "2026-08-10T10:49:39.690Z",
+  "asOfDate": "2026-08-10",
+  "price": 66970.22,
+  "sma25": 65857.76,
+  "sma75": 65417.93,
+  "deviationPct": 1.69,
+  "rsi14": 52.6,
+  "vol25AnnualizedPct": 34.8,
+  "trend": "up",
   "overheat": "neutral",
   "highVol": true,
   "crossSignal": null,
-  "nextTrigger": {
-    "direction": "above",
-    "level": 65968.71,
-    "distancePct": 0.55,
-    "resultingSignal": "bull",
-    "note": "終値が25日線を上抜けるとブル型優勢に転換します"
-  },
+  "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 157.745,
-      "changePct": -0.42
+      "value": 158.749,
+      "changePct": 0.21
     },
     "sp500": {
       "value": 7757.64,
       "changePct": 0.62
     },
     "vix": {
-      "value": 14.9,
-      "changePct": -1.65
+      "value": 15.45,
+      "changePct": 3.69
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bull",
     "vixStatus": "calm"
   },
   "macroNote": null,
-  "signal": "wait",
-  "headline": "様子見(トレンド不明瞭)",
-  "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
+  "signal": "bull",
+  "headline": "ブル型優勢",
+  "rationale": "日経平均は上昇トレンド(終値>25日線>75日線)で、RSIも過熱していません。",
   "history": [
-    {
-      "date": "2026-01-28",
-      "close": 53358.71,
-      "sma25": 52178.43,
-      "sma75": 50554.73
-    },
     {
       "date": "2026-01-29",
       "close": 53375.6,
@@ -820,6 +808,12 @@
       "close": 65606.71,
       "sma25": 65968.71,
       "sma75": 65309.32
+    },
+    {
+      "date": "2026-08-10",
+      "close": 66970.22,
+      "sma25": 65857.76,
+      "sma75": 65417.93
     }
   ]
 }

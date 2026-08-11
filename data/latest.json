@@ -1,35 +1,29 @@
 {
-  "updatedAt": "2026-08-08T15:16:52.228Z",
-  "asOfDate": "2026-08-07",
-  "price": 65606.71,
-  "sma25": 65968.71,
-  "sma75": 65309.32,
-  "deviationPct": -0.55,
-  "rsi14": 54.9,
-  "vol25AnnualizedPct": 34.4,
-  "trend": "mixed",
+  "updatedAt": "2026-08-11T02:32:21.407Z",
+  "asOfDate": "2026-08-10",
+  "price": 66970.22,
+  "sma25": 65857.76,
+  "sma75": 65417.93,
+  "deviationPct": 1.69,
+  "rsi14": 52.6,
+  "vol25AnnualizedPct": 34.8,
+  "trend": "up",
   "overheat": "neutral",
   "highVol": true,
   "crossSignal": null,
-  "nextTrigger": {
-    "direction": "above",
-    "level": 65968.71,
-    "distancePct": 0.55,
-    "resultingSignal": "bull",
-    "note": "終値が25日線を上抜けるとブル型優勢に転換します"
-  },
+  "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 157.745,
-      "changePct": -0.42
+      "value": 159.285,
+      "changePct": 0.88
     },
     "sp500": {
-      "value": 7757.64,
-      "changePct": 0.62
+      "value": 7753.11,
+      "changePct": -0.06
     },
     "vix": {
-      "value": 14.9,
-      "changePct": -1.65
+      "value": 15.46,
+      "changePct": 3.76
     }
   },
   "macroAssessment": {
@@ -37,16 +31,51 @@
     "vixStatus": "calm"
   },
   "macroNote": null,
-  "signal": "wait",
-  "headline": "様子見(トレンド不明瞭)",
-  "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
-  "history": [
+  "conviction": {
+    "level": 4,
+    "levelLabel": "やや強い",
+    "successRatePct": 64.3,
+    "avgForwardReturnPct": 1.78,
+    "sampleSize": 196,
+    "horizonDays": 10,
+    "lowSample": false
+  },
+  "news": [
     {
-      "date": "2026-01-28",
-      "close": 53358.71,
-      "sma25": 52178.43,
-      "sma75": 50554.73
+      "title": "日経平均が高値を目指すための条件は？",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9pNjRyWFdidVBpYnFKcktPdG03SU9kNjZmT2tWV3drRUl4UzFPb3NVY25EMVo0Ym1jNmtlc0F4MHJFa2ZIWDNSNDVSWEcxamJ3el80ek5EVUROdw?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Mon, 10 Aug 2026 04:13:00 GMT"
     },
+    {
+      "title": "日経平均終値1363円高、米利上げ観測後退で25日移動平均を突破",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE54NFE1U0JrRzJkbVMzR3Nha01aWXZLTFIzU3dQZnQ3ZThEcG5fcGE3V0NmMmVPV3d6TnlrTVVueGxXVVhyZ1NOSzAyU0h2UmxGM1hwNzBNYkZ6eGJNcGV5RG1TVmdkOHd3Zl85TA?oc=5",
+      "source": "nikkei.com",
+      "publishedAt": "Mon, 10 Aug 2026 02:54:38 GMT"
+    },
+    {
+      "title": "日経平均10万円超は「夢物語ではない」長期シナリオ(トウシル)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOU0ktbXh2cmpEVDlURVc2MEZWUTBnUFlFRUtUVHRIeUZfQXF1S2gxSFJXdVdFZndOeTNOdUlROEYyTHM3SWtvWnRDQWhpZVZJN1MtSE5MQVZ3VDF4S0VxMnBpWExBVnJRU1hCSWtTUjlEVmpyMzJEQUdhSmlnLXRSN2poUU1xNk0?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Mon, 10 Aug 2026 22:45:00 GMT"
+    },
+    {
+      "title": "（まとめ）日経平均は一時67,000円超も1,363円高の66,970円で反発　日銀の早期利上げ観測が浮上",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4zQXk4akhRRko4QVhucGc1Zk9IVlQ2R2wxTzJsNkVfeXBrbkFIY2RfZTdFT1VpdXVhNDhTcDE2WFVadnZQc1hNamNHSWV6RTVVWlhOMNIBV0FVX3lxTE83YjNIbDFvRVNBUFUtdFZDZlU3Q09iSmhOcjlqTTBROFZWVmN3aGJ0bzVqeXh6M09IOGEwS3hpbkZhUmkwVGp1OFdIemtGcW9HYm9yR2VxQQ?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Mon, 10 Aug 2026 08:08:00 GMT"
+    },
+    {
+      "title": "日経平均株価 一時1000円超値上がり",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5kVGZxVVhFNDN0RHJzZERNS1hqczdHcVFkc3J0WGNWa0pXbUMyS0dDblhBNTRCM0ZNS0JVTXlVY201UGRnZ2NTczdjNDR1ZkFKR1N1Q0tmclQ2S0k?oc=5",
+      "source": "ABEMA",
+      "publishedAt": "Mon, 10 Aug 2026 01:29:30 GMT"
+    }
+  ],
+  "signal": "bull",
+  "headline": "ブル型優勢",
+  "rationale": "日経平均は上昇トレンド(終値>25日線>75日線)で、RSIも過熱していません。",
+  "history": [
     {
       "date": "2026-01-29",
       "close": 53375.6,
@@ -820,6 +849,12 @@
       "close": 65606.71,
       "sma25": 65968.71,
       "sma75": 65309.32
+    },
+    {
+      "date": "2026-08-10",
+      "close": 66970.22,
+      "sma25": 65857.76,
+      "sma75": 65417.93
     }
   ]
 }

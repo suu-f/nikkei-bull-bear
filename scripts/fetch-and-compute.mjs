@@ -105,6 +105,107 @@ function annualizedVolatility(values, period, endIndex) {
   return dailyStd * Math.sqrt(252) * 100; // %
 }
 
+// トレンド/過熱感の組み合わせから5区分のシグナルを決める(当日判定と過去のバックテストで共通利用)
+function classify(trend, overheat) {
+  if (trend === "up" && overheat !== "overbought") {
+    return { signal: "bull", headline: "ブル型優勢", rationale: "日経平均は上昇トレンド(終値>25日線>75日線)で、RSIも過熱していません。" };
+  }
+  if (trend === "up" && overheat === "overbought") {
+    return { signal: "bull_caution", headline: "ブル型優勢だが過熱感あり", rationale: "上昇トレンドですがRSIが70以上で買われすぎ気味です。押し目を待つ選択肢もあります。" };
+  }
+  if (trend === "down" && overheat !== "oversold") {
+    return { signal: "bear", headline: "ベア型優勢", rationale: "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。" };
+  }
+  if (trend === "down" && overheat === "oversold") {
+    return { signal: "bear_caution", headline: "ベア型優勢だが過熱感あり", rationale: "下降トレンドですがRSIが30以下で売られすぎ気味です。反発リスクに注意してください。" };
+  }
+  return { signal: "wait", headline: "様子見(トレンド不明瞭)", rationale: "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。" };
+}
+
+const CONVICTION_LABELS = { 1: "弱い", 2: "やや弱い", 3: "普通", 4: "やや強い", 5: "強い" };
+function convictionLevel(successRatePct) {
+  if (successRatePct == null) return null;
+  if (successRatePct < 40) return 1;
+  if (successRatePct < 50) return 2;
+  if (successRatePct < 60) return 3;
+  if (successRatePct < 70) return 4;
+  return 5;
+}
+
+// 過去2年分のデータで「今日と同じ判定が出た日、その後2週間(10営業日)でどうなったか」を集計する
+function backtestConviction(prices, horizonDays = 10) {
+  const buckets = {};
+  for (let i = 75; i <= prices.length - 1 - horizonDays; i++) {
+    const p = prices[i];
+    const s25 = sma(prices, 25, i);
+    const s75 = sma(prices, 75, i);
+    const r = rsi(prices, 14, i);
+    if (s25 == null || s75 == null || r == null) continue;
+    const trend_i = p > s25 && s25 > s75 ? "up" : p < s25 && s25 < s75 ? "down" : "mixed";
+    const overheat_i = r >= 70 ? "overbought" : r <= 30 ? "oversold" : "neutral";
+    const { signal: sig } = classify(trend_i, overheat_i);
+    const fwdReturnPct = ((prices[i + horizonDays] - p) / p) * 100;
+    if (!buckets[sig]) buckets[sig] = { count: 0, successCount: 0, returnSum: 0 };
+    buckets[sig].count += 1;
+    buckets[sig].returnSum += fwdReturnPct;
+    const isDirectional = sig === "bull" || sig === "bull_caution" || sig === "bear" || sig === "bear_caution";
+    const isBull = sig === "bull" || sig === "bull_caution";
+    if (isDirectional && (isBull ? fwdReturnPct > 0 : fwdReturnPct < 0)) buckets[sig].successCount += 1;
+  }
+  const result = {};
+  for (const [sig, b] of Object.entries(buckets)) {
+    const isDirectional = sig !== "wait";
+    const successRatePct = isDirectional ? Number(((b.successCount / b.count) * 100).toFixed(1)) : null;
+    result[sig] = {
+      sampleSize: b.count,
+      successRatePct,
+      avgForwardReturnPct: Number((b.returnSum / b.count).toFixed(2)),
+    };
+  }
+  return result;
+}
+
+function decodeEntities(s) {
+  return s
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/<!\[CDATA\[/g, "")
+    .replace(/\]\]>/g, "");
+}
+
+// 無料のGoogle Newsフィードから日経平均関連の見出しのみを取得する(AIによる要約・因果解説は行わない)
+async function fetchNews(query = "日経平均", limit = 5) {
+  try {
+    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ja&gl=JP&ceid=JP:ja`;
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+      },
+    });
+    if (!res.ok) throw new Error(`news fetch failed: ${res.status}`);
+    const xml = await res.text();
+    const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, limit).map((m) => {
+      const block = m[1];
+      const rawTitle = decodeEntities((block.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "");
+      const link = (block.match(/<link>([\s\S]*?)<\/link>/) || [])[1] || "";
+      const pubDate = (block.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1] || "";
+      const sourceMatch = block.match(/<source[^>]*>([\s\S]*?)<\/source>/);
+      const source = sourceMatch ? decodeEntities(sourceMatch[1]) : "";
+      const suffix = source ? ` - ${source}` : "";
+      const title = suffix && rawTitle.endsWith(suffix) ? rawTitle.slice(0, -suffix.length) : rawTitle;
+      return { title, link, source, publishedAt: pubDate };
+    });
+    return items;
+  } catch (err) {
+    console.error("news fetch failed:", err.message);
+    return [];
+  }
+}
+
 function fmtDateJST(unixSeconds) {
   const d = new Date(unixSeconds * 1000);
   return d.toLocaleDateString("sv-SE", { timeZone: "Asia/Tokyo" }); // YYYY-MM-DD
@@ -178,29 +279,27 @@ async function main() {
 
   const macro = await fetchMacro();
   const macroAssessment = assessMacro(macro);
+  const news = await fetchNews();
 
   // 総合判定
-  let signal, headline, rationale;
-  if (trend === "up" && overheat !== "overbought") {
-    signal = "bull";
-    headline = "ブル型優勢";
-    rationale = "日経平均は上昇トレンド(終値>25日線>75日線)で、RSIも過熱していません。";
-  } else if (trend === "up" && overheat === "overbought") {
-    signal = "bull_caution";
-    headline = "ブル型優勢だが過熱感あり";
-    rationale = "上昇トレンドですがRSIが70以上で買われすぎ気味です。押し目を待つ選択肢もあります。";
-  } else if (trend === "down" && overheat !== "oversold") {
-    signal = "bear";
-    headline = "ベア型優勢";
-    rationale = "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。";
-  } else if (trend === "down" && overheat === "oversold") {
-    signal = "bear_caution";
-    headline = "ベア型優勢だが過熱感あり";
-    rationale = "下降トレンドですがRSIが30以下で売られすぎ気味です。反発リスクに注意してください。";
-  } else {
-    signal = "wait";
-    headline = "様子見(トレンド不明瞭)";
-    rationale = "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。";
+  const { signal, headline, rationale } = classify(trend, overheat);
+
+  // 過去実績にもとづく確信度(1〜5段階): 同じ判定が過去に出た日、その後2週間でどうなったか
+  const HORIZON_DAYS = 10;
+  const backtest = backtestConviction(prices, HORIZON_DAYS);
+  const bucketStats = backtest[signal] || null;
+  let conviction = null;
+  if (bucketStats && bucketStats.successRatePct != null) {
+    const level = convictionLevel(bucketStats.successRatePct);
+    conviction = {
+      level,
+      levelLabel: CONVICTION_LABELS[level],
+      successRatePct: bucketStats.successRatePct,
+      avgForwardReturnPct: bucketStats.avgForwardReturnPct,
+      sampleSize: bucketStats.sampleSize,
+      horizonDays: HORIZON_DAYS,
+      lowSample: bucketStats.sampleSize < 15,
+    };
   }
 
   // テクニカル判定とマクロ地合いが逆方向を示していないかチェック
@@ -264,6 +363,8 @@ async function main() {
     macro,
     macroAssessment,
     macroNote,
+    conviction,
+    news,
     signal,
     headline,
     rationale,

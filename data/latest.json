@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T02:32:21.407Z",
+  "updatedAt": "2026-08-11T02:40:45.891Z",
   "asOfDate": "2026-08-10",
   "price": 66970.22,
   "sma25": 65857.76,
@@ -14,8 +14,8 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.285,
-      "changePct": 0.88
+      "value": 159.268,
+      "changePct": 0.87
     },
     "sp500": {
       "value": 7753.11,

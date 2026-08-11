@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T13:57:22.994Z",
+  "updatedAt": "2026-08-11T13:59:24.972Z",
   "asOfDate": "2026-08-10",
   "price": 66970.22,
   "sma25": 65857.76,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.225,
-      "changePct": 0.84
+      "value": 159.23,
+      "changePct": 0.85
     },
     "sp500": {
-      "value": 7756.45,
-      "changePct": 0.04
+      "value": 7757.39,
+      "changePct": 0.06
     },
     "vix": {
-      "value": 15.52,
-      "changePct": 0.39
+      "value": 15.54,
+      "changePct": 0.52
     }
   },
   "macroAssessment": {

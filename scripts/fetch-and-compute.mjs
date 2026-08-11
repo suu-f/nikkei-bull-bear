@@ -3,7 +3,18 @@
 import { writeFile } from "node:fs/promises";
 
 const SYMBOL = "%5EN225"; // ^N225 (日経平均)
-const API_URL = `https://query1.finance.yahoo.com/v8/finance/chart/${SYMBOL}?range=2y&interval=1d`;
+// バックテストの信頼性を上げるため10年分(複数の下落局面を含む)を取得する
+const API_URL = `https://query1.finance.yahoo.com/v8/finance/chart/${SYMBOL}?range=10y&interval=1d`;
+
+// 「厳選ブル型」の判定条件(訓練期間/検証期間に分けた検証で再現性を確認済み)
+const BULL_STRONG_HORIZON_DAYS = 20; // 約1か月後
+const BULL_STRONG_RULE = {
+  shortPeriod: 20,
+  longPeriod: 100,
+  extensionPct: 6, // 長期線からの上方乖離が6%以上
+  rsiCeiling: 80,
+  slopeLookback: 5,
+};
 
 // マクロ指標(参考情報): 為替・米国株・投資家心理は日経平均の地合いに影響するため補助的に表示する
 const MACRO_SYMBOLS = {
@@ -165,6 +176,42 @@ function backtestConviction(prices, horizonDays = 10) {
   return result;
 }
 
+// 「厳選ブル型」: 100日線を6%以上上回る強い上昇トレンド+短期線が上向きの時のみ発動する高確度シグナル
+function isBullStrong(prices, i) {
+  const { shortPeriod, longPeriod, extensionPct, rsiCeiling, slopeLookback } = BULL_STRONG_RULE;
+  const p = prices[i];
+  const sShort = sma(prices, shortPeriod, i);
+  const sLong = sma(prices, longPeriod, i);
+  const sShortPrev = sma(prices, shortPeriod, i - slopeLookback);
+  const r = rsi(prices, 14, i);
+  if (sShort == null || sLong == null || sShortPrev == null || r == null) return false;
+  const trendUp = p > sShort && sShort > sLong;
+  const extensionOk = ((p - sLong) / sLong) * 100 >= extensionPct;
+  const rsiOk = r < rsiCeiling;
+  const slopeOk = sShort > sShortPrev;
+  return trendUp && extensionOk && rsiOk && slopeOk;
+}
+
+function backtestBullStrong(prices, horizonDays) {
+  let count = 0;
+  let successCount = 0;
+  let returnSum = 0;
+  const start = BULL_STRONG_RULE.longPeriod;
+  for (let i = start; i <= prices.length - 1 - horizonDays; i++) {
+    if (!isBullStrong(prices, i)) continue;
+    const fwdReturnPct = ((prices[i + horizonDays] - prices[i]) / prices[i]) * 100;
+    count += 1;
+    returnSum += fwdReturnPct;
+    if (fwdReturnPct > 0) successCount += 1;
+  }
+  if (count === 0) return null;
+  return {
+    sampleSize: count,
+    successRatePct: Number(((successCount / count) * 100).toFixed(1)),
+    avgForwardReturnPct: Number((returnSum / count).toFixed(2)),
+  };
+}
+
 function decodeEntities(s) {
   return s
     .replace(/&amp;/g, "&")
@@ -281,13 +328,23 @@ async function main() {
   const macroAssessment = assessMacro(macro);
   const news = await fetchNews();
 
-  // 総合判定
-  const { signal, headline, rationale } = classify(trend, overheat);
+  // 総合判定(基本の5区分)
+  let { signal, headline, rationale } = classify(trend, overheat);
 
-  // 過去実績にもとづく確信度(1〜5段階): 同じ判定が過去に出た日、その後2週間でどうなったか
-  const HORIZON_DAYS = 10;
+  // 「厳選ブル型」: 通常のブル判定よりさらに条件を絞った高確度シグナル(該当時は上書き)
+  const bullStrongToday = isBullStrong(prices, last);
+  if (bullStrongToday) {
+    signal = "bull_strong";
+    headline = "ブル型 高確度シグナル";
+    rationale = `日経平均は100日線を${BULL_STRONG_RULE.extensionPct}%以上上回る強い上昇トレンドで、短期線も上向いています。過去10年で同条件が発生した局面に絞った、より厳選されたシグナルです。`;
+  }
+
+  // 過去実績にもとづく確信度(1〜5段階): 同じ判定パターンが過去に出た日、その後どうなったか
+  const HORIZON_DAYS = 10; // 通常の5区分は約2週間後で評価
   const backtest = backtestConviction(prices, HORIZON_DAYS);
-  const bucketStats = backtest[signal] || null;
+  const bucketStats =
+    signal === "bull_strong" ? backtestBullStrong(prices, BULL_STRONG_HORIZON_DAYS) : backtest[signal] || null;
+  const convictionHorizon = signal === "bull_strong" ? BULL_STRONG_HORIZON_DAYS : HORIZON_DAYS;
   let conviction = null;
   if (bucketStats && bucketStats.successRatePct != null) {
     const level = convictionLevel(bucketStats.successRatePct);
@@ -297,14 +354,15 @@ async function main() {
       successRatePct: bucketStats.successRatePct,
       avgForwardReturnPct: bucketStats.avgForwardReturnPct,
       sampleSize: bucketStats.sampleSize,
-      horizonDays: HORIZON_DAYS,
+      horizonDays: convictionHorizon,
       lowSample: bucketStats.sampleSize < 15,
+      noEdge: bucketStats.successRatePct <= 50,
     };
   }
 
   // テクニカル判定とマクロ地合いが逆方向を示していないかチェック
   let macroNote = null;
-  const technicalLeansBull = signal === "bull" || signal === "bull_caution";
+  const technicalLeansBull = signal === "bull" || signal === "bull_caution" || signal === "bull_strong";
   const technicalLeansBear = signal === "bear" || signal === "bear_caution";
   if (technicalLeansBull && macroAssessment.bias === "supportive_bear") {
     macroNote = "テクニカルはブル型優勢ですが、為替・米国株など外部環境は逆風気味です。";

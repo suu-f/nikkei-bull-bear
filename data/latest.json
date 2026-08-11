@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T02:40:45.891Z",
+  "updatedAt": "2026-08-11T13:57:22.994Z",
   "asOfDate": "2026-08-10",
   "price": 66970.22,
   "sma25": 65857.76,
@@ -14,62 +14,63 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.268,
-      "changePct": 0.87
+      "value": 159.225,
+      "changePct": 0.84
     },
     "sp500": {
-      "value": 7753.11,
-      "changePct": -0.06
+      "value": 7756.45,
+      "changePct": 0.04
     },
     "vix": {
-      "value": 15.46,
-      "changePct": 3.76
+      "value": 15.52,
+      "changePct": 0.39
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bull",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": {
-    "level": 4,
-    "levelLabel": "やや強い",
-    "successRatePct": 64.3,
-    "avgForwardReturnPct": 1.78,
-    "sampleSize": 196,
+    "level": 3,
+    "levelLabel": "普通",
+    "successRatePct": 54.7,
+    "avgForwardReturnPct": 0.48,
+    "sampleSize": 713,
     "horizonDays": 10,
-    "lowSample": false
+    "lowSample": false,
+    "noEdge": false
   },
   "news": [
     {
-      "title": "日経平均が高値を目指すための条件は？",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9pNjRyWFdidVBpYnFKcktPdG03SU9kNjZmT2tWV3drRUl4UzFPb3NVY25EMVo0Ym1jNmtlc0F4MHJFa2ZIWDNSNDVSWEcxamJ3el80ek5EVUROdw?oc=5",
+      "title": "NYダウ最高値更新が示す日経平均10万円超の可能性",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE45WHNLWVdTN1dkTm1BM2oxR05xdXFYaU5Fa0FOQVNKVlYxcDV0X21CNDc3V01XOUlDc0tkNUI3bFlvQ1JrLXA5TzljRnZnbVVQU1Q5UE16S0hFUQ?oc=5",
       "source": "トウシル",
-      "publishedAt": "Mon, 10 Aug 2026 04:13:00 GMT"
+      "publishedAt": "Mon, 10 Aug 2026 22:30:00 GMT"
     },
     {
-      "title": "日経平均終値1363円高、米利上げ観測後退で25日移動平均を突破",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE54NFE1U0JrRzJkbVMzR3Nha01aWXZLTFIzU3dQZnQ3ZThEcG5fcGE3V0NmMmVPV3d6TnlrTVVueGxXVVhyZ1NOSzAyU0h2UmxGM1hwNzBNYkZ6eGJNcGV5RG1TVmdkOHd3Zl85TA?oc=5",
-      "source": "nikkei.com",
-      "publishedAt": "Mon, 10 Aug 2026 02:54:38 GMT"
+      "title": "目覚めるライオン、バリュー株に勢い 日経平均再浮上のカギに",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBlVmNNNXJZdmJ3VGxZM1l1VlpMZXVFaFRFd29sSGppSDduQVB4LUFkMXQya3A1b0NKOHgzc2hzQllPM3ZySkhXTU02SjNRcHp5Qks3bkNXeE91cUFlZjExV1NiMnhuM1ZfM211VQ?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Mon, 10 Aug 2026 09:06:22 GMT"
     },
     {
-      "title": "日経平均10万円超は「夢物語ではない」長期シナリオ(トウシル)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOU0ktbXh2cmpEVDlURVc2MEZWUTBnUFlFRUtUVHRIeUZfQXF1S2gxSFJXdVdFZndOeTNOdUlROEYyTHM3SWtvWnRDQWhpZVZJN1MtSE5MQVZ3VDF4S0VxMnBpWExBVnJRU1hCSWtTUjlEVmpyMzJEQUdhSmlnLXRSN2poUU1xNk0?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Mon, 10 Aug 2026 22:45:00 GMT"
+      "title": "「日経平均6万円なら安い」と感じたら危ない･･･資産10億円投資家が半導体の次に仕込む“出遅れ内需株”（みんかぶマガジン）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9EdVpDajhOY0oxdllNbHBtV1YzSlFMYUlHWUxiYnhsVWFHSUZZa1YwYnM5SXQwRGVGSTc4ZlppLVVwMnp5bU92SlhuOGpWMC11M2NVbHVQR2pMUDE3N3B0a0JlZjhjZTFxNE5UT3M5UkxHSF9xN2RZUHdWaTBRZ1k?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Tue, 11 Aug 2026 03:10:02 GMT"
+    },
+    {
+      "title": "日経平均株価は｢SOX指数の上昇｣と｢KOSPIのボラ低下｣を追い風に反発か!? 今後は9月の配当狙いや、リスクを取れるなら｢AI･半導体株の反発｣を狙う戦略も！",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0tS0pWSUlPVXcwMTJ2cFByZmRMVWpkZTVlc2pFQms3R3B3Tm5uQzZtU2tQMVpZZnd0NkJ0VmkwSks3SGYyZnNDVUp2UVpacXNzTTNj?oc=5",
+      "source": "ダイヤモンド・オンライン",
+      "publishedAt": "Mon, 10 Aug 2026 11:10:00 GMT"
     },
     {
       "title": "（まとめ）日経平均は一時67,000円超も1,363円高の66,970円で反発　日銀の早期利上げ観測が浮上",
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4zQXk4akhRRko4QVhucGc1Zk9IVlQ2R2wxTzJsNkVfeXBrbkFIY2RfZTdFT1VpdXVhNDhTcDE2WFVadnZQc1hNamNHSWV6RTVVWlhOMNIBV0FVX3lxTE83YjNIbDFvRVNBUFUtdFZDZlU3Q09iSmhOcjlqTTBROFZWVmN3aGJ0bzVqeXh6M09IOGEwS3hpbkZhUmkwVGp1OFdIemtGcW9HYm9yR2VxQQ?oc=5",
       "source": "マネクリ",
       "publishedAt": "Mon, 10 Aug 2026 08:08:00 GMT"
-    },
-    {
-      "title": "日経平均株価 一時1000円超値上がり",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5kVGZxVVhFNDN0RHJzZERNS1hqczdHcVFkc3J0WGNWa0pXbUMyS0dDblhBNTRCM0ZNS0JVTXlVY201UGRnZ2NTczdjNDR1ZkFKR1N1Q0tmclQ2S0k?oc=5",
-      "source": "ABEMA",
-      "publishedAt": "Mon, 10 Aug 2026 01:29:30 GMT"
     }
   ],
   "signal": "bull",

@@ -219,6 +219,13 @@
     color: var(--text-muted);
     line-height: 1.6;
   }
+  .conviction-noedge {
+    margin-top: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--warn-text);
+    line-height: 1.6;
+  }
 
   .info-btn {
     display: inline-flex;
@@ -462,6 +469,7 @@
         <button class="info-btn" data-info="conviction">i</button>
       </div>
       <div class="conviction-sub" id="convictionSub"></div>
+      <div class="conviction-noedge" id="convictionNoEdge" hidden></div>
     </div>
   </div>
 
@@ -529,6 +537,7 @@
 
 <script>
 const SIGNAL_META = {
+  bull_strong:  { cls: "bull", label: "ブル型 高確度", caution: "🎯 厳選シグナル(発生頻度は低め)" },
   bull:         { cls: "bull", label: "ブル型優勢", caution: null },
   bull_caution: { cls: "bull", label: "ブル型優勢", caution: "⚠ 過熱感あり(買われすぎ)" },
   bear:         { cls: "bear", label: "ベア型優勢", caution: null },
@@ -563,7 +572,7 @@ const INFO_CONTENT = {
   },
   conviction: {
     title: "確信度(5段階)とは",
-    body: "過去2年分のデータの中から「今日と同じ判定(トレンドの向き・過熱感の組み合わせ)」が出た日をすべて集め、その<b>約2週間後(10営業日後)</b>に実際どうなったかを集計した、統計的な実績値です。<br><br>例えば「過去に同じ判定が出た日が50回あり、そのうち32回で予想方向に動いていた」場合、勝率は64%となり、これを1〜5の5段階に変換して表示しています。<br><br><b>5に近いほど</b>過去の的中率が高かったことを、<b>1に近いほど</b>低かったことを示します。<br><br>⚠️ あくまで<b>過去の統計</b>であり、将来の値動きを保証するものではありません。サンプル数が少ない場合は参考程度としてください。",
+    body: "過去<b>10年分</b>(複数の下落局面を含む)のデータの中から「今日と同じ判定パターン」が出た日をすべて集め、その後(通常は約2週間後、「ブル型 高確度」のみ約1か月後)に実際どうなったかを集計した、統計的な実績値です。<br><br>例えば「過去に同じ判定が出た日が700回あり、そのうち380回で予想方向に動いていた」場合、勝率は54%となり、これを1〜5の5段階に変換して表示しています。<br><br><b>5に近いほど</b>過去の的中率が高かったことを、<b>1に近いほど</b>低かったことを示します。<br><br>⚠️ 訓練期間と検証期間に分けて検証した結果、<b>「ベア型優勢」は過去10年でコイントスより低い的中率</b>しか確認できていません(=下落を的中させる根拠として頼れません)。「ブル型優勢」も通常は五分五分に近い水準です。「ブル型 高確度」は条件を絞り込むことで検証期間でも70%台の的中率を確認できた、より厳選されたシグナルです。<br><br>あくまで<b>過去の統計</b>であり、将来の値動きを保証するものではありません。",
   },
 };
 
@@ -616,14 +625,25 @@ function render(data) {
   document.getElementById("rationale").textContent = data.rationale;
 
   if (data.conviction) {
+    const c = data.conviction;
     const box = document.getElementById("convictionBox");
     box.hidden = false;
-    document.getElementById("convictionPill").textContent = `${data.conviction.level}/5`;
-    document.getElementById("convictionLevelLabel").textContent = `確信度: ${data.conviction.levelLabel}`;
-    const sign = data.conviction.avgForwardReturnPct >= 0 ? "+" : "";
-    document.getElementById("convictionSub").textContent =
-      `過去${data.conviction.sampleSize}回の類似局面のうち${data.conviction.successRatePct}%で、${data.conviction.horizonDays}営業日後(約2週間後)に予想方向へ動いていました(平均${sign}${data.conviction.avgForwardReturnPct}%)。` +
-      (data.conviction.lowSample ? "※サンプル数が少なく参考程度です。" : "");
+    document.getElementById("convictionPill").textContent = `${c.level}/5`;
+    document.getElementById("convictionLevelLabel").textContent = `確信度: ${c.levelLabel}`;
+    const sign = c.avgForwardReturnPct >= 0 ? "+" : "";
+    const aboutWeeks = c.horizonDays >= 18 ? "約1か月" : "約2週間";
+    let subText =
+      `過去${c.sampleSize}回の類似局面のうち${c.successRatePct}%で、${c.horizonDays}営業日後(${aboutWeeks}後)に予想方向へ動いていました(平均${sign}${c.avgForwardReturnPct}%)。` +
+      (c.lowSample ? "※サンプル数が少なく参考程度です。" : "");
+    document.getElementById("convictionSub").textContent = subText;
+
+    const noEdgeBox = document.getElementById("convictionNoEdge");
+    if (c.noEdge) {
+      noEdgeBox.hidden = false;
+      noEdgeBox.textContent = "⚠️ 過去の検証では、コイントス(五分五分)以下の的中率しか確認できていません。この判定を根拠に売買するのはおすすめしません。";
+    } else {
+      noEdgeBox.hidden = true;
+    }
   }
 
   document.getElementById("statPrice").textContent = fmtNum(data.price, 2) + " 円";

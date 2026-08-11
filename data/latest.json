@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T02:40:45.891Z",
+  "updatedAt": "2026-08-11T10:16:03.793Z",
   "asOfDate": "2026-08-10",
   "price": 66970.22,
   "sma25": 65857.76,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.268,
-      "changePct": 0.87
+      "value": 159.315,
+      "changePct": 0.9
     },
     "sp500": {
       "value": 7753.11,
       "changePct": -0.06
     },
     "vix": {
-      "value": 15.46,
-      "changePct": 3.76
+      "value": 15.53,
+      "changePct": 0.45
     }
   },
   "macroAssessment": {
@@ -42,34 +42,34 @@
   },
   "news": [
     {
-      "title": "日経平均が高値を目指すための条件は？",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9pNjRyWFdidVBpYnFKcktPdG03SU9kNjZmT2tWV3drRUl4UzFPb3NVY25EMVo0Ym1jNmtlc0F4MHJFa2ZIWDNSNDVSWEcxamJ3el80ek5EVUROdw?oc=5",
+      "title": "NYダウ最高値更新が示す日経平均10万円超の可能性",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE45WHNLWVdTN1dkTm1BM2oxR05xdXFYaU5Fa0FOQVNKVlYxcDV0X21CNDc3V01XOUlDc0tkNUI3bFlvQ1JrLXA5TzljRnZnbVVQU1Q5UE16S0hFUQ?oc=5",
       "source": "トウシル",
-      "publishedAt": "Mon, 10 Aug 2026 04:13:00 GMT"
+      "publishedAt": "Mon, 10 Aug 2026 22:30:00 GMT"
     },
     {
-      "title": "日経平均終値1363円高、米利上げ観測後退で25日移動平均を突破",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE54NFE1U0JrRzJkbVMzR3Nha01aWXZLTFIzU3dQZnQ3ZThEcG5fcGE3V0NmMmVPV3d6TnlrTVVueGxXVVhyZ1NOSzAyU0h2UmxGM1hwNzBNYkZ6eGJNcGV5RG1TVmdkOHd3Zl85TA?oc=5",
-      "source": "nikkei.com",
-      "publishedAt": "Mon, 10 Aug 2026 02:54:38 GMT"
+      "title": "日経平均終値、１３６３円高の６万６９７０円…ＡＩや半導体関連株が買われ３営業日ぶり上昇",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1zVlNYUkgzWUxKd1lsX3hKbnRTRVlUYUxDTzZfSTZhVEw0dHhMWUVtbVNxNzNkN0UzOFdTM3JHUEhlVHdVcF90X3pwbG8wZHlOYWRRUlh5aE5KZHE0ZDBQajNDbDA?oc=5",
+      "source": "読売新聞",
+      "publishedAt": "Mon, 10 Aug 2026 06:44:00 GMT"
     },
     {
-      "title": "日経平均10万円超は「夢物語ではない」長期シナリオ(トウシル)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOU0ktbXh2cmpEVDlURVc2MEZWUTBnUFlFRUtUVHRIeUZfQXF1S2gxSFJXdVdFZndOeTNOdUlROEYyTHM3SWtvWnRDQWhpZVZJN1MtSE5MQVZ3VDF4S0VxMnBpWExBVnJRU1hCSWtTUjlEVmpyMzJEQUdhSmlnLXRSN2poUU1xNk0?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Mon, 10 Aug 2026 22:45:00 GMT"
+      "title": "企業決算を徹底分析/日経平均終値1363円高・米利上げ観測後退で｜NIKKEI NEWS NEXT",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE45OFhNNlpTcjllTGQyVGpld2o1bnItMFlwVS1HOVR0WG81eWJrNkk4N0xhSGJMTzhReDlXZldqZUlHTTRpdHlYclMtU3l1dk1tTzRGQkwwUHRXNl9IWm1vZjhCT1BZQQ?oc=5",
+      "source": "テレ東BIZ",
+      "publishedAt": "Mon, 10 Aug 2026 12:00:00 GMT"
     },
     {
-      "title": "（まとめ）日経平均は一時67,000円超も1,363円高の66,970円で反発　日銀の早期利上げ観測が浮上",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4zQXk4akhRRko4QVhucGc1Zk9IVlQ2R2wxTzJsNkVfeXBrbkFIY2RfZTdFT1VpdXVhNDhTcDE2WFVadnZQc1hNamNHSWV6RTVVWlhOMNIBV0FVX3lxTE83YjNIbDFvRVNBUFUtdFZDZlU3Q09iSmhOcjlqTTBROFZWVmN3aGJ0bzVqeXh6M09IOGEwS3hpbkZhUmkwVGp1OFdIemtGcW9HYm9yR2VxQQ?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Mon, 10 Aug 2026 08:08:00 GMT"
+      "title": "日経平均株価、298円39銭高で始まる - 寄り付き解説 きょうのトピック",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBZU2E0aHBFVkRSTzZmMXk4cVlIRTNnRHZ2UnNwdjU2QTBZaXRtOTdXNVpaNjN0X1JXWV92MHRpY3BaVEdpSElGMnFlalItRVA1aFBkSw?oc=5",
+      "source": "日経CNBC online",
+      "publishedAt": "Mon, 10 Aug 2026 00:20:09 GMT"
     },
     {
-      "title": "日経平均株価 一時1000円超値上がり",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5kVGZxVVhFNDN0RHJzZERNS1hqczdHcVFkc3J0WGNWa0pXbUMyS0dDblhBNTRCM0ZNS0JVTXlVY201UGRnZ2NTczdjNDR1ZkFKR1N1Q0tmclQ2S0k?oc=5",
-      "source": "ABEMA",
-      "publishedAt": "Mon, 10 Aug 2026 01:29:30 GMT"
+      "title": "「日経平均6万円なら安い」と感じたら危ない･･･資産10億円投資家が半導体の次に仕込む“出遅れ内需株”（みんかぶマガジン）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9EdVpDajhOY0oxdllNbHBtV1YzSlFMYUlHWUxiYnhsVWFHSUZZa1YwYnM5SXQwRGVGSTc4ZlppLVVwMnp5bU92SlhuOGpWMC11M2NVbHVQR2pMUDE3N3B0a0JlZjhjZTFxNE5UT3M5UkxHSF9xN2RZUHdWaTBRZ1k?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Tue, 11 Aug 2026 03:10:02 GMT"
     }
   ],
   "signal": "bull",

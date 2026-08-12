@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T11:46:14.666Z",
+  "updatedAt": "2026-08-12T12:01:52.112Z",
   "asOfDate": "2026-08-12",
   "price": 67524.06,
   "sma25": 65769.22,
@@ -14,7 +14,7 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.07,
+      "value": 159.083,
       "changePct": -0.05
     },
     "sp500": {
@@ -22,8 +22,8 @@
       "changePct": -0.32
     },
     "vix": {
-      "value": 15.38,
-      "changePct": 0.65
+      "value": 15.37,
+      "changePct": 0.59
     }
   },
   "macroAssessment": {
@@ -55,16 +55,16 @@
       "publishedAt": "Tue, 11 Aug 2026 23:11:20 GMT"
     },
     {
-      "title": "決算でサンリオ・楽天G急落、スクエニHD予想以上で買い！/日経平均続伸【今日の注目株＆日本株市場見通し】「デイリーZAi」8月12日号(ダイヤモンド・ザイ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUFpsZVJ1VGhPcXhBSVpLdnBfMFV4NGhTdDVoODNLUVJtU0N3ZVAzZUdpdS1PQVo5LXIzeWhQanBxTDZoVHozOS13ejR2QVJzRTB4Q2tDM3RvN3hMd0ZSZmxURkJueU8tSi1TYmc5c09aNXNNRU80aXN1bWYxdUl5UHpCeW5hbmM?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Wed, 12 Aug 2026 11:14:07 GMT"
-    },
-    {
       "title": "日経平均553円高、夏枯れ潤すゴールデンクロス 銀行株に買い意欲",
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZM3lXLTZkQThPRllXUEMwNktfbXBGUmlveWM1elJsYTZFMXBCbHJmSnF1ckowbXJQR1YxeWxVZjBBbjBZeUkwejczaUJRMU9xeW0wVTdaZlZHYlN6QWpfb3lDQkNoOUxiS2hHeg?oc=5",
       "source": "日本経済新聞",
       "publishedAt": "Wed, 12 Aug 2026 02:58:36 GMT"
+    },
+    {
+      "title": "日経平均が一服…今こそNISAで持ちたい高配当株5選 初心者でも選びやすい日本株は?",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5aaGFaTDJDNWNIaGlMdk0wTWp2YWlJd2xyT1ZqQmNKcTlXMkN0ZTBaLXVfV3VkNk1xZFJwelFPQ3pZeWY4REJSWHN1OXVvWXlfcDdsaUVDdVQ4X2IwUXlyTENOMmpsYWlxX19ueFhFTFZjc1o0M0ttV2NQZlk1ams?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Wed, 12 Aug 2026 03:11:10 GMT"
     },
     {
       "title": "（まとめ）日経平均は553円高の67,524円で続伸　TOPIXは最高値を更新　今晩は米CPIの発表",

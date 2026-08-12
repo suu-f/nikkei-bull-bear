@@ -404,6 +404,23 @@ async function main() {
     });
   }
 
+  // シミュレーション(タイムトラベル機能)用に、全期間分の日次シグナルを計算する
+  const signalHistory = [];
+  const signalHistoryStart = BULL_STRONG_RULE.longPeriod; // 100日線が計算できる最初の日から
+  for (let i = signalHistoryStart; i <= last; i++) {
+    const p = prices[i];
+    const s25 = sma(prices, 25, i);
+    const s75 = sma(prices, 75, i);
+    const r = rsi(prices, 14, i);
+    if (s25 == null || s75 == null || r == null) continue;
+    const trend_i = p > s25 && s25 > s75 ? "up" : p < s25 && s25 < s75 ? "down" : "mixed";
+    const overheat_i = r >= 70 ? "overbought" : r <= 30 ? "oversold" : "neutral";
+    let sig_i = classify(trend_i, overheat_i).signal;
+    if (isBullStrong(prices, i)) sig_i = "bull_strong";
+    signalHistory.push({ date: dates[i], close: Number(p.toFixed(2)), signal: sig_i });
+  }
+  await writeFile(new URL("../data/signal-history.json", import.meta.url), JSON.stringify(signalHistory));
+
   const output = {
     updatedAt: new Date().toISOString(),
     asOfDate: dates[last],

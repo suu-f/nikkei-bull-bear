@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-11T13:59:24.972Z",
-  "asOfDate": "2026-08-10",
-  "price": 66970.22,
-  "sma25": 65857.76,
-  "sma75": 65417.93,
-  "deviationPct": 1.69,
-  "rsi14": 52.6,
-  "vol25AnnualizedPct": 34.8,
+  "updatedAt": "2026-08-12T11:46:14.666Z",
+  "asOfDate": "2026-08-12",
+  "price": 67524.06,
+  "sma25": 65769.22,
+  "sma75": 65526.92,
+  "deviationPct": 2.67,
+  "rsi14": 54.8,
+  "vol25AnnualizedPct": 34.9,
   "trend": "up",
   "overheat": "neutral",
   "highVol": true,
@@ -14,23 +14,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.23,
-      "changePct": 0.85
+      "value": 159.07,
+      "changePct": -0.05
     },
     "sp500": {
-      "value": 7757.39,
-      "changePct": 0.06
+      "value": 7728.2,
+      "changePct": -0.32
     },
     "vix": {
-      "value": 15.54,
-      "changePct": 0.52
+      "value": 15.38,
+      "changePct": 0.65
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "supportive_bear",
     "vixStatus": "calm"
   },
-  "macroNote": null,
+  "macroNote": "テクニカルはブル型優勢ですが、為替・米国株など外部環境は逆風気味です。",
   "conviction": {
     "level": 3,
     "levelLabel": "普通",
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "NYダウ最高値更新が示す日経平均10万円超の可能性",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE45WHNLWVdTN1dkTm1BM2oxR05xdXFYaU5Fa0FOQVNKVlYxcDV0X21CNDc3V01XOUlDc0tkNUI3bFlvQ1JrLXA5TzljRnZnbVVQU1Q5UE16S0hFUQ?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Mon, 10 Aug 2026 22:30:00 GMT"
+      "title": "日経平均は続伸、夏枯れを意識 ＴＯＰＩＸは高値更新",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSnZSMi05dEk0OEpnclBfSDlMbjJ1dU9JTjZ1OVc4X3JOMmpwYm1Ccm5ta1kyMURWdUZJYTU3ZHRlZXZLcUtqMFZkR2tNMVV2VUdEU1J5dTBtaTJic0ppeDJHVldud3lPbHF3NXVERjE3TzRid3pBRktrdEdKRFhuUg?oc=5",
+      "source": "ロイター",
+      "publishedAt": "Wed, 12 Aug 2026 07:13:43 GMT"
     },
     {
-      "title": "目覚めるライオン、バリュー株に勢い 日経平均再浮上のカギに",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBlVmNNNXJZdmJ3VGxZM1l1VlpMZXVFaFRFd29sSGppSDduQVB4LUFkMXQya3A1b0NKOHgzc2hzQllPM3ZySkhXTU02SjNRcHp5Qks3bkNXeE91cUFlZjExV1NiMnhuM1ZfM211VQ?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月12日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5pQmpLUG1PNXR0OXlEQmNNYmp0UGhJQUFIa2o1emRId19IX2E1Q3J6QXMzRTJmVnFhT2FwQXgzdzVxNmFCMktGaktZZHBGQXlrenhRSzF5dlJpc0U1N2FPMA?oc=5",
+      "source": "株探",
+      "publishedAt": "Tue, 11 Aug 2026 23:11:20 GMT"
+    },
+    {
+      "title": "決算でサンリオ・楽天G急落、スクエニHD予想以上で買い！/日経平均続伸【今日の注目株＆日本株市場見通し】「デイリーZAi」8月12日号(ダイヤモンド・ザイ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUFpsZVJ1VGhPcXhBSVpLdnBfMFV4NGhTdDVoODNLUVJtU0N3ZVAzZUdpdS1PQVo5LXIzeWhQanBxTDZoVHozOS13ejR2QVJzRTB4Q2tDM3RvN3hMd0ZSZmxURkJueU8tSi1TYmc5c09aNXNNRU80aXN1bWYxdUl5UHpCeW5hbmM?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Wed, 12 Aug 2026 11:14:07 GMT"
+    },
+    {
+      "title": "日経平均553円高、夏枯れ潤すゴールデンクロス 銀行株に買い意欲",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZM3lXLTZkQThPRllXUEMwNktfbXBGUmlveWM1elJsYTZFMXBCbHJmSnF1ckowbXJQR1YxeWxVZjBBbjBZeUkwejczaUJRMU9xeW0wVTdaZlZHYlN6QWpfb3lDQkNoOUxiS2hHeg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Mon, 10 Aug 2026 09:06:22 GMT"
+      "publishedAt": "Wed, 12 Aug 2026 02:58:36 GMT"
     },
     {
-      "title": "「日経平均6万円なら安い」と感じたら危ない･･･資産10億円投資家が半導体の次に仕込む“出遅れ内需株”（みんかぶマガジン）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9EdVpDajhOY0oxdllNbHBtV1YzSlFMYUlHWUxiYnhsVWFHSUZZa1YwYnM5SXQwRGVGSTc4ZlppLVVwMnp5bU92SlhuOGpWMC11M2NVbHVQR2pMUDE3N3B0a0JlZjhjZTFxNE5UT3M5UkxHSF9xN2RZUHdWaTBRZ1k?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Tue, 11 Aug 2026 03:10:02 GMT"
-    },
-    {
-      "title": "日経平均株価は｢SOX指数の上昇｣と｢KOSPIのボラ低下｣を追い風に反発か!? 今後は9月の配当狙いや、リスクを取れるなら｢AI･半導体株の反発｣を狙う戦略も！",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0tS0pWSUlPVXcwMTJ2cFByZmRMVWpkZTVlc2pFQms3R3B3Tm5uQzZtU2tQMVpZZnd0NkJ0VmkwSks3SGYyZnNDVUp2UVpacXNzTTNj?oc=5",
-      "source": "ダイヤモンド・オンライン",
-      "publishedAt": "Mon, 10 Aug 2026 11:10:00 GMT"
-    },
-    {
-      "title": "（まとめ）日経平均は一時67,000円超も1,363円高の66,970円で反発　日銀の早期利上げ観測が浮上",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4zQXk4akhRRko4QVhucGc1Zk9IVlQ2R2wxTzJsNkVfeXBrbkFIY2RfZTdFT1VpdXVhNDhTcDE2WFVadnZQc1hNamNHSWV6RTVVWlhOMNIBV0FVX3lxTE83YjNIbDFvRVNBUFUtdFZDZlU3Q09iSmhOcjlqTTBROFZWVmN3aGJ0bzVqeXh6M09IOGEwS3hpbkZhUmkwVGp1OFdIemtGcW9HYm9yR2VxQQ?oc=5",
+      "title": "（まとめ）日経平均は553円高の67,524円で続伸　TOPIXは最高値を更新　今晩は米CPIの発表",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vdmg1NVdDeGhPYUhzRDd2OUU5X19hZkN5a3BUYjZhY1V4UFNPVG1GenZzUjhHR3FCUzJGZzk5c1BHS1lXWGRSS3FzWU5oRG44QkJ4UdIBV0FVX3lxTE8wZk5LVFk0ZVE1bzJIU2RPNWVNck83QkEwTXh0RHFQVXVadzREREEyZjdPWTNRWUtUeTVmRTlldUVpdk5yVXhBTlREZmVRQjRvN0ktcGJTUQ?oc=5",
       "source": "マネクリ",
-      "publishedAt": "Mon, 10 Aug 2026 08:08:00 GMT"
+      "publishedAt": "Wed, 12 Aug 2026 07:24:00 GMT"
     }
   ],
   "signal": "bull",
   "headline": "ブル型優勢",
   "rationale": "日経平均は上昇トレンド(終値>25日線>75日線)で、RSIも過熱していません。",
   "history": [
-    {
-      "date": "2026-01-29",
-      "close": 53375.6,
-      "sma25": 52333.17,
-      "sma75": 50627.06
-    },
     {
       "date": "2026-01-30",
       "close": 53322.85,
@@ -856,6 +850,12 @@
       "close": 66970.22,
       "sma25": 65857.76,
       "sma75": 65417.93
+    },
+    {
+      "date": "2026-08-12",
+      "close": 67524.06,
+      "sma25": 65769.22,
+      "sma75": 65526.92
     }
   ]
 }

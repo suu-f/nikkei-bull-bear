@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="タイムトラベル運用" />
+<meta name="theme-color" content="#0b1830" />
+<title>タイムトラベル・シミュレーション</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>🎮 タイムトラベル・シミュレーション</h1>
+  <div class="headerRow">
+    <div class="updated">過去のデータで100万円を運用したら?</div>
+  </div>
+  <a class="nav-link" href="index.html">← 本体のツールに戻る</a>
+</header>
+
+<main id="app">
+  <div class="card">
+    <h2>📖 これは何?</h2>
+    <div style="font-size:16px; color:var(--text-secondary); line-height:1.8;">
+      もし<b>何年か前に戻って</b>、このツールの判定(ブル型優勢/ベア型優勢/様子見)どおりに売買していたら、資産はどうなっていたでしょうか?<br><br>
+      実際の日経平均のデータを使って、過去にタイムスリップした気分でシミュレーションしてみましょう。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚙️ 条件を選ぶ</h2>
+
+    <div class="control-row">
+      <label>いつから始める?</label>
+      <div class="chip-row" id="yearsChips">
+        <button class="chip" data-years="1">1年前</button>
+        <button class="chip" data-years="3">3年前</button>
+        <button class="chip active" data-years="5">5年前</button>
+        <button class="chip" data-years="10">10年前(全期間)</button>
+      </div>
+    </div>
+
+    <div class="control-row">
+      <label>元手(スタート資金)</label>
+      <input type="number" id="capitalInput" value="1000000" min="10000" step="10000" />
+    </div>
+
+    <div class="control-row">
+      <label>レバレッジ倍率</label>
+      <input type="range" id="leverageInput" min="1" max="4.5" step="0.1" value="2" />
+      <div class="range-value" id="leverageValue">2.0倍</div>
+    </div>
+
+    <button class="run-btn" id="runBtn">🚀 シミュレーション開始</button>
+  </div>
+
+  <div id="resultArea"></div>
+</main>
+
+<footer>
+  ※このシミュレーションは、実際のレバレッジ型投信の値動きを「日経平均の日々の変動率 × レバレッジ倍率」で単純化して計算した参考用のゲームです。信託報酬・売買コスト・税金・実際の商品ごとの連動差は考慮していません。過去の結果は将来の成果を保証するものではありません。
+</footer>
+
+<script>
+const SIGNAL_CATEGORY = (sig) => sig.startsWith("bull") ? "bull" : sig.startsWith("bear") ? "bear" : "wait";
+const SIGNAL_LABEL = {
+  bull_strong: "ブル型 高確度",
+  bull: "ブル型優勢",
+  bull_caution: "ブル型優勢(過熱)",
+  bear: "ベア型優勢",
+  bear_caution: "ベア型優勢(過熱)",
+  wait: "様子見",
+};
+
+function fmtYen(n) {
+  return Math.round(n).toLocaleString("ja-JP") + "円";
+}
+function fmtDateJp(iso) {
+  const [y, m, d] = iso.split("-");
+  return `${y}年${Number(m)}月${Number(d)}日`;
+}
+
+let signalHistory = null;
+
+async function loadHistory() {
+  const res = await fetch("./data/signal-history.json", { cache: "no-store" });
+  if (!res.ok) throw new Error("データの取得に失敗しました");
+  signalHistory = await res.json();
+}
+
+function positionMultiplier(signal, leverage) {
+  const cat = SIGNAL_CATEGORY(signal);
+  if (cat === "bull") return leverage;
+  if (cat === "bear") return -leverage;
+  return 0;
+}
+
+function runSimulation({ years, capital, leverage }) {
+  const cutoff = new Date();
+  cutoff.setFullYear(cutoff.getFullYear() - years);
+  const cutoffStr = cutoff.toISOString().slice(0, 10);
+  let startIdx = signalHistory.findIndex(h => h.date >= cutoffStr);
+  if (startIdx < 0) startIdx = 0;
+
+  let value = capital;
+  let benchmark = capital;
+  let peak = capital;
+  let maxDrawdownPct = 0;
+  let switches = 0;
+  let prevCategory = null;
+  const series = [];
+
+  for (let i = startIdx; i < signalHistory.length - 1; i++) {
+    const today = signalHistory[i];
+    const tomorrow = signalHistory[i + 1];
+    const idxReturn = (tomorrow.close - today.close) / today.close;
+    const mult = positionMultiplier(today.signal, leverage);
+    value *= 1 + mult * idxReturn;
+    benchmark *= 1 + idxReturn;
+
+    const cat = SIGNAL_CATEGORY(today.signal);
+    if (prevCategory && cat !== prevCategory) switches++;
+    prevCategory = cat;
+
+    peak = Math.max(peak, value);
+    const drawdown = ((value - peak) / peak) * 100;
+    maxDrawdownPct = Math.min(maxDrawdownPct, drawdown);
+
+    series.push({ date: tomorrow.date, value, benchmark });
+  }
+
+  return {
+    startDate: signalHistory[startIdx].date,
+    endDate: signalHistory[signalHistory.length - 1].date,
+    finalValue: value,
+    finalBenchmark: benchmark,
+    maxDrawdownPct,
+    switches,
+    series,
+    days: series.length,
+  };
+}
+
+function buildComment(capital, result) {
+  const ratio = result.finalValue / capital;
+  const vsBenchmark = result.finalValue / result.finalBenchmark;
+  if (ratio <= 0.3) return "😱 資産の7割以上を失う結果になりました。レバレッジ型は判断を誤ると、これくらい急速に減ることがあるという良い(?)教訓です。";
+  if (ratio < 1) return "😅 元手より減ってしまいました。レバレッジ型投信は「当たればでかいが外れると早い」ことがよく分かる結果です。";
+  if (ratio >= 1.5 && vsBenchmark >= 1.1) return "🎉 見事!日経平均をただ持っているより大きく増やせました。ナイストレードです。";
+  if (vsBenchmark >= 1.0) return "😊 悪くない結果です。日経平均をそのまま持っていた場合より良い成績でした。";
+  return "🤔 資産は増えましたが、実は「何もせず日経平均をそのまま持っていた」方が結果が良かったパターンです。レバレッジ型は当たっても、値動きの荒さで意外と増えにくいことがあります。";
+}
+
+function render(result, capital) {
+  const area = document.getElementById("resultArea");
+  const gain = result.finalValue - capital;
+  const pct = (gain / capital) * 100;
+  const cls = gain >= 0 ? "up" : "down";
+  const sign = gain >= 0 ? "+" : "";
+
+  area.innerHTML = `
+    <div class="card">
+      <div style="font-size:14px; color:var(--text-muted); text-align:center;">
+        ${fmtDateJp(result.startDate)} 〜 ${fmtDateJp(result.endDate)}(${result.days}営業日)のシミュレーション
+      </div>
+      <div class="result-hero">
+        <div class="from">元手 ${fmtYen(capital)}</div>
+        <div class="arrow">↓</div>
+        <div class="to ${cls}">${fmtYen(result.finalValue)}</div>
+        <div class="pct ${cls}">${sign}${pct.toFixed(1)}%</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="name">📊 何もせず日経平均をそのまま持っていたら</div>
+        <div class="amount">${fmtYen(result.finalBenchmark)}</div>
+      </div>
+
+      <div class="comment-box">${buildComment(capital, result)}</div>
+
+      <div class="mini-stat-row">
+        <div class="mini-stat">
+          <div class="label">最大ドローダウン</div>
+          <div class="value down">${result.maxDrawdownPct.toFixed(1)}%</div>
+        </div>
+        <div class="mini-stat">
+          <div class="label">判定切り替わり回数</div>
+          <div class="value">${result.switches}回</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>資産推移</h2>
+      <div class="legend">
+        <span><i style="background:var(--bull)"></i>シミュレーション結果</span>
+        <span><i style="background:var(--text-muted)"></i>日経平均をそのまま保有</span>
+      </div>
+      <div id="chartWrap"></div>
+    </div>
+  `;
+
+  window.__lastResult = result;
+  window.__lastCapital = capital;
+  drawChart(result.series, capital);
+}
+
+function drawChart(series, capital) {
+  const wrap = document.getElementById("chartWrap");
+  const width = wrap.clientWidth || 320;
+  const height = 240;
+  const padL = 54, padR = 8, padT = 10, padB = 24;
+  const plotW = width - padL - padR;
+  const plotH = height - padT - padB;
+
+  const allVals = [capital];
+  series.forEach(d => { allVals.push(d.value); allVals.push(d.benchmark); });
+  const min = Math.min(...allVals, 0);
+  const max = Math.max(...allVals);
+  const pad = (max - min) * 0.08 || 1;
+  const yMin = Math.max(0, min - pad), yMax = max + pad;
+
+  const n = series.length;
+  const x = i => padL + (plotW * i) / Math.max(1, n - 1);
+  const y = v => padT + plotH - ((v - yMin) / (yMax - yMin)) * plotH;
+
+  function pathFor(key) {
+    let d = "";
+    series.forEach((pt, i) => {
+      d += (i === 0 ? "M" : "L") + x(i).toFixed(1) + "," + y(pt[key]).toFixed(1) + " ";
+    });
+    return d.trim();
+  }
+
+  const gridLines = 4;
+  let gridSvg = "";
+  for (let i = 0; i <= gridLines; i++) {
+    const gy = padT + (plotH * i) / gridLines;
+    const val = yMax - ((yMax - yMin) * i) / gridLines;
+    gridSvg += `<line x1="${padL}" y1="${gy}" x2="${width - padR}" y2="${gy}" stroke="var(--grid)" stroke-width="1"/>`;
+    gridSvg += `<text x="${padL - 6}" y="${gy + 4}" text-anchor="end" font-size="10" fill="var(--text-muted)">${Math.round(val / 10000)}万</text>`;
+  }
+
+  const svg = `
+    <svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" style="display:block">
+      ${gridSvg}
+      <path d="${pathFor('benchmark')}" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${pathFor('value')}" fill="none" stroke="var(--bull)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="crosshair" opacity="0">
+        <line id="chLine" x1="0" y1="${padT}" x2="0" y2="${padT + plotH}" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3,3"/>
+        <circle id="chDot1" r="4" fill="var(--bull)"/>
+        <circle id="chDot2" r="4" fill="var(--text-muted)"/>
+      </g>
+      <rect id="hitArea" x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="transparent"/>
+    </svg>
+    <div id="tooltip"></div>
+  `;
+  wrap.innerHTML = svg;
+
+  const svgEl = wrap.querySelector("svg");
+  const hitArea = wrap.querySelector("#hitArea");
+  const crosshair = wrap.querySelector("#crosshair");
+  const chLine = wrap.querySelector("#chLine");
+  const chDot1 = wrap.querySelector("#chDot1");
+  const chDot2 = wrap.querySelector("#chDot2");
+  const tooltip = wrap.querySelector("#tooltip");
+
+  function handleMove(clientX) {
+    const rect = svgEl.getBoundingClientRect();
+    const scale = width / rect.width;
+    const px = (clientX - rect.left) * scale;
+    let idx = Math.round(((px - padL) / plotW) * (n - 1));
+    idx = Math.max(0, Math.min(n - 1, idx));
+    const pt = series[idx];
+    crosshair.setAttribute("opacity", "1");
+    const cx = x(idx);
+    chLine.setAttribute("x1", cx); chLine.setAttribute("x2", cx);
+    chDot1.setAttribute("cx", cx); chDot1.setAttribute("cy", y(pt.value));
+    chDot2.setAttribute("cx", cx); chDot2.setAttribute("cy", y(pt.benchmark));
+
+    tooltip.style.opacity = "1";
+    tooltip.style.left = (cx / width * 100) + "%";
+    tooltip.style.top = (y(pt.value) / height * 100) + "%";
+    tooltip.innerHTML = `${fmtDateJp(pt.date)}<br>シミュレーション: ${fmtYen(pt.value)}<br>そのまま保有: ${fmtYen(pt.benchmark)}`;
+  }
+  function hide() {
+    crosshair.setAttribute("opacity", "0");
+    tooltip.style.opacity = "0";
+  }
+  hitArea.addEventListener("pointermove", e => handleMove(e.clientX));
+  hitArea.addEventListener("pointerdown", e => handleMove(e.clientX));
+  hitArea.addEventListener("pointerleave", hide);
+}
+
+let selectedYears = 5;
+
+function updateLeverageLabel() {
+  const v = Number(document.getElementById("leverageInput").value);
+  document.getElementById("leverageValue").textContent = v.toFixed(1) + "倍";
+}
+
+async function runAndRender() {
+  if (!signalHistory) await loadHistory();
+  const capital = Math.max(10000, Number(document.getElementById("capitalInput").value) || 1000000);
+  const leverage = Number(document.getElementById("leverageInput").value);
+  const result = runSimulation({ years: selectedYears, capital, leverage });
+  render(result, capital);
+}
+
+document.getElementById("yearsChips").addEventListener("click", e => {
+  const chip = e.target.closest(".chip");
+  if (!chip) return;
+  document.querySelectorAll("#yearsChips .chip").forEach(c => c.classList.remove("active"));
+  chip.classList.add("active");
+  selectedYears = Number(chip.dataset.years);
+  runAndRender();
+});
+
+document.getElementById("leverageInput").addEventListener("input", () => {
+  updateLeverageLabel();
+});
+document.getElementById("leverageInput").addEventListener("change", runAndRender);
+document.getElementById("capitalInput").addEventListener("change", runAndRender);
+document.getElementById("runBtn").addEventListener("click", runAndRender);
+
+window.addEventListener("resize", () => {
+  const wrap = document.getElementById("chartWrap");
+  if (wrap && wrap.querySelector("svg") && window.__lastResult) {
+    drawChart(window.__lastResult.series, window.__lastCapital);
+  }
+});
+
+updateLeverageLabel();
+runAndRender();
+</script>
+</body>
+</html>

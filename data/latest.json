@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-12T12:01:52.112Z",
-  "asOfDate": "2026-08-12",
-  "price": 67524.06,
-  "sma25": 65769.22,
-  "sma75": 65526.92,
-  "deviationPct": 2.67,
-  "rsi14": 54.8,
-  "vol25AnnualizedPct": 34.9,
+  "updatedAt": "2026-08-13T10:44:49.075Z",
+  "asOfDate": "2026-08-13",
+  "price": 68308.59,
+  "sma25": 65771.28,
+  "sma75": 65643.23,
+  "deviationPct": 3.86,
+  "rsi14": 56.2,
+  "vol25AnnualizedPct": 34.5,
   "trend": "up",
   "overheat": "neutral",
   "highVol": true,
@@ -14,23 +14,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.083,
-      "changePct": -0.05
+      "value": 159.328,
+      "changePct": 0.04
     },
     "sp500": {
-      "value": 7728.2,
-      "changePct": -0.32
+      "value": 7748.5,
+      "changePct": 0.26
     },
     "vix": {
-      "value": 15.37,
-      "changePct": 0.59
+      "value": 14.61,
+      "changePct": 0.41
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bear",
+    "bias": "supportive_bull",
     "vixStatus": "calm"
   },
-  "macroNote": "テクニカルはブル型優勢ですが、為替・米国株など外部環境は逆風気味です。",
+  "macroNote": null,
   "conviction": {
     "level": 3,
     "levelLabel": "普通",
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "日経平均は続伸、夏枯れを意識 ＴＯＰＩＸは高値更新",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSnZSMi05dEk0OEpnclBfSDlMbjJ1dU9JTjZ1OVc4X3JOMmpwYm1Ccm5ta1kyMURWdUZJYTU3ZHRlZXZLcUtqMFZkR2tNMVV2VUdEU1J5dTBtaTJic0ppeDJHVldud3lPbHF3NXVERjE3TzRid3pBRktrdEdKRFhuUg?oc=5",
-      "source": "ロイター",
-      "publishedAt": "Wed, 12 Aug 2026 07:13:43 GMT"
-    },
-    {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月12日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5pQmpLUG1PNXR0OXlEQmNNYmp0UGhJQUFIa2o1emRId19IX2E1Q3J6QXMzRTJmVnFhT2FwQXgzdzVxNmFCMktGaktZZHBGQXlrenhRSzF5dlJpc0U1N2FPMA?oc=5",
-      "source": "株探",
-      "publishedAt": "Tue, 11 Aug 2026 23:11:20 GMT"
-    },
-    {
-      "title": "日経平均553円高、夏枯れ潤すゴールデンクロス 銀行株に買い意欲",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZM3lXLTZkQThPRllXUEMwNktfbXBGUmlveWM1elJsYTZFMXBCbHJmSnF1ckowbXJQR1YxeWxVZjBBbjBZeUkwejczaUJRMU9xeW0wVTdaZlZHYlN6QWpfb3lDQkNoOUxiS2hHeg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Wed, 12 Aug 2026 02:58:36 GMT"
-    },
-    {
-      "title": "日経平均が一服…今こそNISAで持ちたい高配当株5選 初心者でも選びやすい日本株は?",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5aaGFaTDJDNWNIaGlMdk0wTWp2YWlJd2xyT1ZqQmNKcTlXMkN0ZTBaLXVfV3VkNk1xZFJwelFPQ3pZeWY4REJSWHN1OXVvWXlfcDdsaUVDdVQ4X2IwUXlyTENOMmpsYWlxX19ueFhFTFZjc1o0M0ttV2NQZlk1ams?oc=5",
+      "title": "日経平均 一時6万8000円台回復",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE55VkZXX25wM1hFNTJmbFA2WllLV2dsOVpoRHA3XzBfaWpONzVpS1RKRW8yY3FKZlRCMUhrN1VobFlUUzgwWTRtS1pyYVktNVBy?oc=5",
       "source": "Yahoo!ニュース",
-      "publishedAt": "Wed, 12 Aug 2026 03:11:10 GMT"
+      "publishedAt": "Thu, 13 Aug 2026 00:58:30 GMT"
     },
     {
-      "title": "（まとめ）日経平均は553円高の67,524円で続伸　TOPIXは最高値を更新　今晩は米CPIの発表",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vdmg1NVdDeGhPYUhzRDd2OUU5X19hZkN5a3BUYjZhY1V4UFNPVG1GenZzUjhHR3FCUzJGZzk5c1BHS1lXWGRSS3FzWU5oRG44QkJ4UdIBV0FVX3lxTE8wZk5LVFk0ZVE1bzJIU2RPNWVNck83QkEwTXh0RHFQVXVadzREREEyZjdPWTNRWUtUeTVmRTlldUVpdk5yVXhBTlREZmVRQjRvN0ktcGJTUQ?oc=5",
+      "title": "日経平均終値784円高 AI・半導体買い誘った「適温経済」期待",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8xYVBiNWF0M0J4T1NiR0ZIRmF1YzNvY3hEbU4wbkI3clltSF9QZ2NaeDJZLXRIaDhRQW10d0dFbVh5NS12ZWZWYUFlZ2dEX0Z0dlNOMlJQRjhBUFF6NTcweWpkTm13Y29FdWZZNA?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Thu, 13 Aug 2026 02:50:19 GMT"
+    },
+    {
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月13日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1JVm5vMHJZVTNWRlZIbEFCUVg5ZXpMRG1GeUdXM1lWWENBcFVxemxkeTVOU001WFI4RVd2Q2c5TUpPQTZiQlNVMU5YdVVINGt0NjhSTm5QSW9rWVJTS0trOA?oc=5",
+      "source": "株探",
+      "publishedAt": "Wed, 12 Aug 2026 22:55:43 GMT"
+    },
+    {
+      "title": "（まとめ）日経平均は後場伸び悩むも784円高の68,308円　TOPIXは連日で最高値更新",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1TNTFLMWl1enFfOXlmUmpCaUEyd0FrbUhqelVzdGhqOG9oSDZVR2pGUm1laDZtVVpGZDVpbXVaYzhfQWFCbm1XZC1sVF8yU0lGVnN4btIBV0FVX3lxTFBSdHNZcnZLTW4tdTIxSkcweWZGdWpOTVBoQVBRZG9HdWs2NXNaY284MVhMUlZzQ0hHOFRsTjEzUmFIUjc3TzVrM3N4U3F2VWVCaWk5aFZNaw?oc=5",
       "source": "マネクリ",
-      "publishedAt": "Wed, 12 Aug 2026 07:24:00 GMT"
+      "publishedAt": "Thu, 13 Aug 2026 07:26:00 GMT"
+    },
+    {
+      "title": "日経平均１２２０円高、プラス寄与上位はアドバンテス、東エレク、イビデンなど＝１３日後場 速報",
+      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9nUUJad2VJV2RpRE5oUU44bFZ6UlE2dlFrcTNpX2pxb1dKbzJzRWdKYVo3TnZOU0tmeFpobWJUZ0MyU1pxYjhr?oc=5",
+      "source": "kabushiki.jp",
+      "publishedAt": "Thu, 13 Aug 2026 03:52:00 GMT"
     }
   ],
   "signal": "bull",
   "headline": "ブル型優勢",
   "rationale": "日経平均は上昇トレンド(終値>25日線>75日線)で、RSIも過熱していません。",
   "history": [
-    {
-      "date": "2026-01-30",
-      "close": 53322.85,
-      "sma25": 52449.99,
-      "sma75": 50701.56
-    },
     {
       "date": "2026-02-02",
       "close": 52655.18,
@@ -856,6 +850,12 @@
       "close": 67524.06,
       "sma25": 65769.22,
       "sma75": 65526.92
+    },
+    {
+      "date": "2026-08-13",
+      "close": 68308.59,
+      "sma25": 65771.28,
+      "sma75": 65643.23
     }
   ]
 }

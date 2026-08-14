@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-13T10:44:49.075Z",
-  "asOfDate": "2026-08-13",
-  "price": 68308.59,
-  "sma25": 65771.28,
-  "sma75": 65643.23,
-  "deviationPct": 3.86,
-  "rsi14": 56.2,
-  "vol25AnnualizedPct": 34.5,
+  "updatedAt": "2026-08-14T10:37:13.363Z",
+  "asOfDate": "2026-08-14",
+  "price": 68713.8,
+  "sma25": 66171.23,
+  "sma75": 65522.41,
+  "deviationPct": 3.84,
+  "rsi14": 58,
+  "vol25AnnualizedPct": 34.4,
   "trend": "up",
   "overheat": "neutral",
   "highVol": true,
@@ -14,20 +14,20 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.328,
-      "changePct": 0.04
+      "value": 159.141,
+      "changePct": -0.12
     },
     "sp500": {
-      "value": 7748.5,
-      "changePct": 0.26
+      "value": 7798.99,
+      "changePct": 0.65
     },
     "vix": {
-      "value": 14.61,
-      "changePct": 0.41
+      "value": 14.56,
+      "changePct": -0.48
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
   "macroNote": null,
@@ -43,40 +43,52 @@
   },
   "news": [
     {
-      "title": "日経平均 一時6万8000円台回復",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE55VkZXX25wM1hFNTJmbFA2WllLV2dsOVpoRHA3XzBfaWpONzVpS1RKRW8yY3FKZlRCMUhrN1VobFlUUzgwWTRtS1pyYVktNVBy?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Thu, 13 Aug 2026 00:58:30 GMT"
-    },
-    {
-      "title": "日経平均終値784円高 AI・半導体買い誘った「適温経済」期待",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8xYVBiNWF0M0J4T1NiR0ZIRmF1YzNvY3hEbU4wbkI3clltSF9QZ2NaeDJZLXRIaDhRQW10d0dFbVh5NS12ZWZWYUFlZ2dEX0Z0dlNOMlJQRjhBUFF6NTcweWpkTm13Y29FdWZZNA?oc=5",
+      "title": "日経平均終値405円高 アドバンテスト最高値はAIラリー再来の合図か",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBMQnRtNm91cVZLNzlQazVoNUlUQ05KcHpvT0RtVzNJSDdTUmc0d0Zad3A5Sy1leURDN3Z1NDVNLThObUlqRGJ4VkhsTk1CZlJVTWNlRTNidUp2VlZveW5NcmsyQm5tQWV0UmRmVQ?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Thu, 13 Aug 2026 02:50:19 GMT"
+      "publishedAt": "Fri, 14 Aug 2026 02:53:08 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月13日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1JVm5vMHJZVTNWRlZIbEFCUVg5ZXpMRG1GeUdXM1lWWENBcFVxemxkeTVOU001WFI4RVd2Q2c5TUpPQTZiQlNVMU5YdVVINGt0NjhSTm5QSW9rWVJTS0trOA?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月14日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4ydXE3RUJaYzE4RDJrUU1MTUpsWWtnZkhsU2Q1d0ZoLUhEMmd4S0pnX29KZmVOOVprLVBuaE16eHludHVHTHcyRTFBMFRUMF96TVVTcFVhQzFJNVktejE3MA?oc=5",
       "source": "株探",
-      "publishedAt": "Wed, 12 Aug 2026 22:55:43 GMT"
+      "publishedAt": "Thu, 13 Aug 2026 23:05:00 GMT"
     },
     {
-      "title": "（まとめ）日経平均は後場伸び悩むも784円高の68,308円　TOPIXは連日で最高値更新",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1TNTFLMWl1enFfOXlmUmpCaUEyd0FrbUhqelVzdGhqOG9oSDZVR2pGUm1laDZtVVpGZDVpbXVaYzhfQWFCbm1XZC1sVF8yU0lGVnN4btIBV0FVX3lxTFBSdHNZcnZLTW4tdTIxSkcweWZGdWpOTVBoQVBRZG9HdWs2NXNaY284MVhMUlZzQ0hHOFRsTjEzUmFIUjc3TzVrM3N4U3F2VWVCaWk5aFZNaw?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Thu, 13 Aug 2026 07:26:00 GMT"
-    },
-    {
-      "title": "日経平均１２２０円高、プラス寄与上位はアドバンテス、東エレク、イビデンなど＝１３日後場 速報",
-      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9nUUJad2VJV2RpRE5oUU44bFZ6UlE2dlFrcTNpX2pxb1dKbzJzRWdKYVo3TnZOU0tmeFpobWJUZ0MyU1pxYjhr?oc=5",
+      "title": "日経平均は４０５円高と４日続伸、８月限は「幻のＳＱ」に＝１４日後場 速報",
+      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5xMXJYZUxRaThxREVjWmNzajNQQWJoUFpwUlBtLUZWeE9qTmRIZVhGaDJna1RhdVVFLThKQkMwSU1pc0U4ckhR?oc=5",
       "source": "kabushiki.jp",
-      "publishedAt": "Thu, 13 Aug 2026 03:52:00 GMT"
+      "publishedAt": "Fri, 14 Aug 2026 06:55:00 GMT"
+    },
+    {
+      "title": "（まとめ）日経平均は後場伸び悩み405円高の68,713円　TOPIXは3営業日連続で最高値を更新",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1FX1IzVnhZcE5JejY4QWYwTUpVck5mR0VpaGd3dUlKdmZZbkhRX1VSMUk5WjFyd1J3N25NbnFvVTU4YjVOYzFlUnR3VnRGY2YxdHhoS9IBV0FVX3lxTFBNTzhOakFZa1RLWUdqMGpDOEJxU1ZRSjJEdHFIU05oUDd3Y3BEWWplMjRTWlY2cGY4TExiZ0IxSW9HTmhXTWVacklfekhKb3VFTk1WaUY1NA?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Fri, 14 Aug 2026 07:31:00 GMT"
+    },
+    {
+      "title": "日経平均株価6万9000円台回復 およそ1カ月半ぶりの水準に",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1aVlgyWUY3eS1ia193VlNmN1hodjZkX2dNYjBxMUF3czQ4c3k2V00ybTdLYmYyQkp6d0owUGwwXzdSUmNFVG9zZTdfV2NKYk9NQjM0Wm9DTW42VTRYclZ5RFdUTWxVS0hHN3R6UWVuQl9sZw?oc=5",
+      "source": "テレ朝NEWS",
+      "publishedAt": "Fri, 14 Aug 2026 00:27:42 GMT"
     }
   ],
   "signal": "bull",
   "headline": "ブル型優勢",
   "rationale": "日経平均は上昇トレンド(終値>25日線>75日線)で、RSIも過熱していません。",
   "history": [
+    {
+      "date": "2026-01-29",
+      "close": 53375.6,
+      "sma25": 52333.17,
+      "sma75": 50627.06
+    },
+    {
+      "date": "2026-01-30",
+      "close": 53322.85,
+      "sma25": 52449.99,
+      "sma75": 50701.56
+    },
     {
       "date": "2026-02-02",
       "close": 52655.18,
@@ -756,106 +768,94 @@
       "sma75": 63619
     },
     {
-      "date": "2026-07-21",
-      "close": 66232.19,
-      "sma25": 69007.97,
-      "sma75": 63821.24
-    },
-    {
-      "date": "2026-07-22",
-      "close": 66115.6,
-      "sma25": 68876.42,
-      "sma75": 63986.26
-    },
-    {
       "date": "2026-07-23",
       "close": 66422.6,
-      "sma25": 68737.23,
-      "sma75": 64172.38
+      "sma25": 69015.59,
+      "sma75": 63823.78
     },
     {
       "date": "2026-07-24",
       "close": 64611.15,
-      "sma25": 68479.54,
-      "sma75": 64325.55
+      "sma25": 68823.85,
+      "sma75": 63968.74
     },
     {
       "date": "2026-07-27",
       "close": 64931.19,
-      "sma25": 68226.78,
-      "sma75": 64479.12
+      "sma25": 68625.01,
+      "sma75": 64134.98
     },
     {
       "date": "2026-07-28",
       "close": 62364.92,
-      "sma25": 67827.22,
-      "sma75": 64598.26
+      "sma25": 68277.47,
+      "sma75": 64258.19
     },
     {
       "date": "2026-07-29",
       "close": 61434.19,
-      "sma25": 67493.05,
-      "sma75": 64666.6
+      "sma25": 67884.83,
+      "sma75": 64365.13
     },
     {
       "date": "2026-07-30",
       "close": 61867.43,
-      "sma25": 67200.75,
-      "sma75": 64746.23
-    },
-    {
-      "date": "2026-07-31",
-      "close": 64362.02,
-      "sma25": 66880.58,
-      "sma75": 64845.4
+      "sma25": 67465.37,
+      "sma75": 64477.64
     },
     {
       "date": "2026-08-03",
       "close": 63754.9,
-      "sma25": 66656.34,
-      "sma75": 64942.09
+      "sma25": 67224.03,
+      "sma75": 64576.93
     },
     {
       "date": "2026-08-04",
       "close": 63957.53,
-      "sma25": 66435.92,
-      "sma75": 65023.16
+      "sma25": 67015.34,
+      "sma75": 64684.42
     },
     {
       "date": "2026-08-05",
       "close": 66300.44,
-      "sma25": 66285.44,
-      "sma75": 65132.05
+      "sma25": 66772.7,
+      "sma75": 64809.44
     },
     {
       "date": "2026-08-06",
       "close": 65683.26,
-      "sma25": 66093.77,
-      "sma75": 65214.24
+      "sma25": 66625.6,
+      "sma75": 64931.85
     },
     {
       "date": "2026-08-07",
       "close": 65606.71,
-      "sma25": 65968.71,
-      "sma75": 65309.32
+      "sma25": 66471.14,
+      "sma75": 65034.9
     },
     {
       "date": "2026-08-10",
       "close": 66970.22,
-      "sma25": 65857.76,
-      "sma75": 65417.93
+      "sma25": 66347.46,
+      "sma75": 65152.72
     },
     {
       "date": "2026-08-12",
       "close": 67524.06,
-      "sma25": 65769.22,
-      "sma75": 65526.92
+      "sma25": 66229.42,
+      "sma75": 65259.46
     },
     {
       "date": "2026-08-13",
       "close": 68308.59,
-      "sma25": 65771.28,
-      "sma75": 65643.23
+      "sma25": 66212.44,
+      "sma75": 65390.56
+    },
+    {
+      "date": "2026-08-14",
+      "close": 68713.8,
+      "sma25": 66171.23,
+      "sma75": 65522.41
     }
   ]
 }

@@ -1,81 +1,81 @@
 {
-  "updatedAt": "2026-08-17T09:23:43.339Z",
-  "asOfDate": "2026-08-17",
-  "price": 69220.25,
-  "sma25": 65906.13,
-  "sma75": 65897.6,
-  "deviationPct": 5.03,
-  "rsi14": 65.4,
-  "vol25AnnualizedPct": 33.6,
-  "trend": "up",
+  "updatedAt": "2026-08-18T09:01:52.304Z",
+  "asOfDate": "2026-08-18",
+  "price": 67460.73,
+  "sma25": 65835.75,
+  "sma75": 65874.14,
+  "deviationPct": 2.47,
+  "rsi14": 58.6,
+  "vol25AnnualizedPct": 34.1,
+  "trend": "mixed",
   "overheat": "neutral",
   "highVol": true,
-  "crossSignal": null,
-  "nextTrigger": null,
+  "crossSignal": {
+    "type": "dead",
+    "date": "2026-08-18"
+  },
+  "nextTrigger": {
+    "direction": "below",
+    "level": 65835.75,
+    "distancePct": 2.41,
+    "resultingSignal": "bear",
+    "note": "終値が25日線を下抜けるとベア型優勢に転換します"
+  },
   "macro": {
     "usdjpy": {
-      "value": 159.083,
-      "changePct": -0.22
+      "value": 159.677,
+      "changePct": 0.29
     },
     "sp500": {
       "value": 7785.76,
       "changePct": -0.17
     },
     "vix": {
-      "value": 14.95,
-      "changePct": 4.91
+      "value": 15.87,
+      "changePct": 11.37
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bear",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
-  "macroNote": "テクニカルはブル型優勢ですが、為替・米国株など外部環境は逆風気味です。",
-  "conviction": {
-    "level": 4,
-    "levelLabel": "やや強い",
-    "successRatePct": 68.9,
-    "avgForwardReturnPct": 2.12,
-    "sampleSize": 438,
-    "horizonDays": 20,
-    "lowSample": false,
-    "noEdge": false
-  },
+  "macroNote": null,
+  "conviction": null,
   "news": [
     {
-      "title": "日経平均「年内7万5000円」 証券各社が最高値予想、シティは9万円",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5iMVVkQURBUmhJXzVSWk9pb3NvMTNrWUtXRmJKakJ2YWFSSjNBOVJ0Qjg2V2lIVDV1ZU5QY0NRckx2SVpKOHBSY0VOSWxDeWQwOTVSVFV6UWdscUwwZEN4WVA0Z1JHRXYwZEFjVw?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Sun, 16 Aug 2026 20:00:00 GMT"
+      "title": "日経平均終値1759円安、水差された業績相場 金利高で不動産に売り",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4tSEREQnd5X25wUm0zVnFocXB6Q0hXSzFlaTJVXy1OdlZ5djNTM2ktdTRhRElwNWdZc21lSkNUazZHYl9tOVp4OTROMlpmUWlWYWJFd1oxU0RSRUlCcno2cVVKS2tvR01IQ2IzVw?oc=5",
+      "source": "nikkei.com",
+      "publishedAt": "Tue, 18 Aug 2026 03:01:06 GMT"
     },
     {
-      "title": "7万円間近、回復基調の日経平均株価だが…投資のプロが警戒する「売りサイン」とは？",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBBXzhKeGV6dE5xNWRkSm93eGtiTS12eFpMZ1BuWGU3UmZLN211SE5aREMzRnJRUWhucVpHY3NjRVRGeDdnam1uZWpJYU5sWlY0QU9LenFkaHlnUQ?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Mon, 17 Aug 2026 03:15:00 GMT"
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月18日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5jeGlWbWJYZ1dYdF9UbU1YTUZoSmI2RHM1VF9TQTh4Sm4wN3RUdWRlZ21Ka1BEQjBVODdHZWNiUjljZEdidzR4SnBCd21yVHpybFE4ME5WWnF4YTVxMGR3aQ?oc=5",
+      "source": "株探",
+      "publishedAt": "Mon, 17 Aug 2026 23:02:56 GMT"
     },
     {
-      "title": "日経平均続伸、半導体株がけん引 キオクシアは5日続伸し6万円台回復【日経CNBC／きょうのポイント、明日のヒント】",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBxU3hrc3F2dE5QX2JMX1pqbmZlNXlPNGFPUHNHamZKekhZVVNzOTRsVVlWbFBIYmNDTEQxZFlXS1otNmczWGE1NVZpQkRka1R0M1BHdm9iaEdmeUJUbHBDd2NONEY0WHc?oc=5",
-      "source": "テレ東BIZ",
-      "publishedAt": "Mon, 17 Aug 2026 09:00:00 GMT"
-    },
-    {
-      "title": "読売３３３終値は９営業日ぶり下落、２６４円安の５万３８１９円…日経平均終値と異なる動き",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9IYVZGbGhWN3ZvX0VZUDdzM0VISWwzV3oyT2RzWVNtdjRxMl9oN2FMTktMZVNKb1pfZFpTYllIM0VXTUpjSUlwMmRzZW1qazFxR3hnMlF5VkpnNmpUQ0xaN2hmbkI?oc=5",
-      "source": "読売新聞",
-      "publishedAt": "Mon, 17 Aug 2026 09:13:00 GMT"
-    },
-    {
-      "title": "日経平均テクニカル： 5日続伸、25日線乖離5％超え(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNWsxYmhlbFhYYjFSLWVVWTVjTzlxcGg0TXFVSTk4NGtDendvSVhRUjkyUVBTYzNPVWZDMmRHZUlOVnAtX01oYVlIMnpORzhoSV80SGJzQm5wR2FHMWFxRkJCeFBrSXEyWU5zYTVBRUFKZEdvZURaVDk0RTJFanpDR0pRbjZab2s?oc=5",
+      "title": "日経平均寄与度ランキング（大引け）～日経平均は大幅に6日ぶり反落、アドバンテストや東エレクが2銘柄で約836円分押し下げ",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOaE5CSmFmZVVRdFJreWE2NzVpQ25XU2R1aHM4cU93MXNzdG5iSG9jWGRLend3SFB3VFF3eVp2R09CUUNkdWZUd1pkWmlWN19GYkx1bUU0aWFSZ1lfZTNkdDZDZGM5V0lrSmxWeEZKWXV4NlR1S0tSZ0ZEeEdxMnVBa2lkVE9sYmM?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Mon, 17 Aug 2026 09:15:00 GMT"
+      "publishedAt": "Tue, 18 Aug 2026 07:35:00 GMT"
+    },
+    {
+      "title": "日経平均は6日ぶりに反落、金利上昇を嫌気 半導体株が下げ先導",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOLUVBdUdBZ0c4M2VaMGU0eWFNYnhmcWtKemJxT2k2YW1uSVRMMWNIQVctcmdsbGVOU1FFQjR6UzJ2Ri1UV3hNQWNhWm5saHI0Z3g1Ul9GUkgzSS02cGI4Zm5OVnl5X28wc1dpeExrWHBGakd6MElmQ3pUeGROdURWcQ?oc=5",
+      "source": "ロイター",
+      "publishedAt": "Tue, 18 Aug 2026 07:30:21 GMT"
+    },
+    {
+      "title": "日経平均は１１２１円安と大幅安、半導体株値崩れで下げ幅拡大＝１８日前場 速報",
+      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5ZTTNTM2FDSTVNMll3anV1aFEwMXhtYmM1dFMzWklhZ21ZMUZYbmZCVld2bzY0MjRlU3dMUnNDb2x2OUxFOVNV?oc=5",
+      "source": "kabushiki.jp",
+      "publishedAt": "Tue, 18 Aug 2026 02:56:00 GMT"
     }
   ],
-  "signal": "bull_strong",
-  "headline": "ブル型 高確度シグナル",
-  "rationale": "日経平均は100日線を6%以上上回る強い上昇トレンドで、短期線も上向いています。過去10年で同条件が発生した局面に絞った、より厳選されたシグナルです。",
+  "signal": "wait",
+  "headline": "様子見(トレンド不明瞭)",
+  "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
     {
       "date": "2026-02-04",
@@ -852,10 +852,10 @@
       "sma75": 65770.88
     },
     {
-      "date": "2026-08-17",
-      "close": 69220.25,
-      "sma25": 65906.13,
-      "sma75": 65897.6
+      "date": "2026-08-18",
+      "close": 67460.73,
+      "sma25": 65835.75,
+      "sma75": 65874.14
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-20T09:06:34.022Z",
-  "asOfDate": "2026-08-20",
-  "price": 66216.79,
-  "sma25": 65724.53,
-  "sma75": 66154.45,
-  "deviationPct": 0.75,
-  "rsi14": 64.8,
-  "vol25AnnualizedPct": 35.6,
+  "updatedAt": "2026-08-21T09:10:15.585Z",
+  "asOfDate": "2026-08-21",
+  "price": 66016.36,
+  "sma25": 65615.12,
+  "sma75": 66241.16,
+  "deviationPct": 0.61,
+  "rsi14": 56.6,
+  "vol25AnnualizedPct": 35.2,
   "trend": "mixed",
   "overheat": "neutral",
   "highVol": true,
@@ -16,23 +16,23 @@
   },
   "nextTrigger": {
     "direction": "below",
-    "level": 65724.53,
-    "distancePct": 0.74,
+    "level": 65615.12,
+    "distancePct": 0.61,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 158.484,
-      "changePct": -0.67
+      "value": 158.364,
+      "changePct": 0.06
     },
     "sp500": {
-      "value": 7707.98,
-      "changePct": 0.21
+      "value": 7641.16,
+      "changePct": -0.87
     },
     "vix": {
-      "value": 15.23,
-      "changePct": 2.28
+      "value": 15.73,
+      "changePct": -1.75
     }
   },
   "macroAssessment": {
@@ -43,46 +43,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均890円高、「売られすぎ」銘柄に買い戻し 円高でも車に食指",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9RWnBZZ1ItTFBMUlVJcXJEblNaanFGbkdmOHl5a3dXQmtaUFFRUmptMk9vU1B2T3VZbVlDZmI2MVVKbWk0S3RlYXBwSTgxTi0xa3F1WExmOC1jZG42dlUwQXRwa2Z0TTcxRlNuaA?oc=5",
+      "title": "日経平均終値200円安 米ウォルマート急落が消費株揺らす",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBBWjh6elloNWYzVlZfSkxYS3JXXzFTMkdEZmhpWG9fNkFSODcwN3dfQkpYMnRrcktKWnRLa250YkFtWm5nVzQ5enFyR2lpXzM4YzloRTFjbEJWYzcxOWhHa0pKZzV5YjhBVUE2MA?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Thu, 20 Aug 2026 02:57:55 GMT"
+      "publishedAt": "Fri, 21 Aug 2026 02:51:36 GMT"
     },
     {
-      "title": "日経平均 一時2000円超の値下がり",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE56X0labXhCSHBOUHB5M2xxZUkyeUE3MjdhY0o4dndjNWtKUWVwMDBINnFYbDBDanNSSUpkUUxILWN2S3RiOVl2WHVWLVN4bDZC?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Wed, 19 Aug 2026 00:31:52 GMT"
-    },
-    {
-      "title": "【↑】日経平均 大引け｜ 3日ぶり反発、金利低下でリスクオフ巻き戻し (8月20日)",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1nSEowbWxnalpMdWozVXhFWUNSdEdhZGFZS3JVanVDUjRDMF9uNHFNN0ZJY2s4NFpsazY1a0s4cXlRRFBEWlBIeFMzRVB5Zi1kdnpZa1NFVGtoOW1UckdxQw?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月21日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1QNmU1NHN2ZzJLRXh5QWFTaGNKVFpRc3FZLUkzeWMzRjhRRFYyelhCQ3AwNUhsTDJJNXpNdnJSUWNVN3o4NDAwWG5PS054dU1PZmVYUWJRMnNNU3R6Z2NLNg?oc=5",
       "source": "株探",
-      "publishedAt": "Thu, 20 Aug 2026 08:17:45 GMT"
+      "publishedAt": "Thu, 20 Aug 2026 23:06:30 GMT"
     },
     {
-      "title": "日経平均は890.37円高の「66,216.79円」で取引終了…反発の背景にある〈海外株式指数〉【8月20日の国内株式市場概況】",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5id2tJbjdTYmJpdS1ZWWNGRTBCQXRFeTZWWnEzVFdmOTRONmNVNXk1SUo5LXRyMnlNZU5WNV9CT0lpc2VYek1aci01clhGdXVsZDNzUzFWQ2Y4clFZcUYxWF9sS2xhLWp4V2ZLQ1pIZlRPanBQclNWZ0RrUjBVazQ?oc=5",
+      "title": "76年分の「日経平均下落率ランキング」ワーストは39年前の大暴落2桁マイナス「下落金額であおる報道にうんざり」NISA応援",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBham05ZVYweVNtODVhVnJOdmRNdUVleERZS0o0bUljb2dDaVd5ZHdTNjlMSXVNS18wdy1jdWFtTXV5Q1VvUTU0YkNWZENtazlsQVphUE1fRkZPVzNtNlhGNVN3QXpkdUp6OFM3ZVJwbG9RNEpFQUdnN1Nhc1MxT2s?oc=5",
       "source": "Yahoo!ニュース",
-      "publishedAt": "Thu, 20 Aug 2026 08:12:16 GMT"
+      "publishedAt": "Fri, 21 Aug 2026 08:30:37 GMT"
     },
     {
-      "title": "日経平均は3日ぶり反発、金利低下を好感 中東不透明感はくすぶる",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTE5ud3loSFRYeF84NWlDbFZLRXFtanpFQ1UtVlJBclZ0b0haYk9OQkFtTzN0MU50Q1dhZG5xOUFyMTdhYk5aS2o1N1lQNnRucDBsekp1Q1JyX1FsSURfMGU4NFhYTlhxZ29OZTh3QUpuNENmR0tvQU8yUDUtRWc2dA?oc=5",
+      "title": "日経平均は反落、日米金利上昇を嫌気 ＴＯＰＩＸはプラス",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPcVR3SE9jcXo4LXRXNVlHdUZLRlBIX3lKcDBPMTZmSkJBa0FaX3o0UGwzRkFvUzRfOW40U3d2TlVVVUZPMFowZE1XMmRqWEo1RmlhX196bm4td0lMb2NjQW1jLWlVdGxzS1BXQ2J3MmczSnZ1N0ZZRUU0TTRPNHo1eA?oc=5",
       "source": "ロイター",
-      "publishedAt": "Thu, 20 Aug 2026 07:05:43 GMT"
+      "publishedAt": "Fri, 21 Aug 2026 07:17:00 GMT"
+    },
+    {
+      "title": "２１日大引けの日経平均株価＝２００円４３銭安の６万６０１６円３６銭と反落 速報",
+      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1pSlBCSDdZQW9ob2tzRE9GbXlRNjBZY3ZwbTZwRHRtTDB1STdQeWdFcXA0bVNHVFR6cDlUX2ZpYWZ6VmVBdGNr?oc=5",
+      "source": "kabushiki.jp",
+      "publishedAt": "Fri, 21 Aug 2026 06:32:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-02-09",
-      "close": 56363.94,
-      "sma25": 53382.92,
-      "sma75": 51222.3
-    },
     {
       "date": "2026-02-10",
       "close": 57650.54,
@@ -856,6 +850,12 @@
       "close": 66216.79,
       "sma25": 65724.53,
       "sma75": 66154.45
+    },
+    {
+      "date": "2026-08-21",
+      "close": 66016.36,
+      "sma25": 65615.12,
+      "sma75": 66241.16
     }
   ]
 }

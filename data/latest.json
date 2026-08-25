@@ -1,49 +1,43 @@
 {
-  "updatedAt": "2026-08-24T09:31:46.558Z",
-  "asOfDate": "2026-08-24",
-  "price": 65528.09,
-  "sma25": 65562.82,
-  "sma75": 66277.09,
-  "deviationPct": -0.05,
-  "rsi14": 57.2,
-  "vol25AnnualizedPct": 34.2,
-  "trend": "down",
+  "updatedAt": "2026-08-25T09:10:40.352Z",
+  "asOfDate": "2026-08-25",
+  "price": 65856.43,
+  "sma25": 65631.43,
+  "sma75": 66318.99,
+  "deviationPct": 0.34,
+  "rsi14": 57.6,
+  "vol25AnnualizedPct": 31.5,
+  "trend": "mixed",
   "overheat": "neutral",
   "highVol": true,
-  "crossSignal": {
-    "type": "dead",
-    "date": "2026-08-18"
+  "crossSignal": null,
+  "nextTrigger": {
+    "direction": "below",
+    "level": 65631.43,
+    "distancePct": 0.34,
+    "resultingSignal": "bear",
+    "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
-  "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.171,
-      "changePct": 0.18
+      "value": 159.264,
+      "changePct": 0.23
     },
     "sp500": {
-      "value": 7674.37,
-      "changePct": 0.43
+      "value": 7652.86,
+      "changePct": -0.28
     },
     "vix": {
-      "value": 15.88,
-      "changePct": 4.96
+      "value": 15.8,
+      "changePct": -0.32
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
-  "macroNote": "テクニカルはベア型優勢ですが、為替・米国株など外部環境は逆風気味です。",
-  "conviction": {
-    "level": 1,
-    "levelLabel": "弱い",
-    "successRatePct": 37.4,
-    "avgForwardReturnPct": 1.1,
-    "sampleSize": 302,
-    "horizonDays": 10,
-    "lowSample": false,
-    "noEdge": true
-  },
+  "macroNote": null,
+  "conviction": null,
   "news": [
     {
       "title": "日経平均株価は今週末「6万6,329円」を下回ってはいけない【アナリストが警告】",
@@ -52,40 +46,34 @@
       "publishedAt": "Mon, 24 Aug 2026 03:45:00 GMT"
     },
     {
-      "title": "日経平均は続落、重要イベント控え模様眺めムード",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNT3VKMnZzSk55MXVfLWdpaUZrVk1rQzZ0SlI2b3k1MVViajFYWDNySDRiYlN4SVhtMEVFa1o1a255ZjhEaWNjM2tKXzFCaUlXcE1BWTNaUUdjbWFycVVNV2E5ejlTLUplVy1RdloxU1pCbUdVeGhZa2tzX3lmdzVXbw?oc=5",
-      "source": "ロイター",
-      "publishedAt": "Mon, 24 Aug 2026 07:32:07 GMT"
+      "title": "東証大引け 日経平均は続落、488円安 日米金利上昇と韓国株安で",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAtN0JFbmdfcElWc3N5a0RZREtoX09UNEUtTGJ0bEpVbjFkMjVWNkN3NnhRMmhQdXlhMkNlblFjN2lkVUxtTTlzUTBwcG90eTRhbjRsRWdBXzUwdXV1bkVkU0hiVmYwbDdaRHA3Mw?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Mon, 24 Aug 2026 06:55:46 GMT"
     },
     {
-      "title": "午前の日経平均は小幅続落、方向感欠く 一部半導体株安は重し",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbnJKY3QyTFhvcW5Kc2txczZDYXB4Z1BuVGFjdzNMVEltZW56MVJNLUduYlZBOTZzbEROelhucXNQZWZSRTdaZF9mMUxiOWR2UThjU3FhbWp1a2hOMnpTa3E1Ry1BNmpvQTZVTGo4UmJQd1RROUhhSEotdkEyZXFiOA?oc=5",
-      "source": "ロイター",
-      "publishedAt": "Mon, 24 Aug 2026 02:57:00 GMT"
-    },
-    {
-      "title": "日経平均は小幅続落で寄り付く、米半導体株安嫌気 プラス転換も（ロイター）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBfVTg3M1hxTDFyek5ENUtpM2J6azlDUzR2dUQtWFdST2RiRTRBTktHaE9hb201dkJ1S2dnbV81MkNSWUZrNUV3Y1BoWFFpaThsUy1rcXAyRFh0eEF5Y21kVkUyMUFYZnlYR0ZIOEh5S0FoRDhYR1JER2RNWC1CQ2c?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Mon, 24 Aug 2026 00:24:22 GMT"
-    },
-    {
-      "title": "日経平均テクニカル： 続落、5日・25日線のデッドクロス窺う(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNS0Z0V1NWVnNlVVAwNlRGQ2IyalJFZVhvalJNTWEwVGpncHZmQ1M4YUxtU3VDaU42d2ZoYmFFMlI2QnRhdW9LOTIwM24wUjlxZjJrcnd4XzJ5SktfOGZ4bnVTTG43ZFB3Q1RPSEdxdDRONDM2eHY0OURMVF9hRTdseFhFN1VJTG8?oc=5",
+      "title": "空売り集計（25日）43.0％に低下 日経平均は3日ぶり反発(トレーダーズ・ウェブ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZ1NKSTdjUjRmWjFyTWxqVks0NjZYbko5WXpIREF0S0VZQmg3djNDNVNGUzYzTjl1V09nZTFlNV93UFE4U0lQR1ptNkg1X0l3VTFYN2RBREJhU19WdWpjMVZ6OUlNWHZBdU9fTFd6T3JoZmtrSmlleXNjbWYxMi1NbUhBeF9WZGs?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Mon, 24 Aug 2026 09:15:00 GMT"
+      "publishedAt": "Tue, 25 Aug 2026 08:30:00 GMT"
+    },
+    {
+      "title": "日経平均は3日ぶり小反発、売り一巡後下げ渋り 様子見は継続",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQT1pJNkdUcF9XbURjdEdfRHJzOFVGcF9WUWRlZEtGTHdFQmlfVXUwNFZfOFo1NnpTMGdzSXJwVERoVl8wbG5MaGFWLTljcTM1OC1WMzJiM1U5MUxsUml0dlNVTlBaRWQ1OGJIbEpCdWxJbFpMeE9GV0F3UnJGWERueA?oc=5",
+      "source": "ロイター",
+      "publishedAt": "Tue, 25 Aug 2026 07:13:51 GMT"
+    },
+    {
+      "title": "日経平均は２２０円程度高、売買代金はキオクシア、フジクラ、アドバンテスが上位 速報",
+      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE93WERNRERYemROOGtxTUdLaHpQMnZRRzBnRF9xQ1gyS3psc3I2WkRFdjdnYzAyU29vR1p5SmdhVVYzemR6M0lz?oc=5",
+      "source": "kabushiki.jp",
+      "publishedAt": "Tue, 25 Aug 2026 05:02:00 GMT"
     }
   ],
-  "signal": "bear",
-  "headline": "ベア型優勢",
-  "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
+  "signal": "wait",
+  "headline": "様子見(トレンド不明瞭)",
+  "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-02-12",
-      "close": 57639.84,
-      "sma25": 53820.5,
-      "sma75": 51446.16
-    },
     {
       "date": "2026-02-13",
       "close": 56941.97,
@@ -859,6 +847,12 @@
       "close": 65528.09,
       "sma25": 65562.82,
       "sma75": 66277.09
+    },
+    {
+      "date": "2026-08-25",
+      "close": 65856.43,
+      "sma25": 65631.43,
+      "sma75": 66318.99
     }
   ]
 }

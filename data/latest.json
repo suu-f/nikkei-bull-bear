@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-08-28T21:32:01.425Z",
-  "asOfDate": "2026-08-27",
-  "price": 66131.98,
-  "sma25": 65633.29,
-  "sma75": 66415.44,
-  "deviationPct": 0.76,
-  "rsi14": 52.2,
-  "vol25AnnualizedPct": 29.8,
+  "updatedAt": "2026-08-31T07:11:08.329Z",
+  "asOfDate": "2026-08-31",
+  "price": 66311.93,
+  "sma25": 65700.64,
+  "sma75": 66505.99,
+  "deviationPct": 0.93,
+  "rsi14": 46.3,
+  "vol25AnnualizedPct": 28.4,
   "trend": "mixed",
   "overheat": "neutral",
   "highVol": true,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 65633.29,
-    "distancePct": 0.75,
+    "level": 65700.64,
+    "distancePct": 0.92,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 160.038,
-      "changePct": 0.49
+      "value": 159.748,
+      "changePct": 0.27
     },
     "sp500": {
       "value": 7711.76,
@@ -40,52 +40,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均273円高、SaaS株復権が支え 薄商いで出遅れ銘柄物色",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9JUkRIU1MyRnRhRGdldnkyUDZzZjRjMFVZSDhJcnRWcEppbGlZTXdpbWtPSW9GZGF1bkFsZDV1dTM3NEpsRVd6S1NyOHJFb0swZloxb1RfSVU4UUd5SjFWdlAxS2x2SXlCbWpRRA?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 28 Aug 2026 02:57:46 GMT"
+      "title": "【速報】日経平均、一時1500円超値下がり 米利上げ観測高まりで28日NY市場の下落受け",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5USElMUGdNX1VjZWQ2dVpzTUk3c2NnT2JNbmdKWlpyVi05T29EeWl2UHcxSmRTeGZBZ1djSUtfTXdOaFpiV19rNWxDdWZManN0?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Mon, 31 Aug 2026 00:57:02 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (8月28日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4zeGtEWWVCakNfaFVrS3J3WDEtNkY3OF92N1ZpTmpDRkFYUmxrMFlDaXYzcmJuc1VZMnp0YTNjdlpMSzRZOUN0X1dYelloUlU4Q29ZOUJkQ01PV1BHWDA0UQ?oc=5",
-      "source": "株探",
-      "publishedAt": "Thu, 27 Aug 2026 23:06:58 GMT"
-    },
-    {
-      "title": "日経平均は上値重く、円相場占う雇用統計",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1LZ1E2alBXZVZrbnBPX0k1NFNsT3VTZFV2Z1M4S2JlaWhINlhtSUpiTHZ3aE13bWNNRm02ZXpjMGVHQjlkODQ3WXh2OEV2LVY0VThlOTIxd3dGQS1pTmYwdEkyZG1HUlVHRjJXcw?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 28 Aug 2026 19:01:22 GMT"
-    },
-    {
-      "title": "日経平均株価3日ぶり反落 NVIDIA「予想上回る最高益」も市場踊らず",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5HZGFnZ2RGbWVIcm5MNldpRU9HNE04enRfbGQzSlJqQzRpQ0JWUWZBUUNjQVBza2lNTXF2TERXdzA4SGg5bmJLU2k4YWhOSkNEZG1zSw?oc=5",
+      "title": "日経平均株価、終値93円63銭安の6万6311円93銭 - TOKYO CLOSING BELL 大引け解説",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vUUtGSFkwS1MtUkFsRm9jTzRFRTNoX2gwV3pJRmFTbGd4X2QtVEk2ZS1OQjFTbzlvR3ZSWV9kZjVKVUVrMVJISzlya19IeU9LTzB6VA?oc=5",
       "source": "日経CNBC online",
-      "publishedAt": "Thu, 27 Aug 2026 07:07:00 GMT"
+      "publishedAt": "Mon, 31 Aug 2026 06:18:00 GMT"
     },
     {
-      "title": "日経平均は２７３円高と反発、ウォーシュＦＲＢ議長の講演控え積極的な買い限られる＝２８日後場(ウエルスアドバイザー)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPWmJiMERQUEFOVjRiZlFtZjY2TTJueHp6ZEw3NlJ5WVBtNHE2UjFwWmxJalFteGhRV0FJSFc0ZTVSQ2NuLVBISUZKcndud1h6VlFxSmZZMDVoMXkyT3cyZGJjR3NlZi12NFNlX3Y0Zk04T25EUGFKci0zamJtQ0JYWG1Oc2swcEE?oc=5",
+      "title": "日経平均株価の指数情報・推移",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Fri, 28 Aug 2026 06:51:00 GMT"
+      "publishedAt": "Mon, 31 Aug 2026 04:59:06 GMT"
+    },
+    {
+      "title": "日経平均午前1043円安 崩れるAI半導体、FRBタカ派的発言が冷や水",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAzd2JBZlRzVmFaM1pjVzVidFpPck10RzlzeTRlOEhtTmxZRVc1bmFES01PMUM5THpERGs5NW4tQ09fbEhiOUlIR3Q5a3FqWVREbnZqT1lRRG5pQWFQTFZlNVNIS3FpOUxRT0syOA?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Mon, 31 Aug 2026 02:51:55 GMT"
+    },
+    {
+      "title": "日経平均の長期見通し：2029年8万円、2032年10万円を予想（窪田真之）",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBJalFLckp4YlpFVzlKTEV3VzV3SDg0MV81SDRQbGZ6dTBLclRwcnZuSk02RXlWYUFNZnllNzZXYWxWUzJObVJjOFg3c0tSUVFWekJ1V00wdjVNZw?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Sun, 30 Aug 2026 23:00:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-02-17",
-      "close": 56566.49,
-      "sma25": 54432.33,
-      "sma75": 51753.7
-    },
-    {
-      "date": "2026-02-18",
-      "close": 57143.84,
-      "sma25": 54576.11,
-      "sma75": 51842.12
-    },
     {
       "date": "2026-02-19",
       "close": 57467.83,
@@ -853,6 +841,18 @@
       "close": 66131.98,
       "sma25": 65633.29,
       "sma75": 66415.44
+    },
+    {
+      "date": "2026-08-28",
+      "close": 66405.56,
+      "sma25": 65632.61,
+      "sma75": 66457.22
+    },
+    {
+      "date": "2026-08-31",
+      "close": 66311.93,
+      "sma25": 65700.64,
+      "sma75": 66505.99
     }
   ]
 }

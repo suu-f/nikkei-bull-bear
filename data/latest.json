@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-08-31T07:11:08.329Z",
-  "asOfDate": "2026-08-31",
-  "price": 66311.93,
-  "sma25": 65700.64,
-  "sma75": 66505.99,
-  "deviationPct": 0.93,
-  "rsi14": 46.3,
+  "updatedAt": "2026-09-01T07:19:20.054Z",
+  "asOfDate": "2026-09-01",
+  "price": 66215.34,
+  "sma25": 65752,
+  "sma75": 66570.07,
+  "deviationPct": 0.7,
+  "rsi14": 42.3,
   "vol25AnnualizedPct": 28.4,
   "trend": "mixed",
   "overheat": "neutral",
@@ -13,73 +13,67 @@
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 65700.64,
-    "distancePct": 0.92,
+    "level": 65752,
+    "distancePct": 0.7,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 159.748,
-      "changePct": 0.27
+      "value": 159.955,
+      "changePct": -0.1
     },
     "sp500": {
-      "value": 7711.76,
-      "changePct": -0.25
+      "value": 7686.14,
+      "changePct": -0.33
     },
     "vix": {
-      "value": 14.43,
-      "changePct": -0.55
+      "value": 14.92,
+      "changePct": 3.4
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bear",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "【速報】日経平均、一時1500円超値下がり 米利上げ観測高まりで28日NY市場の下落受け",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5USElMUGdNX1VjZWQ2dVpzTUk3c2NnT2JNbmdKWlpyVi05T29EeWl2UHcxSmRTeGZBZ1djSUtfTXdOaFpiV19rNWxDdWZManN0?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Mon, 31 Aug 2026 00:57:02 GMT"
-    },
-    {
-      "title": "日経平均株価、終値93円63銭安の6万6311円93銭 - TOKYO CLOSING BELL 大引け解説",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vUUtGSFkwS1MtUkFsRm9jTzRFRTNoX2gwV3pJRmFTbGd4X2QtVEk2ZS1OQjFTbzlvR3ZSWV9kZjVKVUVrMVJISzlya19IeU9LTzB6VA?oc=5",
-      "source": "日経CNBC online",
-      "publishedAt": "Mon, 31 Aug 2026 06:18:00 GMT"
-    },
-    {
-      "title": "日経平均株価の指数情報・推移",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Mon, 31 Aug 2026 04:59:06 GMT"
-    },
-    {
-      "title": "日経平均午前1043円安 崩れるAI半導体、FRBタカ派的発言が冷や水",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAzd2JBZlRzVmFaM1pjVzVidFpPck10RzlzeTRlOEhtTmxZRVc1bmFES01PMUM5THpERGs5NW4tQ09fbEhiOUlIR3Q5a3FqWVREbnZqT1lRRG5pQWFQTFZlNVNIS3FpOUxRT0syOA?oc=5",
+      "title": "日経平均午前261円安、「金利3%時代」に身構える市場 半導体に売り",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1NVEV0YzNWYzFyZk1LWGRiTXBmRnRvY3hHNG9ERW9MNkx0S3c1MHVkYkZ6amZXc1lQRHdoRHU4NjR4TVRsRS1ISWhVZE1yRHJUS1M1VDQtV3oxeVlLblVyR3UwbUtkTTh1UGg2Mg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Mon, 31 Aug 2026 02:51:55 GMT"
+      "publishedAt": "Tue, 01 Sep 2026 03:03:20 GMT"
     },
     {
-      "title": "日経平均の長期見通し：2029年8万円、2032年10万円を予想（窪田真之）",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBJalFLckp4YlpFVzlKTEV3VzV3SDg0MV81SDRQbGZ6dTBLclRwcnZuSk02RXlWYUFNZnllNzZXYWxWUzJObVJjOFg3c0tSUVFWekJ1V00wdjVNZw?oc=5",
+      "title": "日経平均は朝方一時「1,500円超下落」と売り先行…株価は一段安？持ち直す？カギを握るのは「バリュー株」と「中小型株」か",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ETExLQ1libTN4TkRxYmRCcmo3QU5KZ2ZMMFoxVWljbnU5Rk1ZZzhzbXc4RVJEdG5tbVdpQXpRU2E0NkRLeUY3M1ptNGszaGJwbGloRDI4cVl0UQ?oc=5",
       "source": "トウシル",
-      "publishedAt": "Sun, 30 Aug 2026 23:00:00 GMT"
+      "publishedAt": "Mon, 31 Aug 2026 03:00:48 GMT"
+    },
+    {
+      "title": "日経平均は９６円安と続落、一時上げ転換も取引終了にかけ売りに押される＝１日後場(ウエルスアドバイザー)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPa3IwUUh0NWlGcEpsMmROVlhON0ZnLWtuT1lGWFpZVHlLcWotcnZzY3JnYTEtYkNhaUtsTmFwQkQ2OGNSSFAxRTc5SUIySTZsQndSSDZQZFg2dGxoTUw3SW0zSHpSTHBzRVR5cUVkemJsd1d4cXBCRGpyQVozdmpUZDBDbVpiSkk?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Tue, 01 Sep 2026 06:58:00 GMT"
+    },
+    {
+      "title": "日経平均は小幅続落、売り一巡後下げ渋る ＴＯＰＩＸ小幅高",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1TZHdNODV0LVdQTFJzSHlKQWRoVVZ4bEY3MU12MmpycTNJQXlhZUZHZjI3ZU9PbjNJWXF4XzJtbU9MSEtGVVBnNzhoTEJGQzFRRnpzV1IyeDdDUQ?oc=5",
+      "source": "ニューズウィーク日本版",
+      "publishedAt": "Tue, 01 Sep 2026 06:56:00 GMT"
+    },
+    {
+      "title": "日経平均は小幅続落、売り一巡後下げ渋る ＴＯＰＩＸ小幅高",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPYW5sTEI4U1VrLVA4OEFvaFAwd0hNaWJJZ3hfT1FsdWNBQ2JCd1gwbWwyT3NlckprWkdfaGdIUTMyekdNTXBackREQWZrQ01yNVJlTTVLSjZEUm5BUHl5X29RQnFNQmJSTDE1eVRULTVNbnpuT21HYWJaZE9iWEZRVQ?oc=5",
+      "source": "ロイター",
+      "publishedAt": "Tue, 01 Sep 2026 06:57:43 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-02-19",
-      "close": 57467.83,
-      "sma25": 54701.18,
-      "sma75": 51938.77
-    },
     {
       "date": "2026-02-20",
       "close": 56825.7,
@@ -853,6 +847,12 @@
       "close": 66311.93,
       "sma25": 65700.64,
       "sma75": 66505.99
+    },
+    {
+      "date": "2026-09-01",
+      "close": 66215.34,
+      "sma25": 65752,
+      "sma75": 66570.07
     }
   ]
 }

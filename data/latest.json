@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-02T07:19:05.507Z",
-  "asOfDate": "2026-09-02",
-  "price": 64325.64,
-  "sma25": 65830.43,
-  "sma75": 66616.87,
-  "deviationPct": -2.29,
-  "rsi14": 29.3,
-  "vol25AnnualizedPct": 26.9,
+  "updatedAt": "2026-09-03T07:19:48.356Z",
+  "asOfDate": "2026-09-03",
+  "price": 64214.48,
+  "sma25": 65941.64,
+  "sma75": 66665.72,
+  "deviationPct": -2.62,
+  "rsi14": 25.8,
+  "vol25AnnualizedPct": 26.3,
   "trend": "down",
   "overheat": "oversold",
   "highVol": true,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.758,
-      "changePct": 0.01
+      "value": 156.676,
+      "changePct": -2.2
     },
     "sp500": {
-      "value": 7631.47,
-      "changePct": -0.71
+      "value": 7666.6,
+      "changePct": 0.46
     },
     "vix": {
-      "value": 16.34,
-      "changePct": 9.52
+      "value": 15.2,
+      "changePct": -6.98
     }
   },
   "macroAssessment": {
@@ -43,10 +43,10 @@
   },
   "news": [
     {
-      "title": "日経平均株価 下げ幅一時1900円超 マーケットは「トリプル安」状態に",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9GNC0zYloyNDhfVk1KbWJCRnBXZHRabnFocTZWaG4zbUNnOGc4ai1rWDdDeFFNTW1kTGpCU2k3TE5veVBOaUxUNzZrS0ZMTTRhbkpkT2xwM0hvM1lDMkVhT2dTOWRjaUJ1czZUcHBNaGw4dw?oc=5",
-      "source": "テレ朝NEWS",
-      "publishedAt": "Wed, 02 Sep 2026 01:23:11 GMT"
+      "title": "日経平均、午前終値130円高 バークシャー買い増し意欲「呼び水」に",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZX2JmbVBKYlB3SllyQ1VsbHpOcWtGOUljekVKTUxBVk1yWmhIWWtyVG5MSkR5Zi0tc284VVRfMjZCWEtQbEJHR01HdE9tUThFRDVOVmRCa2hRYU9ZS0o3cG5idkF4SnQ2aEVXMg?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Thu, 03 Sep 2026 02:56:02 GMT"
     },
     {
       "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月2日記）",
@@ -55,34 +55,28 @@
       "publishedAt": "Tue, 01 Sep 2026 23:33:54 GMT"
     },
     {
-      "title": "日経平均は１８８９円安と大幅３日続落、買い手がかりに乏しく安値圏で推移＝２日後場(ウエルスアドバイザー)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZ1lWdEllcE40NUFqeEVOa01BdFhVUmhYcVlyZEZIY3pzRFl4c2FDcEV4TWZWLWFmTWxFb0lINUtSWXFYRDFleDNvcm9fOWFIVkFkc01RX1RYZDVJd0gtSkVvUjlmZW1xbV9qR01KY0VMYVV5aUhKWXp0bTNxNVdJWG81RHdsamc?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Wed, 02 Sep 2026 06:51:00 GMT"
+      "title": "日経平均が４日連続で下落、終値は１１１円安の６万４２１４円（読売新聞オンライン）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8wNFhyb0Z1ZE9Ia1JudmdVV1VrZ1A0LVhSRjItQTM4c2dHMVpCeUVzOGR2MjFoOURJSXppc3pLQ3FLSzdVS1g1NFNpRDNfaDBqR2VCdVpleEJlSjQxSFpobjBaUkNKMnlFbElBaWk4UklLdm5RZkN5OGNkQVF2VHc?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Thu, 03 Sep 2026 06:53:00 GMT"
     },
     {
-      "title": "日経平均は大幅続落、原油高や金利高横目に売り優勢の展開",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxObHV4cVBwaWhTVnV6WlVlZDFjUTlpTlIyZ1p6VlRkcDZCREpaZDZrbkxibEw0NEpQZVJMUFZKVkFkcm9sMEZRUHM3SDRDLVhjMl9sb1puQkl2ZVdJYlNqSkNhUWg3NmxqRU45UEEzSkZlMDE5UDkwTjNaTlUzSXlFbFdHRFZuS1HSAYwBQVVfeXFMTzFsaXI1Z2VaZmxzS0NISW5QLUVVR195MTJpZjVoNUZWeEVSQ2FJd1JFQl81X0htbncwa2o2amR6TUs5ZHFtTFl3T3ZSTDJXRkFUN2tOMEx2XzRtZU85VU52ckxBS2xYRzdxenJaX2RCMkxFMzVfcjdneGJuWHJHSmJNMDBBVWJjWE90dUM?oc=5",
-      "source": "ｄメニューニュース",
-      "publishedAt": "Wed, 02 Sep 2026 07:02:00 GMT"
+      "title": "東京株式市場・大引け＝日経平均は4日続落、金利上昇などを警戒 一時6万4000円割れ",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTlo5SGpZU3p4Q3N2cGtnZ0dhY2pQZ1Q3bHluN3MwamVjbGRVNDhsUkNURjBVaXpuSmZ2aHZaRFRqOVJ3TmJNN1llNDBSOEM3dzFLcDd4amVla2tudWxraUh1ZUxqaUx1R01XaGtMMmM4THJ3eUJubTFXVkUwQ1FJXw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Thu, 03 Sep 2026 07:17:44 GMT"
     },
     {
-      "title": "大引け概況－日経平均は大幅に3日続落 ティアフォーがストップ高(トレーダーズ・ウェブ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaF9ITVZzRlVuajFCTm1lU3pHR3lLSmpYSm94cF9fbkRFbWlNaHp3R0kxcW56U24zY2w1ZFBKSHJ5dTV6OWhVV0RJUVVOTXA1MjdrbG5tY3BYNGxNTmtObUE2UFpubjhRMS0taHA4aUJTSVpLckotdnJPOGc1cnlsOERac1E4NVk?oc=5",
+      "title": "日経平均は小幅続落、売り買い交錯でもみ合う展開／相場概況(フィスコ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPa2d4MWVYT09sRE9Ea19zQ0hJSENKWENFZk9BUWZJQmRIdmNEaC1lWjZfamtCUGtFbWtGOTA4MEFvZWtmNGw5Mmt6ZG5QUkNlX1R4di10dFIySlBrLXNRb0t2d0tZNUJEbWJJSXBUd3dvNnpFTUEyYUZGLTlKMlZuaUZrQm9QOUE?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Wed, 02 Sep 2026 06:53:00 GMT"
+      "publishedAt": "Thu, 03 Sep 2026 07:12:00 GMT"
     }
   ],
   "signal": "bear_caution",
   "headline": "ベア型優勢だが過熱感あり",
   "rationale": "下降トレンドですがRSIが30以下で売られすぎ気味です。反発リスクに注意してください。",
   "history": [
-    {
-      "date": "2026-02-24",
-      "close": 57321.09,
-      "sma25": 54945.18,
-      "sma75": 52092.28
-    },
     {
       "date": "2026-02-25",
       "close": 58583.12,
@@ -856,6 +850,12 @@
       "close": 64325.64,
       "sma25": 65830.43,
       "sma75": 66616.87
+    },
+    {
+      "date": "2026-09-03",
+      "close": 64214.48,
+      "sma25": 65941.64,
+      "sma75": 66665.72
     }
   ]
 }

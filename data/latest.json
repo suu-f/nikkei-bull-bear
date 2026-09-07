@@ -1,29 +1,35 @@
 {
-  "updatedAt": "2026-09-04T07:18:47.612Z",
-  "asOfDate": "2026-09-04",
-  "price": 65020.94,
-  "sma25": 65973.9,
-  "sma75": 66676.47,
-  "deviationPct": -1.44,
-  "rsi14": 31.3,
-  "vol25AnnualizedPct": 26.5,
-  "trend": "down",
+  "updatedAt": "2026-09-07T07:21:00.774Z",
+  "asOfDate": "2026-09-07",
+  "price": 66399.84,
+  "sma25": 66149.3,
+  "sma75": 66798.15,
+  "deviationPct": 0.38,
+  "rsi14": 44.3,
+  "vol25AnnualizedPct": 24.3,
+  "trend": "mixed",
   "overheat": "neutral",
-  "highVol": true,
+  "highVol": false,
   "crossSignal": null,
-  "nextTrigger": null,
+  "nextTrigger": {
+    "direction": "below",
+    "level": 66149.3,
+    "distancePct": 0.38,
+    "resultingSignal": "bear",
+    "note": "終値が25日線を下抜けるとベア型優勢に転換します"
+  },
   "macro": {
     "usdjpy": {
-      "value": 156.342,
-      "changePct": -1.62
+      "value": 155.742,
+      "changePct": 0.05
     },
     "sp500": {
-      "value": 7666.6,
-      "changePct": 0.46
+      "value": 7718.6,
+      "changePct": -0.38
     },
     "vix": {
-      "value": 15.2,
-      "changePct": -6.98
+      "value": 14.53,
+      "changePct": 1.47
     }
   },
   "macroAssessment": {
@@ -31,64 +37,43 @@
     "vixStatus": "calm"
   },
   "macroNote": null,
-  "conviction": {
-    "level": 1,
-    "levelLabel": "弱い",
-    "successRatePct": 37.6,
-    "avgForwardReturnPct": 1.09,
-    "sampleSize": 303,
-    "horizonDays": 10,
-    "lowSample": false,
-    "noEdge": true
-  },
+  "conviction": null,
   "news": [
     {
-      "title": "日経平均午前555円高 息吹き返したモメンタム株、金利高一服に安堵",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5OMnhlY3dSQlpTNk9lQUhQWHk4dERpbDhLTndCOGRqV3lZQTZtS2RQLWhrZ3pTY1FJblFDWUtacklfQ3lpVjJnXzV5b2c4NU52U1ZFY1VXVXdkRU5idnhveGpCbTl0VzFxcERCYQ?oc=5",
+      "title": "日経平均午前1439円高 半導体買い､投資家は｢雇用統計よりマイクロン｣",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1PN21EZVNwY1dtYVlwMWpQbWNONzVZOHhSXzloNXczYWJTUmJFSURTTC0tYlduMms3bGJxTjlTQUI1bGxLdVFST3hKV2JuSFZQZkdsUTBrVWVRbzI0c3ZHRzN0OWNOTFdDMWZkbQ?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Fri, 04 Sep 2026 02:48:51 GMT"
+      "publishedAt": "Mon, 07 Sep 2026 03:01:58 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月4日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1sUktQU0RRcFpIdXVNZVd0NThvZFpqYnJjdGQ0SUZNeWthdjVVd0hhM1NIdENMd1g5cmZxaU56SmNueERqbFZrVmZkT2s2eERsUHZpXzlDdFExY0xYaGdLMg?oc=5",
-      "source": "株探",
-      "publishedAt": "Thu, 03 Sep 2026 23:25:48 GMT"
+      "title": "日経平均、ボーダーラインは「6万6,735円」か…相場を動かす直近の重要イベントと注目ポイント",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0tOGJjSlRvcXRGRE1uSTZzRXc5OGRsYTNPQVdKUGhZZngzNkxnMjhZR3QxX2h5ak4wcy1WMU9sUktsd3lQRFdzOVNEOG5yaC1WazJCcjdvdEVWZw?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Mon, 07 Sep 2026 03:00:00 GMT"
     },
     {
-      "title": "日経平均は反発、買い優勢でじりじりと上げ幅広げる展開／相場概況(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQaVV2NnZkbjdfMDVJUUZkTWtGbzRBeEtvS1I2WFZRUkVDcndrZ2dibE1nRHcwbzhoaDVYbXpEZzZPeFRJRkhDVG5UZzhmWTk4WEtiR1Z3NjdOM3M0LXBuV2x1UUFDYTJwdmI1RU0zSFFNcTlVZ0dWTXhYMzJRSTFwbzc3WU0xdUU?oc=5",
+      "title": "大引け概況－日経平均は大幅続伸 ソフトバンクグループが連日の大幅高(トレーダーズ・ウェブ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQak5GOUl5bE9jT1BOWmVmZ0JWbXhCdTN3OXNrTHJjSEdJSUtCRV9Hb1NYQ3dXTjZLQ2lTU2dpUURUdFNRMUQyQ19mWjVfOXJHQ3hIWW5FalhGUDBFUktEaHNRdEFQcmJsdUxTb2pIUWFpYm9CNzNjckNITnRzNVVlcXQtWFpReDQ?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Fri, 04 Sep 2026 06:56:00 GMT"
+      "publishedAt": "Mon, 07 Sep 2026 06:52:00 GMT"
     },
     {
-      "title": "日経平均は5日ぶり反発、金利低下が支え 一部ＡＩ株堅調",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9FdUJkdk94ZlJGTlQzNkItQ2RXcHZZaUwxaEJCbnNuaFpJZklJRGxMUk9aY25pY0hLUHRwbEpRbmRDSHhNVmhseHZLX056NmhEUGJnYzB0WUZIQQ?oc=5",
-      "source": "newsweekjapan.jp",
-      "publishedAt": "Fri, 04 Sep 2026 06:52:00 GMT"
+      "title": "日経平均は続伸、半導体株高が支え 一巡後は小動き",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE85U0FDcnJKeW4xOGRZU0puanhrbGVZMFFpNXRLM2NTTEdYaTh3OWMyTThlcWFvZ3NxY0lZSEZoUTA1N0JveHQ5UTFTLV9TbGR3NmFzTm5nQ2tZUQ?oc=5",
+      "source": "ニューズウィーク日本版",
+      "publishedAt": "Mon, 07 Sep 2026 07:00:00 GMT"
     },
     {
-      "title": "日経平均終値、８０６円高の６万５０２０円…日米長期金利上昇一服が追い風",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1sTUM1RXo1Y2piZkZxTGNDZXUzQTMybXRtZ2dSaWtjcnBhLVJsM0xjUzltSmY2ZDNiTm5ZWEVUZkdBSVRLZmRKUFItNzRJSHhkNUhrUmJxSmtRVmNFREExREpKbnY?oc=5",
-      "source": "読売新聞",
-      "publishedAt": "Fri, 04 Sep 2026 06:45:00 GMT"
+      "title": "日経平均は続伸、半導体株高が支え 一巡後は小動き（ロイター）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA4WU5icHowLU1iZ3R1cjdFVUQ5YlVLYWFkSGdURzFsR1JOSUdYd2pYd0RKV3hjbE44dFpGU001aFRXNkx3eTVfbTM4bzBkUHBkV0IyZ0pNVGZRRXgzcVQ3UFFxSFl2NjBVbjdNUkU4Rl81QmNxQlNaVGxXcTRHZms?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Mon, 07 Sep 2026 07:00:15 GMT"
     }
   ],
-  "signal": "bear",
-  "headline": "ベア型優勢",
-  "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
+  "signal": "wait",
+  "headline": "様子見(トレンド不明瞭)",
+  "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-02-25",
-      "close": 58583.12,
-      "sma25": 55145.17,
-      "sma75": 52174.57
-    },
-    {
-      "date": "2026-02-26",
-      "close": 58753.39,
-      "sma25": 55375.66,
-      "sma75": 52271.32
-    },
     {
       "date": "2026-02-27",
       "close": 58850.27,
@@ -852,10 +837,22 @@
       "sma75": 66616.87
     },
     {
+      "date": "2026-09-03",
+      "close": 64214.48,
+      "sma25": 65941.64,
+      "sma75": 66665.72
+    },
+    {
       "date": "2026-09-04",
       "close": 65020.94,
-      "sma25": 65973.9,
-      "sma75": 66676.47
+      "sma25": 66067.79,
+      "sma75": 66735.27
+    },
+    {
+      "date": "2026-09-07",
+      "close": 66399.84,
+      "sma25": 66149.3,
+      "sma75": 66798.15
     }
   ]
 }

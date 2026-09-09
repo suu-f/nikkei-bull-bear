@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-08T12:05:52.007Z",
-  "asOfDate": "2026-09-08",
-  "price": 65269.33,
-  "sma25": 66209.88,
-  "sma75": 66823.88,
-  "deviationPct": -1.42,
-  "rsi14": 49.7,
+  "updatedAt": "2026-09-09T12:17:45.944Z",
+  "asOfDate": "2026-09-09",
+  "price": 65142.78,
+  "sma25": 66257.29,
+  "sma75": 66823.68,
+  "deviationPct": -1.68,
+  "rsi14": 42.8,
   "vol25AnnualizedPct": 24.8,
   "trend": "down",
   "overheat": "neutral",
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 154.272,
-      "changePct": -1.23
+      "value": 153.319,
+      "changePct": -0.35
     },
     "sp500": {
-      "value": 7718.6,
-      "changePct": -0.38
+      "value": 7673.52,
+      "changePct": -0.58
     },
     "vix": {
-      "value": 15.73,
-      "changePct": 2.81
+      "value": 16.39,
+      "changePct": 4.26
     }
   },
   "macroAssessment": {
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "【↓】日経平均 大引け｜ 3日ぶり反落、中東リスクや円高で安値引け (9月8日)",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9hblUxb05nRFM0WXFjVDVmNTBNckVHcmVDdUk3MlF5Yk9QMHdRY0dKUDRiLUVUT3hXSlQ1SFgzRGVXbk9tMmdNZndVOXI5OU5FQ05xMUZtY0dwaEJWcTV2Ng?oc=5",
-      "source": "株探",
-      "publishedAt": "Tue, 08 Sep 2026 09:00:56 GMT"
-    },
-    {
-      "title": "（まとめ）日経平均は半導体がけん引し1,378円高の66,399円で続伸",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBNY2hLaXRnTXdmeTlfcXk4WjVLMjlIaVA3WjdITVlNV0JRZlNiMWwxMDRRcE1wNFNnWFluSXZzSG9WeWwxXzNXQU1GWVNyenZ3NDVBY9IBV0FVX3lxTE5SRzdjMXpCUWRyY2hicVFjVlVxczFnNkhfWXFfQTdsMFp3Tkt1Y29pMHFpcE4xYnJUYTlKR1FtOHp6eWo0aTVib3J2cmo0djhOZXZpb1V1Zw?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Mon, 07 Sep 2026 07:22:00 GMT"
-    },
-    {
-      "title": "自動車株が1カ月ぶり安値 トヨタ4%安、想定超える円高逆風に",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE14SjhFMEd1MjF5bHNvYUZyelNTVWZhZUF5SENYNjRxdi1ZcXRUS2M3T1FZTXF0amVucFBIZ2ozWnpTREluVkFfUVYtWUJLVGx4Z19hOUxIbEFIWjR0N1ZHVWZDSi1MWFhPa3B6Xw?oc=5",
+      "title": "日経平均株価終値126円安 原油高警戒、電線株買いは支え",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBORm5ob2g4U1VnMmZ6NWItRU12S2YtWDNubVZkZWNDeEdYZ09weE00OHZIcGNUZVh4dEx2T0xVZFl6Tmo5b0tsb0hYdFJPbzlVQnZOZ3hzaXphcVhXZWFvTzBfRVZjNVdVcDY3bg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Tue, 08 Sep 2026 11:30:32 GMT"
+      "publishedAt": "Wed, 09 Sep 2026 02:45:34 GMT"
     },
     {
-      "title": "コニカミノルタ---大幅続落、日経平均採用銘柄からの除外が発表",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mVC1RTGI4bzkzM0Q4SzZIY1Y2cThuYl85UDhkckVpY3I2OXFrTHFLQkwzcGxBWHJrMnpYaUZvZ3FSNXNwNktSV29RUXhqOVlBWnhTWlVqd3F0SmNsYjN2bw?oc=5",
+      "title": "「日経平均10万円へ」過熱する日本市場で「ボロ負け」する投資銘柄とは",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1nYjRTbjc2RTBfWE8tc2x2aWsxMWV1SzZtU1JxRWdQNlhVOTR5LVRZSUQ2YlZlR1hWTGdmTlVQd2Rad2tvQW5GR0l2bzRjbzBNeHEw?oc=5",
+      "source": "クーリエ・ジャポン",
+      "publishedAt": "Tue, 08 Sep 2026 21:00:11 GMT"
+    },
+    {
+      "title": "信用評価損益率、2週ぶり悪化 AI・半導体関連株下落で",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBiN0xYY3JXYzJ0czcxYjVyc1o5b3A2ZktodVJzV2NMMnd0QV9JT2JnbzVFMDVmOUhSRFpoSUpDSndmTmJ1cnVoekpQSUVMWmRKQlVHV0drS1dQU1pBRE9OR1BZemEtSWhPeExnZQ?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Wed, 09 Sep 2026 11:23:23 GMT"
+    },
+    {
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月9日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1faG1CdDdwclAwMHpIMTVOM1pqS0p0dUZRRFBZdTAxRHM0R1FybXBEQXBXekJjd29Uc3FUa3Nka25BOWY3elYtWDA3ZEg2UEkxT3VnRWVJLVM4djNnUncyYQ?oc=5",
       "source": "株探",
-      "publishedAt": "Mon, 07 Sep 2026 01:30:09 GMT"
+      "publishedAt": "Tue, 08 Sep 2026 22:55:27 GMT"
     },
     {
-      "title": "日経平均が下げ幅拡大、下落幅１０００円超える 速報",
-      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1tSmhMX0dUaDdzSnY2c0VJd05KbVdZT0NSVFVfZW84OERYcktrSmVUVjZNNnFEbWJwQmI5VEhMbnI0SjdHbTI0?oc=5",
-      "source": "kabushiki.jp",
-      "publishedAt": "Tue, 08 Sep 2026 06:22:00 GMT"
+      "title": "日経平均の10月銘柄入れ替え発表､次の入れ替え候補は？",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE53cWFOV2RaX3c3ZzI0bmdJak5nc09LRk0xUWhCTVotNV9vZk1yVTJ5TEpHVWlhVG55SlgzMTFLX1RYR0FnV0Z4RUg3Rm1qTVpiREg0SnVyWQ?oc=5",
+      "source": "shikiho.toyokeizai.net",
+      "publishedAt": "Wed, 09 Sep 2026 02:30:00 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-03-02",
-      "close": 58057.24,
-      "sma25": 55793.42,
-      "sma75": 52482.14
-    },
     {
       "date": "2026-03-03",
       "close": 56279.05,
@@ -856,6 +850,12 @@
       "close": 65269.33,
       "sma25": 66209.88,
       "sma75": 66823.88
+    },
+    {
+      "date": "2026-09-09",
+      "close": 65142.78,
+      "sma25": 66257.29,
+      "sma75": 66823.68
     }
   ]
 }

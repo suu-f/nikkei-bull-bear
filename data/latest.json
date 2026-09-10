@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-09T12:17:45.944Z",
-  "asOfDate": "2026-09-09",
-  "price": 65142.78,
-  "sma25": 66257.29,
-  "sma75": 66823.68,
-  "deviationPct": -1.68,
-  "rsi14": 42.8,
-  "vol25AnnualizedPct": 24.8,
+  "updatedAt": "2026-09-10T12:11:27.981Z",
+  "asOfDate": "2026-09-10",
+  "price": 65270.95,
+  "sma25": 66216.11,
+  "sma75": 66827.34,
+  "deviationPct": -1.43,
+  "rsi14": 45,
+  "vol25AnnualizedPct": 21.9,
   "trend": "down",
   "overheat": "neutral",
   "highVol": false,
@@ -14,20 +14,20 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 153.319,
-      "changePct": -0.35
+      "value": 154.214,
+      "changePct": 0.48
     },
     "sp500": {
-      "value": 7673.52,
-      "changePct": -0.58
+      "value": 7636.36,
+      "changePct": -0.48
     },
     "vix": {
-      "value": 16.39,
-      "changePct": 4.26
+      "value": 16.85,
+      "changePct": 2.37
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bear",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
   "macroNote": null,
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "日経平均株価終値126円安 原油高警戒、電線株買いは支え",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBORm5ob2g4U1VnMmZ6NWItRU12S2YtWDNubVZkZWNDeEdYZ09weE00OHZIcGNUZVh4dEx2T0xVZFl6Tmo5b0tsb0hYdFJPbzlVQnZOZ3hzaXphcVhXZWFvTzBfRVZjNVdVcDY3bg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Wed, 09 Sep 2026 02:45:34 GMT"
+      "title": "日経平均、128円17銭高の6万5270円95銭で終了＝東京株式(時事通信)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUDVLeTdFSUJNd2J5QTAya2VwZy1YVzBqSzZ5a2ZiXzV1NjRKQkp4V3UwbnpNdUxzRWJFNFVWdFR5VEEyd3d6UzVvOXJZQkg4SGlZNk92UWdYRW1ZdVltQ0s4alM3MjQ4ODc4RW5kS1ZoUlZzS0hYNnhNcF9odkpmek5tMDRDbFk?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Thu, 10 Sep 2026 06:31:12 GMT"
     },
     {
-      "title": "「日経平均10万円へ」過熱する日本市場で「ボロ負け」する投資銘柄とは",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1nYjRTbjc2RTBfWE8tc2x2aWsxMWV1SzZtU1JxRWdQNlhVOTR5LVRZSUQ2YlZlR1hWTGdmTlVQd2Rad2tvQW5GR0l2bzRjbzBNeHEw?oc=5",
-      "source": "クーリエ・ジャポン",
-      "publishedAt": "Tue, 08 Sep 2026 21:00:11 GMT"
+      "title": "任天堂「ニンダイ」配信も軟調、決算のANYCOLORは急伸！/日経平均反発【今日の注目株＆日本株市場見通し】「デイリーZAi」9月10日号（ダイヤモンド・ザイ）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8yVThfMG5kT0MzRHBPQ2t6aUhCQmZaNGJEcmdiaDNjRjh4eWlwcEdlLTlyT2s2WldSUWZhNFhucy03YkRCczZ1a2wySUZRSVFnRl9CaEdXR0FpQ3g5Y3VUZ1A2em5VdDJrYUEzZWppMVVOZ0FTU1lGdjlNaGVKYWc?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Thu, 10 Sep 2026 11:10:26 GMT"
     },
     {
-      "title": "信用評価損益率、2週ぶり悪化 AI・半導体関連株下落で",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBiN0xYY3JXYzJ0czcxYjVyc1o5b3A2ZktodVJzV2NMMnd0QV9JT2JnbzVFMDVmOUhSRFpoSUpDSndmTmJ1cnVoekpQSUVMWmRKQlVHV0drS1dQU1pBRE9OR1BZemEtSWhPeExnZQ?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Wed, 09 Sep 2026 11:23:23 GMT"
+      "title": "日経平均6万円時代にどう向き合うか",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE90cmxFcmg4Z09pNElSSHBxRDQ2MU9LbnRjY3ZSRVRuRXJpb3otVE5tOTNPZktiNWphSEdNMjlXT3lYZk96OV9Uam1lOUdybjhVRXowRUhKR0tkWEZDREkzc0lsTUg3cXRxZFJJRVg5LVFxdFVndlJZbnIyYVNOZw?oc=5",
+      "source": "日経メディカル",
+      "publishedAt": "Wed, 09 Sep 2026 14:45:02 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月9日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1faG1CdDdwclAwMHpIMTVOM1pqS0p0dUZRRFBZdTAxRHM0R1FybXBEQXBXekJjd29Uc3FUa3Nka25BOWY3elYtWDA3ZEg2UEkxT3VnRWVJLVM4djNnUncyYQ?oc=5",
-      "source": "株探",
-      "publishedAt": "Tue, 08 Sep 2026 22:55:27 GMT"
+      "title": "日経平均は3日ぶり小反発、米ＣＰＩ発表前に手がけにくさ 原油・金利高警戒も",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaT21UeFVBVmJDRWpjWjZYei1pZHFKZXp6OXJXcWctaUplOGg4dTl2RGxwOXZSZlMtUGZWb0JTcjFhSFZMeTVLbmo1Rm1KVDgxTWN0LVBsYmM1dw?oc=5",
+      "source": "ニューズウィーク日本版",
+      "publishedAt": "Thu, 10 Sep 2026 08:02:00 GMT"
     },
     {
-      "title": "日経平均の10月銘柄入れ替え発表､次の入れ替え候補は？",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE53cWFOV2RaX3c3ZzI0bmdJak5nc09LRk0xUWhCTVotNV9vZk1yVTJ5TEpHVWlhVG55SlgzMTFLX1RYR0FnV0Z4RUg3Rm1qTVpiREg0SnVyWQ?oc=5",
-      "source": "shikiho.toyokeizai.net",
-      "publishedAt": "Wed, 09 Sep 2026 02:30:00 GMT"
+      "title": "10日の日経平均は持ち直す､AI関連の一角などに買い",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5iVXZNUGU5Rlo4TDBpcWhYM1pxRi01M3M0TThzdGtPLUVhczM0RmM2Z0NOaHRCd3R6UnNUUExuVlktNWxZTkM5RWNYSVlrVEExdUJ1R0wySQ?oc=5",
+      "source": "四季報オンライン",
+      "publishedAt": "Thu, 10 Sep 2026 07:20:00 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-03-03",
-      "close": 56279.05,
-      "sma25": 55890.7,
-      "sma75": 52562.18
-    },
     {
       "date": "2026-03-04",
       "close": 54245.54,
@@ -856,6 +850,12 @@
       "close": 65142.78,
       "sma25": 66257.29,
       "sma75": 66823.68
+    },
+    {
+      "date": "2026-09-10",
+      "close": 65270.95,
+      "sma25": 66216.11,
+      "sma75": 66827.34
     }
   ]
 }

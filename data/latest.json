@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-11T12:10:03.141Z",
-  "asOfDate": "2026-09-11",
-  "price": 64011.34,
-  "sma25": 66149.23,
-  "sma75": 66814.17,
-  "deviationPct": -3.23,
-  "rsi14": 40.7,
-  "vol25AnnualizedPct": 22.5,
+  "updatedAt": "2026-09-14T13:53:47.462Z",
+  "asOfDate": "2026-09-14",
+  "price": 63492.99,
+  "sma25": 66064.68,
+  "sma75": 66798.17,
+  "deviationPct": -3.89,
+  "rsi14": 35.8,
+  "vol25AnnualizedPct": 22.7,
   "trend": "down",
   "overheat": "neutral",
   "highVol": false,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 154.031,
-      "changePct": 0.3
+      "value": 154.969,
+      "changePct": 0.32
     },
     "sp500": {
-      "value": 7591.7,
-      "changePct": -0.58
+      "value": 7617.32,
+      "changePct": -0.52
     },
     "vix": {
-      "value": 17.08,
-      "changePct": -4.26
+      "value": 17.69,
+      "changePct": 11.68
     }
   },
   "macroAssessment": {
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "日経平均 一時2000円以上値下がり",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9lZm4weUdydUxmbEVQYUlaazNRbDFMMkduWldrZmVHWHBPeVdwbjRkTUpXR1NEb2YwcDhHekNIdWp6X3JJNjNiaHVaQkRwaC1i?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Fri, 11 Sep 2026 00:32:12 GMT"
+      "title": "シルバーウィーク直前の日経平均「6 万5,000円」まで回復するか？",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jMzVfMlFyNGNHaEhpN0FkVEVFTjJnbWw3NGRNYzRMVk9JbXRoVWg3cE11SnZmUGVCeWdRT2FRd1ZRSVNvd2tTRDlsT3BVSXpqSjJVQ0dqdjRSUQ?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Mon, 14 Sep 2026 02:00:00 GMT"
     },
     {
-      "title": "「鳥貴族」値上げ、あいち・三十三統合破談、タイミー決算/日経平均急反落【今日の注目株＆日本株市場見通し】「デイリーZAi」9月11日号（ダイヤモンド・ザイ）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBNejRuWlA3TUpSUWhHREpVNmZnY3hacnZuZ3FHY1hoS1lnVDhTVnY0TDBNUDVHQUdQYno4c0tZTTg4S2NLZ25YcDVaeHNyZEQ4RHBJSFB1OGNmd1RuZzNHTzZyRFk4X2Y0V1lYR1k2cmNkUG0xMHIzNEVLY2hHMVk?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Fri, 11 Sep 2026 11:10:28 GMT"
+      "title": "週明けの日経平均株価 一時1200円余下落 中東情勢やAI関連報道うけ",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9QLWJacGxOSWh1al9ybTAyajQwMGI4amJZcWpxa2JfUDFqcENBV3loMlNYNEpnSjRvckdaalQzS3MwdTVaRVhvV19zY1hENkxFWXFyWXlqRVFGMFBqVnlJQTFScm5vaUJxaFp1TEVmcXpnZw?oc=5",
+      "source": "テレ朝NEWS",
+      "publishedAt": "Mon, 14 Sep 2026 01:35:54 GMT"
     },
     {
-      "title": "日経平均は大幅反落、金利上昇と原油高で半導体関連に売り／ランチタイムコメント",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE53X1RnU3NXZjQwRjJuS1A4VmJBcUxLbEw2Z0FwalFTVXVMTC1OazN1M1JPaXUxcXBBYUVnaklUQkpOV1RGbTlnZDNnQk1IYWUtdUk0NnNRSklvQ3dUcW5MUQ?oc=5",
-      "source": "株探",
-      "publishedAt": "Fri, 11 Sep 2026 03:05:03 GMT"
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月14日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MY1FKMjBkYS1OeXFfMjgtTVNueEFicHR5RUVlOGtsQk1ZcERjOWhsTDJOOXFZUEozMnllWV83YmdpamZkSVBUdUhBVDF2cGxqU0U1bzYxRWNCZHNocTl0Tg?oc=5",
+      "source": "kabutan.jp",
+      "publishedAt": "Sun, 13 Sep 2026 22:41:22 GMT"
     },
     {
-      "title": "原油急伸と米金利上昇のダブルパンチ、日経平均は大幅安",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1qdzdKUWlncENEYzdidHpIM2NjeW5LUlpRdjljSk5qdFdxbUluM0pLV1Q0b2FBUzJMeS00Y2RjbGg5ZUdlOUEtSDg1U2lrZFRxUXZ1S3p0YU9sTjJBelhaZlJxLWlfWm1tSU9xbEQ4ZHFwaE5I?oc=5",
-      "source": "SBI証券",
-      "publishedAt": "Fri, 11 Sep 2026 01:06:27 GMT"
+      "title": "午前の日経平均は続落、米ＡＩ懸念や原油高が重し 売り一巡後は下げ渋り",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBja2RjMExPTzJKUjJKMzlTY2pKT0Fmc1FsU0NySFRWSkdSR0NTdWF2QnRlZkxzd1NlSXFKbEVyTUFoOF94TWZJa3dub19URENqR2s1V0NwUVpVUQ?oc=5",
+      "source": "ニューズウィーク日本版",
+      "publishedAt": "Mon, 14 Sep 2026 02:52:00 GMT"
     },
     {
-      "title": "日経平均、一時２０００円超下落…米国市場の原油先物価格・日米の長期金利上昇などで",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4xSXkyMHV6ai1XXzljY2NFY2JxYTJqYWVYSWQ0OTZ0dzJBdHVMLVhNVFpMcFBsWU1NS28yeE9IeUh4Zk9qWThEWnhNSG5oZ0hrRVFvMkN0TTlsSk5yWW0tYVFYVmQ?oc=5",
-      "source": "読売新聞",
-      "publishedAt": "Fri, 11 Sep 2026 00:09:00 GMT"
+      "title": "日経平均大引け：前週末比518.35円安の63492.99円｜FX・為替ニュース",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9IOFd4NnJmVmo2X2E5Q3BmV0wtMGlFS1JsTUozS3VJV3RSdGF0OW5abFYtemltOE9vX0d4QTBlYndqR2Jib01jME9xTlc1ckNZc0E?oc=5",
+      "source": "ザイFX！",
+      "publishedAt": "Mon, 14 Sep 2026 06:31:00 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-03-05",
-      "close": 55278.06,
-      "sma25": 56022.9,
-      "sma75": 52665.76
-    },
     {
       "date": "2026-03-06",
       "close": 55620.84,
@@ -856,6 +850,12 @@
       "close": 64011.34,
       "sma25": 66149.23,
       "sma75": 66814.17
+    },
+    {
+      "date": "2026-09-14",
+      "close": 63492.99,
+      "sma25": 66064.68,
+      "sma75": 66798.17
     }
   ]
 }

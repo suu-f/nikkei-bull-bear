@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-14T13:53:47.462Z",
-  "asOfDate": "2026-09-14",
-  "price": 63492.99,
-  "sma25": 66064.68,
-  "sma75": 66798.17,
-  "deviationPct": -3.89,
-  "rsi14": 35.8,
-  "vol25AnnualizedPct": 22.7,
+  "updatedAt": "2026-09-15T12:37:12.305Z",
+  "asOfDate": "2026-09-15",
+  "price": 63484.1,
+  "sma25": 65925.24,
+  "sma75": 66760.23,
+  "deviationPct": -3.7,
+  "rsi14": 32.5,
+  "vol25AnnualizedPct": 21.5,
   "trend": "down",
   "overheat": "neutral",
   "highVol": false,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 154.969,
-      "changePct": 0.32
+      "value": 154.933,
+      "changePct": 0.98
     },
     "sp500": {
-      "value": 7617.32,
-      "changePct": -0.52
+      "value": 7619.98,
+      "changePct": -0.48
     },
     "vix": {
-      "value": 17.69,
-      "changePct": 11.68
+      "value": 17.04,
+      "changePct": -0.35
     }
   },
   "macroAssessment": {
@@ -43,46 +43,40 @@
   },
   "news": [
     {
+      "title": "日経平均終値8円安、金利上昇で一転下落 「過度なAI減速論」は小休止",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1zclluZWdHLXNleElkUkZUMVFRa2p4MmxTcW5Uc3dDMWg1SzQtZU40Q2o2U2FvX0FIcnRDNFFnRmRUZ0xoVVplLVJjYXA5UFRRSnR0blpnZm5hWHltRkVHVVdwUU5kZ0RVc3lWeg?oc=5",
+      "source": "nikkei.com",
+      "publishedAt": "Tue, 15 Sep 2026 03:01:54 GMT"
+    },
+    {
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月15日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBINjhISm1mcEEwM19XY0dDU0pDbnNvN2FjZE54Ykt5WWw2dGdiUUE4TFJad2FfZnVsUlVELTNtQUl6UC1IdlNDbHlHTnhSTXh5OE9wQVdkWFdZcHpZcUpJbw?oc=5",
+      "source": "株探",
+      "publishedAt": "Mon, 14 Sep 2026 22:47:08 GMT"
+    },
+    {
       "title": "シルバーウィーク直前の日経平均「6 万5,000円」まで回復するか？",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jMzVfMlFyNGNHaEhpN0FkVEVFTjJnbWw3NGRNYzRMVk9JbXRoVWg3cE11SnZmUGVCeWdRT2FRd1ZRSVNvd2tTRDlsT3BVSXpqSjJVQ0dqdjRSUQ?oc=5",
-      "source": "トウシル",
+      "source": "media.rakuten-sec.net",
       "publishedAt": "Mon, 14 Sep 2026 02:00:00 GMT"
     },
     {
-      "title": "週明けの日経平均株価 一時1200円余下落 中東情勢やAI関連報道うけ",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9QLWJacGxOSWh1al9ybTAyajQwMGI4amJZcWpxa2JfUDFqcENBV3loMlNYNEpnSjRvckdaalQzS3MwdTVaRVhvV19zY1hENkxFWXFyWXlqRVFGMFBqVnlJQTFScm5vaUJxaFp1TEVmcXpnZw?oc=5",
-      "source": "テレ朝NEWS",
-      "publishedAt": "Mon, 14 Sep 2026 01:35:54 GMT"
+      "title": "（まとめ）日経平均は8円安の63,484円と小幅続落　中銀会合前に終日方向感に欠ける展開",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9GSzluX010ZHVJaWN5ajZ2SkJfYmNHbW92ZUxSTGFXeGFyS2FyeTBJOG9hWUU3d000SnlXOTZ4bUVxMVBZOWVpaHZtVGJPcDlxbkRJU9IBV0FVX3lxTE9GY2tQdTJuRDlsTTZVNE5ra0NXeFR0Zmc3Uk5tZTAyTV9iUmxfaUVYeVljOXFwSllTLThmQ3JyQ0luYThjTHBvNkpGS01GU3U1MjlRYXhzQQ?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Tue, 15 Sep 2026 07:22:00 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月14日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MY1FKMjBkYS1OeXFfMjgtTVNueEFicHR5RUVlOGtsQk1ZcERjOWhsTDJOOXFZUEozMnllWV83YmdpamZkSVBUdUhBVDF2cGxqU0U1bzYxRWNCZHNocTl0Tg?oc=5",
-      "source": "kabutan.jp",
-      "publishedAt": "Sun, 13 Sep 2026 22:41:22 GMT"
-    },
-    {
-      "title": "午前の日経平均は続落、米ＡＩ懸念や原油高が重し 売り一巡後は下げ渋り",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBja2RjMExPTzJKUjJKMzlTY2pKT0Fmc1FsU0NySFRWSkdSR0NTdWF2QnRlZkxzd1NlSXFKbEVyTUFoOF94TWZJa3dub19URENqR2s1V0NwUVpVUQ?oc=5",
-      "source": "ニューズウィーク日本版",
-      "publishedAt": "Mon, 14 Sep 2026 02:52:00 GMT"
-    },
-    {
-      "title": "日経平均大引け：前週末比518.35円安の63492.99円｜FX・為替ニュース",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9IOFd4NnJmVmo2X2E5Q3BmV0wtMGlFS1JsTUozS3VJV3RSdGF0OW5abFYtemltOE9vX0d4QTBlYndqR2Jib01jME9xTlc1ckNZc0E?oc=5",
-      "source": "ザイFX！",
-      "publishedAt": "Mon, 14 Sep 2026 06:31:00 GMT"
+      "title": "日経平均は１３０円程度安、売買代金はキオクシア、ソフバンＧ、太陽誘電が上位(ウエルスアドバイザー)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQcGUwamxZUmtuRGl0clhOS0xNTFJqcl9ZeWpibUI2eUVERk1xTHBmWTlLcUxCR0FGZ1poWTRmTUlEZGZJTWtHS1hIUWhuNFF1Mml6SXQ5QmJfemlraHlDVlJ5VjdfQ19CemFXMVExdzV0eHN2SzY3UVdsUzFYT3JabW5jVnlCa2M?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Tue, 15 Sep 2026 05:03:28 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-03-06",
-      "close": 55620.84,
-      "sma25": 56113.38,
-      "sma75": 52726.53
-    },
     {
       "date": "2026-03-09",
       "close": 52728.72,
@@ -856,6 +850,12 @@
       "close": 63492.99,
       "sma25": 66064.68,
       "sma75": 66798.17
+    },
+    {
+      "date": "2026-09-15",
+      "close": 63484.1,
+      "sma25": 65925.24,
+      "sma75": 66760.23
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-17T12:33:08.870Z",
-  "asOfDate": "2026-09-17",
-  "price": 64136.25,
-  "sma25": 65614.3,
-  "sma75": 66685.44,
-  "deviationPct": -2.25,
-  "rsi14": 36.2,
-  "vol25AnnualizedPct": 21,
+  "updatedAt": "2026-09-18T12:11:17.366Z",
+  "asOfDate": "2026-09-18",
+  "price": 65018.95,
+  "sma25": 65466.51,
+  "sma75": 66640.33,
+  "deviationPct": -0.68,
+  "rsi14": 42.8,
+  "vol25AnnualizedPct": 21.5,
   "trend": "down",
   "overheat": "neutral",
   "highVol": false,
@@ -14,23 +14,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 155.47,
-      "changePct": 0.13
+      "value": 157.883,
+      "changePct": 1.2
     },
     "sp500": {
-      "value": 7551.81,
-      "changePct": -0.45
+      "value": 7637.76,
+      "changePct": 1.14
     },
     "vix": {
-      "value": 15.64,
-      "changePct": -11.69
+      "value": 15.4,
+      "changePct": -0.26
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bull",
     "vixStatus": "calm"
   },
-  "macroNote": null,
+  "macroNote": "テクニカルはベア型優勢ですが、為替・米国株など外部環境は逆風気味です。",
   "conviction": {
     "level": 1,
     "levelLabel": "弱い",
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "日経平均は続伸、米ＦＯＭＣ波乱なく通過で 方向感は乏しく",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNTjBkQjNrTFZYTEI4dk1WQ1NwR2xDdmJqX2pzVWo1OVV3a01UUVdrWEtuTWdNOVFwNzEwLWh5YzZqWFlpdU1LQURRZ0pLRFhTZXlaektHUlVndi1QWERhV2hqUkRhMVo0U1BmU3hmVTl6dDFYeVEwbWVnWklmSjVDeVV2MUtadw?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Thu, 17 Sep 2026 07:20:36 GMT"
-    },
-    {
-      "title": "【日本市況】円下落、原油高で対ドル155円台前半－超長期金利が上昇",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE55YzlHRFdleUN5WV8zQkg5ZXkyYjVMeHNPNHlDWHJJZElDaGxnaDFrdkJLY2d1UjM2ck5CTVgxRDRLXzVjV0VGcUdUTjhCY05OYTkzNU5kODV3eW9Xd3c5TGJBa3Juc3FBY2NPZFpIT01kdTVxSGRj?oc=5",
-      "source": "Bloomberg.com",
-      "publishedAt": "Wed, 16 Sep 2026 00:36:45 GMT"
-    },
-    {
-      "title": "正直､｢日経平均10万円｣でも喜べない…日本株のプロが危惧する｢株価暴落の引き金｣と日本企業が辿る末路",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA2T281OGhsM1B3WTZzRk9KVGRjSFZDclBpY0RweDFqaVhiUVNzUl9xNkpsMG5rdjlLcnhaWjZ5LTJuLVozd05GbUVPU3dpWk8tNE5DT0hmN0RBMmg4TEhKeXdiZHF3cXlNQUtFMzNtQ0F1S1FQXzhQaWJKSEQ1aFU?oc=5",
+      "title": "日経平均、1100円超高＝東京株式（時事通信）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8wd3NnSVhEa1N2QkFraF9yT2VfRm9pMlNvNng0VHlqWVNCWXU2NE9tNnZ1NjY5MkNMQTJyVWVXTVdINFF1TnNKRGkybHZ2UXlOZUNhWDRHYTlUbnlHN081VWZTWnM0eVdCWVZFUGh5Q2hZQ243Wm8xTkltYkxPTVk?oc=5",
       "source": "Yahoo!ニュース",
-      "publishedAt": "Wed, 16 Sep 2026 21:15:40 GMT"
+      "publishedAt": "Fri, 18 Sep 2026 04:00:33 GMT"
     },
     {
-      "title": "（まとめ）日経平均は213円高の64,136円で続伸　日銀金融政策決定会合を控え様子見の展開",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9qZTlTSjExY0JBcVlhbDM4WmxrVUQtN3dSenlKNU52d3R2VDh4QXlnUHVBa3NubHZPdmdyNURmMFdDUURmdzBXZ2hHYzA2YVR0Y1JOaNIBV0FVX3lxTE81aDRpZWYzUnZ1NzRxMFN5MU5TMDBBRWYzbVlLVG5wQkdMNmJtLTJOUHNHVHVTWkRxRUJ4TXZXRW1GbFB1TVFsWkNyZkFZT1duVjNlMk43SQ?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Thu, 17 Sep 2026 07:44:00 GMT"
-    },
-    {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月16日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE13QVI0dUo1TkZ4RFktVjRUV0lnS0ZPbUt3QjM0d0xvNjVLd0hMV2ZJNWRoUVlabzRGTnZ5SDRSVE1DajJwTkUxVXlxcW5VSnluYkxwX0xKbGhzRzBRMnJHeg?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月18日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAzMnZocXBtRWc0M3F5dEdWTlg5S2FDNXc3X1hoVF9tbmEteVI4UzRXSmRrcDZHTFUyT01jM0UxckpBYnpMMnhQU1BNYS1xMnRqSFY2NDU4YWR2aWEwMHE3cA?oc=5",
       "source": "株探",
-      "publishedAt": "Tue, 15 Sep 2026 23:17:52 GMT"
+      "publishedAt": "Thu, 17 Sep 2026 23:21:43 GMT"
+    },
+    {
+      "title": "日経平均株価の指数情報・推移",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Fri, 18 Sep 2026 06:37:02 GMT"
+    },
+    {
+      "title": "来週の日経平均見通し（9/21〜9/25）｜65,000円台回復！日銀利上げ後も株高続く？米金利・AI株の動向に注目",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE96QmcyVlgyWi1jb0FsMng0ODdiNTNuT2trcXlJNnNISURFa290OGJ4NVo1R2tRaUx5RDVQNVNZUWUxVlBCWTVxUFpTb0NMaV82MXk0UHlVcXVuWVRtcVRiWmxkbw?oc=5",
+      "source": "外為どっとコム",
+      "publishedAt": "Fri, 18 Sep 2026 08:38:54 GMT"
+    },
+    {
+      "title": "日経平均株価、3日続伸 終値882円高の6万5018円",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5Kam5jN2FJWUktOWNPRHpEZkh5T0RvUTI5aElXWmh2SThoNGljUkdlcHp0QU5xVGhlS0xNXzU2S3JERHdKYkh3aUJqaEc1VXdjWGNOY25LTVJJSHdfX3dSMFhRV1dzMG1fWGg0RQ?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Fri, 18 Sep 2026 00:05:02 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-03-11",
-      "close": 55025.37,
-      "sma25": 56219.33,
-      "sma75": 52860.13
-    },
     {
       "date": "2026-03-12",
       "close": 54452.96,
@@ -856,6 +850,12 @@
       "close": 64136.25,
       "sma25": 65614.3,
       "sma75": 66685.44
+    },
+    {
+      "date": "2026-09-18",
+      "close": 65018.95,
+      "sma25": 65466.51,
+      "sma75": 66640.33
     }
   ]
 }

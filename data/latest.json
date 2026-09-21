@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T12:11:17.366Z",
+  "updatedAt": "2026-09-21T13:56:32.671Z",
   "asOfDate": "2026-09-18",
   "price": 65018.95,
   "sma25": 65466.51,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 157.883,
-      "changePct": 1.2
+      "value": 157.429,
+      "changePct": 0.83
     },
     "sp500": {
-      "value": 7637.76,
-      "changePct": 1.14
+      "value": 7704.23,
+      "changePct": 0.7
     },
     "vix": {
-      "value": 15.4,
-      "changePct": -0.26
+      "value": 14.89,
+      "changePct": 0.54
     }
   },
   "macroAssessment": {
@@ -43,34 +43,34 @@
   },
   "news": [
     {
-      "title": "日経平均、1100円超高＝東京株式（時事通信）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8wd3NnSVhEa1N2QkFraF9yT2VfRm9pMlNvNng0VHlqWVNCWXU2NE9tNnZ1NjY5MkNMQTJyVWVXTVdINFF1TnNKRGkybHZ2UXlOZUNhWDRHYTlUbnlHN081VWZTWnM0eVdCWVZFUGh5Q2hZQ243Wm8xTkltYkxPTVk?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Fri, 18 Sep 2026 04:00:33 GMT"
-    },
-    {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月18日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAzMnZocXBtRWc0M3F5dEdWTlg5S2FDNXc3X1hoVF9tbmEteVI4UzRXSmRrcDZHTFUyT01jM0UxckpBYnpMMnhQU1BNYS1xMnRqSFY2NDU4YWR2aWEwMHE3cA?oc=5",
-      "source": "株探",
-      "publishedAt": "Thu, 17 Sep 2026 23:21:43 GMT"
-    },
-    {
-      "title": "日経平均株価の指数情報・推移",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Fri, 18 Sep 2026 06:37:02 GMT"
-    },
-    {
-      "title": "来週の日経平均見通し（9/21〜9/25）｜65,000円台回復！日銀利上げ後も株高続く？米金利・AI株の動向に注目",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE96QmcyVlgyWi1jb0FsMng0ODdiNTNuT2trcXlJNnNISURFa290OGJ4NVo1R2tRaUx5RDVQNVNZUWUxVlBCWTVxUFpTb0NMaV82MXk0UHlVcXVuWVRtcVRiWmxkbw?oc=5",
-      "source": "外為どっとコム",
-      "publishedAt": "Fri, 18 Sep 2026 08:38:54 GMT"
-    },
-    {
-      "title": "日経平均株価、3日続伸 終値882円高の6万5018円",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5Kam5jN2FJWUktOWNPRHpEZkh5T0RvUTI5aElXWmh2SThoNGljUkdlcHp0QU5xVGhlS0xNXzU2S3JERHdKYkh3aUJqaEc1VXdjWGNOY25LTVJJSHdfX3dSMFhRV1dzMG1fWGg0RQ?oc=5",
+      "title": "円は介入警戒で下値限定、日経平均は堅調な展開か 今週の市場・予定",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE55X3Rac2xyZ0U4dmRJYjZJNkd2SVBpUzNib2JhTmp4OExoSl9qbFdwM0RtYVFHaFZxaWU5RE42M29EMDBmUkVEa3hOYmFPVExteUV4dkZ2bUVBZjlhUm53MVlST2N1enFHVmZlQQ?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Fri, 18 Sep 2026 00:05:02 GMT"
+      "publishedAt": "Sun, 20 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "title": "株式インデックスが抱える“限界”とは―日経平均7万円時代に見つめ直したい「インデックス投資」の意味（Finasee）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1aVGJNUFJOcV9GSGI5Rnd0UVN1bV96VlFLbWRPRlVfWlJheVZ6OENsMjlxTzlMemppeWltcGFkQzlndGZJS2hMdlJocGhwRTJMYWdvdG0zME14VHlOQzY2RWJaSmdBNll0aFBqemtGM2ZJVTFxRHY3RnhoU2NkMGM?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Sun, 20 Sep 2026 02:50:12 GMT"
+    },
+    {
+      "title": "日経平均の上昇トレンド入りへ､越えるべきハードルとは？",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1nVTRsWC1jcF9wbGNMbVRkLXFoUTBYSnFBNlVSdmVyX0hZbHlqN2N1aWVEX2Y5OXZxMlBFODc4enI2cnE4X0JLajlyek9PcGFncGE0a0FCYw?oc=5",
+      "source": "四季報オンライン",
+      "publishedAt": "Sat, 19 Sep 2026 23:00:00 GMT"
+    },
+    {
+      "title": "来週（9/24～9/25）の日経平均株価の予想レンジは6万3000～6万7000円！ シルバーウィーク中の原油相場や長期金利、欧米市場の動向に左右される展開に",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBiS3ZSRWxCcWdsOTVZT3l2SzdpNGt3eWdRNXpycnV0SE9idGtPU1I2MDM4NWxtMGFHM3RqRXJGbVlkXzhCb3BsZWtIY2hJVC1CTGJv?oc=5",
+      "source": "diamond.jp",
+      "publishedAt": "Fri, 18 Sep 2026 12:05:00 GMT"
+    },
+    {
+      "title": "日経平均株価は上昇か暴落か？ 人気占い師yujiが星読みで動向を大予測！",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5DeFlfcldZanRBQU50cTJ1MlQtSkZ4Qy16eGpOd2p0NzlTekRnb3lfRmNzblM5SHljdUZ2eVdBUHdHUmYwQUpQT3pMdnZIR2ZiTXd1UWZSN3BJZkJscTJJaER3dGp1UDdxM05aQTJTS1NxbU5TTEVuR1BTVUs3NEU?oc=5",
+      "source": "elle.com",
+      "publishedAt": "Sat, 19 Sep 2026 04:47:35 GMT"
     }
   ],
   "signal": "bear",

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T13:56:32.671Z",
+  "updatedAt": "2026-09-22T12:32:22.998Z",
   "asOfDate": "2026-09-18",
   "price": 65018.95,
   "sma25": 65466.51,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 157.429,
-      "changePct": 0.83
+      "value": 157.175,
+      "changePct": 0.08
     },
     "sp500": {
-      "value": 7704.23,
-      "changePct": 0.7
+      "value": 7764.7,
+      "changePct": 1.49
     },
     "vix": {
-      "value": 14.89,
-      "changePct": 0.54
+      "value": 14.67,
+      "changePct": -1.34
     }
   },
   "macroAssessment": {
@@ -45,32 +45,32 @@
     {
       "title": "円は介入警戒で下値限定、日経平均は堅調な展開か 今週の市場・予定",
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE55X3Rac2xyZ0U4dmRJYjZJNkd2SVBpUzNib2JhTmp4OExoSl9qbFdwM0RtYVFHaFZxaWU5RE42M29EMDBmUkVEa3hOYmFPVExteUV4dkZ2bUVBZjlhUm53MVlST2N1enFHVmZlQQ?oc=5",
-      "source": "日本経済新聞",
+      "source": "nikkei.com",
       "publishedAt": "Sun, 20 Sep 2026 09:00:00 GMT"
     },
     {
-      "title": "株式インデックスが抱える“限界”とは―日経平均7万円時代に見つめ直したい「インデックス投資」の意味（Finasee）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1aVGJNUFJOcV9GSGI5Rnd0UVN1bV96VlFLbWRPRlVfWlJheVZ6OENsMjlxTzlMemppeWltcGFkQzlndGZJS2hMdlJocGhwRTJMYWdvdG0zME14VHlOQzY2RWJaSmdBNll0aFBqemtGM2ZJVTFxRHY3RnhoU2NkMGM?oc=5",
+      "title": "シルバーウィークの日経平均先物急伸、「Muse」人気で米テック株高騰（Bloomberg）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE54LThhNjJTdWpaa09fZTJCOXJTYUFTNTdhNmFoSXJhRXlvVElPX2NvY1AxZVM5eENQby1rc1AxV0xZQ1MtdmlRdzRCc3JhWHZhUWRGMjFWYzZsMzAzQnFLR1NmcXhvdGtCUkFISUxQV0NCcHp0clBHX05EUWh3Mmc?oc=5",
       "source": "Yahoo!ニュース",
-      "publishedAt": "Sun, 20 Sep 2026 02:50:12 GMT"
+      "publishedAt": "Tue, 22 Sep 2026 02:00:59 GMT"
     },
     {
-      "title": "日経平均の上昇トレンド入りへ､越えるべきハードルとは？",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1nVTRsWC1jcF9wbGNMbVRkLXFoUTBYSnFBNlVSdmVyX0hZbHlqN2N1aWVEX2Y5OXZxMlBFODc4enI2cnE4X0JLajlyek9PcGFncGE0a0FCYw?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Sat, 19 Sep 2026 23:00:00 GMT"
+      "title": "シカゴ日経平均先物 大取終値比 1300円高 （9月21日）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB5MGg5WUEtVjRDQnhHX05wdUM0SVdPRkhkM1RZSk1ra0d2U2kxT0M3bWZvYndSUW1QYV9XR2RHdDJxZHIzTTlRMlZTa3BlTjZUeWFOd09JQzl5bUlkbVJtOA?oc=5",
+      "source": "株探",
+      "publishedAt": "Mon, 21 Sep 2026 22:39:14 GMT"
     },
     {
-      "title": "来週（9/24～9/25）の日経平均株価の予想レンジは6万3000～6万7000円！ シルバーウィーク中の原油相場や長期金利、欧米市場の動向に左右される展開に",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBiS3ZSRWxCcWdsOTVZT3l2SzdpNGt3eWdRNXpycnV0SE9idGtPU1I2MDM4NWxtMGFHM3RqRXJGbVlkXzhCb3BsZWtIY2hJVC1CTGJv?oc=5",
-      "source": "diamond.jp",
-      "publishedAt": "Fri, 18 Sep 2026 12:05:00 GMT"
+      "title": "日米欧が同時利上げ 「日経平均は年内6万円台なら十分」",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBUQkExTUF6ZnFMQmU4dlVHUzdIQ2s1MExNUEg3UzBPTVp1eDc1MEUtenZmbjVuZ0wwUGZjRHFBLXBwQmlERnljZE96NDczbDZUT0VyWF9KalV1M3ZWRHNnQmg1Zmt2b25oM1Vj?oc=5",
+      "source": "テレ東BIZ",
+      "publishedAt": "Mon, 21 Sep 2026 12:00:00 GMT"
     },
     {
-      "title": "日経平均株価は上昇か暴落か？ 人気占い師yujiが星読みで動向を大予測！",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5DeFlfcldZanRBQU50cTJ1MlQtSkZ4Qy16eGpOd2p0NzlTekRnb3lfRmNzblM5SHljdUZ2eVdBUHdHUmYwQUpQT3pMdnZIR2ZiTXd1UWZSN3BJZkJscTJJaER3dGp1UDdxM05aQTJTS1NxbU5TTEVuR1BTVUs3NEU?oc=5",
-      "source": "elle.com",
-      "publishedAt": "Sat, 19 Sep 2026 04:47:35 GMT"
+      "title": "【株式市場特集】日経平均１０万円は現実になるか？「買えば安心」の前に知っておきたい条件",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE91anQ0ZTlUYUJBZWZwWlNZakM1TXVyaHBmR0JKVWhjclp4amdMUE9jZ0RtZ2xwN2V3dktTRl9iOE12UUhReDJobTFwV1ZYMGxpWFd0WA?oc=5",
+      "source": "kabu-ir.com",
+      "publishedAt": "Tue, 22 Sep 2026 04:00:00 GMT"
     }
   ],
   "signal": "bear",

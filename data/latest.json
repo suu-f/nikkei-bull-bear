@@ -1,88 +1,79 @@
 {
-  "updatedAt": "2026-09-23T12:42:37.264Z",
-  "asOfDate": "2026-09-18",
-  "price": 65018.95,
-  "sma25": 65466.51,
-  "sma75": 66640.33,
-  "deviationPct": -0.68,
-  "rsi14": 42.8,
+  "updatedAt": "2026-09-24T12:40:48.145Z",
+  "asOfDate": "2026-09-24",
+  "price": 65513.99,
+  "sma25": 65318.25,
+  "sma75": 66614.24,
+  "deviationPct": 0.3,
+  "rsi14": 46.3,
   "vol25AnnualizedPct": 21.5,
-  "trend": "down",
+  "trend": "mixed",
   "overheat": "neutral",
   "highVol": false,
   "crossSignal": null,
-  "nextTrigger": null,
+  "nextTrigger": {
+    "direction": "below",
+    "level": 65318.25,
+    "distancePct": 0.3,
+    "resultingSignal": "bear",
+    "note": "終値が25日線を下抜けるとベア型優勢に転換します"
+  },
   "macro": {
     "usdjpy": {
-      "value": 157.954,
-      "changePct": 0.37
+      "value": 158.805,
+      "changePct": 0.85
     },
     "sp500": {
-      "value": 7764.7,
-      "changePct": 1.49
+      "value": 7706.03,
+      "changePct": -0.76
     },
     "vix": {
-      "value": 14.31,
-      "changePct": -3.77
+      "value": 15.99,
+      "changePct": 5.34
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
-  "macroNote": "テクニカルはベア型優勢ですが、為替・米国株など外部環境は逆風気味です。",
-  "conviction": {
-    "level": 1,
-    "levelLabel": "弱い",
-    "successRatePct": 37.5,
-    "avgForwardReturnPct": 1.1,
-    "sampleSize": 304,
-    "horizonDays": 10,
-    "lowSample": false,
-    "noEdge": true
-  },
+  "macroNote": null,
+  "conviction": null,
   "news": [
     {
-      "title": "シカゴ日経平均先物 大取終値比 1870円高 （9月22日）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4zaEhFbW5PY1RhSlRFZUxvYjZFUGZXZXItaWZWV0xUZHBGcWhvNmNHZ1VxSWJQVUZZUWRwWkpzaDJjNktyTlZ6S3k3bEFibVJUVVVVVDlnakpzRndyVDItRQ?oc=5",
-      "source": "株探",
-      "publishedAt": "Tue, 22 Sep 2026 22:39:10 GMT"
+      "title": "【↑】日経平均 大引け｜ 4日続伸、AI・半導体関連に資金流入 (9月24日)(株探ニュース)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeHpFdUowZHMtUnJ3UzBhZHZCN0JjZ0NtN2ptdzRGOGxBSWxaYkJNMk5zcEdFWFptcWo3MXNseTl6eGgyMXhvN3ZVV3RrcjJYTWt1YUM4OE0zcHhwRGh3RVI2eUs0WFhpOUt2UjZXdE11TXg5dGFGYW9oc0pheHd3alBjVkh5WkE?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Thu, 24 Sep 2026 07:46:46 GMT"
     },
     {
-      "title": "シルバーウィークの日経平均先物急伸、「Muse」人気で米テック株高騰（Bloomberg）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE54LThhNjJTdWpaa09fZTJCOXJTYUFTNTdhNmFoSXJhRXlvVElPX2NvY1AxZVM5eENQby1rc1AxV0xZQ1MtdmlRdzRCc3JhWHZhUWRGMjFWYzZsMzAzQnFLR1NmcXhvdGtCUkFISUxQV0NCcHp0clBHX05EUWh3Mmc?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Tue, 22 Sep 2026 02:00:59 GMT"
+      "title": "【日経平均株価】11/3の米･中間選挙までは長期下落トレンドが継続!? 原油高と金利の先高観が後退するまで｢バリュー株｣や｢ドローン･自動運転｣関連株に注目！",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0yYVRGYU1nM3QwZHRhRkFrQlM5M1pWbjV6b2dtZkdaSENiVG9nYlVYbV8yUHpyVUQ4SnNoNmxBZkhfRm4xOTZuNWhUcHhNX19ucXdN?oc=5",
+      "source": "ダイヤモンド・オンライン",
+      "publishedAt": "Thu, 24 Sep 2026 09:00:00 GMT"
     },
     {
-      "title": "日経平均先物、大取の夜間取引で上昇 1280円高の6万6380円",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBoc1VPMVhXbE5aMFY0eV9TTDRrVk5oRXlYaHJQc1RGbWNHejZZSkItNzRmVnpWOE5MNElTamV3SUN6cFVVNjNpU3AwLXhhaURONnFQUXE5bjhORExkVUJoWDVCcFVoQWp3NkliZg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Mon, 21 Sep 2026 21:20:30 GMT"
+      "title": "日経平均株価の指数情報・推移",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Thu, 24 Sep 2026 09:07:21 GMT"
     },
     {
-      "title": "日米欧が同時利上げ 「日経平均は年内6万円台なら十分」",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBUQkExTUF6ZnFMQmU4dlVHUzdIQ2s1MExNUEg3UzBPTVp1eDc1MEUtenZmbjVuZ0wwUGZjRHFBLXBwQmlERnljZE96NDczbDZUT0VyWF9KalV1M3ZWRHNnQmg1Zmt2b25oM1Vj?oc=5",
-      "source": "txbiz.tv-tokyo.co.jp",
-      "publishedAt": "Mon, 21 Sep 2026 12:00:00 GMT"
+      "title": "日経平均株価、連休中の米ハイテク株上昇が追い風（先読み株式相場）",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0zdkRraGRXVjd2LTRYamMwYkFKQUdqcTBUVHlnTDNIb3dnMEhuUzlnQmlMZVVJaE5EZ2hrN3JMZ3c4WlpFb25xbXdkdl8tVFBHdENGUEcyanp0YnpmWmt4S21kcTNoOERpRUVmag?oc=5",
+      "source": "nikkei.com",
+      "publishedAt": "Wed, 23 Sep 2026 22:40:33 GMT"
     },
     {
-      "title": "ＮＹ各市場 ４時台 ダウ平均は１６１ドル安 シカゴ日経平均先物は６万６９４５円",
-      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Za2pZeUhQRm9kMUNuYzZqMDEtbkRrQnVkaWVaMXNOb3ltLUp3ekRZMWE1RlhXQmpDdHFVRGJzOWdINkxMR0p4cw?oc=5",
-      "source": "みんかぶ FX/為替",
-      "publishedAt": "Tue, 22 Sep 2026 19:02:57 GMT"
+      "title": "今日の株式見通し＝買い先行、連休中の海外株高に追随 一巡後は模様眺めも",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNbHR4RTUwekgzc205eWMzSWZReWs2ZVZ0V0RsSlhEaHU4Y3h0Z21OdmRvQnp4c3p0V1ByLVpjc0tDaXJyVnZvOHdRRWJpRXdsZ3RtVnVOREw0Wk8yOVFHRTZhVDdyT3I5SnJGNEo4Rnh3QnhIY1Y2NldjTEU3aTFENHdQRzZTZw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Wed, 23 Sep 2026 23:07:38 GMT"
     }
   ],
-  "signal": "bear",
-  "headline": "ベア型優勢",
-  "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
+  "signal": "wait",
+  "headline": "様子見(トレンド不明瞭)",
+  "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-12",
-      "close": 54452.96,
-      "sma25": 56208.63,
-      "sma75": 52936.8
-    },
     {
       "date": "2026-03-13",
       "close": 53819.61,
@@ -856,6 +847,12 @@
       "close": 65018.95,
       "sma25": 65466.51,
       "sma75": 66640.33
+    },
+    {
+      "date": "2026-09-24",
+      "close": 65513.99,
+      "sma25": 65318.25,
+      "sma75": 66614.24
     }
   ]
 }

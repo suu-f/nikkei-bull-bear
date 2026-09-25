@@ -1,85 +1,79 @@
 {
-  "updatedAt": "2026-09-24T12:40:48.145Z",
-  "asOfDate": "2026-09-24",
-  "price": 65513.99,
-  "sma25": 65318.25,
-  "sma75": 66614.24,
-  "deviationPct": 0.3,
-  "rsi14": 46.3,
-  "vol25AnnualizedPct": 21.5,
+  "updatedAt": "2026-09-25T12:42:55.191Z",
+  "asOfDate": "2026-09-25",
+  "price": 66364.2,
+  "sma25": 65274.39,
+  "sma75": 66611.25,
+  "deviationPct": 1.67,
+  "rsi14": 62.2,
+  "vol25AnnualizedPct": 20.5,
   "trend": "mixed",
   "overheat": "neutral",
   "highVol": false,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 65318.25,
-    "distancePct": 0.3,
+    "level": 65274.39,
+    "distancePct": 1.64,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 158.805,
-      "changePct": 0.85
+      "value": 157.725,
+      "changePct": -0.34
     },
     "sp500": {
-      "value": 7706.03,
-      "changePct": -0.76
+      "value": 7704.13,
+      "changePct": -0.02
     },
     "vix": {
-      "value": 15.99,
-      "changePct": 5.34
+      "value": 15.11,
+      "changePct": -3.57
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bear",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "【↑】日経平均 大引け｜ 4日続伸、AI・半導体関連に資金流入 (9月24日)(株探ニュース)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeHpFdUowZHMtUnJ3UzBhZHZCN0JjZ0NtN2ptdzRGOGxBSWxaYkJNMk5zcEdFWFptcWo3MXNseTl6eGgyMXhvN3ZVV3RrcjJYTWt1YUM4OE0zcHhwRGh3RVI2eUs0WFhpOUt2UjZXdE11TXg5dGFGYW9oc0pheHd3alBjVkh5WkE?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Thu, 24 Sep 2026 07:46:46 GMT"
+      "title": "東証大引け 日経平均は5日続伸 AI・半導体関連が押し上げ 中間配当の権利取りも追い風",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBRbE5ENHp3ZlJpREY1RGR1TnN5ZmJmYlJJX09uRmk1NlVqQlg0Ri1VM2J3V2NXMk9aOGxPMkZ0TU4tTlpic0pZaFdLSFZITmVxd09PN1FUY21NcEF2TkYzVFpuLVA1N2dRd1oxdQ?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Fri, 25 Sep 2026 06:45:53 GMT"
     },
     {
-      "title": "【日経平均株価】11/3の米･中間選挙までは長期下落トレンドが継続!? 原油高と金利の先高観が後退するまで｢バリュー株｣や｢ドローン･自動運転｣関連株に注目！",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0yYVRGYU1nM3QwZHRhRkFrQlM5M1pWbjV6b2dtZkdaSENiVG9nYlVYbV8yUHpyVUQ4SnNoNmxBZkhfRm4xOTZuNWhUcHhNX19ucXdN?oc=5",
-      "source": "ダイヤモンド・オンライン",
-      "publishedAt": "Thu, 24 Sep 2026 09:00:00 GMT"
+      "title": "今後１年の日経平均、高値は７万円にとどまる！？ キオクシアなどＡＩ・米中間選挙の動向が焦点 ★★みんなの株価予想",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1fZ0tjUW1FV2NqMmw5bmM2bVNmTlVpVUpWcEhmSXNKcnlzZzNYVV9wSkxHZXJOT1Y1NkItSFhNM1h5MER3MW92Ry1mc2NZd1lBQkpJZ3NR?oc=5",
+      "source": "QUICK Money World",
+      "publishedAt": "Fri, 25 Sep 2026 09:00:00 GMT"
     },
     {
-      "title": "日経平均株価の指数情報・推移",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Thu, 24 Sep 2026 09:07:21 GMT"
+      "title": "日経平均850円高 金利高はねのけ5連騰､「米中友好」AI加速に安堵感",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8tdmc3MDZGeEl4RmxwTmRvUk15MDcxSHhfX3c4ZDIxcVNSMmFVbE9hUlBURTU3RjZsaDQ2YWJtaVNSajJ4MmdCaHlfM29LWDU3QnRNOHRablYwakhIWEtwUmt5S1FEdC1QUk1HQw?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Fri, 25 Sep 2026 03:03:45 GMT"
     },
     {
-      "title": "日経平均株価、連休中の米ハイテク株上昇が追い風（先読み株式相場）",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0zdkRraGRXVjd2LTRYamMwYkFKQUdqcTBUVHlnTDNIb3dnMEhuUzlnQmlMZVVJaE5EZ2hrN3JMZ3c4WlpFb25xbXdkdl8tVFBHdENGUEcyanp0YnpmWmt4S21kcTNoOERpRUVmag?oc=5",
-      "source": "nikkei.com",
-      "publishedAt": "Wed, 23 Sep 2026 22:40:33 GMT"
+      "title": "来週（9/28～10/2）の日経平均株価の予想レンジは6万5000～6万8000円！ 10/2の米･雇用統計などの重要指標と75日移動平均線を上抜けるかどうかに注目！",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kRm5pYVlqc3k1VmlqUGZoQTN0WHJzU2I3VUVDeVpQVWhJLTNqU2UzRHlmcERTMUFHSjAxTnUyR3F1ZnZvM3JPZ2dWYko1alhObmxv?oc=5",
+      "source": "diamond.jp",
+      "publishedAt": "Fri, 25 Sep 2026 10:55:00 GMT"
     },
     {
-      "title": "今日の株式見通し＝買い先行、連休中の海外株高に追随 一巡後は模様眺めも",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNbHR4RTUwekgzc205eWMzSWZReWs2ZVZ0V0RsSlhEaHU4Y3h0Z21OdmRvQnp4c3p0V1ByLVpjc0tDaXJyVnZvOHdRRWJpRXdsZ3RtVnVOREw0Wk8yOVFHRTZhVDdyT3I5SnJGNEo4Rnh3QnhIY1Y2NldjTEU3aTFENHdQRzZTZw?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Wed, 23 Sep 2026 23:07:38 GMT"
+      "title": "日経平均、米半導体株安と配当狙いの買いが綱引き（先読み株式相場）",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5UejZKNkNqem9RTWhzS1lFYTNZcjZtX1FDeUlpZnRkUWRqNHhITmRHcFppMzI5OXloVWxEdXRud1pSNEphTmtJVFlDVElWbzJDNGY4ZGY1WGVqaVpoWTFSNUlaWENmcHRVbEc2Tg?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Thu, 24 Sep 2026 22:35:06 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-13",
-      "close": 53819.61,
-      "sma25": 56189.68,
-      "sma75": 53007.23
-    },
     {
       "date": "2026-03-16",
       "close": 53751.15,
@@ -853,6 +847,12 @@
       "close": 65513.99,
       "sma25": 65318.25,
       "sma75": 66614.24
+    },
+    {
+      "date": "2026-09-25",
+      "close": 66364.2,
+      "sma25": 65274.39,
+      "sma75": 66611.25
     }
   ]
 }

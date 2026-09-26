@@ -99,8 +99,13 @@ function principalFromPayment(payment, annualRatePct, years) {
   return payment * (f - 1) / (r * f);
 }
 
-// 一般的な審査基準(フラット35の基準):年収400万円未満30%、400万円以上35%
-const limitFor = (income) => (income < 4000000 ? 30 : 35);
+// 年収別の返済比率の基準:500万円以上40%、450万円以上35%、400万円以上30%、それ未満25%
+function limitFor(income) {
+  if (income >= 5000000) return 40;
+  if (income >= 4500000) return 35;
+  if (income >= 4000000) return 30;
+  return 25;
+}
 
 function render() {
   const loan = parseFloat($("loanInput").value) * 10000;
@@ -122,9 +127,8 @@ function render() {
   const limit = limitFor(income);
 
   let verdictClass, verdictText;
-  if (ratio <= 25) { verdictClass = "ok"; verdictText = "無理のない水準(25%以下)"; }
-  else if (ratio <= limit) { verdictClass = "caution"; verdictText = `審査基準内(${limit}%以下)・やや負担大`; }
-  else { verdictClass = "ng"; verdictText = `審査基準(${limit}%)超過`; }
+  if (ratio <= limit) { verdictClass = "ok"; verdictText = `無理のない水準(${limit}%以下)`; }
+  else { verdictClass = "ng"; verdictText = `基準(${limit}%)超過`; }
 
   const maxMonthly = Math.max(0, income * limit / 100 - other) / 12;
   const maxLoan = Math.floor(principalFromPayment(maxMonthly, rate, years) / 10000);

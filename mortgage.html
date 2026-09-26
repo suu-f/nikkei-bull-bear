@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="返済比率計算" />
+<meta name="theme-color" content="#0b1830" />
+<title>住宅ローン返済比率計算</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  .input-unit { display: flex; align-items: center; gap: 10px; }
+  .input-unit input { flex: 1; min-width: 0; }
+  .input-unit .unit { font-size: 16px; font-weight: 700; color: var(--text-secondary); white-space: nowrap; }
+  .hint { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+  .ratio-hero { text-align: center; padding: 8px 0 4px; }
+  .ratio-hero .label { font-size: 15px; font-weight: 700; color: var(--text-secondary); }
+  .ratio-hero .value { font-size: 56px; font-weight: 900; line-height: 1.1; margin: 6px 0; font-variant-numeric: tabular-nums; }
+  .ratio-hero .verdict { display: inline-block; padding: 6px 14px; border-radius: 999px; color: #fff; font-weight: 800; font-size: 14px; }
+  .ok { background: #1baf7a; }
+  .caution { background: var(--game-gold); }
+  .ng { background: var(--bull); }
+  .formula { font-size: 15px; line-height: 2; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .formula b { color: var(--text-primary); }
+  .error { color: var(--bull); font-weight: 700; }
+  #resultArea .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #resultArea .stat-tile .value { font-size: 20px; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏠 住宅ローン返済比率計算</h1>
+  <div class="headerRow">
+    <div class="updated">年収に対して何%の返済負担になるか計算します</div>
+  </div>
+  <a class="nav-link" href="index.html">← 本体のツールに戻る</a>
+</header>
+
+<main id="app">
+  <div class="card">
+    <h2>✏️ 条件を入力</h2>
+
+    <div class="control-row">
+      <label for="loanInput">借入金額</label>
+      <div class="input-unit"><input type="number" id="loanInput" value="3000" min="0" step="10" inputmode="decimal" /><span class="unit">万円</span></div>
+    </div>
+
+    <div class="control-row">
+      <label for="yearsInput">借入期間</label>
+      <div class="input-unit"><input type="number" id="yearsInput" value="40" min="1" max="50" step="1" inputmode="numeric" /><span class="unit">年</span></div>
+    </div>
+
+    <div class="control-row">
+      <label for="rateInput">審査金利</label>
+      <div class="input-unit"><input type="number" id="rateInput" value="1.35" min="0" step="0.01" inputmode="decimal" /><span class="unit">%</span></div>
+      <div class="hint">金融機関が審査で使う金利(実際の適用金利とは異なる場合があります)</div>
+    </div>
+
+    <div class="control-row">
+      <label for="incomeInput">年収(税込)</label>
+      <div class="input-unit"><input type="number" id="incomeInput" value="500" min="0" step="10" inputmode="decimal" /><span class="unit">万円</span></div>
+    </div>
+
+    <div class="control-row">
+      <label for="otherInput">他の借入の年間返済額(任意)</label>
+      <div class="input-unit"><input type="number" id="otherInput" value="0" min="0" step="1" inputmode="decimal" /><span class="unit">万円</span></div>
+      <div class="hint">自動車ローン・カードローンなど。返済比率に合算されます</div>
+    </div>
+  </div>
+
+  <div id="resultArea"></div>
+</main>
+
+<footer>
+  ※元利均等返済・ボーナス返済なしで計算しています。月々の返済額は1円未満切り捨てです。審査基準は金融機関によって異なるため、目安としてご利用ください。
+</footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const yen = (n) => Math.round(n).toLocaleString("ja-JP") + "円";
+
+// 元利均等返済の月々返済額(1円未満切り捨て)
+function monthlyPayment(principal, annualRatePct, years) {
+  const n = years * 12;
+  const r = annualRatePct / 100 / 12;
+  if (r === 0) return Math.floor(principal / n);
+  const f = Math.pow(1 + r, n);
+  return Math.floor(principal * r * f / (f - 1));
+}
+
+// 月々返済額から借入可能額を逆算
+function principalFromPayment(payment, annualRatePct, years) {
+  const n = years * 12;
+  const r = annualRatePct / 100 / 12;
+  if (r === 0) return payment * n;
+  const f = Math.pow(1 + r, n);
+  return payment * (f - 1) / (r * f);
+}
+
+// 一般的な審査基準(フラット35の基準):年収400万円未満30%、400万円以上35%
+const limitFor = (income) => (income < 4000000 ? 30 : 35);
+
+function render() {
+  const loan = parseFloat($("loanInput").value) * 10000;
+  const years = parseInt($("yearsInput").value, 10);
+  const rate = parseFloat($("rateInput").value);
+  const income = parseFloat($("incomeInput").value) * 10000;
+  const other = (parseFloat($("otherInput").value) || 0) * 10000;
+  const area = $("resultArea");
+
+  if (!(loan > 0) || !(years > 0) || !(rate >= 0) || !(income > 0)) {
+    area.innerHTML = `<div class="card"><div class="error">借入金額・借入期間・審査金利・年収を正しく入力してください。</div></div>`;
+    return;
+  }
+
+  const monthly = monthlyPayment(loan, rate, years);
+  const annual = monthly * 12;
+  const totalAnnual = annual + other;
+  const ratio = Math.round(totalAnnual / income * 10000) / 100;
+  const limit = limitFor(income);
+
+  let verdictClass, verdictText;
+  if (ratio <= 25) { verdictClass = "ok"; verdictText = "無理のない水準(25%以下)"; }
+  else if (ratio <= limit) { verdictClass = "caution"; verdictText = `審査基準内(${limit}%以下)・やや負担大`; }
+  else { verdictClass = "ng"; verdictText = `審査基準(${limit}%)超過`; }
+
+  const maxMonthly = Math.max(0, income * limit / 100 - other) / 12;
+  const maxLoan = Math.floor(principalFromPayment(maxMonthly, rate, years) / 10000);
+
+  const otherLine = other > 0
+    ? `+ 他の借入 <b>${yen(other)}</b> = <b>${yen(totalAnnual)}</b><br>`
+    : "";
+
+  area.innerHTML = `
+    <div class="card">
+      <div class="ratio-hero">
+        <div class="label">返済比率</div>
+        <div class="value">${ratio.toFixed(2)}%</div>
+        <span class="verdict ${verdictClass}">${verdictText}</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🧮 計算内訳</h2>
+      <div class="formula">
+        月々の返済額 <b>${yen(monthly)}</b> × 12ヶ月 = <b>${yen(annual)}</b><br>
+        ${otherLine}
+        ${yen(totalAnnual)} ÷ ${yen(income)} = <b>${ratio.toFixed(2)}%</b><br>
+        よって返済比率は <b>${ratio.toFixed(2)}%</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 参考</h2>
+      <div class="stat-grid">
+        <div class="stat-tile"><div class="label">月々の返済額</div><div class="value">${yen(monthly)}</div></div>
+        <div class="stat-tile"><div class="label">年間返済額</div><div class="value">${yen(annual)}</div></div>
+        <div class="stat-tile"><div class="label">総返済額</div><div class="value">${yen(monthly * years * 12)}</div></div>
+        <div class="stat-tile"><div class="label">返済比率${limit}%での借入上限</div><div class="value">${maxLoan.toLocaleString("ja-JP")}万円</div></div>
+      </div>
+    </div>`;
+}
+
+["loanInput", "yearsInput", "rateInput", "incomeInput", "otherInput"].forEach((id) => $(id).addEventListener("input", render));
+render();
+</script>
+</body>
+</html>

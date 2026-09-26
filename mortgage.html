@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="返済比率計算" />
+<meta name="theme-color" content="#0b1830" />
+<title>住宅ローン返済比率計算</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>" />
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1: #fcfcfb; --surface-2: #f9f9f7; --card: #ffffff;
+    --text-primary: #0b1830; --text-secondary: #52514e; --text-muted: #898781;
+    --border: rgba(11,11,11,0.10); --navy: #0b1830; --navy-2: #142a52;
+    --ok: #1a8a62; --ng: #d0342c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface-1: #0d0d0d; --surface-2: #141414; --card: #1a1a19;
+      --text-primary: #ffffff; --text-secondary: #c3c2b7; --text-muted: #898781;
+      --border: rgba(255,255,255,0.10); --navy: #16294f; --navy-2: #1f3a70;
+      --ok: #199e70; --ng: #c8433c;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-1: #0d0d0d; --surface-2: #141414; --card: #1a1a19;
+    --text-primary: #ffffff; --text-secondary: #c3c2b7; --text-muted: #898781;
+    --border: rgba(255,255,255,0.10); --navy: #16294f; --navy-2: #1f3a70;
+    --ok: #199e70; --ng: #c8433c;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--surface-2); color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 18px; line-height: 1.6;
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  }
+  header {
+    background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: #fff;
+    padding: calc(20px + env(safe-area-inset-top)) 20px 22px;
+  }
+  header h1 { margin: 0 0 10px; font-size: 24px; font-weight: 800; letter-spacing: 0.02em; }
+  header .updated { font-size: 15px; color: #c9d4ee; }
+  header .nav-link { font-size: 14px; color: #c9d4ee; text-decoration: none; display: inline-block; margin-top: 12px; }
+  main { max-width: 720px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card h2 { font-size: 18px; margin: 0 0 12px; font-weight: 800; }
+  .control-row { margin-bottom: 16px; }
+  .control-row label { display: block; font-size: 14px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
+  .control-row input[type="number"] {
+    width: 100%; font-size: 20px; font-weight: 800; padding: 12px 14px; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .stat-tile { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+  .stat-tile .label { font-size: 14px; color: var(--text-muted); font-weight: 600; }
+  .stat-tile .value { font-size: 20px; font-weight: 800; margin-top: 4px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  footer { max-width: 720px; margin: 0 auto; padding: 4px 20px 24px; color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+
+  .input-unit { display: flex; align-items: center; gap: 10px; }
+  .input-unit input { flex: 1; min-width: 0; }
+  .input-unit .unit { font-size: 16px; font-weight: 700; color: var(--text-secondary); white-space: nowrap; }
+  .hint { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+  .ratio-hero { text-align: center; padding: 8px 0 4px; }
+  .ratio-hero .label { font-size: 15px; font-weight: 700; color: var(--text-secondary); }
+  .ratio-hero .value { font-size: 56px; font-weight: 900; line-height: 1.1; margin: 6px 0; font-variant-numeric: tabular-nums; }
+  .ratio-hero .verdict { display: inline-block; padding: 6px 14px; border-radius: 999px; color: #fff; font-weight: 800; font-size: 14px; }
+  .ok { background: var(--ok); }
+  .ng { background: var(--ng); }
+  .formula { font-size: 15px; line-height: 2; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .formula b { color: var(--text-primary); }
+  .error { color: var(--ng); font-weight: 700; }
+  .share-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .share-btn {
+    flex: 1 1 140px; background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: #fff;
+    border: none; border-radius: 999px; padding: 14px; font-size: 16px; font-weight: 800; cursor: pointer; font-family: inherit;
+  }
+  .share-btn.secondary { background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border); }
+  .share-btn:active { opacity: 0.85; }
+  .toast { min-height: 1.4em; font-size: 14px; color: var(--text-secondary); margin-top: 10px; text-align: center; }
+  #copyFallback { width: 100%; min-height: 160px; margin-top: 10px; font: 14px/1.6 inherit; padding: 10px; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏠 住宅ローン返済比率計算</h1>
+  <div class="updated">年収に対して何%の返済負担になるか計算します</div>
+  <a class="nav-link" id="backLink" href="index.html" hidden>← 本体のツールに戻る</a>
+</header>
+
+<main id="app">
+  <div class="card">
+    <h2>✏️ 条件を入力</h2>
+
+    <div class="control-row">
+      <label for="loanInput">借入金額</label>
+      <div class="input-unit"><input type="number" id="loanInput" value="3000" min="0" step="10" inputmode="decimal" /><span class="unit">万円</span></div>
+    </div>
+
+    <div class="control-row">
+      <label for="yearsInput">借入期間</label>
+      <div class="input-unit"><input type="number" id="yearsInput" value="40" min="1" max="50" step="1" inputmode="numeric" /><span class="unit">年</span></div>
+    </div>
+
+    <div class="control-row">
+      <label for="rateInput">審査金利</label>
+      <div class="input-unit"><input type="number" id="rateInput" value="1.35" min="0" step="0.01" inputmode="decimal" /><span class="unit">%</span></div>
+      <div class="hint">金融機関が審査で使う金利(実際の適用金利とは異なる場合があります)</div>
+    </div>
+
+    <div class="control-row">
+      <label for="incomeInput">年収(税込)</label>
+      <div class="input-unit"><input type="number" id="incomeInput" value="500" min="0" step="10" inputmode="decimal" /><span class="unit">万円</span></div>
+    </div>
+
+    <div class="control-row">
+      <label for="otherInput">他の借入の年間返済額(任意)</label>
+      <div class="input-unit"><input type="number" id="otherInput" value="0" min="0" step="1" inputmode="decimal" /><span class="unit">万円</span></div>
+      <div class="hint">自動車ローン・カードローンなど。返済比率に合算されます</div>
+    </div>
+  </div>
+
+  <div id="resultArea"></div>
+
+  <div class="card">
+    <h2>📤 共有する</h2>
+    <div class="share-row">
+      <button class="share-btn" id="copyResultBtn">結果をコピー</button>
+      <button class="share-btn secondary" id="shareLinkBtn">この条件のリンクを共有</button>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <textarea id="copyFallback" readonly hidden></textarea>
+    <div class="hint" id="linkHint">リンクには入力した条件が含まれるので、開いた人にも同じ計算結果が表示されます。LINEやメールに貼り付けて送れます。</div>
+  </div>
+</main>
+
+<footer>
+  ※元利均等返済・ボーナス返済なしで計算しています。月々の返済額は1円未満切り捨てです。審査基準は金融機関によって異なるため、目安としてご利用ください。
+</footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const yen = (n) => Math.round(n).toLocaleString("ja-JP") + "円";
+const FIELDS = { loan: "loanInput", years: "yearsInput", rate: "rateInput", income: "incomeInput", other: "otherInput" };
+let summaryText = "";
+
+// 元利均等返済の月々返済額(1円未満切り捨て)
+function monthlyPayment(principal, annualRatePct, years) {
+  const n = years * 12;
+  const r = annualRatePct / 100 / 12;
+  if (r === 0) return Math.floor(principal / n);
+  const f = Math.pow(1 + r, n);
+  return Math.floor(principal * r * f / (f - 1));
+}
+
+// 月々返済額から借入可能額を逆算
+function principalFromPayment(payment, annualRatePct, years) {
+  const n = years * 12;
+  const r = annualRatePct / 100 / 12;
+  if (r === 0) return payment * n;
+  const f = Math.pow(1 + r, n);
+  return payment * (f - 1) / (r * f);
+}
+
+// 年収別の返済比率の基準:500万円以上40%、450万円以上35%、400万円以上30%、それ未満25%
+function limitFor(income) {
+  if (income >= 5000000) return 40;
+  if (income >= 4500000) return 35;
+  if (income >= 4000000) return 30;
+  return 25;
+}
+
+function render() {
+  const loan = parseFloat($("loanInput").value) * 10000;
+  const years = parseInt($("yearsInput").value, 10);
+  const rate = parseFloat($("rateInput").value);
+  const income = parseFloat($("incomeInput").value) * 10000;
+  const other = (parseFloat($("otherInput").value) || 0) * 10000;
+  const area = $("resultArea");
+
+  if (!(loan > 0) || !(years > 0) || !(rate >= 0) || !(income > 0)) {
+    area.innerHTML = `<div class="card"><div class="error">借入金額・借入期間・審査金利・年収を正しく入力してください。</div></div>`;
+    summaryText = "";
+    return;
+  }
+
+  const monthly = monthlyPayment(loan, rate, years);
+  const annual = monthly * 12;
+  const totalAnnual = annual + other;
+  const ratio = Math.round(totalAnnual / income * 10000) / 100;
+  const limit = limitFor(income);
+
+  let verdictClass, verdictText;
+  if (ratio <= limit) { verdictClass = "ok"; verdictText = `無理のない水準(${limit}%以下)`; }
+  else { verdictClass = "ng"; verdictText = `基準(${limit}%)超過`; }
+
+  const maxMonthly = Math.max(0, income * limit / 100 - other) / 12;
+  const maxLoan = Math.floor(principalFromPayment(maxMonthly, rate, years) / 10000);
+
+  const otherLine = other > 0
+    ? `+ 他の借入 <b>${yen(other)}</b> = <b>${yen(totalAnnual)}</b><br>`
+    : "";
+
+  summaryText = [
+    "【住宅ローン返済比率】",
+    `借入金額 ${$("loanInput").value}万円 / 借入期間 ${years}年 / 審査金利 ${rate}% / 年収 ${$("incomeInput").value}万円` +
+      (other > 0 ? ` / 他の借入 ${$("otherInput").value}万円/年` : ""),
+    `月々の返済額 ${yen(monthly)} × 12ヶ月 = ${yen(annual)}`,
+    ...(other > 0 ? [`+ 他の借入 ${yen(other)} = ${yen(totalAnnual)}`] : []),
+    `${yen(totalAnnual)} ÷ ${yen(income)} = ${ratio.toFixed(2)}%`,
+    `よって返済比率は ${ratio.toFixed(2)}%(${verdictText})`,
+  ].join("\n");
+
+  area.innerHTML = `
+    <div class="card">
+      <div class="ratio-hero">
+        <div class="label">返済比率</div>
+        <div class="value">${ratio.toFixed(2)}%</div>
+        <span class="verdict ${verdictClass}">${verdictText}</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🧮 計算内訳</h2>
+      <div class="formula">
+        月々の返済額 <b>${yen(monthly)}</b> × 12ヶ月 = <b>${yen(annual)}</b><br>
+        ${otherLine}
+        ${yen(totalAnnual)} ÷ ${yen(income)} = <b>${ratio.toFixed(2)}%</b><br>
+        よって返済比率は <b>${ratio.toFixed(2)}%</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 参考</h2>
+      <div class="stat-grid">
+        <div class="stat-tile"><div class="label">月々の返済額</div><div class="value">${yen(monthly)}</div></div>
+        <div class="stat-tile"><div class="label">年間返済額</div><div class="value">${yen(annual)}</div></div>
+        <div class="stat-tile"><div class="label">総返済額</div><div class="value">${yen(monthly * years * 12)}</div></div>
+        <div class="stat-tile"><div class="label">返済比率${limit}%での借入上限</div><div class="value">${maxLoan.toLocaleString("ja-JP")}万円</div></div>
+      </div>
+    </div>`;
+}
+
+// 単独のWebページとして開かれているか(Claudeのアーティファクト等の埋め込み表示ではないか)
+const isStandalone = window.top === window && /^https?:$/.test(location.protocol);
+
+function shareUrl() {
+  const url = new URL(location.href);
+  url.search = "";
+  for (const [key, id] of Object.entries(FIELDS)) url.searchParams.set(key, $(id).value);
+  return url.toString();
+}
+
+function toast(msg) { $("toast").textContent = msg; }
+
+async function copyText(text, doneMsg) {
+  $("copyFallback").hidden = true;
+  try {
+    await navigator.clipboard.writeText(text);
+    toast(doneMsg);
+  } catch (e) {
+    // クリップボードが使えない環境では、選択済みのテキストを表示して手動コピーしてもらう
+    const box = $("copyFallback");
+    box.value = text;
+    box.hidden = false;
+    box.focus();
+    box.select();
+    toast("下の文章を長押し(またはCtrl+C)でコピーしてください");
+  }
+}
+
+$("copyResultBtn").addEventListener("click", () => {
+  if (!summaryText) return toast("先に条件を正しく入力してください");
+  copyText(summaryText, "計算結果をコピーしました");
+});
+
+$("shareLinkBtn").addEventListener("click", async () => {
+  const url = shareUrl();
+  if (navigator.share) {
+    try { await navigator.share({ title: document.title, text: summaryText, url }); return; }
+    catch (e) { if (e.name === "AbortError") return; }
+  }
+  copyText(url, "リンクをコピーしました");
+});
+
+// 条件付きリンクは単独ページでのみ意味を持つので、それ以外ではボタンを隠す
+if (!isStandalone) { $("shareLinkBtn").hidden = true; $("linkHint").hidden = true; }
+// サイト内(index.htmlがある場所)で開いたときだけ戻るリンクを出す
+if (isStandalone) $("backLink").hidden = false;
+
+// URLに条件があれば入力欄に反映
+const params = new URLSearchParams(location.search);
+for (const [key, id] of Object.entries(FIELDS)) {
+  const v = params.get(key);
+  if (v !== null && v !== "" && !isNaN(parseFloat(v))) $(id).value = v;
+}
+
+Object.values(FIELDS).forEach((id) => $(id).addEventListener("input", () => {
+  render();
+  if (isStandalone) history.replaceState(null, "", shareUrl());
+}));
+render();
+</script>
+</body>
+</html>

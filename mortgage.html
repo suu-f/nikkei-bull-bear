@@ -121,12 +121,6 @@
       <label for="incomeInput">年収(税込)</label>
       <div class="input-unit"><input type="number" id="incomeInput" value="500" min="0" step="10" inputmode="decimal" /><span class="unit">万円</span></div>
     </div>
-
-    <div class="control-row">
-      <label for="otherInput">他の借入の年間返済額(任意)</label>
-      <div class="input-unit"><input type="number" id="otherInput" value="0" min="0" step="1" inputmode="decimal" /><span class="unit">万円</span></div>
-      <div class="hint">自動車ローン・カードローンなど。返済比率に合算されます</div>
-    </div>
   </div>
 
   <div id="resultArea"></div>
@@ -150,7 +144,7 @@
 <script>
 const $ = (id) => document.getElementById(id);
 const yen = (n) => Math.round(n).toLocaleString("ja-JP") + "円";
-const FIELDS = { loan: "loanInput", years: "yearsInput", rate: "rateInput", income: "incomeInput", other: "otherInput" };
+const FIELDS = { loan: "loanInput", years: "yearsInput", rate: "rateInput", income: "incomeInput" };
 let summaryText = "";
 
 // 元利均等返済の月々返済額(1円未満切り捨て)
@@ -184,7 +178,6 @@ function render() {
   const years = parseInt($("yearsInput").value, 10);
   const rate = parseFloat($("rateInput").value);
   const income = parseFloat($("incomeInput").value) * 10000;
-  const other = (parseFloat($("otherInput").value) || 0) * 10000;
   const area = $("resultArea");
 
   if (!(loan > 0) || !(years > 0) || !(rate >= 0) || !(income > 0)) {
@@ -195,28 +188,21 @@ function render() {
 
   const monthly = monthlyPayment(loan, rate, years);
   const annual = monthly * 12;
-  const totalAnnual = annual + other;
-  const ratio = Math.round(totalAnnual / income * 10000) / 100;
+  const ratio = Math.round(annual / income * 10000) / 100;
   const limit = limitFor(income);
 
   let verdictClass, verdictText;
   if (ratio <= limit) { verdictClass = "ok"; verdictText = `無理のない水準(${limit}%以下)`; }
   else { verdictClass = "ng"; verdictText = `基準(${limit}%)超過`; }
 
-  const maxMonthly = Math.max(0, income * limit / 100 - other) / 12;
+  const maxMonthly = income * limit / 100 / 12;
   const maxLoan = Math.floor(principalFromPayment(maxMonthly, rate, years) / 10000);
-
-  const otherLine = other > 0
-    ? `+ 他の借入 <b>${yen(other)}</b> = <b>${yen(totalAnnual)}</b><br>`
-    : "";
 
   summaryText = [
     "【住宅ローン返済比率】",
-    `借入金額 ${$("loanInput").value}万円 / 借入期間 ${years}年 / 審査金利 ${rate}% / 年収 ${$("incomeInput").value}万円` +
-      (other > 0 ? ` / 他の借入 ${$("otherInput").value}万円/年` : ""),
+    `借入金額 ${$("loanInput").value}万円 / 借入期間 ${years}年 / 審査金利 ${rate}% / 年収 ${$("incomeInput").value}万円`,
     `月々の返済額 ${yen(monthly)} × 12ヶ月 = ${yen(annual)}`,
-    ...(other > 0 ? [`+ 他の借入 ${yen(other)} = ${yen(totalAnnual)}`] : []),
-    `${yen(totalAnnual)} ÷ ${yen(income)} = ${ratio.toFixed(2)}%`,
+    `${yen(annual)} ÷ ${yen(income)} = ${ratio.toFixed(2)}%`,
     `よって返済比率は ${ratio.toFixed(2)}%(${verdictText})`,
   ].join("\n");
 
@@ -233,8 +219,7 @@ function render() {
       <h2>🧮 計算内訳</h2>
       <div class="formula">
         月々の返済額 <b>${yen(monthly)}</b> × 12ヶ月 = <b>${yen(annual)}</b><br>
-        ${otherLine}
-        ${yen(totalAnnual)} ÷ ${yen(income)} = <b>${ratio.toFixed(2)}%</b><br>
+        ${yen(annual)} ÷ ${yen(income)} = <b>${ratio.toFixed(2)}%</b><br>
         よって返済比率は <b>${ratio.toFixed(2)}%</b>
       </div>
     </div>

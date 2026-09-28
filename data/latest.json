@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-25T12:42:55.191Z",
+  "updatedAt": "2026-09-28T15:18:25.455Z",
   "asOfDate": "2026-09-25",
   "price": 66364.2,
   "sma25": 65274.39,
@@ -20,16 +20,16 @@
   },
   "macro": {
     "usdjpy": {
-      "value": 157.725,
-      "changePct": -0.34
+      "value": 157.454,
+      "changePct": -0.85
     },
     "sp500": {
-      "value": 7704.13,
-      "changePct": -0.02
+      "value": 7678.97,
+      "changePct": -0.83
     },
     "vix": {
-      "value": 15.11,
-      "changePct": -3.57
+      "value": 16.46,
+      "changePct": 10.69
     }
   },
   "macroAssessment": {
@@ -40,34 +40,34 @@
   "conviction": null,
   "news": [
     {
-      "title": "東証大引け 日経平均は5日続伸 AI・半導体関連が押し上げ 中間配当の権利取りも追い風",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBRbE5ENHp3ZlJpREY1RGR1TnN5ZmJmYlJJX09uRmk1NlVqQlg0Ri1VM2J3V2NXMk9aOGxPMkZ0TU4tTlpic0pZaFdLSFZITmVxd09PN1FUY21NcEF2TkYzVFpuLVA1N2dRd1oxdQ?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 25 Sep 2026 06:45:53 GMT"
+      "title": "【↓】日経平均 大引け｜ 6日ぶり反落、朝高も利益確定売りで安値引け (9月28日)",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAwSzBPUGVZQV9ka0V0MVNnLW1LWXVrSUFKMzJMVGVOZ01WNkdSM0ZaRGlVRFNIMV91czViWVJiYldOREExZHZ1V3FsVHF2QmVUMjk2UnFyNEExUTNBLUFXSA?oc=5",
+      "source": "株探",
+      "publishedAt": "Mon, 28 Sep 2026 09:46:31 GMT"
     },
     {
-      "title": "今後１年の日経平均、高値は７万円にとどまる！？ キオクシアなどＡＩ・米中間選挙の動向が焦点 ★★みんなの株価予想",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1fZ0tjUW1FV2NqMmw5bmM2bVNmTlVpVUpWcEhmSXNKcnlzZzNYVV9wSkxHZXJOT1Y1NkItSFhNM1h5MER3MW92Ry1mc2NZd1lBQkpJZ3NR?oc=5",
-      "source": "QUICK Money World",
-      "publishedAt": "Fri, 25 Sep 2026 09:00:00 GMT"
+      "title": "日経平均に日米金利上昇の試練、好業績中小型株に注目（窪田真之）",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE52Ni1TYU5XdkJyQ0VfWk9EUmZiWFpKTWtSNkRkMTc3cEI0bGJ5cmtUTFFBb0RwQ3laUXpnbWdFSlZTV2JWNmVZQ0swY2RXS0xTVnVZOFQ4ajVmUQ?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Sun, 27 Sep 2026 23:00:00 GMT"
     },
     {
-      "title": "日経平均850円高 金利高はねのけ5連騰､「米中友好」AI加速に安堵感",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8tdmc3MDZGeEl4RmxwTmRvUk15MDcxSHhfX3c4ZDIxcVNSMmFVbE9hUlBURTU3RjZsaDQ2YWJtaVNSajJ4MmdCaHlfM29LWDU3QnRNOHRablYwakhIWEtwUmt5S1FEdC1QUk1HQw?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 25 Sep 2026 03:03:45 GMT"
+      "title": "（再送）２８日大引けの日経平均株価＝４８６円５８銭安の６万５８７７円６２銭と６日ぶり反落",
+      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE0xUW5UWGE0UmVzUHRXM2JaaC1ERmpWR3QtbWJJOG04dE15RjZOVTM5cENVN3hUNVBBOTFOXy1ta1FKaVRfSWRN?oc=5",
+      "source": "kabushiki.jp",
+      "publishedAt": "Mon, 28 Sep 2026 06:32:00 GMT"
     },
     {
-      "title": "来週（9/28～10/2）の日経平均株価の予想レンジは6万5000～6万8000円！ 10/2の米･雇用統計などの重要指標と75日移動平均線を上抜けるかどうかに注目！",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kRm5pYVlqc3k1VmlqUGZoQTN0WHJzU2I3VUVDeVpQVWhJLTNqU2UzRHlmcERTMUFHSjAxTnUyR3F1ZnZvM3JPZ2dWYko1alhObmxv?oc=5",
-      "source": "diamond.jp",
-      "publishedAt": "Fri, 25 Sep 2026 10:55:00 GMT"
+      "title": "配当落ちに負けない､日経平均が上昇トレンドを維持する条件",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5adGhXN0MzejBvOTZFTjZqZjJiSVZkRncybHRzUV9YOUl5enFEa0J6QVVaR1lWQTF0RVhfS2p2TlpUNEZNQVVDaVZuMGVVUnNuUkFhVWhHVQ?oc=5",
+      "source": "四季報オンライン",
+      "publishedAt": "Sat, 26 Sep 2026 23:00:00 GMT"
     },
     {
-      "title": "日経平均、米半導体株安と配当狙いの買いが綱引き（先読み株式相場）",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5UejZKNkNqem9RTWhzS1lFYTNZcjZtX1FDeUlpZnRkUWRqNHhITmRHcFppMzI5OXloVWxEdXRud1pSNEphTmtJVFlDVElWbzJDNGY4ZGY1WGVqaVpoWTFSNUlaWENmcHRVbEc2Tg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Thu, 24 Sep 2026 22:35:06 GMT"
+      "title": "週明けの日経平均、一時５００円超上昇…６万６９００円台で推移",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB0alBUNERfWHZ1UVlXUzZPTkhUNGdXSDAzVHNFUXdwaGZROTl4V28xR3l3cXVvUlpidURVdEt4SmtTNFIwZERMTWR5emN2TjdIVEowNTJUVmFOd2xvU3FuUEFHQUk?oc=5",
+      "source": "読売新聞",
+      "publishedAt": "Mon, 28 Sep 2026 00:20:00 GMT"
     }
   ],
   "signal": "wait",

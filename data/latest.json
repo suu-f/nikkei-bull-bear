@@ -1,35 +1,35 @@
 {
-  "updatedAt": "2026-09-28T15:18:25.455Z",
-  "asOfDate": "2026-09-25",
-  "price": 66364.2,
-  "sma25": 65274.39,
-  "sma75": 66611.25,
-  "deviationPct": 1.67,
-  "rsi14": 62.2,
-  "vol25AnnualizedPct": 20.5,
+  "updatedAt": "2026-09-29T13:58:36.692Z",
+  "asOfDate": "2026-09-29",
+  "price": 65481.27,
+  "sma25": 65267.02,
+  "sma75": 66636.82,
+  "deviationPct": 0.33,
+  "rsi14": 52.8,
+  "vol25AnnualizedPct": 17.4,
   "trend": "mixed",
   "overheat": "neutral",
   "highVol": false,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 65274.39,
-    "distancePct": 1.64,
+    "level": 65267.02,
+    "distancePct": 0.33,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.454,
-      "changePct": -0.85
+      "value": 157.469,
+      "changePct": 0
     },
     "sp500": {
-      "value": 7678.97,
-      "changePct": -0.83
+      "value": 7682.07,
+      "changePct": -0.02
     },
     "vix": {
-      "value": 16.46,
-      "changePct": 10.69
+      "value": 15.92,
+      "changePct": -0.93
     }
   },
   "macroAssessment": {
@@ -40,10 +40,16 @@
   "conviction": null,
   "news": [
     {
-      "title": "【↓】日経平均 大引け｜ 6日ぶり反落、朝高も利益確定売りで安値引け (9月28日)",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAwSzBPUGVZQV9ka0V0MVNnLW1LWXVrSUFKMzJMVGVOZ01WNkdSM0ZaRGlVRFNIMV91czViWVJiYldOREExZHZ1V3FsVHF2QmVUMjk2UnFyNEExUTNBLUFXSA?oc=5",
+      "title": "東証前引け 日経平均は続落 米半導体株安や原油高で、配当落ちも重荷",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fZVVyTU9pa0pkeHR2NldlR0VvbG54YmI0SmhScURIcXpQMTZUT3BPdUN5dUo2cjZRb2VXc0pOQTdwcHpUekFkZlVEX1hVdTEwbVUzWHk1NVV2Y1p2T3pVcGNsRHFmRXEyQU9wVg?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Tue, 29 Sep 2026 02:49:06 GMT"
+    },
+    {
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月29日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBLN3I2OW5KY01RZmVHVVUybTBtd3hZdUNjM08yWjZUR3V5OWxma3l2M1hnblc4SjN3NHBQTE5fNTV1ZjdzNm5KaFpob3g4dzZuTTdxamtZN0Y0dFN3NEJoSg?oc=5",
       "source": "株探",
-      "publishedAt": "Mon, 28 Sep 2026 09:46:31 GMT"
+      "publishedAt": "Mon, 28 Sep 2026 23:14:12 GMT"
     },
     {
       "title": "日経平均に日米金利上昇の試練、好業績中小型株に注目（窪田真之）",
@@ -52,40 +58,22 @@
       "publishedAt": "Sun, 27 Sep 2026 23:00:00 GMT"
     },
     {
-      "title": "（再送）２８日大引けの日経平均株価＝４８６円５８銭安の６万５８７７円６２銭と６日ぶり反落",
-      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE0xUW5UWGE0UmVzUHRXM2JaaC1ERmpWR3QtbWJJOG04dE15RjZOVTM5cENVN3hUNVBBOTFOXy1ta1FKaVRfSWRN?oc=5",
-      "source": "kabushiki.jp",
-      "publishedAt": "Mon, 28 Sep 2026 06:32:00 GMT"
+      "title": "日経平均は続落、中間期末控え見送りムード",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcFNldHg1dktYaWhEUnR5S0Z5M1pQSlF2Y0ItZ3ZPaEp1dUNvM2hBaGZ6UWRGSFdudFpfa25scmJiRVppRGtfZzEwMnVYdDNGeWhmRjBBMG5xNUpSWjg4eTFCbFlkMFpHMzRzVTVpaTZXeE5Nb3B1bTBQRnJmTWctdUNGNlhlZw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Tue, 29 Sep 2026 07:16:04 GMT"
     },
     {
-      "title": "配当落ちに負けない､日経平均が上昇トレンドを維持する条件",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5adGhXN0MzejBvOTZFTjZqZjJiSVZkRncybHRzUV9YOUl5enFEa0J6QVVaR1lWQTF0RVhfS2p2TlpUNEZNQVVDaVZuMGVVUnNuUkFhVWhHVQ?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Sat, 26 Sep 2026 23:00:00 GMT"
-    },
-    {
-      "title": "週明けの日経平均、一時５００円超上昇…６万６９００円台で推移",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB0alBUNERfWHZ1UVlXUzZPTkhUNGdXSDAzVHNFUXdwaGZROTl4V28xR3l3cXVvUlpidURVdEt4SmtTNFIwZERMTWR5emN2TjdIVEowNTJUVmFOd2xvU3FuUEFHQUk?oc=5",
-      "source": "読売新聞",
-      "publishedAt": "Mon, 28 Sep 2026 00:20:00 GMT"
+      "title": "日経平均は957円安、米経済指標や金融当局者の発言に関心(フィスコ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbENfWm95S3llUHN2dUJCLVJ4R2IxTXd1VjAxYnBhNFc2ZXhCYjBZRUMwYXl4R3NXUXlVcW43RGs1V2tKOHRGempfSWF0bS0zTkY2dmp0emI0RXNkcEM3aFE2OGg0aFNGblh6eWdtQi15c1lRNWxvb3BfemlxbzB4SEJ3VXJCTUE?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Tue, 29 Sep 2026 05:51:47 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-16",
-      "close": 53751.15,
-      "sma25": 56187,
-      "sma75": 53059.59
-    },
-    {
-      "date": "2026-03-17",
-      "close": 53700.39,
-      "sma25": 56164.87,
-      "sma75": 53127.25
-    },
     {
       "date": "2026-03-18",
       "close": 55239.4,
@@ -853,6 +841,18 @@
       "close": 66364.2,
       "sma25": 65274.39,
       "sma75": 66611.25
+    },
+    {
+      "date": "2026-09-28",
+      "close": 65877.62,
+      "sma25": 65296.44,
+      "sma75": 66635.96
+    },
+    {
+      "date": "2026-09-29",
+      "close": 65481.27,
+      "sma25": 65267.02,
+      "sma75": 66636.82
     }
   ]
 }

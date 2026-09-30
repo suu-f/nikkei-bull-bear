@@ -1,49 +1,55 @@
 {
-  "updatedAt": "2026-09-29T13:58:36.692Z",
-  "asOfDate": "2026-09-29",
-  "price": 65481.27,
-  "sma25": 65267.02,
-  "sma75": 66636.82,
-  "deviationPct": 0.33,
-  "rsi14": 52.8,
-  "vol25AnnualizedPct": 17.4,
+  "updatedAt": "2026-09-30T13:35:13.271Z",
+  "asOfDate": "2026-09-30",
+  "price": 66753.72,
+  "sma25": 65296.52,
+  "sma75": 66671.15,
+  "deviationPct": 2.23,
+  "rsi14": 52.2,
+  "vol25AnnualizedPct": 18.5,
   "trend": "mixed",
   "overheat": "neutral",
   "highVol": false,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 65267.02,
-    "distancePct": 0.33,
+    "level": 65296.52,
+    "distancePct": 2.18,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.469,
-      "changePct": 0
+      "value": 156.842,
+      "changePct": -0.33
     },
     "sp500": {
-      "value": 7682.07,
-      "changePct": -0.02
+      "value": 7694.99,
+      "changePct": 0.31
     },
     "vix": {
-      "value": 15.92,
-      "changePct": -0.93
+      "value": 15.89,
+      "changePct": -0.94
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bear",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "東証前引け 日経平均は続落 米半導体株安や原油高で、配当落ちも重荷",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fZVVyTU9pa0pkeHR2NldlR0VvbG54YmI0SmhScURIcXpQMTZUT3BPdUN5dUo2cjZRb2VXc0pOQTdwcHpUekFkZlVEX1hVdTEwbVUzWHk1NVV2Y1p2T3pVcGNsRHFmRXEyQU9wVg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Tue, 29 Sep 2026 02:49:06 GMT"
+      "title": "日経平均株価 一時1000円超値上がり AI半導体銘柄に買い広がる",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE42YVV1MExpTC1ETm1ZYTRwR1J5ZE8wMVkwOGFEa0ttR013NnZHMG14eFlCZy0xb2ItaXQtTHdkcHVaS3J5Y1kxMGx2NUthOF9SazFTT1ZxRjQ3MllQR1I4TEtjdFlVS3hQeHNtRGxDWVpJUQ?oc=5",
+      "source": "テレ朝NEWS",
+      "publishedAt": "Wed, 30 Sep 2026 01:03:27 GMT"
+    },
+    {
+      "title": "（まとめ）日経平均は396円安の65,481円で続落　SBGや銀行株など広範な銘柄に売り",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1mS21mTjJqbkhyQ3hySjZaVGV4S2RYV1dXZV85eGF5YTRwSWl1anNYQXZTU3B4V3ktcXRzb0o3VmZOaXUxQ3FHeFU5d1J6ZTV3UEJmWNIBV0FVX3lxTFBQVGNTR2ZKRE5POGhnVDNDUGVZRkY0cWhsOVhLRkhwWm9tbVNTY2pkSHhQb0NteHFLNHhDN0hNYV9JeUx4MWJDU0N3Zy10WnQyV1ZkWlJGdw?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Tue, 29 Sep 2026 07:29:00 GMT"
     },
     {
       "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (9月29日記）",
@@ -52,34 +58,22 @@
       "publishedAt": "Mon, 28 Sep 2026 23:14:12 GMT"
     },
     {
-      "title": "日経平均に日米金利上昇の試練、好業績中小型株に注目（窪田真之）",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE52Ni1TYU5XdkJyQ0VfWk9EUmZiWFpKTWtSNkRkMTc3cEI0bGJ5cmtUTFFBb0RwQ3laUXpnbWdFSlZTV2JWNmVZQ0swY2RXS0xTVnVZOFQ4ajVmUQ?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Sun, 27 Sep 2026 23:00:00 GMT"
+      "title": "日経平均は反発、原油安など支え 下半期入りでポジション構築も",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBhSHBRZWs0TlpXeG5ZZzhrRGQ4emdPMTd4b3JIWExlVVRlY3gxSHhBM0szSGF3U3hDcDhqZ09saXk3ZHozVFdmeUtmOEFpSWJpNFNzMWJLMmZyQQ?oc=5",
+      "source": "ニューズウィーク日本版",
+      "publishedAt": "Wed, 30 Sep 2026 07:02:00 GMT"
     },
     {
-      "title": "日経平均は続落、中間期末控え見送りムード",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcFNldHg1dktYaWhEUnR5S0Z5M1pQSlF2Y0ItZ3ZPaEp1dUNvM2hBaGZ6UWRGSFdudFpfa25scmJiRVppRGtfZzEwMnVYdDNGeWhmRjBBMG5xNUpSWjg4eTFCbFlkMFpHMzRzVTVpaTZXeE5Nb3B1bTBQRnJmTWctdUNGNlhlZw?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Tue, 29 Sep 2026 07:16:04 GMT"
-    },
-    {
-      "title": "日経平均は957円安、米経済指標や金融当局者の発言に関心(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbENfWm95S3llUHN2dUJCLVJ4R2IxTXd1VjAxYnBhNFc2ZXhCYjBZRUMwYXl4R3NXUXlVcW43RGs1V2tKOHRGempfSWF0bS0zTkY2dmp0emI0RXNkcEM3aFE2OGg0aFNGblh6eWdtQi15c1lRNWxvb3BfemlxbzB4SEJ3VXJCTUE?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Tue, 29 Sep 2026 05:51:47 GMT"
+      "title": "【テクニカル】日経平均株価テクニカル分析－10日線を支持に自律反発につながるか",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBpRmdNWVpaU21UNldOY25IcHkyTUtqQ21BN01TcTJFVFhzbElhWGRiRXdLRGp5cUNKZmRRVjZ1TW5lQ2NuLTN2M3FDQVB1YUtnWWR3OUI0ZFp6OWMtR2lFOUUwTQ?oc=5",
+      "source": "外為どっとコム",
+      "publishedAt": "Tue, 29 Sep 2026 15:43:31 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-18",
-      "close": 55239.4,
-      "sma25": 56119.89,
-      "sma75": 53214.98
-    },
     {
       "date": "2026-03-19",
       "close": 53372.53,
@@ -853,6 +847,12 @@
       "close": 65481.27,
       "sma25": 65267.02,
       "sma75": 66636.82
+    },
+    {
+      "date": "2026-09-30",
+      "close": 66753.72,
+      "sma25": 65296.52,
+      "sma75": 66671.15
     }
   ]
 }

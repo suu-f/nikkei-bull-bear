@@ -1,35 +1,35 @@
 {
-  "updatedAt": "2026-10-01T14:24:27.355Z",
-  "asOfDate": "2026-10-01",
-  "price": 68956.72,
-  "sma25": 65433.66,
-  "sma75": 66734.34,
-  "deviationPct": 5.38,
-  "rsi14": 69.9,
-  "vol25AnnualizedPct": 20.9,
+  "updatedAt": "2026-10-02T13:47:18.822Z",
+  "asOfDate": "2026-10-02",
+  "price": 68309.46,
+  "sma25": 65531.78,
+  "sma75": 66764.87,
+  "deviationPct": 4.24,
+  "rsi14": 66.2,
+  "vol25AnnualizedPct": 21.2,
   "trend": "mixed",
   "overheat": "neutral",
   "highVol": false,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 65433.66,
-    "distancePct": 5.11,
+    "level": 65531.78,
+    "distancePct": 4.07,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.963,
-      "changePct": 0.36
+      "value": 157.557,
+      "changePct": 0
     },
     "sp500": {
-      "value": 7633.06,
-      "changePct": -0.24
+      "value": 7749.09,
+      "changePct": 1.08
     },
     "vix": {
-      "value": 17.21,
-      "changePct": 5.32
+      "value": 15.66,
+      "changePct": -4.45
     }
   },
   "macroAssessment": {
@@ -40,46 +40,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均、2200円超高＝東京株式（時事通信）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE00bjZlaW1NbjluMHdvRDVXbUNheXRVNkFEVDZoRjYtaHRJSDZKZjVGanpUNjZ0ckJKQTNDMEdnUlo0Wk1FYklkMW1lRzhUOWhBS0p4S2otcVlLcUhybkxBYnJTSzljVzBYU05qaFY4VFIwczV6bDlGOG9PUGRzNzA?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Thu, 01 Oct 2026 06:00:26 GMT"
-    },
-    {
-      "title": "日経平均終値2203円高 マイクロン好業績で「半導体局所買い」",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE92d2hZY0M1NWRnczF2S041RUU0czFURG14UVpCRU5zWDBHV2R6SnVXSlN6NEZDcUE2aXRGRFVKLWZBOWd4czk2ekowem5mMDJvOHYtQU9vWm9kSkNHeVpCbmJCa21TOUQ3UTJvRQ?oc=5",
+      "title": "日経平均、反落で始まる 前日までの急伸で利益確定売り",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB2SmQ1MmZrWmJJR09kLUZtZWNZZ2dtQW01aEgtVzBSNTZLakh3ZGl0VjM5X1U0R0lmZG0taFZXS0RwREtvSVduUUY1cEZrZlJfSDN4V2FuRVJRZExtaDR3by1LOTdBTXctYnVTbg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Thu, 01 Oct 2026 02:57:34 GMT"
+      "publishedAt": "Fri, 02 Oct 2026 00:07:45 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月1日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5QT1FqSm9TczFvUWZlUTI1WWFYXzU5dHpZaEgxNV9hblZicnQ1NjB1emF5MmhXNXVUYm1VR3djQmROYlgzaFYybldYSlVsMUotYldPWndtUTFTWHRBdDI5UQ?oc=5",
-      "source": "株探",
-      "publishedAt": "Wed, 30 Sep 2026 23:15:56 GMT"
-    },
-    {
-      "title": "（まとめ）半導体銘柄に資金回帰が見られた日経平均は2,203円高の68,956円で大幅高",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE84Uk4zZFBFdWI0ZnR3UTF3RjN3Z25lWjEtWmEwZjVGamRHMVYzSXRZaUkyOW9UQnpNdU5iSFFsYzlZWFJtSmNkRXhvdWlHN1RtWmEwTdIBV0FVX3lxTFBxX0VuX1NicDFURGduZ1cwbzFyMXA4WGZxZkw0MUdYcFBzM0dJUEVJbXcxUjRLSHVydkFLcnJCeWJLeFM2bTZKanlldVR0S1U0V3c1RmdNWQ?oc=5",
+      "title": "（まとめ）利益確定の売りが優勢となった日経平均は647円安の68,309円で反落　今晩は米雇用統計の発表",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE00UjhQMGd2OTFFXzdaaHh1ZV85a1BwOTdEVGdkQ2FvMy15ZGk1WjZVbXFOaF9WTXA1U2ZuaUFHWkdCWWxHb2xWQkR5bXE1eXZsMC1TOdIBV0FVX3lxTE1FdFpNS1IzbE44SFhDR29hOGR1alVYaEhBNGZWZWgyYkFKSGJfQzNRMDJGVzJRZjdWb3BSak5SNUZRUWpOVE1nZk5KX1VfOVBKbURMekFZaw?oc=5",
       "source": "マネクリ",
-      "publishedAt": "Thu, 01 Oct 2026 07:38:00 GMT"
+      "publishedAt": "Fri, 02 Oct 2026 07:44:00 GMT"
     },
     {
-      "title": "日経平均一時1100円安の日に年初来高値､逆行高した株の正体",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBaeGc1V0ZOVlpjcG1BWEN4WE50X2V3cl90clBkd284OVkxSWNUZ0JvMndVZFBkNlBQcDg2TUE1MC1oU2hMcW4yNW1fREpudnRNbVBfVzJ1VQ?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Wed, 30 Sep 2026 21:00:00 GMT"
+      "title": "日経平均は759円安、米雇用統計などに関心(フィスコ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOVS1sTUZ4eVFMbEgzeGYwNWZURzhqSFhxODRZenhfcUctSnFDNG1Ic3NNcVd5cWRtWmxDY25VYjdRdXRhRUZOYW1NQ2N2SHpMZzFfZC1yTHlUUzQ0c0ozVVdMaWdiWGsxbThqa1dFQXljSGczdThMZ2YtZGZZelh6SlZKSHRpRlE?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Fri, 02 Oct 2026 05:52:35 GMT"
+    },
+    {
+      "title": "日経平均急伸始まった10月相場とAI相場の賞味期限 バブル崩壊の目安「25％ルール」から探る持続性（土信田雅之）",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuaG04bkxDeWZMV05maU1Cb2R4d3ZMcS1fdy1XekdJdEx0UTBUQV91ZEtfWmI2UzFXR25ObzdSV0xHM0xRNXJSemhjX3FFNXNneEZBMGhGbmJzUQ?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Thu, 01 Oct 2026 23:00:00 GMT"
+    },
+    {
+      "title": "日経225先物：2日22時＝1180円高、6万9830円",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5nbEMwN2daSEI2SnZ0cEZVc2E1NFRSVUJxU01SbllLNlVwRXlGMnhfWXphOHpLU2RBaDZkUzg4ZGlOb04xU2kzbFZQMmVTUHhZSUw3VklsUnZMMjd1c2FLbQ?oc=5",
+      "source": "株探",
+      "publishedAt": "Fri, 02 Oct 2026 13:00:42 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-23",
-      "close": 51515.49,
-      "sma25": 55703.79,
-      "sma75": 53283.8
-    },
     {
       "date": "2026-03-24",
       "close": 52252.28,
@@ -853,6 +847,12 @@
       "close": 68956.72,
       "sma25": 65433.66,
       "sma75": 66734.34
+    },
+    {
+      "date": "2026-10-02",
+      "close": 68309.46,
+      "sma25": 65531.78,
+      "sma75": 66764.87
     }
   ]
 }

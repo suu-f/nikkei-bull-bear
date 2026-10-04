@@ -112,6 +112,9 @@ input[type=text],input[type=number],input[type=datetime-local],input[type=date],
 .wk-day{position:relative;height:calc(24 * var(--hh));border-left:1px solid var(--line);
   background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(3 * var(--hh) - 1px),var(--line) calc(3 * var(--hh) - 1px),var(--line) calc(3 * var(--hh)))}
 .wk-day.off{background-color:var(--off)}
+.wk-day{cursor:pointer}
+.wk-day:hover{background-color:color-mix(in srgb,var(--accent) 6%,transparent)}
+.wk-day.off:hover{background-color:color-mix(in srgb,var(--accent) 8%,var(--off))}
 .wk-blk{position:absolute;left:3px;right:3px;border-radius:5px;background:var(--c);color:var(--surface);
   font-size:11px;line-height:1.3;padding:2px 4px;overflow:hidden;font-weight:700}
 .wk-blk{cursor:pointer}
@@ -192,7 +195,7 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
       <div class="card prose">
         <span class="eyebrow">お金の流れ</span>
         <h3>毎月の支払いは名義人に集める</h3>
-        <p>月額＝固定費の頭割り＋走行距離×km単価−自分が立て替えた給油代。固定費には任意保険・軽自動車税・車検（自賠責含む）の積立、整備・オイル、冬タイヤと履き替え代、車の値下がり分（購入額−売却見込額を使用予定月数で割った額）を入れます。</p>
+        <p>月額＝固定費の頭割り＋距離料金（その月の給油代を全員の走行距離で分けた額＋消耗分）−自分が立て替えた給油代。固定費には任意保険・軽自動車税・車検（自賠責含む）の積立、整備・オイル、冬タイヤと履き替え代、車の値下がり分（購入額−売却見込額を使用予定月数で割った額）を入れます。</p>
       </div>
       <div class="card prose">
         <span class="eyebrow">使い方</span>
@@ -212,7 +215,7 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
         <li>会社・社宅の管理者に、社宅駐車場を3人で1台共用してよいか、マイカー規程に触れないかを確認する。</li>
         <li>3人で「ルール」タブの内容に合意する（特に事故時の負担と転勤時の扱い）。</li>
         <li>車を選び、名義人が購入。任意保険は<strong>運転者限定なし</strong>・年齢条件は3人の最年少に合わせて契約する。</li>
-        <li>「費用試算」タブで固定費を計算し、「設定」タブにメンバーとkm単価を入れる。</li>
+        <li>「費用試算」タブで固定費を計算し、「設定」タブにメンバー名と固定費を入れる。</li>
         <li>このページのURLを2人に共有し、編集者として招待する。予約と記録を開始する。</li>
         <li>3か月後にルールと単価を見直す。</li>
       </ol>
@@ -294,7 +297,7 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
       </div>
       <div class="card prose small">
         <h3>計算のしかた</h3>
-        <p>固定費（月額 <span class="num" data-cfg="fixedMonthly">0</span> 円）をメンバー数で等分し、走行距離×<span class="num" data-cfg="kmRate">0</span>円/km を足し、その月に立て替えた給油代を引きます。</p>
+        <p>固定費（月額 <span class="num" data-cfg="fixedMonthly">0</span> 円）をメンバー数で等分し、走行距離に応じた距離料金を足し、その月に立て替えた給油代を引きます。たくさん走った人ほど多く払います。</p><p>距離料金は初期設定では「実費按分」です。その月の給油代の合計を全員の走行距離で割った単価に、消耗分（<span class="num" data-cfg="wearRate">1</span>円/km）を足します。想定燃費を使わないので、実際の燃料代との差は出ません。</p>
         <p>プラスなら名義人へ支払い、マイナスなら名義人から受け取ります。名義人の行は自分の負担分の目安で、保険料や税金の支払いはこの集めたお金から行います。</p>
       </div>
     </div>
@@ -347,7 +350,7 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
         <h3>お金</h3>
         <ul class="list">
           <li><span class="rule-n">13</span>固定費は在籍人数で等分。月の途中で加入・離脱した場合も1か月分とする。</li>
-          <li><span class="rule-n">14</span>走行距離料金は<span class="num" data-cfg="kmRate">9</span>円/km（燃料代＋タイヤ・オイルの消耗分）。</li>
+          <li><span class="rule-n">14</span>距離料金＝その月の給油代合計÷全員の総走行距離（実際の燃料単価）＋消耗分<span class="num" data-cfg="wearRate">1</span>円/km。走った距離に応じて燃料代を分け合う。</li>
           <li><span class="rule-n">15</span>毎月5日までに前月分を名義人へ送金する。</li>
           <li><span class="rule-n">16</span>想定外の修理費（5万円超）は、原因が特定の人の使い方でなければ在籍人数で等分。</li>
         </ul>
@@ -496,7 +499,9 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
       <div class="form">
         <div class="field"><label for="s-manager">名義人（集金役）</label><select id="s-manager"></select></div>
         <div class="field"><label for="s-fixed">固定費（月・円）</label><input id="s-fixed" type="number" min="0"></div>
-        <div class="field"><label for="s-km">km単価（円）</label><input id="s-km" type="number" min="0" step="0.5"></div>
+        <div class="field"><label for="s-mode">距離料金の決め方</label><select id="s-mode"><option value="actual">実費按分（給油代を距離で分ける）</option><option value="fixed">固定のkm単価</option></select></div>
+        <div class="field"><label for="s-wear">消耗分（円/km・実費按分のとき）</label><input id="s-wear" type="number" min="0" step="0.5"></div>
+        <div class="field"><label for="s-km">km単価（円・固定のとき）</label><input id="s-km" type="number" min="0" step="0.5"></div>
         <div class="field"><label for="s-pri">優先予約（回/月/人）</label><input id="s-pri" type="number" min="0"></div>
         <div class="field"><label for="s-bump">押し出せる期限（利用の何日前まで）</label><input id="s-bump" type="number" min="0"></div>
         <div class="field"><label for="s-max">1回の最長（時間）</label><input id="s-max" type="number" min="1"></div>
@@ -531,7 +536,7 @@ const HOLIDAYS=new Set(["2026-01-01","2026-01-12","2026-02-11","2026-02-23","202
 const isOff=d=>d.getDay()===0||d.getDay()===6||HOLIDAYS.has(ymd(d));
 
 const DEFAULT={members:[{id:"m1",name:"新任（名義人）"},{id:"m2",name:"先輩A"},{id:"m3",name:"先輩B"}],
-  manager:"m1",fixedMonthly:25289,kmRate:9,priorityPerMonth:1,bumpDeadlineDays:3,maxHours:48,horizonDays:30};
+  manager:"m1",fixedMonthly:25289,kmRate:9,fuelMode:"actual",wearRate:1,priorityPerMonth:1,bumpDeadlineDays:3,maxHours:48,horizonDays:30};
 const S={config:structuredClone(DEFAULT),bookings:[],logs:[],db:null,week:0,readOnly:false,
   month:ym(new Date())};
 
@@ -692,16 +697,27 @@ function renderWeek(){
       blocks+=`<div class="wk-blk${cls}" data-edit="${esc(b.id)}" role="button" tabindex="0" style="--c:${mColor(b.member)};top:calc(${top} * var(--hh));height:calc(${hgt} * var(--hh) - 1px)" title="${label}${b.note?" / "+esc(b.note):""}（クリックで編集）">${label}${b.note&&hgt>=2?`<br><span style="font-weight:400">${esc(b.note)}</span>`:""}</div>`;
     });
     if(ymd(d)===today){const n=new Date();blocks+=`<div class="wk-now" style="top:calc(${(n-ds)/36e5} * var(--hh))"></div>`}
-    h+=`<div class="wk-day${isOff(d)?" off":""}">${blocks}</div>`;
+    h+=`<div class="wk-day${isOff(d)?" off":""}" data-date="${ymd(d)}" title="空いている時間をクリックすると予約できます">${blocks}</div>`;
   });
   h+=`</div>`;
   $("#week").innerHTML=h;
-  $("#legend").innerHTML=members().map(m=>chip(m.id)).join("")+`<span class="muted">黄色の列＝土日祝　★黄枠＝優先予約　点線＝押し出され得る通常予約</span>`;
+  $("#legend").innerHTML=members().map(m=>chip(m.id)).join("")+`<span class="muted">空き時間をクリックで予約　黄色の列＝土日祝　★黄枠＝優先予約　点線＝押し出され得る通常予約</span>`;
 }
 $("#wk-prev").onclick=()=>{S.week--;renderWeek()};
 $("#wk-next").onclick=()=>{S.week++;renderWeek()};
 $("#wk-today").onclick=()=>{S.week=0;renderWeek()};
-$("#week").addEventListener("click",ev=>{const b=ev.target.closest("[data-edit]");if(b&&!S.readOnly)setEdit(b.dataset.edit)});
+$("#week").addEventListener("click",ev=>{
+  if(S.readOnly)return;
+  const b=ev.target.closest("[data-edit]");if(b){setEdit(b.dataset.edit);return}
+  const day=ev.target.closest("[data-date]");if(!day)return;
+  const r=day.getBoundingClientRect(),hr=Math.min(23,Math.max(0,Math.floor((ev.clientY-r.top)/r.height*24)));
+  const [y,mo,da]=day.dataset.date.split("-").map(Number),st=new Date(y,mo-1,da,hr,0);
+  setEdit(null);
+  $("#bk-start").value=toLocal(st);$("#bk-end").value=toLocal(new Date(st.getTime()+3*36e5));
+  showBkMsg();$("#bk-msg").insertAdjacentHTML("afterbegin",`<div class="msg ok">${esc(fmtDT(toLocal(st)))} からの予約を入力中です。返却時刻とメモを確認して「予約を登録」を押してください。</div>`);
+  $("#bk-form").scrollIntoView({behavior:"smooth",block:"start"});
+  try{$("#bk-end").focus({preventScroll:true})}catch(e){}
+});
 $("#week").addEventListener("keydown",ev=>{const b=ev.target.closest("[data-edit]");if(b&&(ev.key==="Enter"||ev.key===" ")&&!S.readOnly){ev.preventDefault();setEdit(b.dataset.edit)}});
 
 function armDelete(btn,fn){
@@ -768,16 +784,24 @@ $("#lg-form").addEventListener("submit",async ev=>{
 /* ---------- settlement ---------- */
 function renderSettle(){
   const c=S.config,ms=members(),n=ms.length||1,month=S.month;
+  const ml=S.logs.filter(l=>(l.date||"").startsWith(month));
+  const tKm=ml.reduce((a,l)=>a+km(l),0),tFuel=ml.reduce((a,l)=>a+(+l.fuelYen||0),0);
+  const actual=c.fuelMode!=="fixed",fuelRate=tKm>0?tFuel/tKm:0;
+  const rate=actual?fuelRate+(+c.wearRate||0):c.kmRate;
   const rows=ms.map(m=>{
-    const ls=S.logs.filter(l=>l.member===m.id&&(l.date||"").startsWith(month));
+    const ls=ml.filter(l=>l.member===m.id);
     const k=ls.reduce((a,l)=>a+km(l),0),fuel=ls.reduce((a,l)=>a+(+l.fuelYen||0),0);
-    const fixed=c.fixedMonthly/n,dist=k*c.kmRate;
+    const fixed=c.fixedMonthly/n,dist=k*rate;
     return {m,k,fuel,fixed,dist,net:fixed+dist-fuel};
   });
   let h=`<table><thead><tr><th>メンバー</th><th class="r">固定費</th><th class="r">走行</th><th class="r">距離料金</th><th class="r">給油立替</th><th class="r">差引</th></tr></thead><tbody>`;
   rows.forEach(r=>{h+=`<tr><td>${chip(r.m.id)}${r.m.id===c.manager?' <span class="pill ok">名義人</span>':""}</td><td class="r num">${yen(r.fixed)}</td><td class="r num">${r.k} km</td><td class="r num">${yen(r.dist)}</td><td class="r num">−${yen(r.fuel)}</td><td class="r num"><strong>${r.net<0?"−":""}${yen(Math.abs(r.net))}</strong></td></tr>`});
   const tk=rows.reduce((a,r)=>a+r.k,0);
-  h+=`<tr><td class="muted">合計</td><td class="r num">${yen(c.fixedMonthly)}</td><td class="r num">${tk} km</td><td class="r num">${yen(tk*c.kmRate)}</td><td class="r num">−${yen(rows.reduce((a,r)=>a+r.fuel,0))}</td><td></td></tr></tbody></table>`;
+  h+=`<tr><td class="muted">合計</td><td class="r num">${yen(c.fixedMonthly)}</td><td class="r num">${tk} km</td><td class="r num">${yen(tk*rate)}</td><td class="r num">−${yen(tFuel)}</td><td></td></tr></tbody></table>`;
+  const diff=tk*rate-tFuel;
+  h+=`<div class="small" style="padding:10px;display:grid;gap:4px">`+(actual
+    ?`<div>距離料金の単価（この月）：<strong class="num">${rate.toFixed(1)}円/km</strong> ＝ 実際の燃料代 ${fuelRate.toFixed(1)}円/km（給油 ${yen(tFuel)} ÷ ${tKm} km）＋ 消耗分 ${(+c.wearRate||0)}円/km</div><div class="muted">燃料代は全額が走行距離に応じて配分されるので、想定燃費との差は出ません。名義人の手元には消耗分 ${yen(tk*(+c.wearRate||0))} が残り、整備費に充てます。</div>`
+    :`<div>距離料金の単価：<strong class="num">${rate}円/km</strong>（固定）。この月の実際の燃料代は ${tKm?fuelRate.toFixed(1):"—"}円/km でした。</div><div class="muted">距離料金の合計と実際の給油代の差：<strong class="${diff<0?"":""}">${diff<0?"−":"＋"}${yen(Math.abs(diff))}</strong>（＋なら名義人の手元に残り整備費へ、−なら不足分を名義人が負担）</div>`)+`</div>`;
   $("#settle").innerHTML=h;
   const mgr=mName(c.manager),lines=[`【${+month.slice(5)}月分 カーシェア精算】`];
   rows.forEach(r=>{
@@ -785,7 +809,7 @@ function renderSettle(){
     else if(r.net>=0)lines.push(`${r.m.name} → ${mgr}：${yen(r.net)}`);
     else lines.push(`${mgr} → ${r.m.name}：${yen(-r.net)}`);
   });
-  lines.push(`（固定費 ${yen(c.fixedMonthly)}÷${n}人、${c.kmRate}円/km、給油立替は差し引き済み）`);
+  lines.push(`（固定費 ${yen(c.fixedMonthly)}÷${n}人、距離料金 ${actual?rate.toFixed(1)+"円/km［実際の燃料代＋消耗分］":rate+"円/km"}、給油立替は差し引き済み）`);
   $("#st-text").textContent=lines.join("\n");
 }
 $("#st-copy").onclick=async()=>{
@@ -809,7 +833,7 @@ function renderCalc(){
   const rent=v["c-rent"]||1;
   $("#c-even").innerHTML=`レンタカー（1日${yen(rent)}）と比べると、3人なら月<strong class="num">${(total/3/rent).toFixed(1)}</strong>日、2人なら<strong class="num">${(total/2/rent).toFixed(1)}</strong>日以上使う人にとって得になります。`;
   const fuel=v["c-gas"]/Math.max(1,v["c-kmpl"]),rate=Math.ceil(fuel+1);
-  $("#c-km").innerHTML=`燃料代は約<span class="num">${fuel.toFixed(1)}</span>円/km。消耗分を足して <strong class="num">${rate}円/km</strong> をkm単価の目安にしています。`;
+  $("#c-km").innerHTML=`この燃費だと燃料代は約<span class="num">${fuel.toFixed(1)}</span>円/km。精算は初期設定で実際の給油代を距離で分けるので、この値は目安です（固定単価にする場合は消耗分を足した <strong class="num">${rate}円/km</strong>）。`;
   calcOut={fixed:Math.round(total),kmRate:rate};
 }
 CALC.forEach(id=>$("#"+id).addEventListener("input",renderCalc));
@@ -825,7 +849,7 @@ function renderSetup(){
   draftMembers=structuredClone(members());
   drawMembers();
   const c=S.config;
-  $("#s-fixed").value=c.fixedMonthly;$("#s-km").value=c.kmRate;$("#s-pri").value=c.priorityPerMonth;$("#s-bump").value=c.bumpDeadlineDays;$("#s-max").value=c.maxHours;$("#s-horizon").value=c.horizonDays;
+  $("#s-fixed").value=c.fixedMonthly;$("#s-km").value=c.kmRate;$("#s-mode").value=c.fuelMode==="fixed"?"fixed":"actual";$("#s-wear").value=c.wearRate;$("#s-pri").value=c.priorityPerMonth;$("#s-bump").value=c.bumpDeadlineDays;$("#s-max").value=c.maxHours;$("#s-horizon").value=c.horizonDays;
   fillMemberSelect($("#me"),me());
 }
 function drawMembers(){
@@ -841,7 +865,7 @@ $("#m-add").onclick=()=>{draftMembers.push({id:"m"+Date.now().toString(36),name:
 $("#s-save").onclick=async()=>{
   const num=(id,min)=>Math.max(min,+$("#"+id).value||0);
   const next={members:draftMembers.map(m=>({id:m.id,name:(m.name||"").trim().slice(0,20)||"名前未設定"})),manager:$("#s-manager").value,
-    fixedMonthly:num("s-fixed",0),kmRate:num("s-km",0),priorityPerMonth:Math.round(num("s-pri",0)),bumpDeadlineDays:Math.round(num("s-bump",0)),maxHours:num("s-max",1),horizonDays:Math.round(num("s-horizon",1))};
+    fixedMonthly:num("s-fixed",0),kmRate:num("s-km",0),fuelMode:$("#s-mode").value,wearRate:num("s-wear",0),priorityPerMonth:Math.round(num("s-pri",0)),bumpDeadlineDays:Math.round(num("s-bump",0)),maxHours:num("s-max",1),horizonDays:Math.round(num("s-horizon",1))};
   try{await write(db=>db.doc("config/main").set(next));$("#s-msg").textContent="保存しました"; $("#s-msg").style.color="var(--ok)"}
   catch(e){$("#s-msg").textContent=writeErr(e);$("#s-msg").style.color="var(--bad)"}
 };

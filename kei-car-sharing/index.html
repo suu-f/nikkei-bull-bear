@@ -114,6 +114,12 @@ input[type=text],input[type=number],input[type=datetime-local],input[type=date],
 .wk-day.off{background-color:var(--off)}
 .wk-blk{position:absolute;left:3px;right:3px;border-radius:5px;background:var(--c);color:var(--surface);
   font-size:11px;line-height:1.3;padding:2px 4px;overflow:hidden;font-weight:700}
+.wk-blk{cursor:pointer}
+.wk-blk.pri{box-shadow:inset 0 0 0 2px var(--plate)}
+.wk-blk.soft{background:color-mix(in srgb,var(--c) 55%,var(--surface));color:var(--ink);border:1px dashed var(--c)}
+tr.bumped td{color:var(--muted)}
+tr.bumped td.dt{text-decoration:line-through}
+tr.editing td{background:color-mix(in srgb,var(--plate) 18%,transparent)}
 .wk-now{position:absolute;left:0;right:0;height:2px;background:var(--bad)}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px}
 
@@ -186,12 +192,12 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
       <div class="card prose">
         <span class="eyebrow">お金の流れ</span>
         <h3>毎月の支払いは名義人に集める</h3>
-        <p>月額＝固定費の頭割り＋走行距離×km単価−自分が立て替えた給油代。固定費には保険・税・車検の積立と、車の値下がり分（購入額−売却見込額を使用予定月数で割った額）を入れます。</p>
+        <p>月額＝固定費の頭割り＋走行距離×km単価−自分が立て替えた給油代。固定費には任意保険・軽自動車税・車検（自賠責含む）の積立、整備・オイル、冬タイヤと履き替え代、車の値下がり分（購入額−売却見込額を使用予定月数で割った額）を入れます。</p>
       </div>
       <div class="card prose">
         <span class="eyebrow">使い方</span>
-        <h3>予約は先着、休日は月の上限つき</h3>
-        <p>平日は先着順です。土日祝は1人あたり月<span class="num" data-cfg="weekendCap">4</span>日までにし、人気の枠が1人に偏らないようにします。予約・記録・精算はこのページの各タブで行います。</p>
+        <h3>平日は先着、土日祝は「優先予約」で公平に</h3>
+        <p>平日は先着順です。土日祝は1人あたり月<span class="num" data-cfg="priorityPerMonth">1</span>回だけ「優先予約」を使えます。それ以外の土日の予約は「通常予約」で、利用日の<span class="num" data-cfg="bumpDeadlineDays">3</span>日前までなら他の人の優先予約に押し出されることがあります。</p>
       </div>
       <div class="card prose">
         <span class="eyebrow">出口</span>
@@ -216,14 +222,15 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
   <!-- 予約 -->
   <section class="panel" id="p-book" role="tabpanel" hidden>
     <div class="card">
-      <h2>予約する</h2>
+      <h2 id="bk-title">予約する</h2>
       <form id="bk-form" class="form" novalidate>
         <div class="field"><label for="bk-member">使う人</label><select id="bk-member"></select></div>
         <div class="field"><label for="bk-start">開始</label><input id="bk-start" type="datetime-local" step="900"></div>
         <div class="field"><label for="bk-end">返却</label><input id="bk-end" type="datetime-local" step="900"></div>
         <div class="field"><label for="bk-note">行き先・メモ</label><input id="bk-note" type="text" maxlength="60" placeholder="例：買い出し、帰省"></div>
-        <div class="field"><button class="btn" type="submit" id="bk-submit">予約を登録</button></div>
+        <div class="field"><div class="row"><button class="btn" type="submit" id="bk-submit">予約を登録</button><button class="btn ghost" type="button" id="bk-cancel" hidden>編集をやめる</button></div></div>
       </form>
+      <label class="chk" id="bk-pri-wrap" hidden style="margin-top:10px"><input type="checkbox" id="bk-pri"> <span id="bk-pri-label">優先予約にする</span></label>
       <div id="bk-msg" style="margin-top:12px;display:grid;gap:8px"></div>
       <label class="chk" id="bk-ok-wrap" hidden style="margin-top:8px"><input type="checkbox" id="bk-ok"> 上の注意について、他のメンバーの了承を得ました</label>
     </div>
@@ -299,6 +306,19 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
       <h2 style="margin:0">ルール案</h2>
       <p class="muted">開始前に3人で読み合わせ、変えたい点は「設定」タブの数値か、この文面を直して合意してください。数値は設定と連動しています。</p>
     </div>
+    <div class="card prose">
+      <h3>土日祝の取り合いを防ぐ方法の比較</h3>
+      <p class="small muted">「月に何日まで」という上限だけだと、月によっては1人で全部の土日を押さえられてしまいます。そこで次の方法を比べ、1つ目を採用しています。</p>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>方式</th><th>仕組み</th><th>よい点</th><th>気になる点</th></tr></thead>
+        <tbody>
+          <tr class="rec"><td><strong>優先予約＋押し出し</strong><br><span class="pill ok">採用</span></td><td>1人月1回だけ、他の人の通常予約より優先できる。他の土日は通常予約で、直前まで押し出され得る</td><td>全員が毎月最低1回は確実に土日を取れる。空いていれば何回でも使える</td><td>通常予約は直前まで確定しない</td></tr>
+          <tr><td>週末ローテーション</td><td>毎月の土日を順番に割り当てる（第1週A、第2週B…）。担当外の人は担当者が使わない日だけ予約</td><td>分かりやすく、取り合いが起きない</td><td>担当日に予定が合わないと無駄になる。5週目の扱いを決める必要</td></tr>
+          <tr><td>月初の抽選・ドラフト</td><td>前月末に希望日を出し合い、くじ順で1日ずつ選ぶ</td><td>希望が最も反映される</td><td>毎月の手間がかかる</td></tr>
+          <tr><td>上限日数のみ（当初案）</td><td>土日祝は1人月4日まで先着</td><td>単純</td><td>早い者勝ちで、全土日を1人が押さえられる</td></tr>
+        </tbody>
+      </table></div>
+    </div>
     <div class="grid2">
       <div class="card prose">
         <h3>予約</h3>
@@ -306,7 +326,8 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
           <li><span class="rule-n">1</span>予約はこのページで先着順。口頭やLINEだけの予約は無効。</li>
           <li><span class="rule-n">2</span>予約できるのは<span class="num" data-cfg="horizonDays">30</span>日先まで。</li>
           <li><span class="rule-n">3</span>1回の予約は最長<span class="num" data-cfg="maxHours">48</span>時間。超える場合は他の2人の了承を得る。</li>
-          <li><span class="rule-n">4</span>土日祝の利用は1人あたり月<span class="num" data-cfg="weekendCap">4</span>日まで。上限を超える予約は、前々日まで他の人の予約が入らなければ可。</li>
+          <li><span class="rule-n">4</span>土日祝を含む予約には「優先予約」と「通常予約」の2種類がある。優先予約は1人あたり月<span class="num" data-cfg="priorityPerMonth">1</span>回（利用開始日の月で数える）。優先予約どうしは先着順。</li>
+          <li><span class="rule-n">4-2</span>通常予約は、利用開始の<span class="num" data-cfg="bumpDeadlineDays">3</span>日前までは他の人の優先予約で押し出されることがある。押し出された予約は一覧に表示されるので、日時を変えるか削除する。<span class="num" data-cfg="bumpDeadlineDays">3</span>日前を過ぎた通常予約は確定。</li>
           <li><span class="rule-n">5</span>年末年始・GW・お盆の帰省利用は、1か月前に3人で調整。重なったら前年に使えなかった人を優先。</li>
           <li><span class="rule-n">6</span>キャンセルは分かった時点ですぐ削除する。予約なしの当日利用は、空いていればOK（記録は必須）。</li>
         </ul>
@@ -441,7 +462,9 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
           <div class="field"><label for="c-ins">任意保険（年・円）</label><input id="c-ins" type="number" value="60000" step="1000"></div>
           <div class="field"><label for="c-tax">軽自動車税（年・円）</label><input id="c-tax" type="number" value="10800" step="100"></div>
           <div class="field"><label for="c-shaken">車検（2年ごと・円）</label><input id="c-shaken" type="number" value="70000" step="1000"></div>
-          <div class="field"><label for="c-maint">整備・タイヤ（年・円）</label><input id="c-maint" type="number" value="40000" step="1000"></div>
+          <div class="field"><label for="c-maint">整備・オイル・消耗品（年・円）</label><input id="c-maint" type="number" value="25000" step="1000"></div>
+          <div class="field"><label for="c-winter">冬タイヤ一式（購入・円）</label><input id="c-winter" type="number" value="50000" step="1000"></div>
+          <div class="field"><label for="c-swap">タイヤ履き替え・保管（年・円）</label><input id="c-swap" type="number" value="6000" step="500"></div>
           <div class="field"><label for="c-park">駐車場（月・円）</label><input id="c-park" type="number" value="0" step="500"></div>
           <div class="field"><label for="c-gas">ガソリン（円/L）</label><input id="c-gas" type="number" value="170"></div>
           <div class="field"><label for="c-kmpl">燃費（km/L）</label><input id="c-kmpl" type="number" value="20"></div>
@@ -474,7 +497,8 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
         <div class="field"><label for="s-manager">名義人（集金役）</label><select id="s-manager"></select></div>
         <div class="field"><label for="s-fixed">固定費（月・円）</label><input id="s-fixed" type="number" min="0"></div>
         <div class="field"><label for="s-km">km単価（円）</label><input id="s-km" type="number" min="0" step="0.5"></div>
-        <div class="field"><label for="s-cap">土日祝の上限（日/月/人）</label><input id="s-cap" type="number" min="0"></div>
+        <div class="field"><label for="s-pri">優先予約（回/月/人）</label><input id="s-pri" type="number" min="0"></div>
+        <div class="field"><label for="s-bump">押し出せる期限（利用の何日前まで）</label><input id="s-bump" type="number" min="0"></div>
         <div class="field"><label for="s-max">1回の最長（時間）</label><input id="s-max" type="number" min="1"></div>
         <div class="field"><label for="s-horizon">予約できる期間（日先まで）</label><input id="s-horizon" type="number" min="1"></div>
       </div>
@@ -486,7 +510,7 @@ footer{margin-top:40px;font-size:12px;color:var(--muted)}
     </div>
   </section>
 
-  <footer>祝日の判定は2026〜2027年分を内蔵しています。予約・記録・設定はこのページを開く全員で共有されます。</footer>
+  <footer>黄色の枠＝優先予約、点線＝押し出され得る通常予約。祝日の判定は2026〜2027年分を内蔵しています。予約・記録・設定はこのページを開く全員で共有されます。</footer>
 </div>
 
 <script>
@@ -507,7 +531,7 @@ const HOLIDAYS=new Set(["2026-01-01","2026-01-12","2026-02-11","2026-02-23","202
 const isOff=d=>d.getDay()===0||d.getDay()===6||HOLIDAYS.has(ymd(d));
 
 const DEFAULT={members:[{id:"m1",name:"新任（名義人）"},{id:"m2",name:"先輩A"},{id:"m3",name:"先輩B"}],
-  manager:"m1",fixedMonthly:24650,kmRate:9,weekendCap:4,maxHours:48,horizonDays:30};
+  manager:"m1",fixedMonthly:25289,kmRate:9,priorityPerMonth:1,bumpDeadlineDays:3,maxHours:48,horizonDays:30};
 const S={config:structuredClone(DEFAULT),bookings:[],logs:[],db:null,week:0,readOnly:false,
   month:ym(new Date())};
 
@@ -552,60 +576,99 @@ function fillMemberSelect(sel,val){
 }
 
 /* ---------- bookings ---------- */
+const active=()=>S.bookings.filter(b=>!b.bumped);
+let editId=null;
 function offDays(start,end){
   const s=new Date(start),e=new Date(end),out=new Set();
   const d=new Date(s.getFullYear(),s.getMonth(),s.getDate());
   while(d<e){if(isOff(d))out.add(ymd(d));d.setDate(d.getDate()+1)}
   return out;
 }
-function memberOffDays(member,month,exceptId){
-  const out=new Set();
-  S.bookings.filter(b=>b.member===member&&b.id!==exceptId).forEach(b=>offDays(b.start,b.end).forEach(k=>{if(k.startsWith(month))out.add(k)}));
-  return out;
+const bumpable=b=>!b.priority&&!b.bumped&&offDays(b.start,b.end).size>0&&new Date(b.start)-new Date()>=S.config.bumpDeadlineDays*864e5;
+function priUsed(member,month,exceptId){
+  return S.bookings.filter(b=>b.member===member&&b.priority&&!b.bumped&&b.id!==exceptId&&b.start.startsWith(month)).length;
 }
-function checkBooking(member,start,end){
-  const errors=[],warns=[];
-  const s=new Date(start),e=new Date(end);
-  if(!start||!end||isNaN(s)||isNaN(e)){errors.push("開始と返却の日時を入力してください。");return {errors,warns}}
-  if(e<=s){errors.push("返却は開始より後の日時にしてください。");return {errors,warns}}
-  S.bookings.forEach(b=>{if(s<new Date(b.end)&&e>new Date(b.start))errors.push(`${mName(b.member)}さんの予約（${fmtDT(b.start)}〜${fmtDT(b.end)}）と重なっています。`)});
-  const hrs=(e-s)/36e5,c=S.config;
+function checkBooking(member,start,end,priority,exceptId){
+  const errors=[],warns=[],bumps=[];
+  const s=new Date(start),e=new Date(end),c=S.config;
+  if(!start||!end||isNaN(s)||isNaN(e)){errors.push("開始と返却の日時を入力してください。");return {errors,warns,bumps}}
+  if(e<=s){errors.push("返却は開始より後の日時にしてください。");return {errors,warns,bumps}}
+  const off=offDays(start,end).size>0;
+  if(priority){
+    if(!off)errors.push("優先予約は土日祝を含む予約にだけ使えます。");
+    const used=priUsed(member,start.slice(0,7),exceptId);
+    if(used>=c.priorityPerMonth)errors.push(`${mName(member)}さんは${+start.slice(5,7)}月の優先予約（${c.priorityPerMonth}回）をすでに使っています。`);
+  }
+  active().forEach(b=>{
+    if(b.id===exceptId||!(s<new Date(b.end)&&e>new Date(b.start)))return;
+    const who=`${mName(b.member)}さんの${b.priority?"優先":"通常"}予約（${fmtDT(b.start)}〜${fmtDT(b.end)}）`;
+    if(priority&&!b.priority){
+      if(b.member===member)errors.push(`${who}と重なっています。自分の予約は編集で変更してください。`);
+      else if(bumpable(b))bumps.push(b);
+      else errors.push(`${who}と重なっています。利用の${c.bumpDeadlineDays}日前を過ぎたので押し出せません。`);
+    }else{
+      errors.push(`${who}と重なっています。`+(!priority&&bumpable(b)&&b.member!==member?"優先予約にすれば押し出せます。":""));
+    }
+  });
+  const hrs=(e-s)/36e5;
   if(hrs>c.maxHours)warns.push(`1回の予約が${Math.round(hrs)}時間で、上限の${c.maxHours}時間を超えています（ルール3）。`);
   if(s-new Date()>c.horizonDays*864e5)warns.push(`${c.horizonDays}日より先の予約です（ルール2）。`);
-  const nd=offDays(start,end),months=new Set([...nd].map(k=>k.slice(0,7)));
-  months.forEach(m=>{
-    const set=memberOffDays(member,m);nd.forEach(k=>{if(k.startsWith(m))set.add(k)});
-    if(set.size>c.weekendCap)warns.push(`${+m.slice(5)}月の土日祝の利用が${set.size}日になり、上限の${c.weekendCap}日を超えます（ルール4）。`);
-  });
-  return {errors,warns};
+  return {errors,warns,bumps};
 }
+function formState(){return {member:$("#bk-member").value,start:$("#bk-start").value,end:$("#bk-end").value,priority:$("#bk-pri").checked&&!$("#bk-pri-wrap").hidden}}
 function showBkMsg(){
-  const {errors,warns}=checkBooking($("#bk-member").value,$("#bk-start").value,$("#bk-end").value);
-  const box=$("#bk-msg");
-  box.innerHTML=errors.map(t=>`<div class="msg bad">${esc(t)}</div>`).join("")+warns.map(t=>`<div class="msg warn">${esc(t)}</div>`).join("");
-  $("#bk-ok-wrap").hidden=!(warns.length&&!errors.length);
-  if(!warns.length)$("#bk-ok").checked=false;
-  $("#bk-submit").disabled=S.readOnly||errors.length>0||(warns.length>0&&!$("#bk-ok").checked);
-  return {errors,warns};
+  const f=formState(),off=f.start&&f.end&&offDays(f.start,f.end).size>0;
+  $("#bk-pri-wrap").hidden=!off;
+  if(off){
+    const left=Math.max(0,S.config.priorityPerMonth-priUsed(f.member,f.start.slice(0,7),editId));
+    $("#bk-pri-label").textContent=`優先予約にする（${mName(f.member)}さんの${+f.start.slice(5,7)}月の残り ${left}回）`;
+  }
+  f.priority=$("#bk-pri").checked&&off;
+  const r=checkBooking(f.member,f.start,f.end,f.priority,editId),box=$("#bk-msg");
+  let h=r.errors.map(t=>`<div class="msg bad">${esc(t)}</div>`).join("")+r.warns.map(t=>`<div class="msg warn">${esc(t)}</div>`).join("");
+  if(!r.errors.length&&r.bumps.length)h+=r.bumps.map(b=>`<div class="msg warn">${esc(mName(b.member))}さんの通常予約（${esc(fmtDT(b.start))}〜${esc(fmtDT(b.end))}）を押し出します。</div>`).join("");
+  if(!r.errors.length&&off&&!f.priority)h+=`<div class="msg warn">通常予約です。利用の${S.config.bumpDeadlineDays}日前までは、他の人の優先予約で押し出されることがあります。</div>`;
+  box.innerHTML=h;
+  $("#bk-ok-wrap").hidden=!(r.warns.length&&!r.errors.length);
+  if(!r.warns.length)$("#bk-ok").checked=false;
+  $("#bk-submit").disabled=S.readOnly||r.errors.length>0||(r.warns.length>0&&!$("#bk-ok").checked);
+  return {...r,f};
 }
-["bk-member","bk-start","bk-end","bk-ok"].forEach(id=>$("#"+id).addEventListener("input",showBkMsg));
+["bk-member","bk-start","bk-end","bk-ok","bk-pri"].forEach(id=>$("#"+id).addEventListener("input",showBkMsg));
 function resetBkTimes(){
   const n=new Date();n.setMinutes(0,0,0);n.setHours(n.getHours()+1);
   const e=new Date(n.getTime()+3*36e5);
   $("#bk-start").value=toLocal(n);$("#bk-end").value=toLocal(e);
 }
+function setEdit(id){
+  const b=id&&S.bookings.find(x=>x.id===id);
+  editId=b?b.id:null;
+  $("#bk-title").textContent=b?"予約を編集":"予約する";
+  $("#bk-submit").textContent=b?"変更を保存":"予約を登録";
+  $("#bk-cancel").hidden=!b;
+  if(b){
+    fillMemberSelect($("#bk-member"),b.member);
+    $("#bk-start").value=b.start;$("#bk-end").value=b.end;$("#bk-note").value=b.note||"";$("#bk-pri").checked=!!b.priority;
+    showTab("book");$("#bk-form").scrollIntoView({behavior:"smooth",block:"start"});
+  }else{$("#bk-note").value="";$("#bk-pri").checked=false;resetBkTimes();fillMemberSelect($("#bk-member"),me())}
+  $("#bk-ok").checked=false;showBkMsg();renderUpcoming();
+}
+$("#bk-cancel").onclick=()=>{setEdit(null);$("#bk-msg").innerHTML=""};
 $("#bk-form").addEventListener("submit",async ev=>{
   ev.preventDefault();
-  const {errors,warns}=showBkMsg();
+  const {errors,warns,bumps,f}=showBkMsg();
   if(errors.length||(warns.length&&!$("#bk-ok").checked))return;
-  const data={member:$("#bk-member").value,start:$("#bk-start").value,end:$("#bk-end").value,
-    note:$("#bk-note").value.trim().slice(0,60),override:warns.length>0,createdAt:new Date().toISOString()};
+  const data={member:f.member,start:f.start,end:f.end,priority:f.priority,note:$("#bk-note").value.trim().slice(0,60),
+    override:warns.length>0,bumped:false,bumpedBy:null,updatedAt:new Date().toISOString()};
   $("#bk-submit").disabled=true;
+  const wasEdit=!!editId;
   try{
-    await write(db=>db.collection("bookings").add(data));
-    $("#bk-note").value="";$("#bk-ok").checked=false;resetBkTimes();
-    $("#bk-msg").innerHTML=`<div class="msg ok">予約を登録しました：${esc(fmtDT(data.start))}〜${esc(fmtDT(data.end))}</div>`;
-    $("#bk-ok-wrap").hidden=true;$("#bk-submit").disabled=S.readOnly;
+    let id=editId;
+    if(id)await write(db=>db.doc("bookings/"+id).update(data));
+    else{data.createdAt=data.updatedAt;id=(await write(db=>db.collection("bookings").add(data))).id}
+    for(const b of bumps)await write(db=>db.doc("bookings/"+b.id).update({bumped:true,bumpedBy:id}));
+    setEdit(null);
+    $("#bk-msg").innerHTML=`<div class="msg ok">${wasEdit?"予約を変更しました":"予約を登録しました"}：${esc(fmtDT(data.start))}〜${esc(fmtDT(data.end))}${data.priority?"（優先予約）":""}${bumps.length?`。${bumps.map(b=>esc(mName(b.member))+"さん").join("、")}の通常予約を押し出しました`:""}</div>`;
   }catch(e){$("#bk-msg").innerHTML=`<div class="msg bad">${esc(writeErr(e))}</div>`;$("#bk-submit").disabled=false}
 });
 
@@ -619,24 +682,27 @@ function renderWeek(){
   h+=`<div class="wk-body"><div class="wk-gut">`+[3,6,9,12,15,18,21].map(x=>`<span style="top:calc(${x} * var(--hh))">${x}時</span>`).join("")+`</div>`;
   days.forEach(d=>{
     const ds=d.getTime(),de=ds+864e5;let blocks="";
-    S.bookings.forEach(b=>{
+    active().forEach(b=>{
       const bs=new Date(b.start).getTime(),be=new Date(b.end).getTime();
       const s=Math.max(bs,ds),e=Math.min(be,de);if(e<=s)return;
       const top=(s-ds)/36e5,hgt=(e-s)/36e5;
       const t1=new Date(s),t2=new Date(e);
-      const label=`${esc(mName(b.member))} ${pad(t1.getHours())}:${pad(t1.getMinutes())}–${e===de?"24:00":pad(t2.getHours())+":"+pad(t2.getMinutes())}`;
-      blocks+=`<div class="wk-blk" style="--c:${mColor(b.member)};top:calc(${top} * var(--hh));height:calc(${hgt} * var(--hh) - 1px)" title="${label}${b.note?" / "+esc(b.note):""}">${label}${b.note&&hgt>=2?`<br><span style="font-weight:400">${esc(b.note)}</span>`:""}</div>`;
+      const label=`${b.priority?"★":""}${esc(mName(b.member))} ${pad(t1.getHours())}:${pad(t1.getMinutes())}–${e===de?"24:00":pad(t2.getHours())+":"+pad(t2.getMinutes())}`;
+      const cls=b.priority?" pri":(bumpable(b)?" soft":"");
+      blocks+=`<div class="wk-blk${cls}" data-edit="${esc(b.id)}" role="button" tabindex="0" style="--c:${mColor(b.member)};top:calc(${top} * var(--hh));height:calc(${hgt} * var(--hh) - 1px)" title="${label}${b.note?" / "+esc(b.note):""}（クリックで編集）">${label}${b.note&&hgt>=2?`<br><span style="font-weight:400">${esc(b.note)}</span>`:""}</div>`;
     });
     if(ymd(d)===today){const n=new Date();blocks+=`<div class="wk-now" style="top:calc(${(n-ds)/36e5} * var(--hh))"></div>`}
     h+=`<div class="wk-day${isOff(d)?" off":""}">${blocks}</div>`;
   });
   h+=`</div>`;
   $("#week").innerHTML=h;
-  $("#legend").innerHTML=members().map(m=>chip(m.id)).join("")+`<span class="muted">黄色の列＝土日祝</span>`;
+  $("#legend").innerHTML=members().map(m=>chip(m.id)).join("")+`<span class="muted">黄色の列＝土日祝　★黄枠＝優先予約　点線＝押し出され得る通常予約</span>`;
 }
 $("#wk-prev").onclick=()=>{S.week--;renderWeek()};
 $("#wk-next").onclick=()=>{S.week++;renderWeek()};
 $("#wk-today").onclick=()=>{S.week=0;renderWeek()};
+$("#week").addEventListener("click",ev=>{const b=ev.target.closest("[data-edit]");if(b&&!S.readOnly)setEdit(b.dataset.edit)});
+$("#week").addEventListener("keydown",ev=>{const b=ev.target.closest("[data-edit]");if(b&&(ev.key==="Enter"||ev.key===" ")&&!S.readOnly){ev.preventDefault();setEdit(b.dataset.edit)}});
 
 function armDelete(btn,fn){
   if(btn.classList.contains("armed")){fn();return}
@@ -645,20 +711,25 @@ function armDelete(btn,fn){
 }
 function renderUpcoming(){
   const now=new Date(),list=S.bookings.filter(b=>new Date(b.end)>now).sort((a,b)=>a.start<b.start?-1:1);
-  const month=ym(now);
-  const counts=members().map(m=>`${chip(m.id)} <span class="num">${memberOffDays(m.id,month).size}</span><span class="muted">/${S.config.weekendCap}日</span>`).join("　");
-  let h=`<div class="small" style="padding:10px 10px 4px">今月の土日祝の利用：${counts}</div>`;
+  const month=ym(now),c=S.config;
+  const counts=members().map(m=>`${chip(m.id)} <span class="num">${priUsed(m.id,month)}</span><span class="muted">/${c.priorityPerMonth}回</span>`).join("　");
+  let h=`<div class="small" style="padding:10px 10px 4px">今月の優先予約の使用：${counts}</div>`;
   if(!list.length){$("#upcoming").innerHTML=h+`<div class="empty">まだ予約はありません。上のフォームから最初の予約を登録してください。</div>`;return}
-  h+=`<div class="tbl-wrap"><table><thead><tr><th>日時</th><th>使う人</th><th>メモ</th><th></th></tr></thead><tbody>`;
+  h+=`<div class="tbl-wrap"><table><thead><tr><th>日時</th><th>使う人</th><th>種類</th><th>メモ</th><th></th></tr></thead><tbody>`;
   list.forEach(b=>{
     const off=offDays(b.start,b.end).size;
-    h+=`<tr><td class="num" style="white-space:nowrap">${esc(fmtDT(b.start))}<br>〜 ${esc(fmtDT(b.end))}</td><td>${chip(b.member)}${off?` <span class="pill warn">土日祝${off}日</span>`:""}${b.override?` <span class="pill bad">了承済み</span>`:""}</td><td>${esc(b.note)}</td><td class="r">${S.readOnly?"":`<button class="btn danger sm" data-del-b="${esc(b.id)}" type="button">削除</button>`}</td></tr>`;
+    let kind=b.bumped?`<span class="pill bad">押し出されました</span>`:b.priority?`<span class="pill ok">優先</span>`:off?(bumpable(b)?`<span class="pill warn">通常・押し出し可</span>`:`<span class="pill ok">通常・確定</span>`):`<span class="muted small">平日</span>`;
+    if(b.bumped){const by=S.bookings.find(x=>x.id===b.bumpedBy);if(by)kind+=`<div class="small muted">${esc(mName(by.member))}さんの優先予約による</div>`}
+    if(b.override)kind+=` <span class="pill warn">了承済み</span>`;
+    const btns=S.readOnly?"":`<div class="row" style="justify-content:flex-end;gap:6px"><button class="btn ghost sm" data-edit-b="${esc(b.id)}" type="button">編集</button><button class="btn danger sm" data-del-b="${esc(b.id)}" type="button">削除</button></div>`;
+    h+=`<tr class="${b.bumped?"bumped":""}${b.id===editId?" editing":""}"><td class="num dt" style="white-space:nowrap">${esc(fmtDT(b.start))}<br>〜 ${esc(fmtDT(b.end))}</td><td>${chip(b.member)}</td><td>${kind}</td><td>${esc(b.note)}</td><td class="r">${btns}</td></tr>`;
   });
   $("#upcoming").innerHTML=h+`</tbody></table></div>`;
 }
 $("#upcoming").addEventListener("click",ev=>{
+  const ed=ev.target.closest("[data-edit-b]");if(ed){setEdit(ed.dataset.editB);return}
   const btn=ev.target.closest("[data-del-b]");if(!btn)return;
-  armDelete(btn,async()=>{try{await write(db=>db.doc("bookings/"+btn.dataset.delB).delete())}catch(e){banner(esc(writeErr(e)),"bad")}});
+  armDelete(btn,async()=>{const id=btn.dataset.delB;try{await write(db=>db.doc("bookings/"+id).delete());if(editId===id)setEdit(null)}catch(e){banner(esc(writeErr(e)),"bad")}});
 });
 
 /* ---------- logs ---------- */
@@ -725,11 +796,11 @@ $("#st-copy").onclick=async()=>{
 ["lg-month","st-month"].forEach(id=>$("#"+id).addEventListener("change",e=>{S.month=e.target.value;$("#lg-month").value=S.month;$("#st-month").value=S.month;renderLogs();renderSettle()}));
 
 /* ---------- calculator ---------- */
-const CALC=["c-price","c-resale","c-months","c-ins","c-tax","c-shaken","c-maint","c-park","c-gas","c-kmpl","c-rent"];
+const CALC=["c-price","c-resale","c-months","c-ins","c-tax","c-shaken","c-maint","c-winter","c-swap","c-park","c-gas","c-kmpl","c-rent"];
 let calcOut={fixed:0,kmRate:0};
 function renderCalc(){
   const v=Object.fromEntries(CALC.map(id=>[id,Math.max(0,+$("#"+id).value||0)]));
-  const parts=[["車の値下がり分",(v["c-price"]-v["c-resale"])/Math.max(1,v["c-months"])],["任意保険",v["c-ins"]/12],["軽自動車税",v["c-tax"]/12],["車検積立",v["c-shaken"]/24],["整備・タイヤ",v["c-maint"]/12],["駐車場",v["c-park"]]];
+  const parts=[["車の値下がり分",(v["c-price"]-v["c-resale"])/Math.max(1,v["c-months"])],["任意保険",v["c-ins"]/12],["軽自動車税",v["c-tax"]/12],["車検積立",v["c-shaken"]/24],["整備・オイル・消耗品",v["c-maint"]/12],["冬タイヤ（購入額を使用月数で割る）",v["c-winter"]/Math.max(1,v["c-months"])],["タイヤ履き替え・保管",v["c-swap"]/12],["駐車場",v["c-park"]]];
   const total=parts.reduce((a,p)=>a+p[1],0);
   $("#c-total").textContent=yen(total)+" /月";
   $("#c-break").innerHTML=parts.map(p=>`<tr><td>${p[0]}</td><td class="r num">${yen(p[1])}</td></tr>`).join("");
@@ -754,7 +825,7 @@ function renderSetup(){
   draftMembers=structuredClone(members());
   drawMembers();
   const c=S.config;
-  $("#s-fixed").value=c.fixedMonthly;$("#s-km").value=c.kmRate;$("#s-cap").value=c.weekendCap;$("#s-max").value=c.maxHours;$("#s-horizon").value=c.horizonDays;
+  $("#s-fixed").value=c.fixedMonthly;$("#s-km").value=c.kmRate;$("#s-pri").value=c.priorityPerMonth;$("#s-bump").value=c.bumpDeadlineDays;$("#s-max").value=c.maxHours;$("#s-horizon").value=c.horizonDays;
   fillMemberSelect($("#me"),me());
 }
 function drawMembers(){
@@ -770,7 +841,7 @@ $("#m-add").onclick=()=>{draftMembers.push({id:"m"+Date.now().toString(36),name:
 $("#s-save").onclick=async()=>{
   const num=(id,min)=>Math.max(min,+$("#"+id).value||0);
   const next={members:draftMembers.map(m=>({id:m.id,name:(m.name||"").trim().slice(0,20)||"名前未設定"})),manager:$("#s-manager").value,
-    fixedMonthly:num("s-fixed",0),kmRate:num("s-km",0),weekendCap:Math.round(num("s-cap",0)),maxHours:num("s-max",1),horizonDays:Math.round(num("s-horizon",1))};
+    fixedMonthly:num("s-fixed",0),kmRate:num("s-km",0),priorityPerMonth:Math.round(num("s-pri",0)),bumpDeadlineDays:Math.round(num("s-bump",0)),maxHours:num("s-max",1),horizonDays:Math.round(num("s-horizon",1))};
   try{await write(db=>db.doc("config/main").set(next));$("#s-msg").textContent="保存しました"; $("#s-msg").style.color="var(--ok)"}
   catch(e){$("#s-msg").textContent=writeErr(e);$("#s-msg").style.color="var(--bad)"}
 };
@@ -799,7 +870,7 @@ setInterval(()=>{if(!$("#p-book").hidden)renderWeek()},5*60*1000);
   S.db=db;
   const onErr=e=>{if(e&&e.code==="revoked"){S.readOnly=true;banner("このページへのアクセス権が変わりました。再読み込みしてください。","warn")}else banner("共有データの読み込みに失敗しました。再読み込みしてください。","bad");renderAll()};
   db.doc("config/main").onSnapshot(s=>{const d=s.exists?s.data():null;S.config={...structuredClone(DEFAULT),...(d||{})};renderAll()},onErr);
-  db.collection("bookings").orderBy("start").onSnapshot(s=>{S.bookings=s.docs.map(d=>({id:d.id,...d.data()}));renderWeek();renderUpcoming();showBkMsg()},onErr);
+  db.collection("bookings").orderBy("start").onSnapshot(s=>{S.bookings=s.docs.map(d=>({id:d.id,...d.data()}));if(editId&&!S.bookings.some(b=>b.id===editId))setEdit(null);renderWeek();renderUpcoming();showBkMsg()},onErr);
   db.collection("logs").orderBy("date").onSnapshot(s=>{
     const first=!S.logs.length;S.logs=s.docs.map(d=>({id:d.id,...d.data()}));
     if(first&&$("#lg-start").value===""&&S.logs.length)$("#lg-start").value=lastOdo();

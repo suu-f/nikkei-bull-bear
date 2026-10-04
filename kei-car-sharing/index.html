@@ -1,0 +1,812 @@
+<title>社宅カーシェア</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one 960px column; header with a kei-plate badge, sticky tab bar, each tab a self-contained panel */
+:root{
+  --bg:#f2f5f4; --surface:#ffffff; --sunk:#e8eeec; --ink:#1b2321; --muted:#5a6863; --line:#d3dcd9;
+  --accent:#17644f; --accent-ink:#ffffff; --plate:#f3c614; --plate-ink:#141414; --plate-edge:#b99300;
+  --ok:#2c7a4b; --warn:#a55a00; --bad:#b3261e; --warn-bg:#fff4e0; --bad-bg:#fdeceb; --off:#f6efd6;
+  --m1:#2f6db0; --m2:#c2532a; --m3:#7b4fb6; --m4:#2f8a78;
+  --f-display:"Dela Gothic One","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  --f-num:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111816; --surface:#19221f; --sunk:#202b28; --ink:#e4ebe8; --muted:#9caaa5; --line:#2d3936;
+  --accent:#5cc2a4; --accent-ink:#0d1714; --plate:#e7bb12; --plate-ink:#141414; --plate-edge:#8f7200;
+  --ok:#6ccb8f; --warn:#f0a94a; --bad:#ff8a80; --warn-bg:#33270f; --bad-bg:#3a1c1a; --off:#2a2716;
+  --m1:#6aa6ec; --m2:#f08a5f; --m3:#b48cf0; --m4:#5fc7b2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --surface:#19221f; --sunk:#202b28; --ink:#e4ebe8; --muted:#9caaa5; --line:#2d3936;
+  --accent:#5cc2a4; --accent-ink:#0d1714; --plate:#e7bb12; --plate-ink:#141414; --plate-edge:#8f7200;
+  --ok:#6ccb8f; --warn:#f0a94a; --bad:#ff8a80; --warn-bg:#33270f; --bad-bg:#3a1c1a; --off:#2a2716;
+  --m1:#6aa6ec; --m2:#f08a5f; --m3:#b48cf0; --m4:#5fc7b2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.75}
+.wrap{max-width:960px;margin:0 auto;padding-inline:16px;padding-block:24px 64px}
+h1,h2,h3{text-wrap:balance;line-height:1.35;margin:0}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,5vw,36px);letter-spacing:.02em}
+h2{font-size:21px;font-weight:700;margin-bottom:12px}
+h3{font-size:16px;font-weight:700}
+p{margin:0}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+a{color:var(--accent)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* header */
+.hdr{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.plate{background:var(--plate);color:var(--plate-ink);border:3px solid var(--plate-edge);border-radius:8px;
+  width:150px;padding:6px 10px 4px;display:grid;justify-items:center;box-shadow:0 2px 0 var(--plate-edge);flex:none}
+.plate .t{font-family:var(--f-body);font-weight:700;font-size:13px;letter-spacing:.15em;line-height:1.2}
+.plate .b{font-family:var(--f-display);font-size:30px;line-height:1.1;display:flex;gap:8px;align-items:baseline}
+.plate .b small{font-family:var(--f-body);font-weight:700;font-size:16px}
+.hdr .lead{flex:1 1 320px;min-width:0}
+.hdr .lead p{color:var(--muted);margin-top:6px;max-width:62ch}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);margin-bottom:24px;padding-top:4px}
+.tab{appearance:none;border:0;background:none;padding:10px 14px;cursor:pointer;color:var(--muted);
+  font-weight:700;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--plate)}
+.tab:hover{color:var(--ink)}
+.panel{display:grid;gap:28px}
+
+/* generic blocks */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.prose{max-width:68ch;display:grid;gap:10px}
+ul.list{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.callout{border-left:4px solid var(--plate);background:var(--surface);padding:16px 20px;border-radius:0 var(--r) var(--r) 0}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.pill.ok{color:var(--ok)} .pill.warn{color:var(--warn)} .pill.bad{color:var(--bad)}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.05em;white-space:nowrap}
+td.r,th.r{text-align:right}
+tr.rec td{background:color-mix(in srgb,var(--plate) 14%,transparent)}
+
+/* forms */
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;align-items:end}
+.field{display:grid;gap:4px;min-width:0}
+.field label{font-size:12px;font-weight:700;color:var(--muted)}
+input[type=text],input[type=number],input[type=datetime-local],input[type=date],select,textarea{
+  width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-height:40px}
+.btn{appearance:none;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);
+  border-radius:8px;padding:8px 16px;font-weight:700;cursor:pointer;min-height:40px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.sm{padding:3px 10px;min-height:30px;font-size:13px}
+.btn.danger{border-color:var(--bad);color:var(--bad);background:transparent}
+.btn.danger.armed{background:var(--bad);color:var(--surface)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.msg{border-radius:8px;padding:10px 14px;font-size:14px}
+.msg.warn{background:var(--warn-bg);color:var(--warn)}
+.msg.bad{background:var(--bad-bg);color:var(--bad)}
+.msg.ok{background:color-mix(in srgb,var(--ok) 12%,transparent);color:var(--ok)}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px}
+.banner{margin-bottom:16px}
+
+/* member chip */
+.chip{display:inline-flex;align-items:center;gap:6px;font-weight:700;white-space:nowrap}
+.chip::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--c,var(--muted))}
+
+/* week view */
+.week-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.week{min-width:640px;--hh:20px}
+.wk-head,.wk-body{display:grid;grid-template-columns:44px repeat(7,1fr)}
+.wk-head div{padding:6px 4px;text-align:center;font-size:13px;font-weight:700;border-bottom:1px solid var(--line)}
+.wk-head .off{color:var(--bad)}
+.wk-head .today{background:var(--plate);color:var(--plate-ink)}
+.wk-gut{position:relative;height:calc(24 * var(--hh))}
+.wk-gut span{position:absolute;right:6px;font-size:11px;color:var(--muted);transform:translateY(-50%)}
+.wk-day{position:relative;height:calc(24 * var(--hh));border-left:1px solid var(--line);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(3 * var(--hh) - 1px),var(--line) calc(3 * var(--hh) - 1px),var(--line) calc(3 * var(--hh)))}
+.wk-day.off{background-color:var(--off)}
+.wk-blk{position:absolute;left:3px;right:3px;border-radius:5px;background:var(--c);color:var(--surface);
+  font-size:11px;line-height:1.3;padding:2px 4px;overflow:hidden;font-weight:700}
+.wk-now{position:absolute;left:0;right:0;height:2px;background:var(--bad)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px}
+
+/* settlement / calc */
+.big{font-family:var(--f-num);font-size:28px;line-height:1.2;font-variant-numeric:tabular-nums}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:4.5em 1fr 7em;gap:10px;align-items:center;font-size:14px}
+.bar .track{height:14px;background:var(--sunk);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;background:var(--accent)}
+.bar .v{text-align:right}
+pre.copy{white-space:pre-wrap;background:var(--sunk);border-radius:8px;padding:12px 14px;font-family:var(--f-body);font-size:14px;margin:0}
+
+.check-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.check-list li{display:grid;grid-template-columns:22px 1fr;gap:8px}
+.check-list li::before{content:"";width:16px;height:16px;border:2px solid var(--muted);border-radius:4px;margin-top:5px}
+.rule-n{font-family:var(--f-display);font-size:13px;color:var(--plate-ink);background:var(--plate);border-radius:5px;padding:1px 7px;margin-right:6px}
+.empty{padding:28px 16px;text-align:center;color:var(--muted)}
+footer{margin-top:40px;font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.btn,.tab{transition:background .15s,color .15s}}
+</style>
+
+<div class="wrap">
+  <header class="hdr">
+    <div class="plate" aria-hidden="true"><span class="t">社宅 580</span><span class="b"><small>あ</small>・・・3</span></div>
+    <div class="lead">
+      <h1>社宅カーシェア</h1>
+      <p>単身赴任の3人で中古の軽自動車を1台持ち、予約と費用を公平に回すための計画書と共有ツールです。予約・走行記録・精算は全員の画面に同じ内容が表示されます。</p>
+    </div>
+  </header>
+  <div id="banner" class="banner" hidden></div>
+
+  <nav class="tabs" role="tablist" aria-label="セクション">
+    <button class="tab" role="tab" data-tab="plan">提案</button>
+    <button class="tab" role="tab" data-tab="book">予約</button>
+    <button class="tab" role="tab" data-tab="log">走行・給油</button>
+    <button class="tab" role="tab" data-tab="settle">月次精算</button>
+    <button class="tab" role="tab" data-tab="rules">ルール</button>
+    <button class="tab" role="tab" data-tab="risk">留意点</button>
+    <button class="tab" role="tab" data-tab="calc">費用試算</button>
+    <button class="tab" role="tab" data-tab="setup">設定</button>
+  </nav>
+
+  <!-- 提案 -->
+  <section class="panel" id="p-plan" role="tabpanel">
+    <div class="callout prose">
+      <span class="eyebrow">結論</span>
+      <h2 style="margin:0">新任者の名義で中古の軽を買い、2人は月額で「利用料」を払う</h2>
+      <p>先輩2人は近いうちに転勤する可能性があります。3人で出資すると、誰かが抜けるたびに持分の買い取りと精算が発生します。そこで、いちばん長く残る見込みの新任者が<strong>所有者・使用者・保険の契約者</strong>になり、他の2人は「固定費の頭割り（車の値下がり分を含む）＋走行距離に応じた料金」を毎月払う形をおすすめします。</p>
+      <p>この形なら、先輩が転勤しても翌月から支払いをやめるだけで済みます。出資していないので、持分の精算はありません。</p>
+    </div>
+
+    <div>
+      <h2>所有の形の比較</h2>
+      <div class="tbl-wrap card" style="padding:4px 8px">
+        <table>
+          <thead><tr><th>方式</th><th>初期費用</th><th>誰かが転勤したとき</th><th>名義人の負担</th><th>評価</th></tr></thead>
+          <tbody>
+            <tr class="rec"><td><strong>新任者名義で中古購入＋月額利用料</strong></td><td>名義人が全額</td><td>翌月から支払いをやめるだけ</td><td>大きい（月額に値下がり分を含めて回収）</td><td><span class="pill ok">推奨</span></td></tr>
+            <tr><td>3人で共同出資（名義は1人）</td><td>3等分</td><td>持分の買い取り額を決める必要があり、揉めやすい</td><td>中</td><td><span class="pill warn">条件付き</span></td></tr>
+            <tr><td>先輩のどちらかの名義</td><td>名義人が全額</td><td>最初に崩れる。名義変更か売却が必要</td><td>大きい</td><td><span class="pill bad">非推奨</span></td></tr>
+            <tr><td>カーリース（月額定額）</td><td>ほぼ0円</td><td>中途解約の違約金が高い。走行距離の上限もある</td><td>契約者が解約リスクを負う</td><td><span class="pill bad">非推奨</span></td></tr>
+            <tr><td>買わずにレンタカーを都度利用</td><td>0円</td><td>影響なし</td><td>なし</td><td><span class="pill warn">月2日未満ならこちら</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:8px">新車は値下がりが大きく、転勤で早めに手放すと損が出やすいため、車検が1年以上残った中古車（乗り出し50〜70万円程度）を想定しています。</p>
+    </div>
+
+    <div class="grid3">
+      <div class="card prose">
+        <span class="eyebrow">お金の流れ</span>
+        <h3>毎月の支払いは名義人に集める</h3>
+        <p>月額＝固定費の頭割り＋走行距離×km単価−自分が立て替えた給油代。固定費には保険・税・車検の積立と、車の値下がり分（購入額−売却見込額を使用予定月数で割った額）を入れます。</p>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">使い方</span>
+        <h3>予約は先着、休日は月の上限つき</h3>
+        <p>平日は先着順です。土日祝は1人あたり月<span class="num" data-cfg="weekendCap">4</span>日までにし、人気の枠が1人に偏らないようにします。予約・記録・精算はこのページの各タブで行います。</p>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">出口</span>
+        <h3>2人になったら継続か売却かを決める</h3>
+        <p>人数が減ると1人あたりの負担が増えます（「費用試算」タブ参照）。転勤の内示が出たら1か月前までに共有し、残る人数で続けるか売却するかを決めます。</p>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2 style="margin:0">始めるまでの手順</h2>
+      <ol class="list">
+        <li>会社・社宅の管理者に、社宅駐車場を3人で1台共用してよいか、マイカー規程に触れないかを確認する。</li>
+        <li>3人で「ルール」タブの内容に合意する（特に事故時の負担と転勤時の扱い）。</li>
+        <li>車を選び、名義人が購入。任意保険は<strong>運転者限定なし</strong>・年齢条件は3人の最年少に合わせて契約する。</li>
+        <li>「費用試算」タブで固定費を計算し、「設定」タブにメンバーとkm単価を入れる。</li>
+        <li>このページのURLを2人に共有し、編集者として招待する。予約と記録を開始する。</li>
+        <li>3か月後にルールと単価を見直す。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 予約 -->
+  <section class="panel" id="p-book" role="tabpanel" hidden>
+    <div class="card">
+      <h2>予約する</h2>
+      <form id="bk-form" class="form" novalidate>
+        <div class="field"><label for="bk-member">使う人</label><select id="bk-member"></select></div>
+        <div class="field"><label for="bk-start">開始</label><input id="bk-start" type="datetime-local" step="900"></div>
+        <div class="field"><label for="bk-end">返却</label><input id="bk-end" type="datetime-local" step="900"></div>
+        <div class="field"><label for="bk-note">行き先・メモ</label><input id="bk-note" type="text" maxlength="60" placeholder="例：買い出し、帰省"></div>
+        <div class="field"><button class="btn" type="submit" id="bk-submit">予約を登録</button></div>
+      </form>
+      <div id="bk-msg" style="margin-top:12px;display:grid;gap:8px"></div>
+      <label class="chk" id="bk-ok-wrap" hidden style="margin-top:8px"><input type="checkbox" id="bk-ok"> 上の注意について、他のメンバーの了承を得ました</label>
+    </div>
+
+    <div>
+      <div class="row" style="justify-content:space-between;margin-bottom:10px">
+        <h2 style="margin:0" id="wk-label">今週</h2>
+        <div class="row">
+          <button class="btn ghost sm" id="wk-prev" type="button">← 前の週</button>
+          <button class="btn ghost sm" id="wk-today" type="button">今週</button>
+          <button class="btn ghost sm" id="wk-next" type="button">次の週 →</button>
+        </div>
+      </div>
+      <div class="week-scroll"><div class="week" id="week"></div></div>
+      <div class="legend" id="legend" style="margin-top:10px"></div>
+    </div>
+
+    <div>
+      <h2>これからの予約</h2>
+      <div class="card" style="padding:4px 8px" id="upcoming"></div>
+    </div>
+  </section>
+
+  <!-- 走行・給油 -->
+  <section class="panel" id="p-log" role="tabpanel" hidden>
+    <div class="card">
+      <h2>使い終わったら記録する</h2>
+      <p class="small muted" style="margin-bottom:12px">メーター（オドメーター）の値を、乗る前と返却時に入力します。給油した日は金額も入れてください。給油代は精算で差し引かれます。</p>
+      <form id="lg-form" class="form" novalidate>
+        <div class="field"><label for="lg-member">使った人</label><select id="lg-member"></select></div>
+        <div class="field"><label for="lg-date">日付</label><input id="lg-date" type="date"></div>
+        <div class="field"><label for="lg-start">乗る前のメーター（km）</label><input id="lg-start" type="number" inputmode="numeric" min="0"></div>
+        <div class="field"><label for="lg-end">返却時のメーター（km）</label><input id="lg-end" type="number" inputmode="numeric" min="0"></div>
+        <div class="field"><label for="lg-fuel">給油代（円）</label><input id="lg-fuel" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+        <div class="field"><label for="lg-note">メモ（傷・不具合など）</label><input id="lg-note" type="text" maxlength="80"></div>
+        <div class="field"><button class="btn" type="submit">記録する</button></div>
+      </form>
+      <div id="lg-msg" style="margin-top:12px"></div>
+    </div>
+    <div>
+      <div class="row" style="justify-content:space-between;margin-bottom:10px">
+        <h2 style="margin:0">記録一覧</h2>
+        <div class="field" style="width:160px"><label for="lg-month">月</label><select id="lg-month"></select></div>
+      </div>
+      <div class="card tbl-wrap" style="padding:4px 8px" id="logs"></div>
+    </div>
+  </section>
+
+  <!-- 精算 -->
+  <section class="panel" id="p-settle" role="tabpanel" hidden>
+    <div class="row" style="justify-content:space-between">
+      <h2 style="margin:0">月次精算</h2>
+      <div class="field" style="width:160px"><label for="st-month">月</label><select id="st-month"></select></div>
+    </div>
+    <div class="card tbl-wrap" style="padding:4px 8px" id="settle"></div>
+    <div class="grid2">
+      <div class="card prose">
+        <h3>LINEなどに貼る用</h3>
+        <pre class="copy" id="st-text"></pre>
+        <div class="row"><button class="btn ghost sm" id="st-copy" type="button">コピー</button><span class="small muted" id="st-copied" role="status"></span></div>
+      </div>
+      <div class="card prose small">
+        <h3>計算のしかた</h3>
+        <p>固定費（月額 <span class="num" data-cfg="fixedMonthly">0</span> 円）をメンバー数で等分し、走行距離×<span class="num" data-cfg="kmRate">0</span>円/km を足し、その月に立て替えた給油代を引きます。</p>
+        <p>プラスなら名義人へ支払い、マイナスなら名義人から受け取ります。名義人の行は自分の負担分の目安で、保険料や税金の支払いはこの集めたお金から行います。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ルール -->
+  <section class="panel" id="p-rules" role="tabpanel" hidden>
+    <div class="prose">
+      <h2 style="margin:0">ルール案</h2>
+      <p class="muted">開始前に3人で読み合わせ、変えたい点は「設定」タブの数値か、この文面を直して合意してください。数値は設定と連動しています。</p>
+    </div>
+    <div class="grid2">
+      <div class="card prose">
+        <h3>予約</h3>
+        <ul class="list">
+          <li><span class="rule-n">1</span>予約はこのページで先着順。口頭やLINEだけの予約は無効。</li>
+          <li><span class="rule-n">2</span>予約できるのは<span class="num" data-cfg="horizonDays">30</span>日先まで。</li>
+          <li><span class="rule-n">3</span>1回の予約は最長<span class="num" data-cfg="maxHours">48</span>時間。超える場合は他の2人の了承を得る。</li>
+          <li><span class="rule-n">4</span>土日祝の利用は1人あたり月<span class="num" data-cfg="weekendCap">4</span>日まで。上限を超える予約は、前々日まで他の人の予約が入らなければ可。</li>
+          <li><span class="rule-n">5</span>年末年始・GW・お盆の帰省利用は、1か月前に3人で調整。重なったら前年に使えなかった人を優先。</li>
+          <li><span class="rule-n">6</span>キャンセルは分かった時点ですぐ削除する。予約なしの当日利用は、空いていればOK（記録は必須）。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <h3>使い方・返却</h3>
+        <ul class="list">
+          <li><span class="rule-n">7</span>返却時は燃料計を半分以上に戻す（給油代は記録すれば精算で戻る）。</li>
+          <li><span class="rule-n">8</span>車内禁煙。ゴミは持ち帰る。泥や雪で汚したら軽く清掃する。</li>
+          <li><span class="rule-n">9</span>乗る前と返却時にメーターを記録し、傷・警告灯・異音はメモ欄に書く。</li>
+          <li><span class="rule-n">10</span>業務・通勤には使わない（会社の規程と保険の対象外になるため）。</li>
+          <li><span class="rule-n">11</span>飲酒運転は厳禁。飲む予定の日は予約しない。</li>
+          <li><span class="rule-n">12</span>家族・友人など3人以外には運転させない。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <h3>お金</h3>
+        <ul class="list">
+          <li><span class="rule-n">13</span>固定費は在籍人数で等分。月の途中で加入・離脱した場合も1か月分とする。</li>
+          <li><span class="rule-n">14</span>走行距離料金は<span class="num" data-cfg="kmRate">9</span>円/km（燃料代＋タイヤ・オイルの消耗分）。</li>
+          <li><span class="rule-n">15</span>毎月5日までに前月分を名義人へ送金する。</li>
+          <li><span class="rule-n">16</span>想定外の修理費（5万円超）は、原因が特定の人の使い方でなければ在籍人数で等分。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <h3>事故・違反</h3>
+        <ul class="list">
+          <li><span class="rule-n">17</span>事故はまず警察・保険会社・名義人に連絡。</li>
+          <li><span class="rule-n">18</span>運転者が負担するもの：車両保険の免責金額、保険を使ったことによる翌年以降の保険料の上がり分（上限10万円などを事前に決める）。</li>
+          <li><span class="rule-n">19</span>駐車違反・速度違反は運転者が出頭し、反則金・違反金を払う。名義人に通知が届いたら予約記録で運転者を特定する。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <h3>転勤・離脱</h3>
+        <ul class="list">
+          <li><span class="rule-n">20</span>内示が出たらすぐ共有。離脱月の固定費までは負担する。</li>
+          <li><span class="rule-n">21</span>利用料方式のため出資金の払い戻しはない。</li>
+          <li><span class="rule-n">22</span>2人になった時点で、継続（1人あたり負担増）か売却かを話し合う。新メンバー（後任者など）を誘うのも可。</li>
+          <li><span class="rule-n">23</span>名義人が先に転勤する場合は、残る人への名義変更（車両は時価で売買）か売却。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <h3>見直し</h3>
+        <ul class="list">
+          <li><span class="rule-n">24</span>開始3か月後と、メンバーが変わるたびにルールと単価を見直す。</li>
+          <li><span class="rule-n">25</span>不満は溜めずに月次精算のタイミングで話す。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 留意点 -->
+  <section class="panel" id="p-risk" role="tabpanel" hidden>
+    <div class="prose">
+      <h2 style="margin:0">始める前の留意点</h2>
+      <p class="muted">法令・保険の扱いは契約内容や自治体で変わります。最終的には保険会社・会社の総務・自治体に確認してください。</p>
+    </div>
+    <div class="grid2">
+      <div class="card prose">
+        <span class="eyebrow">会社・社宅</span>
+        <h3>まず会社に確認すること</h3>
+        <ul class="check-list">
+          <li>社宅駐車場を「3人で1台」共用してよいか（1戸1台などの決まりがないか）。</li>
+          <li>車庫の届出に必要な駐車場の使用承諾書を出してもらえるか。</li>
+          <li>マイカー通勤・業務使用の規程。共有車は業務・通勤に使わない前提にするのが安全。</li>
+          <li>同僚間のお金のやり取りを伴う私的な取り決めについて、上長に一言伝えておくか。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">保険</span>
+        <h3>任意保険の設定がいちばん大事</h3>
+        <ul class="list">
+          <li>家族ではない3人が運転するので、<strong>運転者限定なし</strong>（本人・夫婦限定は使えない）。</li>
+          <li>年齢条件は3人のうち最年少に合わせる。</li>
+          <li>等級（ノンフリート等級）は記名被保険者＝名義人に付く。事故で保険を使うと名義人の等級が下がり、翌年以降の保険料が上がる。この増額分を誰が持つか決めておく（ルール18）。</li>
+          <li>対人・対物は無制限。車両保険は車の価格が低ければ外す判断もあり。</li>
+          <li>名義人が転勤後にこの車を手放す場合、等級を次の車へ引き継げるよう中断証明書の取得も検討。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">法律・責任</span>
+        <h3>名義人に集まる責任</h3>
+        <ul class="list">
+          <li><strong>放置駐車違反金</strong>の通知は車検証の使用者（名義人）に届く。運転者が出頭・負担する取り決めと、予約記録による運転者の特定が必要。</li>
+          <li>飲酒運転をするおそれのある人に車を貸すと、貸した側も処罰対象（車両提供罪）。飲酒予定日の予約禁止を明文化する。</li>
+          <li>自家用車を「有償で貸す」ことは原則として国の許可が必要（道路運送法）。料金は<strong>実費の按分</strong>にとどめ、名義人が利益を得る設定にしない。</li>
+          <li>事故の賠償責任は運転者に加え、所有者（運行供用者）にも及ぶ。保険の補償額を十分にしておく。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">お金</span>
+        <h3>見落としやすい費用</h3>
+        <ul class="list">
+          <li>軽自動車税は<strong>4月1日時点の所有者</strong>に1年分かかる（自家用乗用で年10,800円）。年度途中で売っても月割りで戻らない。</li>
+          <li>車検（2年ごと）は自賠責・重量税・整備費で6〜10万円程度。月割りで積み立てる。</li>
+          <li>雪の多い地域ではスタッドレスタイヤ（4本で数万円）と保管場所。</li>
+          <li>購入時の名義変更・車庫届出の手数料、売却時の手間。</li>
+          <li>使わない月も固定費は発生する。月2日も使わない人にとってはレンタカーの方が安い。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">転勤</span>
+        <h3>先輩2人が抜ける前提で設計する</h3>
+        <ul class="list">
+          <li>3人→2人で1人あたりの固定費は1.5倍、1人では3倍になる。</li>
+          <li>出資方式だと、抜ける人の持分を「いくらで買い取るか」で揉めやすい。利用料方式なら精算が不要。</li>
+          <li>後任者が単身なら新メンバーとして誘える。説明用にこのページを使う。</li>
+          <li>名義人自身が転勤する場合の出口（名義変更か売却）も最初に決めておく。</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">人間関係</span>
+        <h3>揉めるのはお金より「使える日」</h3>
+        <ul class="list">
+          <li>週末・連休の取り合いが一番の火種。上限ルールと記録で、偏りを数字で見えるようにする。</li>
+          <li>汚れ・燃料・小さな傷は気づいた時に記録。後から「誰が」を探さない。</li>
+          <li>職場の上下関係があるので、新任者からは言い出しにくい。ルールを文書にしておくと角が立たない。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 費用試算 -->
+  <section class="panel" id="p-calc" role="tabpanel" hidden>
+    <div class="prose"><h2 style="margin:0">費用試算</h2><p class="muted">初期値は中古の軽を3年使う想定の目安です。実際の見積もりに置き換えてください。この欄の入力は自分の画面だけに反映されます。</p></div>
+    <div class="grid2">
+      <div class="card">
+        <div class="form" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+          <div class="field"><label for="c-price">乗り出し価格（円）</label><input id="c-price" type="number" value="600000" step="10000"></div>
+          <div class="field"><label for="c-resale">売却見込額（円）</label><input id="c-resale" type="number" value="150000" step="10000"></div>
+          <div class="field"><label for="c-months">使用予定（か月）</label><input id="c-months" type="number" value="36" min="1"></div>
+          <div class="field"><label for="c-ins">任意保険（年・円）</label><input id="c-ins" type="number" value="60000" step="1000"></div>
+          <div class="field"><label for="c-tax">軽自動車税（年・円）</label><input id="c-tax" type="number" value="10800" step="100"></div>
+          <div class="field"><label for="c-shaken">車検（2年ごと・円）</label><input id="c-shaken" type="number" value="70000" step="1000"></div>
+          <div class="field"><label for="c-maint">整備・タイヤ（年・円）</label><input id="c-maint" type="number" value="40000" step="1000"></div>
+          <div class="field"><label for="c-park">駐車場（月・円）</label><input id="c-park" type="number" value="0" step="500"></div>
+          <div class="field"><label for="c-gas">ガソリン（円/L）</label><input id="c-gas" type="number" value="170"></div>
+          <div class="field"><label for="c-kmpl">燃費（km/L）</label><input id="c-kmpl" type="number" value="20"></div>
+          <div class="field"><label for="c-rent">レンタカー（1日・円）</label><input id="c-rent" type="number" value="5500" step="100"></div>
+        </div>
+      </div>
+      <div class="card prose">
+        <span class="eyebrow">月あたりの固定費</span>
+        <div class="big" id="c-total">—</div>
+        <div class="tbl-wrap"><table id="c-break"></table></div>
+        <span class="eyebrow" style="margin-top:6px">1人あたり（人数別）</span>
+        <div class="bars" id="c-bars"></div>
+        <p class="small" id="c-even"></p>
+        <p class="small" id="c-km"></p>
+        <div class="row"><button class="btn ghost sm" id="c-apply" type="button">この固定費とkm単価を精算設定に反映</button><span class="small muted" id="c-applied" role="status"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 設定 -->
+  <section class="panel" id="p-setup" role="tabpanel" hidden>
+    <div class="card">
+      <h2>メンバー</h2>
+      <div id="st-members" style="display:grid;gap:10px"></div>
+      <div class="row" style="margin-top:10px"><button class="btn ghost sm" type="button" id="m-add">メンバーを追加</button></div>
+    </div>
+    <div class="card">
+      <h2>精算と予約のルール</h2>
+      <div class="form">
+        <div class="field"><label for="s-manager">名義人（集金役）</label><select id="s-manager"></select></div>
+        <div class="field"><label for="s-fixed">固定費（月・円）</label><input id="s-fixed" type="number" min="0"></div>
+        <div class="field"><label for="s-km">km単価（円）</label><input id="s-km" type="number" min="0" step="0.5"></div>
+        <div class="field"><label for="s-cap">土日祝の上限（日/月/人）</label><input id="s-cap" type="number" min="0"></div>
+        <div class="field"><label for="s-max">1回の最長（時間）</label><input id="s-max" type="number" min="1"></div>
+        <div class="field"><label for="s-horizon">予約できる期間（日先まで）</label><input id="s-horizon" type="number" min="1"></div>
+      </div>
+    </div>
+    <div class="row"><button class="btn" type="button" id="s-save">設定を保存</button><span class="small" id="s-msg" role="status"></span></div>
+    <div class="card prose small">
+      <h3>この端末での表示</h3>
+      <div class="field" style="max-width:240px"><label for="me">自分はどのメンバーか（入力欄の初期値になります）</label><select id="me"></select></div>
+    </div>
+  </section>
+
+  <footer>祝日の判定は2026〜2027年分を内蔵しています。予約・記録・設定はこのページを開く全員で共有されます。</footer>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const yen=n=>"¥"+Math.round(n||0).toLocaleString("ja-JP");
+const pad=n=>String(n).padStart(2,"0");
+const ymd=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const ym=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}`;
+const toLocal=d=>`${ymd(d)}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+const WD=["日","月","火","水","木","金","土"];
+const fmtDT=s=>{const d=new Date(s);return `${d.getMonth()+1}/${d.getDate()}(${WD[d.getDay()]}) ${pad(d.getHours())}:${pad(d.getMinutes())}`};
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+const HOLIDAYS=new Set(["2026-01-01","2026-01-12","2026-02-11","2026-02-23","2026-03-20","2026-04-29","2026-05-03","2026-05-04","2026-05-05","2026-05-06","2026-07-20","2026-08-11","2026-09-21","2026-09-22","2026-09-23","2026-10-12","2026-11-03","2026-11-23",
+"2027-01-01","2027-01-11","2027-02-11","2027-02-23","2027-03-21","2027-03-22","2027-04-29","2027-05-03","2027-05-04","2027-05-05","2027-07-19","2027-08-11","2027-09-20","2027-09-23","2027-10-11","2027-11-03","2027-11-23"]);
+const isOff=d=>d.getDay()===0||d.getDay()===6||HOLIDAYS.has(ymd(d));
+
+const DEFAULT={members:[{id:"m1",name:"新任（名義人）"},{id:"m2",name:"先輩A"},{id:"m3",name:"先輩B"}],
+  manager:"m1",fixedMonthly:24650,kmRate:9,weekendCap:4,maxHours:48,horizonDays:30};
+const S={config:structuredClone(DEFAULT),bookings:[],logs:[],db:null,week:0,readOnly:false,
+  month:ym(new Date())};
+
+/* ---------- helpers on config ---------- */
+const members=()=>S.config.members||[];
+const mName=id=>{const m=members().find(x=>x.id===id);return m?m.name:"（離脱メンバー）"};
+const mColor=id=>{const i=members().findIndex(x=>x.id===id);return i<0?"var(--muted)":`var(--m${(i%4)+1})`};
+const chip=id=>`<span class="chip" style="--c:${mColor(id)}">${esc(mName(id))}</span>`;
+const me=()=>{const v=store.get("kcs-me");return members().some(m=>m.id===v)?v:(members()[0]||{}).id};
+
+function banner(html,cls){const b=$("#banner");if(!html){b.hidden=true;return}b.className="banner msg "+cls;b.innerHTML=html;b.hidden=false}
+function writeErr(e){
+  const c=e&&e.code;
+  if(c==="invalid_argument"||c==="not_granted")return "保存できませんでした。このページの編集者として招待されているか、ページの持ち主に確認してください。";
+  if(c==="quota_exceeded")return "保存容量の上限に達しました。古い記録を削除してください。";
+  return "保存できませんでした。通信状態を確認して、もう一度お試しください。";
+}
+async function write(fn){
+  if(!S.db){throw {code:"not_granted"}}
+  return fn(S.db);
+}
+
+/* ---------- tabs ---------- */
+const TABS=["plan","book","log","settle","rules","risk","calc","setup"];
+function showTab(t){
+  if(!TABS.includes(t))t="plan";
+  document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.tab===t)));
+  TABS.forEach(x=>$("#p-"+x).hidden=x!==t);
+  store.set("kcs-tab",t);
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{showTab(b.dataset.tab);try{history.replaceState(null,"","#"+b.dataset.tab)}catch(e){}}));
+
+/* ---------- config-bound text ---------- */
+function renderCfgText(){
+  document.querySelectorAll("[data-cfg]").forEach(el=>{
+    const v=S.config[el.dataset.cfg];el.textContent=typeof v==="number"?v.toLocaleString("ja-JP"):v;
+  });
+}
+function fillMemberSelect(sel,val){
+  sel.innerHTML=members().map(m=>`<option value="${esc(m.id)}">${esc(m.name)}</option>`).join("");
+  if(val&&members().some(m=>m.id===val))sel.value=val;
+}
+
+/* ---------- bookings ---------- */
+function offDays(start,end){
+  const s=new Date(start),e=new Date(end),out=new Set();
+  const d=new Date(s.getFullYear(),s.getMonth(),s.getDate());
+  while(d<e){if(isOff(d))out.add(ymd(d));d.setDate(d.getDate()+1)}
+  return out;
+}
+function memberOffDays(member,month,exceptId){
+  const out=new Set();
+  S.bookings.filter(b=>b.member===member&&b.id!==exceptId).forEach(b=>offDays(b.start,b.end).forEach(k=>{if(k.startsWith(month))out.add(k)}));
+  return out;
+}
+function checkBooking(member,start,end){
+  const errors=[],warns=[];
+  const s=new Date(start),e=new Date(end);
+  if(!start||!end||isNaN(s)||isNaN(e)){errors.push("開始と返却の日時を入力してください。");return {errors,warns}}
+  if(e<=s){errors.push("返却は開始より後の日時にしてください。");return {errors,warns}}
+  S.bookings.forEach(b=>{if(s<new Date(b.end)&&e>new Date(b.start))errors.push(`${mName(b.member)}さんの予約（${fmtDT(b.start)}〜${fmtDT(b.end)}）と重なっています。`)});
+  const hrs=(e-s)/36e5,c=S.config;
+  if(hrs>c.maxHours)warns.push(`1回の予約が${Math.round(hrs)}時間で、上限の${c.maxHours}時間を超えています（ルール3）。`);
+  if(s-new Date()>c.horizonDays*864e5)warns.push(`${c.horizonDays}日より先の予約です（ルール2）。`);
+  const nd=offDays(start,end),months=new Set([...nd].map(k=>k.slice(0,7)));
+  months.forEach(m=>{
+    const set=memberOffDays(member,m);nd.forEach(k=>{if(k.startsWith(m))set.add(k)});
+    if(set.size>c.weekendCap)warns.push(`${+m.slice(5)}月の土日祝の利用が${set.size}日になり、上限の${c.weekendCap}日を超えます（ルール4）。`);
+  });
+  return {errors,warns};
+}
+function showBkMsg(){
+  const {errors,warns}=checkBooking($("#bk-member").value,$("#bk-start").value,$("#bk-end").value);
+  const box=$("#bk-msg");
+  box.innerHTML=errors.map(t=>`<div class="msg bad">${esc(t)}</div>`).join("")+warns.map(t=>`<div class="msg warn">${esc(t)}</div>`).join("");
+  $("#bk-ok-wrap").hidden=!(warns.length&&!errors.length);
+  if(!warns.length)$("#bk-ok").checked=false;
+  $("#bk-submit").disabled=S.readOnly||errors.length>0||(warns.length>0&&!$("#bk-ok").checked);
+  return {errors,warns};
+}
+["bk-member","bk-start","bk-end","bk-ok"].forEach(id=>$("#"+id).addEventListener("input",showBkMsg));
+function resetBkTimes(){
+  const n=new Date();n.setMinutes(0,0,0);n.setHours(n.getHours()+1);
+  const e=new Date(n.getTime()+3*36e5);
+  $("#bk-start").value=toLocal(n);$("#bk-end").value=toLocal(e);
+}
+$("#bk-form").addEventListener("submit",async ev=>{
+  ev.preventDefault();
+  const {errors,warns}=showBkMsg();
+  if(errors.length||(warns.length&&!$("#bk-ok").checked))return;
+  const data={member:$("#bk-member").value,start:$("#bk-start").value,end:$("#bk-end").value,
+    note:$("#bk-note").value.trim().slice(0,60),override:warns.length>0,createdAt:new Date().toISOString()};
+  $("#bk-submit").disabled=true;
+  try{
+    await write(db=>db.collection("bookings").add(data));
+    $("#bk-note").value="";$("#bk-ok").checked=false;resetBkTimes();
+    $("#bk-msg").innerHTML=`<div class="msg ok">予約を登録しました：${esc(fmtDT(data.start))}〜${esc(fmtDT(data.end))}</div>`;
+    $("#bk-ok-wrap").hidden=true;$("#bk-submit").disabled=S.readOnly;
+  }catch(e){$("#bk-msg").innerHTML=`<div class="msg bad">${esc(writeErr(e))}</div>`;$("#bk-submit").disabled=false}
+});
+
+function weekStart(off){const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7)+off*7);return d}
+function renderWeek(){
+  const base=weekStart(S.week),days=[...Array(7)].map((_,i)=>{const d=new Date(base);d.setDate(d.getDate()+i);return d});
+  const last=days[6];
+  $("#wk-label").textContent=(S.week===0?"今週 ":"")+`${base.getMonth()+1}/${base.getDate()} 〜 ${last.getMonth()+1}/${last.getDate()}`;
+  const today=ymd(new Date());
+  let h=`<div class="wk-head"><div></div>`+days.map(d=>`<div class="${isOff(d)?"off ":""}${ymd(d)===today?"today":""}">${d.getMonth()+1}/${d.getDate()}(${WD[d.getDay()]})</div>`).join("")+`</div>`;
+  h+=`<div class="wk-body"><div class="wk-gut">`+[3,6,9,12,15,18,21].map(x=>`<span style="top:calc(${x} * var(--hh))">${x}時</span>`).join("")+`</div>`;
+  days.forEach(d=>{
+    const ds=d.getTime(),de=ds+864e5;let blocks="";
+    S.bookings.forEach(b=>{
+      const bs=new Date(b.start).getTime(),be=new Date(b.end).getTime();
+      const s=Math.max(bs,ds),e=Math.min(be,de);if(e<=s)return;
+      const top=(s-ds)/36e5,hgt=(e-s)/36e5;
+      const t1=new Date(s),t2=new Date(e);
+      const label=`${esc(mName(b.member))} ${pad(t1.getHours())}:${pad(t1.getMinutes())}–${e===de?"24:00":pad(t2.getHours())+":"+pad(t2.getMinutes())}`;
+      blocks+=`<div class="wk-blk" style="--c:${mColor(b.member)};top:calc(${top} * var(--hh));height:calc(${hgt} * var(--hh) - 1px)" title="${label}${b.note?" / "+esc(b.note):""}">${label}${b.note&&hgt>=2?`<br><span style="font-weight:400">${esc(b.note)}</span>`:""}</div>`;
+    });
+    if(ymd(d)===today){const n=new Date();blocks+=`<div class="wk-now" style="top:calc(${(n-ds)/36e5} * var(--hh))"></div>`}
+    h+=`<div class="wk-day${isOff(d)?" off":""}">${blocks}</div>`;
+  });
+  h+=`</div>`;
+  $("#week").innerHTML=h;
+  $("#legend").innerHTML=members().map(m=>chip(m.id)).join("")+`<span class="muted">黄色の列＝土日祝</span>`;
+}
+$("#wk-prev").onclick=()=>{S.week--;renderWeek()};
+$("#wk-next").onclick=()=>{S.week++;renderWeek()};
+$("#wk-today").onclick=()=>{S.week=0;renderWeek()};
+
+function armDelete(btn,fn){
+  if(btn.classList.contains("armed")){fn();return}
+  btn.classList.add("armed");btn.textContent="本当に削除";
+  setTimeout(()=>{btn.classList.remove("armed");btn.textContent="削除"},4000);
+}
+function renderUpcoming(){
+  const now=new Date(),list=S.bookings.filter(b=>new Date(b.end)>now).sort((a,b)=>a.start<b.start?-1:1);
+  const month=ym(now);
+  const counts=members().map(m=>`${chip(m.id)} <span class="num">${memberOffDays(m.id,month).size}</span><span class="muted">/${S.config.weekendCap}日</span>`).join("　");
+  let h=`<div class="small" style="padding:10px 10px 4px">今月の土日祝の利用：${counts}</div>`;
+  if(!list.length){$("#upcoming").innerHTML=h+`<div class="empty">まだ予約はありません。上のフォームから最初の予約を登録してください。</div>`;return}
+  h+=`<div class="tbl-wrap"><table><thead><tr><th>日時</th><th>使う人</th><th>メモ</th><th></th></tr></thead><tbody>`;
+  list.forEach(b=>{
+    const off=offDays(b.start,b.end).size;
+    h+=`<tr><td class="num" style="white-space:nowrap">${esc(fmtDT(b.start))}<br>〜 ${esc(fmtDT(b.end))}</td><td>${chip(b.member)}${off?` <span class="pill warn">土日祝${off}日</span>`:""}${b.override?` <span class="pill bad">了承済み</span>`:""}</td><td>${esc(b.note)}</td><td class="r">${S.readOnly?"":`<button class="btn danger sm" data-del-b="${esc(b.id)}" type="button">削除</button>`}</td></tr>`;
+  });
+  $("#upcoming").innerHTML=h+`</tbody></table></div>`;
+}
+$("#upcoming").addEventListener("click",ev=>{
+  const btn=ev.target.closest("[data-del-b]");if(!btn)return;
+  armDelete(btn,async()=>{try{await write(db=>db.doc("bookings/"+btn.dataset.delB).delete())}catch(e){banner(esc(writeErr(e)),"bad")}});
+});
+
+/* ---------- logs ---------- */
+function monthOptions(sel){
+  const now=new Date(),opts=[];
+  for(let i=0;i<12;i++){const d=new Date(now.getFullYear(),now.getMonth()-i,1);opts.push(ym(d))}
+  sel.innerHTML=opts.map(m=>`<option value="${m}">${m.slice(0,4)}年${+m.slice(5)}月</option>`).join("");
+  sel.value=S.month;
+}
+const km=l=>{const a=+l.startKm,b=+l.endKm;return Number.isFinite(a)&&Number.isFinite(b)&&b>=a?b-a:0};
+function lastOdo(){return S.logs.reduce((m,l)=>Math.max(m,+l.endKm||0),0)}
+function renderLogs(){
+  const list=S.logs.filter(l=>(l.date||"").startsWith(S.month)).sort((a,b)=>a.date<b.date?1:-1);
+  if(!list.length){$("#logs").innerHTML=`<div class="empty">この月の記録はありません。車を使ったら、上のフォームでメーターの値を記録してください。</div>`;return}
+  let h=`<table><thead><tr><th>日付</th><th>使った人</th><th class="r">メーター</th><th class="r">距離</th><th class="r">給油代</th><th>メモ</th><th></th></tr></thead><tbody>`;
+  list.forEach(l=>{h+=`<tr><td class="num">${esc(l.date.slice(5).replace("-","/"))}</td><td>${chip(l.member)}</td><td class="r num">${(+l.startKm).toLocaleString()}→${(+l.endKm).toLocaleString()}</td><td class="r num">${km(l)} km</td><td class="r num">${l.fuelYen?yen(l.fuelYen):"—"}</td><td>${esc(l.note)}</td><td class="r">${S.readOnly?"":`<button class="btn danger sm" data-del-l="${esc(l.id)}" type="button">削除</button>`}</td></tr>`});
+  $("#logs").innerHTML=h+`</tbody></table>`;
+}
+$("#logs").addEventListener("click",ev=>{
+  const btn=ev.target.closest("[data-del-l]");if(!btn)return;
+  armDelete(btn,async()=>{try{await write(db=>db.doc("logs/"+btn.dataset.delL).delete())}catch(e){banner(esc(writeErr(e)),"bad")}});
+});
+$("#lg-form").addEventListener("submit",async ev=>{
+  ev.preventDefault();
+  const sk=$("#lg-start").value,ek=$("#lg-end").value,box=$("#lg-msg");
+  if(!$("#lg-date").value||sk===""||ek===""){box.innerHTML=`<div class="msg bad">日付と、乗る前・返却時のメーターを入力してください。</div>`;return}
+  if(+ek<+sk){box.innerHTML=`<div class="msg bad">返却時のメーターが乗る前より小さくなっています。</div>`;return}
+  const data={member:$("#lg-member").value,date:$("#lg-date").value,startKm:+sk,endKm:+ek,fuelYen:Math.max(0,+$("#lg-fuel").value||0),note:$("#lg-note").value.trim().slice(0,80),createdAt:new Date().toISOString()};
+  try{
+    await write(db=>db.collection("logs").add(data));
+    box.innerHTML=`<div class="msg ok">記録しました：${data.endKm-data.startKm} km${data.fuelYen?`、給油 ${yen(data.fuelYen)}`:""}</div>`;
+    $("#lg-start").value=data.endKm;$("#lg-end").value="";$("#lg-fuel").value="";$("#lg-note").value="";
+  }catch(e){box.innerHTML=`<div class="msg bad">${esc(writeErr(e))}</div>`}
+});
+
+/* ---------- settlement ---------- */
+function renderSettle(){
+  const c=S.config,ms=members(),n=ms.length||1,month=S.month;
+  const rows=ms.map(m=>{
+    const ls=S.logs.filter(l=>l.member===m.id&&(l.date||"").startsWith(month));
+    const k=ls.reduce((a,l)=>a+km(l),0),fuel=ls.reduce((a,l)=>a+(+l.fuelYen||0),0);
+    const fixed=c.fixedMonthly/n,dist=k*c.kmRate;
+    return {m,k,fuel,fixed,dist,net:fixed+dist-fuel};
+  });
+  let h=`<table><thead><tr><th>メンバー</th><th class="r">固定費</th><th class="r">走行</th><th class="r">距離料金</th><th class="r">給油立替</th><th class="r">差引</th></tr></thead><tbody>`;
+  rows.forEach(r=>{h+=`<tr><td>${chip(r.m.id)}${r.m.id===c.manager?' <span class="pill ok">名義人</span>':""}</td><td class="r num">${yen(r.fixed)}</td><td class="r num">${r.k} km</td><td class="r num">${yen(r.dist)}</td><td class="r num">−${yen(r.fuel)}</td><td class="r num"><strong>${r.net<0?"−":""}${yen(Math.abs(r.net))}</strong></td></tr>`});
+  const tk=rows.reduce((a,r)=>a+r.k,0);
+  h+=`<tr><td class="muted">合計</td><td class="r num">${yen(c.fixedMonthly)}</td><td class="r num">${tk} km</td><td class="r num">${yen(tk*c.kmRate)}</td><td class="r num">−${yen(rows.reduce((a,r)=>a+r.fuel,0))}</td><td></td></tr></tbody></table>`;
+  $("#settle").innerHTML=h;
+  const mgr=mName(c.manager),lines=[`【${+month.slice(5)}月分 カーシェア精算】`];
+  rows.forEach(r=>{
+    if(r.m.id===c.manager)lines.push(`${r.m.name}（名義人）：負担分 ${yen(r.net)}`);
+    else if(r.net>=0)lines.push(`${r.m.name} → ${mgr}：${yen(r.net)}`);
+    else lines.push(`${mgr} → ${r.m.name}：${yen(-r.net)}`);
+  });
+  lines.push(`（固定費 ${yen(c.fixedMonthly)}÷${n}人、${c.kmRate}円/km、給油立替は差し引き済み）`);
+  $("#st-text").textContent=lines.join("\n");
+}
+$("#st-copy").onclick=async()=>{
+  const t=$("#st-text").textContent;
+  try{await navigator.clipboard.writeText(t);$("#st-copied").textContent="コピーしました"}
+  catch(e){const r=document.createRange();r.selectNodeContents($("#st-text"));const s=getSelection();s.removeAllRanges();s.addRange(r);$("#st-copied").textContent="選択しました。長押しまたは Ctrl+C でコピーしてください"}
+};
+["lg-month","st-month"].forEach(id=>$("#"+id).addEventListener("change",e=>{S.month=e.target.value;$("#lg-month").value=S.month;$("#st-month").value=S.month;renderLogs();renderSettle()}));
+
+/* ---------- calculator ---------- */
+const CALC=["c-price","c-resale","c-months","c-ins","c-tax","c-shaken","c-maint","c-park","c-gas","c-kmpl","c-rent"];
+let calcOut={fixed:0,kmRate:0};
+function renderCalc(){
+  const v=Object.fromEntries(CALC.map(id=>[id,Math.max(0,+$("#"+id).value||0)]));
+  const parts=[["車の値下がり分",(v["c-price"]-v["c-resale"])/Math.max(1,v["c-months"])],["任意保険",v["c-ins"]/12],["軽自動車税",v["c-tax"]/12],["車検積立",v["c-shaken"]/24],["整備・タイヤ",v["c-maint"]/12],["駐車場",v["c-park"]]];
+  const total=parts.reduce((a,p)=>a+p[1],0);
+  $("#c-total").textContent=yen(total)+" /月";
+  $("#c-break").innerHTML=parts.map(p=>`<tr><td>${p[0]}</td><td class="r num">${yen(p[1])}</td></tr>`).join("");
+  const max=total||1;
+  $("#c-bars").innerHTML=[3,2,1].map(n=>`<div class="bar"><span>${n}人</span><div class="track"><div class="fill" style="width:${(total/n)/max*100}%"></div></div><span class="v num">${yen(total/n)}</span></div>`).join("");
+  const rent=v["c-rent"]||1;
+  $("#c-even").innerHTML=`レンタカー（1日${yen(rent)}）と比べると、3人なら月<strong class="num">${(total/3/rent).toFixed(1)}</strong>日、2人なら<strong class="num">${(total/2/rent).toFixed(1)}</strong>日以上使う人にとって得になります。`;
+  const fuel=v["c-gas"]/Math.max(1,v["c-kmpl"]),rate=Math.ceil(fuel+1);
+  $("#c-km").innerHTML=`燃料代は約<span class="num">${fuel.toFixed(1)}</span>円/km。消耗分を足して <strong class="num">${rate}円/km</strong> をkm単価の目安にしています。`;
+  calcOut={fixed:Math.round(total),kmRate:rate};
+}
+CALC.forEach(id=>$("#"+id).addEventListener("input",renderCalc));
+$("#c-apply").onclick=async()=>{
+  const next={...S.config,fixedMonthly:calcOut.fixed,kmRate:calcOut.kmRate};
+  try{await write(db=>db.doc("config/main").set(next));$("#c-applied").textContent=`反映しました（固定費 ${yen(calcOut.fixed)}、${calcOut.kmRate}円/km）`}
+  catch(e){$("#c-applied").textContent=writeErr(e)}
+};
+
+/* ---------- settings ---------- */
+let draftMembers=[];
+function renderSetup(){
+  draftMembers=structuredClone(members());
+  drawMembers();
+  const c=S.config;
+  $("#s-fixed").value=c.fixedMonthly;$("#s-km").value=c.kmRate;$("#s-cap").value=c.weekendCap;$("#s-max").value=c.maxHours;$("#s-horizon").value=c.horizonDays;
+  fillMemberSelect($("#me"),me());
+}
+function drawMembers(){
+  $("#st-members").innerHTML=draftMembers.map((m,i)=>`<div class="row"><span class="chip" style="--c:var(--m${(i%4)+1})"></span><input type="text" id="mn-${esc(m.id)}" data-i="${i}" value="${esc(m.name)}" maxlength="20" style="flex:1;min-width:0" aria-label="メンバー${i+1}の名前">${draftMembers.length>1?`<button class="btn danger sm" type="button" data-rm="${i}">外す</button>`:""}</div>`).join("");
+  $("#m-add").disabled=draftMembers.length>=4;
+  const mgr=$("#s-manager"),cur=mgr.value||S.config.manager;
+  mgr.innerHTML=draftMembers.map(m=>`<option value="${esc(m.id)}">${esc(m.name)}</option>`).join("");
+  mgr.value=draftMembers.some(m=>m.id===cur)?cur:draftMembers[0].id;
+}
+$("#st-members").addEventListener("input",e=>{const i=e.target.dataset.i;if(i!=null){draftMembers[i].name=e.target.value;const o=$("#s-manager").options[i];if(o)o.textContent=e.target.value}});
+$("#st-members").addEventListener("click",e=>{const b=e.target.closest("[data-rm]");if(!b)return;draftMembers.splice(+b.dataset.rm,1);drawMembers()});
+$("#m-add").onclick=()=>{draftMembers.push({id:"m"+Date.now().toString(36),name:"新メンバー"});drawMembers()};
+$("#s-save").onclick=async()=>{
+  const num=(id,min)=>Math.max(min,+$("#"+id).value||0);
+  const next={members:draftMembers.map(m=>({id:m.id,name:(m.name||"").trim().slice(0,20)||"名前未設定"})),manager:$("#s-manager").value,
+    fixedMonthly:num("s-fixed",0),kmRate:num("s-km",0),weekendCap:Math.round(num("s-cap",0)),maxHours:num("s-max",1),horizonDays:Math.round(num("s-horizon",1))};
+  try{await write(db=>db.doc("config/main").set(next));$("#s-msg").textContent="保存しました"; $("#s-msg").style.color="var(--ok)"}
+  catch(e){$("#s-msg").textContent=writeErr(e);$("#s-msg").style.color="var(--bad)"}
+};
+$("#me").addEventListener("change",e=>{store.set("kcs-me",e.target.value);fillMemberSelect($("#bk-member"),me());fillMemberSelect($("#lg-member"),me())});
+
+/* ---------- render all ---------- */
+function renderAll(){
+  renderCfgText();
+  fillMemberSelect($("#bk-member"),$("#bk-member").value||me());
+  fillMemberSelect($("#lg-member"),$("#lg-member").value||me());
+  renderWeek();renderUpcoming();renderLogs();renderSettle();
+  if(document.activeElement==null||!$("#p-setup").contains(document.activeElement))renderSetup();
+  showBkMsg();
+}
+
+/* ---------- boot ---------- */
+monthOptions($("#lg-month"));monthOptions($("#st-month"));
+$("#lg-date").value=ymd(new Date());
+resetBkTimes();renderCalc();renderAll();
+showTab((location.hash||"").slice(1)||store.get("kcs-tab")||"plan");
+setInterval(()=>{if(!$("#p-book").hidden)renderWeek()},5*60*1000);
+
+(async()=>{
+  const db=window.claude&&window.claude.use?await window.claude.use("db"):null;
+  if(!db){S.readOnly=true;banner("共有データに接続できません。サインインした状態でclaude.ai上のこのページを開くと、予約や記録が使えます。","warn");renderAll();return}
+  S.db=db;
+  const onErr=e=>{if(e&&e.code==="revoked"){S.readOnly=true;banner("このページへのアクセス権が変わりました。再読み込みしてください。","warn")}else banner("共有データの読み込みに失敗しました。再読み込みしてください。","bad");renderAll()};
+  db.doc("config/main").onSnapshot(s=>{const d=s.exists?s.data():null;S.config={...structuredClone(DEFAULT),...(d||{})};renderAll()},onErr);
+  db.collection("bookings").orderBy("start").onSnapshot(s=>{S.bookings=s.docs.map(d=>({id:d.id,...d.data()}));renderWeek();renderUpcoming();showBkMsg()},onErr);
+  db.collection("logs").orderBy("date").onSnapshot(s=>{
+    const first=!S.logs.length;S.logs=s.docs.map(d=>({id:d.id,...d.data()}));
+    if(first&&$("#lg-start").value===""&&S.logs.length)$("#lg-start").value=lastOdo();
+    renderLogs();renderSettle();renderUpcoming();
+  },onErr);
+  try{const u=await window.claude.use("user");const w=u?await u.can("data.write"):null;
+    if(w===false){S.readOnly=true;banner("閲覧のみの権限で開いています。予約や記録をするには、ページの持ち主に編集者として招待してもらってください。","warn");renderAll()}}catch(e){}
+})();
+})();
+</script>

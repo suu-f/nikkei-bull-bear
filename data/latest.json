@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T13:47:18.822Z",
+  "updatedAt": "2026-10-05T15:53:17.505Z",
   "asOfDate": "2026-10-02",
   "price": 68309.46,
   "sma25": 65531.78,
@@ -20,54 +20,54 @@
   },
   "macro": {
     "usdjpy": {
-      "value": 157.557,
-      "changePct": 0
+      "value": 158.002,
+      "changePct": 0.05
     },
     "sp500": {
-      "value": 7749.09,
-      "changePct": 1.08
+      "value": 7762.36,
+      "changePct": 0.51
     },
     "vix": {
-      "value": 15.66,
-      "changePct": -4.45
+      "value": 15.58,
+      "changePct": 1.76
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bull",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "日経平均、反落で始まる 前日までの急伸で利益確定売り",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB2SmQ1MmZrWmJJR09kLUZtZWNZZ2dtQW01aEgtVzBSNTZLakh3ZGl0VjM5X1U0R0lmZG0taFZXS0RwREtvSVduUUY1cEZrZlJfSDN4V2FuRVJRZExtaDR3by1LOTdBTXctYnVTbg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 02 Oct 2026 00:07:45 GMT"
+      "title": "日経平均が一時7万円台 3カ月ぶり",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5PTnpfU2ptR0tVMENsald2bzgySHJHSGM0QWpuUjNodUR3anlZeGxhY0N5TklYMzFhNUxfWVNpbWdUU1pBWTdkd0FkVFIyNEh6?oc=5",
+      "source": "news.yahoo.co.jp",
+      "publishedAt": "Mon, 05 Oct 2026 01:51:46 GMT"
     },
     {
-      "title": "（まとめ）利益確定の売りが優勢となった日経平均は647円安の68,309円で反落　今晩は米雇用統計の発表",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE00UjhQMGd2OTFFXzdaaHh1ZV85a1BwOTdEVGdkQ2FvMy15ZGk1WjZVbXFOaF9WTXA1U2ZuaUFHWkdCWWxHb2xWQkR5bXE1eXZsMC1TOdIBV0FVX3lxTE1FdFpNS1IzbE44SFhDR29hOGR1alVYaEhBNGZWZWgyYkFKSGJfQzNRMDJGVzJRZjdWb3BSak5SNUZRUWpOVE1nZk5KX1VfOVBKbURMekFZaw?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Fri, 02 Oct 2026 07:44:00 GMT"
+      "title": "【テクニカル】日経平均株価テクニカル分析－大幅高で8月の戻り高値を上回る",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9oOWFzMGFYWVRoMmNjX3VZQmVvQWxWVk1WQjJIRjZacmoweGpBNkM5Z0xUTk0xZnluRlFHLTdrdFhmVlhYM3FBX3kxZU1DNXotV05Nb3hKSW5xejVxWlFrT3hPbw?oc=5",
+      "source": "外為どっとコム",
+      "publishedAt": "Mon, 05 Oct 2026 15:48:30 GMT"
     },
     {
-      "title": "日経平均は759円安、米雇用統計などに関心(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOVS1sTUZ4eVFMbEgzeGYwNWZURzhqSFhxODRZenhfcUctSnFDNG1Ic3NNcVd5cWRtWmxDY25VYjdRdXRhRUZOYW1NQ2N2SHpMZzFfZC1yTHlUUzQ0c0ozVVdMaWdiWGsxbThqa1dFQXljSGczdThMZ2YtZGZZelh6SlZKSHRpRlE?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Fri, 02 Oct 2026 05:52:35 GMT"
-    },
-    {
-      "title": "日経平均急伸始まった10月相場とAI相場の賞味期限 バブル崩壊の目安「25％ルール」から探る持続性（土信田雅之）",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuaG04bkxDeWZMV05maU1Cb2R4d3ZMcS1fdy1XekdJdEx0UTBUQV91ZEtfWmI2UzFXR25ObzdSV0xHM0xRNXJSemhjX3FFNXNneEZBMGhGbmJzUQ?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Thu, 01 Oct 2026 23:00:00 GMT"
-    },
-    {
-      "title": "日経225先物：2日22時＝1180円高、6万9830円",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5nbEMwN2daSEI2SnZ0cEZVc2E1NFRSVUJxU01SbllLNlVwRXlGMnhfWXphOHpLU2RBaDZkUzg4ZGlOb04xU2kzbFZQMmVTUHhZSUw3VklsUnZMMjd1c2FLbQ?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月5日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE91d3k1STNXbUFPbnJJMzY2LTdyaTNpVGQxc0E1REFVcWEyNGhxSzVDRDI4cGE0NzB0TzM3MGRMeTBuUVhNSWM1aGdlcS1tUjdCSWtrdjdDNXM5NW9wVE5DbQ?oc=5",
       "source": "株探",
-      "publishedAt": "Fri, 02 Oct 2026 13:00:42 GMT"
+      "publishedAt": "Sun, 04 Oct 2026 23:15:08 GMT"
+    },
+    {
+      "title": "長期金利3％超えでも日経平均は再び7万円台の攻防へ",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBnclEzY3UyRDZOUXF1WmhvTk4wenhCTEd5NXZWWHdkUThmV0M4OWpJZmlxRy1rYUNlM1VJRTZSajdBUG1QYzJtVHJzTUVTTnRiVmxVVDFpTQ?oc=5",
+      "source": "四季報オンライン",
+      "publishedAt": "Sun, 04 Oct 2026 22:30:00 GMT"
+    },
+    {
+      "title": "【速報】日経平均が３カ月ぶりに７万円を上回った",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5rREZNSHRSTUlaQWpZX3pocjZGWnRHa19oZTQzT3R3VHFuZWFvVERFZWFTbEdsazd4UG9vbHBVa3psVnV4bjFnMDk2eVcwMUdSR2FNTzVqaHYwQlZ6SnpZTlNaRGxnQQ?oc=5",
+      "source": "時事ドットコム",
+      "publishedAt": "Mon, 05 Oct 2026 01:34:00 GMT"
     }
   ],
   "signal": "wait",

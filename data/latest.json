@@ -1,35 +1,35 @@
 {
-  "updatedAt": "2026-10-05T15:53:17.505Z",
-  "asOfDate": "2026-10-02",
-  "price": 68309.46,
-  "sma25": 65531.78,
-  "sma75": 66764.87,
-  "deviationPct": 4.24,
-  "rsi14": 66.2,
-  "vol25AnnualizedPct": 21.2,
+  "updatedAt": "2026-10-06T14:07:19.885Z",
+  "asOfDate": "2026-10-06",
+  "price": 70683.98,
+  "sma25": 65861.25,
+  "sma75": 66790.32,
+  "deviationPct": 7.32,
+  "rsi14": 80.9,
+  "vol25AnnualizedPct": 22.4,
   "trend": "mixed",
-  "overheat": "neutral",
+  "overheat": "overbought",
   "highVol": false,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 65531.78,
-    "distancePct": 4.07,
+    "level": 65861.25,
+    "distancePct": 6.82,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 158.002,
-      "changePct": 0.05
+      "value": 158.054,
+      "changePct": 0.2
     },
     "sp500": {
-      "value": 7762.36,
-      "changePct": 0.51
+      "value": 7828.27,
+      "changePct": 0.7
     },
     "vix": {
-      "value": 15.58,
-      "changePct": 1.76
+      "value": 15.4,
+      "changePct": -0.77
     }
   },
   "macroAssessment": {
@@ -40,52 +40,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均が一時7万円台 3カ月ぶり",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5PTnpfU2ptR0tVMENsald2bzgySHJHSGM0QWpuUjNodUR3anlZeGxhY0N5TklYMzFhNUxfWVNpbWdUU1pBWTdkd0FkVFIyNEh6?oc=5",
-      "source": "news.yahoo.co.jp",
-      "publishedAt": "Mon, 05 Oct 2026 01:51:46 GMT"
-    },
-    {
-      "title": "【テクニカル】日経平均株価テクニカル分析－大幅高で8月の戻り高値を上回る",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9oOWFzMGFYWVRoMmNjX3VZQmVvQWxWVk1WQjJIRjZacmoweGpBNkM5Z0xUTk0xZnluRlFHLTdrdFhmVlhYM3FBX3kxZU1DNXotV05Nb3hKSW5xejVxWlFrT3hPbw?oc=5",
-      "source": "外為どっとコム",
-      "publishedAt": "Mon, 05 Oct 2026 15:48:30 GMT"
-    },
-    {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月5日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE91d3k1STNXbUFPbnJJMzY2LTdyaTNpVGQxc0E1REFVcWEyNGhxSzVDRDI4cGE0NzB0TzM3MGRMeTBuUVhNSWM1aGdlcS1tUjdCSWtrdjdDNXM5NW9wVE5DbQ?oc=5",
+      "title": "明日の株式相場に向けて＝アドテスト躍進で日経平均最高値圏突入か",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE92TTNLaUlEVG9aVTc2NEFuLVRjb1VwUkxDT050X29DeDVkb0h0dGVtNEJnZjV2eXdHS3hTMEFXR0NqVFloWmxWcmFFd3RnbXRjUmh4bm5rdVRYSUI4Q0VJcg?oc=5",
       "source": "株探",
-      "publishedAt": "Sun, 04 Oct 2026 23:15:08 GMT"
+      "publishedAt": "Tue, 06 Oct 2026 11:31:15 GMT"
     },
     {
-      "title": "長期金利3％超えでも日経平均は再び7万円台の攻防へ",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBnclEzY3UyRDZOUXF1WmhvTk4wenhCTEd5NXZWWHdkUThmV0M4OWpJZmlxRy1rYUNlM1VJRTZSajdBUG1QYzJtVHJzTUVTTnRiVmxVVDFpTQ?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Sun, 04 Oct 2026 22:30:00 GMT"
+      "title": "日経225先物：6日22時＝370円高、7万1270円",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBzV2h2aXJkd1hPY1AwNmx4OXFqRVFXRnM2cXZfQlRJc0w5Rk5IMnozUmctVjZqS3lHRnZGdTdHY0dQNXZ6SHpSNkg3NWt5MDdIanc?oc=5",
+      "source": "株探",
+      "publishedAt": "Tue, 06 Oct 2026 13:00:52 GMT"
     },
     {
-      "title": "【速報】日経平均が３カ月ぶりに７万円を上回った",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5rREZNSHRSTUlaQWpZX3pocjZGWnRHa19oZTQzT3R3VHFuZWFvVERFZWFTbEdsazd4UG9vbHBVa3psVnV4bjFnMDk2eVcwMUdSR2FNTzVqaHYwQlZ6SnpZTlNaRGxnQQ?oc=5",
-      "source": "時事ドットコム",
-      "publishedAt": "Mon, 05 Oct 2026 01:34:00 GMT"
+      "title": "日経平均株価の指数情報・推移",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Tue, 06 Oct 2026 11:19:43 GMT"
+    },
+    {
+      "title": "日経平均終値737円高、3カ月ぶり7万円台回復 「業績相場」に先回り",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE53M2NNWEdsb1otVm1YWDEyMG5xMHJ5bF9XRTRORkRRZkFMY0lESUMxdlpuV3lSbXZ3RDNDQ2RLMGplVzVaejBudG9mZjkzUDJ0bEhIdERMWkJpTVdBMW9XV3ZsdmZoQ2FrdzBKSg?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Tue, 06 Oct 2026 02:57:43 GMT"
+    },
+    {
+      "title": "日経平均が7万円を回復、次はどう動く？｜史上最高値突破の条件、「青天井相場」のメカニズム【2026年10月6日】",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9ZdHFSSzBZcmpLMm9GMWh3RllJRDZobzF2UE5zazViQ1VrLVdmcjk2NmFod3A5X2tUelZGTVVpUlZsWk5MVjZFRkNYMFVFZEFZZTYtRXV6VzdFZUZNdDZ2S1g2cw?oc=5",
+      "source": "外為どっとコム",
+      "publishedAt": "Tue, 06 Oct 2026 08:38:37 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-24",
-      "close": 52252.28,
-      "sma25": 55516.21,
-      "sma75": 53310.45
-    },
-    {
-      "date": "2026-03-25",
-      "close": 53749.62,
-      "sma25": 55393.93,
-      "sma75": 53369.73
-    },
     {
       "date": "2026-03-26",
       "close": 53603.65,
@@ -853,6 +841,18 @@
       "close": 68309.46,
       "sma25": 65531.78,
       "sma75": 66764.87
+    },
+    {
+      "date": "2026-10-05",
+      "close": 69946.86,
+      "sma25": 65679.17,
+      "sma75": 66773.26
+    },
+    {
+      "date": "2026-10-06",
+      "close": 70683.98,
+      "sma25": 65861.25,
+      "sma75": 66790.32
     }
   ]
 }

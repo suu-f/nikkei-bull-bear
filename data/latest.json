@@ -1,85 +1,79 @@
 {
-  "updatedAt": "2026-10-07T14:25:23.689Z",
-  "asOfDate": "2026-10-07",
-  "price": 70035.71,
-  "sma25": 66006.46,
-  "sma75": 66792.1,
-  "deviationPct": 6.1,
-  "rsi14": 80,
-  "vol25AnnualizedPct": 22.7,
+  "updatedAt": "2026-10-08T14:31:21.835Z",
+  "asOfDate": "2026-10-08",
+  "price": 69042.11,
+  "sma25": 66115.66,
+  "sma75": 66765.28,
+  "deviationPct": 4.43,
+  "rsi14": 73.3,
+  "vol25AnnualizedPct": 23.3,
   "trend": "mixed",
   "overheat": "overbought",
   "highVol": false,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 66006.46,
-    "distancePct": 5.75,
+    "level": 66115.66,
+    "distancePct": 4.24,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 158.132,
-      "changePct": 0.11
+      "value": 158.062,
+      "changePct": -0.15
     },
     "sp500": {
-      "value": 7776.19,
-      "changePct": -0.55
+      "value": 7791.06,
+      "changePct": -0.14
     },
     "vix": {
-      "value": 15.82,
-      "changePct": 5.4
+      "value": 15.38,
+      "changePct": 1.99
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bear",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "日経平均大引け 3日ぶり反落 648円安の7万0035円",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBQZlhOb19LemF0aUwyMndMdnpZUU9iSWViMkcyR3o5TDMtbWVSTTd2Y0ZELUUtNVRiSzJ4bnd1WjhkSUZ4UHNEdnltZ2l4YTBPR05RUnl3UElpU193WXFmdjZGTkFqRVVIU3JWSw?oc=5",
+      "title": "日経平均は続落、利益確定売り 金利先高観も重し",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQU2tseTNZLTRaWEdienE3azdfT2dGZ0JoX2g2NHNmVGczUVppb09RajRFYkhNbTF4aXNRTGZPT0FDcV9ycEhkX1FHbUhnU2FtX1hPWFh2VTE4Nk5GS0EybVc4LVdHczc1c19Bb2NacXl0OGN3RGFGY0d3N09jLU9mX1JHU2dsdw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Thu, 08 Oct 2026 07:09:03 GMT"
+    },
+    {
+      "title": "牛丼1200円、サンドイッチは900円…2030年「日経平均10万円時代」の日本に起こる「新しい貧富」の絶望的な格差",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9zOFhVTjVMaGh5SUFCbUY3QlB2eG1kS0pCY3NqUS1sUUJJM3V5dTM2R1ZSMHpWdThsajZfMUVvd192VlIyc3hmSXBDeGxSWTdodm94d3JaZE4zLUlyWnBibTNuQzlaQ1Z0VXRyNWphOGpVSlhWQmhxNFNmRGxmM28?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Thu, 08 Oct 2026 03:00:00 GMT"
+    },
+    {
+      "title": "日経平均株価の指数情報・推移",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Thu, 08 Oct 2026 08:31:29 GMT"
+    },
+    {
+      "title": "東証前引け 日経平均が続落 一時800円安 プライムの9割弱が安い",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBKd0FvUjZhaEdTTU12MmNmQkNaUHY0NEctODFudE53Vm5EdlF6WmJHMXBqQ1BFWHYxcXlTakFuYUoxTVNvbDIwN2x4a2NDeXI2VVFJY1lzQXRqLWRHYmw3NU9xTm9qRWRQbjZ5VQ?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Wed, 07 Oct 2026 06:36:46 GMT"
+      "publishedAt": "Thu, 08 Oct 2026 02:54:11 GMT"
     },
     {
-      "title": "明日の株式相場に向けて＝アドテスト躍進で日経平均最高値圏突入か",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE92TTNLaUlEVG9aVTc2NEFuLVRjb1VwUkxDT050X29DeDVkb0h0dGVtNEJnZjV2eXdHS3hTMEFXR0NqVFloWmxWcmFFd3RnbXRjUmh4bm5rdVRYSUI4Q0VJcg?oc=5",
-      "source": "株探",
-      "publishedAt": "Tue, 06 Oct 2026 08:29:00 GMT"
-    },
-    {
-      "title": "日経225先物：7日22時＝730円安、6万9630円",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8tYmFzQ1VpNlhyNUFTVWxibVNxQVBJa1BiQmFqYmVpSVJINXJOQmk5STQ0MDA1TjdHM1RGOGpBT1l1QnZnOHcyQXVxSWRselZRVGc?oc=5",
-      "source": "株探",
-      "publishedAt": "Wed, 07 Oct 2026 13:00:51 GMT"
-    },
-    {
-      "title": "午前の日経平均は反落、利益確定売り優勢 ＴＯＰＩＸも下落",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSEZPRHZKNFFHS01mQ0NDdWNOMWlTRXpWbk9yNTAyZWVQMlEwM2gwTGRXLUJBdllJS2FyekVkb1I4Q3dDZlVteUstbVljMUlhekhpMXYxOWJjNE5LczlDX015ZlZuZk1ib3hsdjYwRUxGUHJXZUpvbEtsR0kxNWhEZnQ1M3BFUQ?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Wed, 07 Oct 2026 02:59:00 GMT"
-    },
-    {
-      "title": "日経平均は3日ぶり反落、高値警戒感 ＡＩ・半導体株に利益確定売り",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOVDFjcGhtcTlpaGpXT0g5N200cmFVR0hOamJ6SGltakFzX2I3X0Q3SnFWY2s3b0RsbF9sb1pBMEFCdmF5Z0RTYmM0RUxIVDhhSVdYdG5tc3RJODlIZ3FtVDhVa1pRMWhkNzZsbDY2WjBlTFZPRVF1Y0tVT0hXdndYdlZkR1BLUQ?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Wed, 07 Oct 2026 07:11:19 GMT"
+      "title": "【市川レポート】3カ月ぶりに終値で7万円台を回復した日経平均株価の今後を展望する",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1hY1lnbmtNSWR2RkJRaXFRbF9VS0t0NzIzUVlCLXBERngzQjRMT3ZZaTRqRUM1Vlhmcnk1WG82dWN0V3VsS2JKN3lWMGh1UUU1U0JuSE5SS2ZNWGxIVlBPSTJfU0xWOFRORVRhWk5B?oc=5",
+      "source": "三井住友DSアセットマネジメント",
+      "publishedAt": "Wed, 07 Oct 2026 02:38:49 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-27",
-      "close": 53373.07,
-      "sma25": 55124.59,
-      "sma75": 53473.85
-    },
     {
       "date": "2026-03-30",
       "close": 51885.85,
@@ -853,6 +847,12 @@
       "close": 70035.71,
       "sma25": 66006.46,
       "sma75": 66792.1
+    },
+    {
+      "date": "2026-10-08",
+      "close": 69042.11,
+      "sma25": 66115.66,
+      "sma75": 66765.28
     }
   ]
 }

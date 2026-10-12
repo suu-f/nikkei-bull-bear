@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T14:18:18.760Z",
+  "updatedAt": "2026-10-12T16:40:26.614Z",
   "asOfDate": "2026-10-09",
   "price": 69030.92,
   "sma25": 66228.29,
@@ -20,54 +20,54 @@
   },
   "macro": {
     "usdjpy": {
-      "value": 158.346,
-      "changePct": 0.18
+      "value": 158.676,
+      "changePct": 0.39
     },
     "sp500": {
-      "value": 7790.44,
-      "changePct": 0.32
+      "value": 7811.14,
+      "changePct": -0.01
     },
     "vix": {
-      "value": 15.05,
-      "changePct": -2.34
+      "value": 15.21,
+      "changePct": 2.49
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "日経平均、500円超安＝東京株式（時事通信）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9UU2hoRTVwZ2RnSHJ6clRXZWd5eGRqSUY2dmtkcUZSR0NmRjhoclFleFdWc19fdHhNc2RzZTlpd2xPMEN1RmNEeFlELW9ORUR1ZkFVUEhVMzBmc2tSNDRRalJ4YTByencxMFJxSFdSVTZnOEFPOHByNUFjVlo4d28?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Fri, 09 Oct 2026 00:30:26 GMT"
+      "title": "日経平均は小幅安、ＡＩ・半導体に買い戻しも",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbHQxU3laZ1dYWkk4S1cwOU1KS3p3QkZuLTFBWHZ6aGkzMmdMVWNNSGRxSjM5TnVKeHMweTF5NktVNGVTak14VUlqQ2FEN1ZadU52eFhMQTlmZmdrMFEyYzVBQjlTVElIc2J0cXlwQldqZEhOSjA3Y3ZwUllnQURsbXlPVVc1QQ?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Fri, 09 Oct 2026 07:40:44 GMT"
     },
     {
-      "title": "来週(10/13～10/16)の日経平均株価の予想レンジは6万7000～7万円！ 米国の物価が落ち着き、半導体大手が好決算ならAI･半導体関連株の押し目買いの好機に",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wZnpsdk5fbm85NHg3VWV2T1JKUDcxLUNIa3ZfYlpjeUF5VTRjdEJjSDV4eUFfeHJ5Q2p2WWZwZ0dua2FJcUNaTmthTUs4TDZ3NHZZ?oc=5",
-      "source": "ダイヤモンド・オンライン",
-      "publishedAt": "Fri, 09 Oct 2026 13:45:00 GMT"
+      "title": "日経平均大引け 3日続落 11円安の6万9030円",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBReS02Nm04ZUxrbWM3cGRJZVF4dUlRS2Q0M3VLTVdUb3pHUjVnWDBZcldtaUJoaTk1Z3VNaEJlMzRqUHAtdGZfVUlhQ1k1RGJteHdvVU53WUk4MVVwYTczRjQwbnBBMDZLYU9xcg?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Fri, 09 Oct 2026 06:37:15 GMT"
     },
     {
-      "title": "来週の株式相場に向けて＝日経平均７万円奪回の模索続く、欧州懸念にはプラス要因も",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9WQkhESk9oOWFvbFdMNkdGVVhxek9qS2pjMlhPSE9OengwYWMyb1MySVRmT0RRc3QwRGgtWEdDa3VrT0VQaFpfRUtlUWNVU0EwNS1IUDdKNk9uT1lhYnRWWg?oc=5",
+      "title": "日経平均伸び悩み TSMC業績と物価指数に注目",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hV1NjZmlJVmZzOTRYejY2dXFORWFlX202aEx2cW9ENlNxNWVRaXIyNU41RjgyNzlCZnltVUpnNERjemR6WDBuV1JfM29vZkN2XzA0QzlzMXNVT0NWY2huNGVIUjBodmJsdjhRSjhsYlFqQQ?oc=5",
+      "source": "テレ朝NEWS",
+      "publishedAt": "Mon, 12 Oct 2026 00:38:31 GMT"
+    },
+    {
+      "title": "上昇トレンドに乗る【低PER＆低PBR】 39社選出 ＜テクニカル特集＞ 10月9日版",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5NUXdaVGNYeFg4ZVE0eXFSY09BVWhPdnYzZU5paDFBYnplQ1JPRTFjdmE4TDVycl9ZMlRVNTU5UTZhS29UdVliNGYyZ2cyMC02eHFacjA0Z3ZBdW41ZHpCMA?oc=5",
       "source": "株探",
-      "publishedAt": "Fri, 09 Oct 2026 08:49:00 GMT"
+      "publishedAt": "Mon, 12 Oct 2026 07:30:00 GMT"
     },
     {
       "title": "日経平均は一時7万円回復も…個人投資家1,872人が答えた「1カ月後の日経平均株価」見通し",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5qdDhDSWtLSGxfZFc4cEtlTTJwRTBVcDhqdXFrbG1rRWtxa1k0MmhVUWgwQUtZUlVCVnRRbUJ5TzJZTG45dTQ3dXRhd1Q2LTAyeGUtLWhaQ2tlQQ?oc=5",
       "source": "トウシル",
       "publishedAt": "Fri, 09 Oct 2026 07:05:00 GMT"
-    },
-    {
-      "title": "味の素、TOTO、オリックス…「日経平均10万円」時代、これから伸びる大型株「9銘柄」を大公開（クーリエ・ジャポン）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE55eUx4TFd0WWtDY3psOU44aHlkT1kxUFRSVkpHS2p0S3J6WDBxbTVwWHpIZWlaOXlqYzd6WFc1OEoxSXZrUlg2TlRNZ0Y5YXpVM1ZWNlJOcy1mVUk3TngxdndPLU1GTDRybFlGVlZoM3VXWEp5ekYzVXlNOUdYWUk?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Thu, 08 Oct 2026 03:30:00 GMT"
     }
   ],
   "signal": "wait",

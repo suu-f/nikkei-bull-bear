@@ -1,35 +1,35 @@
 {
-  "updatedAt": "2026-10-12T16:40:26.614Z",
-  "asOfDate": "2026-10-09",
-  "price": 69030.92,
-  "sma25": 66228.29,
-  "sma75": 66735.69,
-  "deviationPct": 4.23,
-  "rsi14": 72.3,
-  "vol25AnnualizedPct": 23.3,
+  "updatedAt": "2026-10-13T14:57:14.114Z",
+  "asOfDate": "2026-10-13",
+  "price": 67777.52,
+  "sma25": 66366.36,
+  "sma75": 66674.67,
+  "deviationPct": 2.13,
+  "rsi14": 64.5,
+  "vol25AnnualizedPct": 22,
   "trend": "mixed",
-  "overheat": "overbought",
+  "overheat": "neutral",
   "highVol": false,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "below",
-    "level": 66228.29,
-    "distancePct": 4.06,
+    "level": 66366.36,
+    "distancePct": 2.08,
     "resultingSignal": "bear",
     "note": "終値が25日線を下抜けるとベア型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 158.676,
-      "changePct": 0.39
+      "value": 158.368,
+      "changePct": 0.19
     },
     "sp500": {
-      "value": 7811.14,
-      "changePct": -0.01
+      "value": 7796.39,
+      "changePct": -0.14
     },
     "vix": {
-      "value": 15.21,
-      "changePct": 2.49
+      "value": 15.23,
+      "changePct": 0.13
     }
   },
   "macroAssessment": {
@@ -40,46 +40,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均は小幅安、ＡＩ・半導体に買い戻しも",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbHQxU3laZ1dYWkk4S1cwOU1KS3p3QkZuLTFBWHZ6aGkzMmdMVWNNSGRxSjM5TnVKeHMweTF5NktVNGVTak14VUlqQ2FEN1ZadU52eFhMQTlmZmdrMFEyYzVBQjlTVElIc2J0cXlwQldqZEhOSjA3Y3ZwUllnQURsbXlPVVc1QQ?oc=5",
+      "title": "日経平均は4日続落、ＡＩ・半導体株が軒並み下げる 循環物色も",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTnNlaUFHbEljdEZYQUtILUVmQ0JoYTZYMUQxSGFlVUdrbWRiZHVuNWRmRTZyN0ZXblF2LTRBY1Zma2FKaHpZSnJJT3lwT05CU0prcFd5VFJqaTlneFMwY0pEQW1wR0JhM1FsekVmSTFpNUFTLUhOQlB3SktiZ21nSjd4Vm0wZw?oc=5",
       "source": "Reuters",
-      "publishedAt": "Fri, 09 Oct 2026 07:40:44 GMT"
+      "publishedAt": "Tue, 13 Oct 2026 06:55:00 GMT"
     },
     {
-      "title": "日経平均大引け 3日続落 11円安の6万9030円",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBReS02Nm04ZUxrbWM3cGRJZVF4dUlRS2Q0M3VLTVdUb3pHUjVnWDBZcldtaUJoaTk1Z3VNaEJlMzRqUHAtdGZfVUlhQ1k1RGJteHdvVU53WUk4MVVwYTczRjQwbnBBMDZLYU9xcg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 09 Oct 2026 06:37:15 GMT"
+      "title": "株価 大きく値下がり AI・半導体産業 競争激化の警戒感などで",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9YQUxDZWNTbEwwa3VoVmljeV9HOFo1dXY4NDNIVFBWaVl1MkFHdi1mcnBSczEwRF9TcjJYN25JRV8wdk5fT3d3NWtYNDNHblBmaU1lMG1EMG5Ed0huUWk4?oc=5",
+      "source": "NHKニュース",
+      "publishedAt": "Tue, 13 Oct 2026 00:40:34 GMT"
     },
     {
-      "title": "日経平均伸び悩み TSMC業績と物価指数に注目",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hV1NjZmlJVmZzOTRYejY2dXFORWFlX202aEx2cW9ENlNxNWVRaXIyNU41RjgyNzlCZnltVUpnNERjemR6WDBuV1JfM29vZkN2XzA0QzlzMXNVT0NWY2huNGVIUjBodmJsdjhRSjhsYlFqQQ?oc=5",
-      "source": "テレ朝NEWS",
-      "publishedAt": "Mon, 12 Oct 2026 00:38:31 GMT"
-    },
-    {
-      "title": "上昇トレンドに乗る【低PER＆低PBR】 39社選出 ＜テクニカル特集＞ 10月9日版",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5NUXdaVGNYeFg4ZVE0eXFSY09BVWhPdnYzZU5paDFBYnplQ1JPRTFjdmE4TDVycl9ZMlRVNTU5UTZhS29UdVliNGYyZ2cyMC02eHFacjA0Z3ZBdW41ZHpCMA?oc=5",
-      "source": "株探",
-      "publishedAt": "Mon, 12 Oct 2026 07:30:00 GMT"
-    },
-    {
-      "title": "日経平均は一時7万円回復も…個人投資家1,872人が答えた「1カ月後の日経平均株価」見通し",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5qdDhDSWtLSGxfZFc4cEtlTTJwRTBVcDhqdXFrbG1rRWtxa1k0MmhVUWgwQUtZUlVCVnRRbUJ5TzJZTG45dTQ3dXRhd1Q2LTAyeGUtLWhaQ2tlQQ?oc=5",
+      "title": "日経平均「7万円」定着の条件とは？相場上昇のカギを握る米半導体決算に注目",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE50dU83Q0FUVmZON3N3RFpSZWpleFo4YzFqS3hFTW5KQXNOalNyVG90N1V4QWZYeUpFdnJRRGZNalZzRUVRaDJtSjE1RWRxVEMzQzBQYVRPaEw2UQ?oc=5",
       "source": "トウシル",
-      "publishedAt": "Fri, 09 Oct 2026 07:05:00 GMT"
+      "publishedAt": "Tue, 13 Oct 2026 03:00:00 GMT"
+    },
+    {
+      "title": "日経平均、一時1800円超値下がり 半導体関連銘柄に売り注文 中国企業の開発進展によるNY市場の半導体株安受け",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56TVpvdWRndTZrVm9CbkM4WExaelh5eHpmdGFJdUNMdFc5M0t3TlRzeE15Um12Smd6UlA5NFVHYnNtZTN5VEZmTWNacklNdWNzRUVnN2RLZk1RckNnbEFWLXV0OUV6NlFmOThyRy04dE9CSmM0SU9zdVRKRXpXVzQ?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Tue, 13 Oct 2026 00:16:11 GMT"
+    },
+    {
+      "title": "田部井美彦氏【日経平均は高値波乱、秋相場で7万円台奪還なるか】 ＜相場観特集＞",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OODZiQzE0aWc2X21OWVZ3WWFHVjMtWERBekRTSUxMSllmTEpoRGZfTk9nRUptV2tDTloyeUVMY2s5cHd6cllNeS1wbEVIdmRuT3dQbEJWVURfZHR4VnhSZg?oc=5",
+      "source": "株探",
+      "publishedAt": "Tue, 13 Oct 2026 09:30:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-03-31",
-      "close": 51063.72,
-      "sma25": 54670.83,
-      "sma75": 53492.91
-    },
     {
       "date": "2026-04-01",
       "close": 53739.68,
@@ -853,6 +847,12 @@
       "close": 69030.92,
       "sma25": 66228.29,
       "sma75": 66735.69
+    },
+    {
+      "date": "2026-10-13",
+      "close": 67777.52,
+      "sma25": 66366.36,
+      "sma75": 66674.67
     }
   ]
 }

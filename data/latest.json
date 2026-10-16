@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-15T12:36:18.290Z",
-  "asOfDate": "2026-10-15",
-  "price": 64425.95,
-  "sma25": 66483.75,
-  "sma75": 66584.1,
-  "deviationPct": -3.1,
-  "rsi14": 46.2,
-  "vol25AnnualizedPct": 27.3,
+  "updatedAt": "2026-10-16T12:16:51.497Z",
+  "asOfDate": "2026-10-16",
+  "price": 65324.29,
+  "sma25": 66440.73,
+  "sma75": 66490.2,
+  "deviationPct": -1.68,
+  "rsi14": 46.4,
+  "vol25AnnualizedPct": 26.8,
   "trend": "down",
   "overheat": "neutral",
   "highVol": true,
@@ -14,23 +14,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 158.042,
-      "changePct": -0.18
+      "value": 157.979,
+      "changePct": 0.01
     },
     "sp500": {
-      "value": 7718.94,
-      "changePct": -1.11
+      "value": 7744.06,
+      "changePct": 0.33
     },
     "vix": {
-      "value": 17.51,
-      "changePct": 3.79
+      "value": 16.03,
+      "changePct": -2.61
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bear",
+    "bias": "supportive_bull",
     "vixStatus": "calm"
   },
-  "macroNote": null,
+  "macroNote": "テクニカルはベア型優勢ですが、為替・米国株など外部環境は逆風気味です。",
   "conviction": {
     "level": 1,
     "levelLabel": "弱い",
@@ -43,16 +43,10 @@
   },
   "news": [
     {
-      "title": "日経平均3318円安 「コアウィーブ・ショック」で下げ幅歴代3位",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5lR1hYWHdaaDFKNUtWakU1bWtqZ1d1aThuLUpRVmxlS2tTTUxRVG5lSlFVcXFBOTBUTGZkU3R1eElUQ2RNZ0szc2RhcW15NmxYbVp4SEctY0Z0bWVvVkJwQm1VRG5xa2dMbXMydg?oc=5",
+      "title": "日経平均株価、終値898円高 「AI利活用」銘柄の物色鮮明に",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBPZlNDV3dfUk9YQmpoeHRVVDVfRWhmT2ZmTEF6VURsMXRVNkFNajYzZWhUTjk4YUpjZGJsNFlQSjQ1NkJTbm4wRldyd0lMSHJhaF9nNXlPWldKbzduWXBTNm9pZ1JvZklIOHhVaQ?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Thu, 15 Oct 2026 02:51:36 GMT"
-    },
-    {
-      "title": "日経平均 一時3600円以上値下がり",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5wMW9fZEVzX2N0TTJCU1FLUldySFRaLVVDSWVCSzQ4MkZ1ZFM2VnRiX1dmb3BId3lvXzR1YWNFUjRPNEIyTkxReUxyRXdweVFB?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Thu, 15 Oct 2026 04:30:12 GMT"
+      "publishedAt": "Fri, 16 Oct 2026 02:54:42 GMT"
     },
     {
       "title": "日経平均大幅安、コアウィーブ社債急落で信用不安 「目先は慎重スタンス必要」「個別株の業績見極める局面」 市場関係者の見方",
@@ -61,28 +55,28 @@
       "publishedAt": "Thu, 15 Oct 2026 08:00:00 GMT"
     },
     {
-      "title": "（まとめ）日経平均は3,318円安と歴代3位の下げ幅で大幅続落　AI関連にリスクオフ",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE42TlNPdGNYVHlXR1g1QUxfNE1GRkwtazhBRlRZV284bkpYbW92WkJybEFmcWp5UHEtYkQ2cHNlZjBIZFJxbGRhdWl0NFZZYkVFME9YSdIBV0FVX3lxTE04QzNwblM3cS12aWpVU21FRTVQb1p1NDRheXRTZjgyV1hTeGttdVZMblE1OUg3akxjVUNoZmNZaXhBZVNGWFZtUDZFZGF0Z2t4RzFvMmUwUQ?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Thu, 15 Oct 2026 07:28:00 GMT"
+      "title": "来週（10/19～23）の日経平均株価の予想レンジは、6万2000～6万8000円！ IBM、ラムリサーチなどAI関連株の決算に加え、好業績の内需株などにも期待！",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFA0cXBtZF9TbFlLSE5SVm5Lblo5OHdJMUZIRUJtc2QzR0RFb1VKNEdPMjktbHNxdXJoQlZYbk5PXzVtd3BiN2F1aWdJZ2xGNTNWRUJr?oc=5",
+      "source": "ダイヤモンド・オンライン",
+      "publishedAt": "Fri, 16 Oct 2026 11:05:00 GMT"
     },
     {
-      "title": "【速報】日経平均一時3600円以上下落 アメリカ半導体株安が波及（2026年10月14日掲載）",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1ScTQ0ckxScUpwZkdVT3V0WXU4aGtkSDdrUW5TZGpickdRRTcwdlpIQzFvT1JUdGVWemNzUDFRMFRQV2dMQjl1UlB0SDliU1N1TjEtenFYdDMyaC1mb3FiV19OR3pURXlIa1F4RkRtRzE3Tk96Smo0OTRhaTE?oc=5",
-      "source": "日テレNEWS NNN",
-      "publishedAt": "Thu, 15 Oct 2026 03:45:02 GMT"
+      "title": "決算でベイカレントとSHIFTがストップ高！ GOは堅調決算も大幅安/日経平均反発【今日の注目株＆日本株市場見通し】「デイリーZAi」10月16日号(ダイヤモンド・ザイ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWTY3TUlLVGxiSk9rNk9BWFlJLWF6eFM3emZfLTBBTkJ6R0dKU2gwclVCQUpTbHlkRElDb0FoRjFfTlJQbW9xMHVUWU9aX0h3TElvaDV4a3VKWWNPaVdzVjVQQXVoM1o2NlNWb29WSUh3Umcwc01qZUN4YXUwdUJlUU9aVXVzWms?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Fri, 16 Oct 2026 11:10:27 GMT"
+    },
+    {
+      "title": "日経平均寄与度ランキング（大引け）～日経平均は反発、東エレクが約134円分押し上げ",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9PWm44ZzVScEZWLUJ0Zi1oQ190MXFzb0tYWDJsZUNLMlV1WDc1eGJBR2dROW8zUkkxWEtaYi1TaEVNdlV4NEtKXzN5cmtONkp6NjV2R2hoWmRWeS1yVjFqSw?oc=5",
+      "source": "株探",
+      "publishedAt": "Fri, 16 Oct 2026 07:48:10 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-04-03",
-      "close": 53123.49,
-      "sma25": 54057.59,
-      "sma75": 53592.73
-    },
     {
       "date": "2026-04-06",
       "close": 53413.68,
@@ -856,6 +850,12 @@
       "close": 64425.95,
       "sma25": 66483.75,
       "sma75": 66584.1
+    },
+    {
+      "date": "2026-10-16",
+      "close": 65324.29,
+      "sma25": 66440.73,
+      "sma75": 66490.2
     }
   ]
 }

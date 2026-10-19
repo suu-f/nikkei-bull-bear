@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-16T12:16:51.497Z",
-  "asOfDate": "2026-10-16",
-  "price": 65324.29,
-  "sma25": 66440.73,
-  "sma75": 66490.2,
-  "deviationPct": -1.68,
-  "rsi14": 46.4,
-  "vol25AnnualizedPct": 26.8,
+  "updatedAt": "2026-10-19T14:35:19.382Z",
+  "asOfDate": "2026-10-19",
+  "price": 64916.7,
+  "sma25": 66426.63,
+  "sma75": 66430.95,
+  "deviationPct": -2.27,
+  "rsi14": 46.7,
+  "vol25AnnualizedPct": 26.3,
   "trend": "down",
   "overheat": "neutral",
   "highVol": true,
@@ -14,16 +14,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 157.979,
-      "changePct": 0.01
+      "value": 158.433,
+      "changePct": 0.18
     },
     "sp500": {
-      "value": 7744.06,
-      "changePct": 0.33
+      "value": 7699.59,
+      "changePct": 0.52
     },
     "vix": {
-      "value": 16.03,
-      "changePct": -2.61
+      "value": 17.67,
+      "changePct": -11.61
     }
   },
   "macroAssessment": {
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "日経平均株価、終値898円高 「AI利活用」銘柄の物色鮮明に",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBPZlNDV3dfUk9YQmpoeHRVVDVfRWhmT2ZmTEF6VURsMXRVNkFNajYzZWhUTjk4YUpjZGJsNFlQSjQ1NkJTbm4wRldyd0lMSHJhaF9nNXlPWldKbzduWXBTNm9pZ1JvZklIOHhVaQ?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 16 Oct 2026 02:54:42 GMT"
-    },
-    {
-      "title": "日経平均大幅安、コアウィーブ社債急落で信用不安 「目先は慎重スタンス必要」「個別株の業績見極める局面」 市場関係者の見方",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4tVkpMSHFidmtkVzNsR013QmpheG5YbW1ya1pBaXM0YTEwMWxUY0ZvQk5CaTkwclB3VUR2Nk5hSVUzSm8tY0d4NW8yWEhKdGVrczBKajExeGxfUQ?oc=5",
+      "title": "日経平均は再び売り先行か…「下値めど」と注目のAI株決算の行方は？",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBZZHFFNTNTSHhLUHRaNDZ5NlctQWFLRmUwSzJKaEZNRDFuUkE4bnViX01FUjVuTTE5T0N5NWNHaTZaVVJHVUpfLXVIeGEtTUg0TVlFa3VQcWZqdw?oc=5",
       "source": "トウシル",
-      "publishedAt": "Thu, 15 Oct 2026 08:00:00 GMT"
+      "publishedAt": "Mon, 19 Oct 2026 03:10:00 GMT"
     },
     {
-      "title": "来週（10/19～23）の日経平均株価の予想レンジは、6万2000～6万8000円！ IBM、ラムリサーチなどAI関連株の決算に加え、好業績の内需株などにも期待！",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFA0cXBtZF9TbFlLSE5SVm5Lblo5OHdJMUZIRUJtc2QzR0RFb1VKNEdPMjktbHNxdXJoQlZYbk5PXzVtd3BiN2F1aWdJZ2xGNTNWRUJr?oc=5",
-      "source": "ダイヤモンド・オンライン",
-      "publishedAt": "Fri, 16 Oct 2026 11:05:00 GMT"
+      "title": "日経平均終値407円安、途切れぬコアウィーブ不安 内需株に光明",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9QZ2h6enc5UzdqR3FkdFNUb2ZkSVJHbTFTUjk3dUpBbFRYLUxtOENkYl9ISHREdVJWRWtfOFJxNkhLTV9UNVp3c2s0MmxZdXFmdV9Ic29ySGl5S0djaW9oeHVMS2VyOUo1bG83Rg?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Mon, 19 Oct 2026 02:58:22 GMT"
     },
     {
-      "title": "決算でベイカレントとSHIFTがストップ高！ GOは堅調決算も大幅安/日経平均反発【今日の注目株＆日本株市場見通し】「デイリーZAi」10月16日号(ダイヤモンド・ザイ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWTY3TUlLVGxiSk9rNk9BWFlJLWF6eFM3emZfLTBBTkJ6R0dKU2gwclVCQUpTbHlkRElDb0FoRjFfTlJQbW9xMHVUWU9aX0h3TElvaDV4a3VKWWNPaVdzVjVQQXVoM1o2NlNWb29WSUh3Umcwc01qZUN4YXUwdUJlUU9aVXVzWms?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Fri, 16 Oct 2026 11:10:27 GMT"
+      "title": "7万円から一転、日経平均が歴代3位の暴落…「コアウィーブ・ショック」で市場に何が起きているのか（ニューズウィーク日本版）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA2eTlCNlpZQlUwYlprMmdFRUpRRDR0UXk1cVQxNU1xNUI5MHdpSzBjdjZEUFh0Z19mZ2R6TDZlTDVodWdKTVJ6TFluRk1NajVialg1dDFMT2tzUTlWajNXRFd3eng1d3NKVFdoYlZGMDViN25lcGtHUGxHR1NzSU0?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Mon, 19 Oct 2026 11:28:57 GMT"
     },
     {
-      "title": "日経平均寄与度ランキング（大引け）～日経平均は反発、東エレクが約134円分押し上げ",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9PWm44ZzVScEZWLUJ0Zi1oQ190MXFzb0tYWDJsZUNLMlV1WDc1eGJBR2dROW8zUkkxWEtaYi1TaEVNdlV4NEtKXzN5cmtONkp6NjV2R2hoWmRWeS1yVjFqSw?oc=5",
-      "source": "株探",
-      "publishedAt": "Fri, 16 Oct 2026 07:48:10 GMT"
+      "title": "日経平均は反落、米コアウィーブ警戒が継続 下値では押し目買いも",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMFZ2Y29tZHcybWIxMzBRbzR6Qnh0SElXeGwxTl9mdEJQa0x0TWs5ZXk3Q1gzckFNVUFtS3RHSUZrZWNqXzNXNV9EemQxbE1TVWRwbnVUZUd1TVBiaHZkcEM4MWFuM25YdXRGZGF1RGgySFhxNkdjMHNjN012YWNZemRxNnFSdw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Mon, 19 Oct 2026 07:15:09 GMT"
+    },
+    {
+      "title": "（まとめ）日経平均は一時1,400円超下落も最終的に407円安の64,916円で取引終了",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vWU5VTm1BdGczQkc0Zlc5LS1FUUZzbGJTTjVHMEd1ZU55MWF6SHh1cC1mMURjcURpTWxrNUkzNXFIOW1ObW5BNHl6Vzh5OG1sV0tTadIBV0FVX3lxTE9PbEljQlRWWTVQaFRzWE5pRjNTUTZGMlpteF9jbmtEVnM1TUltWHhnMmZSZE1iZ0JpamxsUXAtMmkyUk40Wl93TGxfcl9fSUtrNkRTaFd2bw?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Mon, 19 Oct 2026 07:18:00 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-04-06",
-      "close": 53413.68,
-      "sma25": 53840.12,
-      "sma75": 53636.26
-    },
     {
       "date": "2026-04-07",
       "close": 53429.56,
@@ -856,6 +850,12 @@
       "close": 65324.29,
       "sma25": 66440.73,
       "sma75": 66490.2
+    },
+    {
+      "date": "2026-10-19",
+      "close": 64916.7,
+      "sma25": 66426.63,
+      "sma75": 66430.95
     }
   ]
 }

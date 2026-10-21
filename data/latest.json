@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-20T12:39:52.652Z",
-  "asOfDate": "2026-10-20",
-  "price": 64075.42,
-  "sma25": 66383.93,
-  "sma75": 66359.04,
-  "deviationPct": -3.48,
-  "rsi14": 45.3,
-  "vol25AnnualizedPct": 26.6,
+  "updatedAt": "2026-10-21T12:52:03.264Z",
+  "asOfDate": "2026-10-21",
+  "price": 64621.24,
+  "sma25": 66357.94,
+  "sma75": 66286.5,
+  "deviationPct": -2.62,
+  "rsi14": 42.5,
+  "vol25AnnualizedPct": 26.7,
   "trend": "mixed",
   "overheat": "neutral",
   "highVol": true,
@@ -16,73 +16,67 @@
   },
   "nextTrigger": {
     "direction": "above",
-    "level": 66383.93,
-    "distancePct": 3.6,
+    "level": 66357.94,
+    "distancePct": 2.69,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.978,
-      "changePct": 0.11
+      "value": 157.937,
+      "changePct": -0.37
     },
     "sp500": {
-      "value": 7690.73,
-      "changePct": 0.41
+      "value": 7712.57,
+      "changePct": 0.28
     },
     "vix": {
-      "value": 18.88,
-      "changePct": 2.39
+      "value": 17.21,
+      "changePct": -0.58
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "日経平均株価、終値841円安 クレジット不安の広がりにやきもき",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9CbWNxS1VVYklQUk8wZUJrdDJPN3NmcnlaR2J3dDlmcC1wVFlDSy1MT3JUUERkZDBpM2M3bmMxdko1aE1BRENKXy00VFhNZjNTTlpxOFFMQUdyOTJwbFFXbmtXeVQzblktemdRLQ?oc=5",
+      "title": "日経平均株価、終値545円高 ソフトバンクGが占うAI関連の反発力",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBvWUp1cGE1NUI4eXFGMVFVbkU1SV9uUDJWanl6U1NiRGNHTlRfX1V0bWNNb0paQTFfVEhtcjc4SUdGdXNhbUFmNUY3eUtOX2g3Mkh5YUpncWZIWm1fTUxUT2NwSzB6WTJFVnFPTA?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Tue, 20 Oct 2026 02:44:32 GMT"
+      "publishedAt": "Wed, 21 Oct 2026 02:56:58 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月20日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1icmwwd1BHSERJTjJIOEE4RzlwemRYd1ZlcVUzZkNBY0UyUTA5WHBlX1FxbU1xR0V0d3hDa2RMeXBweUxsTE9TYUJlX2lJU05MX0t6XzdPUE5rVkJieFNwZg?oc=5",
+      "title": "日経平均急落でも強い！上場来高値を更新した6銘柄はこれだ",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1CcHBqcnlvUjQyY1VJWURtTDJqV0YxQjU5aVZXaDQ5Mkp5eG1salAxVms4c0pBUGNWSUZueE53RmF4Rm9sS2U5d3JvMDQ3bWtoZnRuTWRzNA?oc=5",
+      "source": "四季報オンライン",
+      "publishedAt": "Wed, 21 Oct 2026 09:30:00 GMT"
+    },
+    {
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月21日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5WLTRiN3hQUTVkOUtzeUM2XzYyTFhKcWxwZ3Z1N1dSRGV5dGxZQ1lkTzBxT3FiUW16UnlQbVhweHpTQklZNmVvTzlQU0JDbXBwTk1hSnp6ZnFEWER3dGEzdA?oc=5",
       "source": "株探",
-      "publishedAt": "Mon, 19 Oct 2026 23:13:07 GMT"
+      "publishedAt": "Tue, 20 Oct 2026 23:12:16 GMT"
     },
     {
-      "title": "7万円から一転、日経平均が歴代3位の暴落…「コアウィーブ・ショック」で市場に何が起きているのか（ニューズウィーク日本版）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA2eTlCNlpZQlUwYlprMmdFRUpRRDR0UXk1cVQxNU1xNUI5MHdpSzBjdjZEUFh0Z19mZ2R6TDZlTDVodWdKTVJ6TFluRk1NajVialg1dDFMT2tzUTlWajNXRFd3eng1d3NKVFdoYlZGMDViN25lcGtHUGxHR1NzSU0?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Mon, 19 Oct 2026 11:28:57 GMT"
+      "title": "後場の日経平均は833円高でスタート、フジクラやJX金属などが上昇／後場の寄り付き概況(フィスコ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTzF2SlAxZGV0T1VNSkFIeGlqNUY0bm52TWtkSG0tVVREV21MaUR2MzUxOVlUTlVIWWZjSlNDNTFmclZpM2lOMkRPZ1RmaEZPNGR3SkxUcWs0OWtyQjNBVTZINmZITUtXTTltSnNObktubGE4ZlNDbWV5ck5wc3JLRHNaWkcycEk?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Wed, 21 Oct 2026 04:33:30 GMT"
     },
     {
-      "title": "日経平均は再び売り先行か…「下値めど」と注目のAI株決算の行方は？",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBZZHFFNTNTSHhLUHRaNDZ5NlctQWFLRmUwSzJKaEZNRDFuUkE4bnViX01FUjVuTTE5T0N5NWNHaTZaVVJHVUpfLXVIeGEtTUg0TVlFa3VQcWZqdw?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Mon, 19 Oct 2026 03:10:00 GMT"
-    },
-    {
-      "title": "（まとめ）広範な銘柄に売りが出た日経平均は841円安の64,075円で続落",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1xeG5KWEtBVXAtbDNRRjhvQkM0LWdVcEV5WVFpNk12Q2NlSml0YnR6YUgtS25SSGVKTTBtTHp6MEpBZTNqMmVYWDZsdnY2S1hDX1VSU9IBV0FVX3lxTE1aQ05iUzBCdVI5aTIxdm9QeGc1RFRoaFYtOU9KYjdlUW5kV3JzTEk4cnNvVjUwQURZMkJWTzFwS1NjUWd1VUZzTGoxbWVWdnQyREJVa1JETQ?oc=5",
+      "title": "（まとめ）日経平均は一時1,300円超上昇も最終的に545円高の64,621円で反発",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBIV0tsaEJmQTRpTHVlVlpwOS1GNHNtYVZSQ2ZXUmZtRkM1MUdIcERvVmNxLUFRR1NtTzZUdUluRF9hVUJwR1VHSEt0TVFwT2dIVl83aNIBV0FVX3lxTFBtVkI4QThoelQwZVRuY1FYNVlKWXVneXd4aVNhSVVaR1FacHc3MzN5Qnp5MEU0SlVQRTkxLU1YUzNiVzBCRXM5emhnckxyeEhUbDctd0p0SQ?oc=5",
       "source": "マネクリ",
-      "publishedAt": "Tue, 20 Oct 2026 07:14:00 GMT"
+      "publishedAt": "Wed, 21 Oct 2026 07:26:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-08",
-      "close": 56308.42,
-      "sma25": 53656.19,
-      "sma75": 53752.7
-    },
     {
       "date": "2026-04-09",
       "close": 55895.32,
@@ -856,6 +850,12 @@
       "close": 64075.42,
       "sma25": 66383.93,
       "sma75": 66359.04
+    },
+    {
+      "date": "2026-10-21",
+      "close": 64621.24,
+      "sma25": 66357.94,
+      "sma75": 66286.5
     }
   ]
 }

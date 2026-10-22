@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="WenQuanYi Zen Hei, sans-serif">
+  <!-- 背景：銀行の壁 -->
+  <rect width="800" height="600" fill="#f4ecd8"/>
+  <rect y="0" width="800" height="90" fill="#1f4e79"/>
+  <text x="400" y="60" font-size="42" fill="#ffd966" text-anchor="middle" font-weight="bold">わんわん銀行</text>
+  <!-- 柱 -->
+  <g fill="#e6dcc3" stroke="#c9bb98" stroke-width="3">
+    <rect x="30" y="90" width="60" height="330"/>
+    <rect x="710" y="90" width="60" height="330"/>
+  </g>
+  <!-- 窓口の札 -->
+  <rect x="560" y="130" width="120" height="50" rx="8" fill="#fff" stroke="#1f4e79" stroke-width="3"/>
+  <text x="620" y="164" font-size="24" fill="#1f4e79" text-anchor="middle">窓口 1</text>
+  <!-- 時計 -->
+  <circle cx="170" cy="160" r="38" fill="#fff" stroke="#1f4e79" stroke-width="5"/>
+  <line x1="170" y1="160" x2="170" y2="132" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="170" y1="160" x2="190" y2="168" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 犬：耳 -->
+  <path d="M300 200 L285 110 L355 165 Z" fill="#d98c3f" stroke="#7a4a1c" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M500 200 L515 110 L445 165 Z" fill="#d98c3f" stroke="#7a4a1c" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M305 185 L295 130 L340 168 Z" fill="#f6b8b0"/>
+  <path d="M495 185 L505 130 L460 168 Z" fill="#f6b8b0"/>
+
+  <!-- 体（スーツ） -->
+  <path d="M270 470 Q270 340 400 340 Q530 340 530 470 Z" fill="#2c3e50" stroke="#1a252f" stroke-width="4"/>
+  <!-- シャツとネクタイ -->
+  <path d="M360 345 L400 420 L440 345 Z" fill="#fff"/>
+  <path d="M392 360 L408 360 L414 420 L400 440 L386 420 Z" fill="#c0392b"/>
+  <path d="M390 352 L410 352 L405 366 L395 366 Z" fill="#a93226"/>
+  <!-- 名札 -->
+  <rect x="450" y="390" width="56" height="30" rx="4" fill="#fff" stroke="#ffd966" stroke-width="3"/>
+  <text x="478" y="412" font-size="16" fill="#333" text-anchor="middle">ポチ</text>
+
+  <!-- 頭 -->
+  <ellipse cx="400" cy="250" rx="115" ry="100" fill="#d98c3f" stroke="#7a4a1c" stroke-width="4"/>
+  <!-- 顔の白い部分 -->
+  <path d="M310 270 Q330 350 400 352 Q470 350 490 270 Q450 300 400 290 Q350 300 310 270 Z" fill="#fff6e8"/>
+  <!-- ほっぺ -->
+  <ellipse cx="335" cy="290" rx="18" ry="11" fill="#f5a3a3" opacity="0.8"/>
+  <ellipse cx="465" cy="290" rx="18" ry="11" fill="#f5a3a3" opacity="0.8"/>
+  <!-- 目 -->
+  <ellipse cx="358" cy="245" rx="13" ry="16" fill="#222"/>
+  <ellipse cx="442" cy="245" rx="13" ry="16" fill="#222"/>
+  <circle cx="363" cy="239" r="5" fill="#fff"/>
+  <circle cx="447" cy="239" r="5" fill="#fff"/>
+  <!-- 眉 -->
+  <ellipse cx="352" cy="215" rx="9" ry="5" fill="#fff6e8"/>
+  <ellipse cx="448" cy="215" rx="9" ry="5" fill="#fff6e8"/>
+  <!-- 鼻と口 -->
+  <ellipse cx="400" cy="282" rx="16" ry="11" fill="#222"/>
+  <path d="M400 293 L400 305 M400 305 Q388 318 376 306 M400 305 Q412 318 424 306" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+  <path d="M392 312 Q400 335 408 312 Z" fill="#e8737a"/>
+
+  <!-- カウンター -->
+  <rect x="0" y="440" width="800" height="160" fill="#8b5a2b"/>
+  <rect x="0" y="430" width="800" height="22" fill="#a86b35"/>
+  <rect x="0" y="452" width="800" height="6" fill="#6e4520"/>
+
+  <!-- 前足 -->
+  <ellipse cx="320" cy="438" rx="36" ry="20" fill="#fff6e8" stroke="#7a4a1c" stroke-width="4"/>
+  <ellipse cx="480" cy="438" rx="36" ry="20" fill="#fff6e8" stroke="#7a4a1c" stroke-width="4"/>
+
+  <!-- 硬貨の山 -->
+  <g stroke="#b8860b" stroke-width="3">
+    <ellipse cx="150" cy="425" rx="40" ry="12" fill="#f1c40f"/>
+    <ellipse cx="150" cy="412" rx="40" ry="12" fill="#f4d03f"/>
+    <ellipse cx="150" cy="399" rx="40" ry="12" fill="#f1c40f"/>
+    <ellipse cx="150" cy="386" rx="40" ry="12" fill="#f7dc6f"/>
+  </g>
+  <text x="150" y="392" font-size="14" fill="#8a6500" text-anchor="middle" font-weight="bold">¥</text>
+  <!-- 札束 -->
+  <g>
+    <rect x="590" y="395" width="110" height="34" rx="3" fill="#a9d18e" stroke="#4f7a32" stroke-width="3"/>
+    <rect x="590" y="383" width="110" height="34" rx="3" fill="#c5e0b4" stroke="#4f7a32" stroke-width="3"/>
+    <rect x="636" y="383" width="18" height="34" fill="#f4ecd8" stroke="#4f7a32" stroke-width="2"/>
+  </g>
+  <!-- 骨型のハンコ -->
+  <g transform="translate(240 520) rotate(-12)">
+    <rect x="-30" y="-8" width="60" height="16" fill="#fff" stroke="#999" stroke-width="2"/>
+    <circle cx="-32" cy="-8" r="10" fill="#fff" stroke="#999" stroke-width="2"/>
+    <circle cx="-32" cy="8" r="10" fill="#fff" stroke="#999" stroke-width="2"/>
+    <circle cx="32" cy="-8" r="10" fill="#fff" stroke="#999" stroke-width="2"/>
+    <circle cx="32" cy="8" r="10" fill="#fff" stroke="#999" stroke-width="2"/>
+  </g>
+  <!-- 吹き出し -->
+  <path d="M530 225 Q530 260 580 262 L560 300 L610 262 Q760 262 760 225 Q760 190 645 190 Q530 190 530 225 Z" fill="#fff" stroke="#333" stroke-width="3"/>
+  <text x="645" y="233" font-size="20" fill="#333" text-anchor="middle">いらっしゃいワン！</text>
+  <!-- 足元のプレート -->
+  <text x="400" y="560" font-size="26" fill="#ffd966" text-anchor="middle">ご用件をどうぞ</text>
+</svg>

@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-10-21T12:52:03.264Z",
-  "asOfDate": "2026-10-21",
-  "price": 64621.24,
-  "sma25": 66357.94,
-  "sma75": 66286.5,
-  "deviationPct": -2.62,
-  "rsi14": 42.5,
-  "vol25AnnualizedPct": 26.7,
+  "updatedAt": "2026-10-22T12:54:32.008Z",
+  "asOfDate": "2026-10-22",
+  "price": 62907.84,
+  "sma25": 66313.8,
+  "sma75": 66185.6,
+  "deviationPct": -5.14,
+  "rsi14": 27.9,
+  "vol25AnnualizedPct": 27.4,
   "trend": "mixed",
-  "overheat": "neutral",
+  "overheat": "oversold",
   "highVol": true,
   "crossSignal": {
     "type": "golden",
@@ -16,23 +16,23 @@
   },
   "nextTrigger": {
     "direction": "above",
-    "level": 66357.94,
-    "distancePct": 2.69,
+    "level": 66313.8,
+    "distancePct": 5.41,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.937,
-      "changePct": -0.37
+      "value": 157.1,
+      "changePct": -0.74
     },
     "sp500": {
-      "value": 7712.57,
-      "changePct": 0.28
+      "value": 7757.17,
+      "changePct": 0.58
     },
     "vix": {
-      "value": 17.21,
-      "changePct": -0.58
+      "value": 17.99,
+      "changePct": 7.85
     }
   },
   "macroAssessment": {
@@ -43,46 +43,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均株価、終値545円高 ソフトバンクGが占うAI関連の反発力",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBvWUp1cGE1NUI4eXFGMVFVbkU1SV9uUDJWanl6U1NiRGNHTlRfX1V0bWNNb0paQTFfVEhtcjc4SUdGdXNhbUFmNUY3eUtOX2g3Mkh5YUpncWZIWm1fTUxUT2NwSzB6WTJFVnFPTA?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Wed, 21 Oct 2026 02:56:58 GMT"
+      "title": "日経平均は急反落、ＡＩ・半導体株売られ6万3000円割れ",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQY3V4blV4U09uV0xWUVZTZmV5MXk0VHNUbTM1STRFcHFPdmNQX0IwbTgzQVl5eHljSmVWRV9udkdaOUc5ajFYREdnbUxUbkZ1ZGNSeFlBbG1HTEVuS3QwWFp1a0xTVVFBcE9rMU83ejE3bUE5SkV4UEFQX3ppU2JQQnl0Umsxdw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Thu, 22 Oct 2026 07:15:36 GMT"
     },
     {
-      "title": "日経平均急落でも強い！上場来高値を更新した6銘柄はこれだ",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1CcHBqcnlvUjQyY1VJWURtTDJqV0YxQjU5aVZXaDQ5Mkp5eG1salAxVms4c0pBUGNWSUZueE53RmF4Rm9sS2U5d3JvMDQ3bWtoZnRuTWRzNA?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Wed, 21 Oct 2026 09:30:00 GMT"
-    },
-    {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月21日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5WLTRiN3hQUTVkOUtzeUM2XzYyTFhKcWxwZ3Z1N1dSRGV5dGxZQ1lkTzBxT3FiUW16UnlQbVhweHpTQklZNmVvTzlQU0JDbXBwTk1hSnp6ZnFEWER3dGEzdA?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月22日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5yUnVRUUg1OF9oTzRvOEhTNzVQd3BXb0YwSVE3LVdWelN6dlFWRnc1VVNxdk5DSVdTU1prYTNPeE9waFU3RVgtUU5zWWExZVQ3WVVHWTNBaFFwYWhMemcycQ?oc=5",
       "source": "株探",
-      "publishedAt": "Tue, 20 Oct 2026 23:12:16 GMT"
+      "publishedAt": "Wed, 21 Oct 2026 23:12:39 GMT"
     },
     {
-      "title": "後場の日経平均は833円高でスタート、フジクラやJX金属などが上昇／後場の寄り付き概況(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTzF2SlAxZGV0T1VNSkFIeGlqNUY0bm52TWtkSG0tVVREV21MaUR2MzUxOVlUTlVIWWZjSlNDNTFmclZpM2lOMkRPZ1RmaEZPNGR3SkxUcWs0OWtyQjNBVTZINmZITUtXTTltSnNObktubGE4ZlNDbWV5ck5wc3JLRHNaWkcycEk?oc=5",
+      "title": "日経平均VIは大幅に上昇、株価下落で警戒感強まる(フィスコ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNTGRYNUtiSzVBLWJJMWJKZktpeVN4Ti1WV3h1cVRXNVJMZDVMMENkSnFIZlR5SUVWZHNaTEhmcmI5bmtMakJmS1l3Y3Y2SWZaVEE2RG1iMjlFLTNhS3MxWWdVdWYtc1BrdDF5T2ZtUkgwaV9RSFZGLXNucUwtcE1GMnhPTWFsTGs?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Wed, 21 Oct 2026 04:33:30 GMT"
+      "publishedAt": "Thu, 22 Oct 2026 05:08:35 GMT"
     },
     {
-      "title": "（まとめ）日経平均は一時1,300円超上昇も最終的に545円高の64,621円で反発",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBIV0tsaEJmQTRpTHVlVlpwOS1GNHNtYVZSQ2ZXUmZtRkM1MUdIcERvVmNxLUFRR1NtTzZUdUluRF9hVUJwR1VHSEt0TVFwT2dIVl83aNIBV0FVX3lxTFBtVkI4QThoelQwZVRuY1FYNVlKWXVneXd4aVNhSVVaR1FacHc3MzN5Qnp5MEU0SlVQRTkxLU1YUzNiVzBCRXM5emhnckxyeEhUbDctd0p0SQ?oc=5",
+      "title": "日経平均株価、米株高が主力株に追い風（先読み株式相場）",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9XUlNlNWpnVUMyUldUb2ZNX3hMYi1abmhFdDNRdVZjMjlLOEJ0NGdHMUxEcXA2MGNMdjI5RnJBdnFiV1RtNFItVmRoNkNXTHFvZG9ETnJYeU9VcTVUVldCN1RnQ2hMOTc5VEotTg?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Wed, 21 Oct 2026 22:40:14 GMT"
+    },
+    {
+      "title": "（まとめ）半導体銘柄が軟調に推移した日経平均は1,713円安の62,907円と大幅反落",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBtRkdFVDV2N3VjRE9ycTVkWEE4M0tlME9MYnNORGRQVEZkMng3aUFYY0pSX2p3RDI0bUprS1BxcVNpNl96Qzhydlgtb2pfNW03N2JYTNIBV0FVX3lxTE9leHF3TUJlR2M3b1ZJSWdRMzMyMVlkRUpqQUluSkJJLVVfX0MzVndIczV2elNLUTljMzRaRkZTemRQaUt0WDRRc1BEZEZpbTRHV0xpWWdoOA?oc=5",
       "source": "マネクリ",
-      "publishedAt": "Wed, 21 Oct 2026 07:26:00 GMT"
+      "publishedAt": "Thu, 22 Oct 2026 07:21:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-09",
-      "close": 55895.32,
-      "sma25": 53722.18,
-      "sma75": 53839.53
-    },
     {
       "date": "2026-04-10",
       "close": 56924.11,
@@ -856,6 +850,12 @@
       "close": 64621.24,
       "sma25": 66357.94,
       "sma75": 66286.5
+    },
+    {
+      "date": "2026-10-22",
+      "close": 62907.84,
+      "sma25": 66313.8,
+      "sma75": 66185.6
     }
   ]
 }

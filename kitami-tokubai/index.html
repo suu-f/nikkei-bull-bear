@@ -21,6 +21,7 @@
   --off: #8a949a;
   --map-bg: #e9efee;
   --map-grid: #d5dedd;
+  --water: #8ec5e6; --road: #ffffff; --road-edge: #b9c4c6; --nat: #ffd98a; --nat-sign: #2f6fb0; --pref-sign: #4f7d3a; --exp: #3f9a6a; --town: #7d8a90;
   --f-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
   --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
 }
@@ -28,11 +29,13 @@
   --paper: #11181c; --card: #1a2328; --ink: #e8eef0; --muted: #a2afb5; --line: #2d3a40;
   --sale: #ff6b5e; --sale-bg: #3a1d1b; --super: #4fc3a1; --drug: #7ea6ff; --route: #f5b73b;
   --route-soft: rgba(245,183,59,.2); --ok: #5bd17f; --off: #6f7b81; --map-bg: #172025; --map-grid: #243137;
+  --water: #2f5d78; --road: #46545b; --road-edge: #2a353a; --nat: #8a6d2c; --nat-sign: #3d7cc0; --pref-sign: #5b8a45; --exp: #3d8a62; --town: #7f8d93;
   color-scheme: dark } }
 :root[data-theme="dark"] {
   --paper: #11181c; --card: #1a2328; --ink: #e8eef0; --muted: #a2afb5; --line: #2d3a40;
   --sale: #ff6b5e; --sale-bg: #3a1d1b; --super: #4fc3a1; --drug: #7ea6ff; --route: #f5b73b;
   --route-soft: rgba(245,183,59,.2); --ok: #5bd17f; --off: #6f7b81; --map-bg: #172025; --map-grid: #243137;
+  --water: #2f5d78; --road: #46545b; --road-edge: #2a353a; --nat: #8a6d2c; --nat-sign: #3d7cc0; --pref-sign: #5b8a45; --exp: #3d8a62; --town: #7f8d93;
   color-scheme: dark }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -63,7 +66,10 @@ button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px 
 .chip.place[aria-pressed="true"] { background: var(--route); color: #1d2a33; border-color: var(--route); }
 
 .map-box { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--map-bg); }
-.map-box svg { display: block; width: 100%; height: auto; touch-action: manipulation; cursor: crosshair; }
+.map-box svg { display: block; width: 100%; height: auto; touch-action: none; cursor: crosshair; user-select: none; -webkit-user-select: none; }
+.zoom { position: absolute; right: 8px; top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.zoom button { font: inherit; font-weight: 700; min-width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+.zoom #z-fit { font-size: .7rem; }
 .map-hint { font-size: .78rem; color: var(--muted); }
 .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .75rem; color: var(--muted); }
 .legend i { display: inline-block; width: 10px; height: 10px; margin-right: 4px; vertical-align: -1px; }
@@ -119,7 +125,7 @@ footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
     <p id="today"></p>
   </header>
 
-  <div class="notice"><b>試作版です。</b>特売・価格はサンプルデータ、店舗の位置は町名からの概算です。店名は北見市内の実在店舗です。</div>
+  <div class="notice"><b>試作版です。</b>特売・価格はサンプルデータです。店名と住所は北見市内の実在店舗で、地図上の位置は住所の町丁目単位です。</div>
 
   <section>
     <h2>探し方</h2>
@@ -152,21 +158,24 @@ footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
   </section>
 
   <section>
-    <h2>地図（タップで地点を置く）</h2>
+    <h2>地図</h2>
     <div class="panel">
       <div class="row" role="group" aria-label="置く地点">
         <button type="button" class="chip place" id="p-home" data-place="home">🏠 自宅</button>
         <button type="button" class="chip place" id="p-work" data-place="work">🏢 職場</button>
         <button type="button" class="chip place" id="p-via" data-place="via">＋ 経由地</button>
         <button type="button" class="chip" id="p-clear">経由地を消す</button>
-        <button type="button" class="chip" id="z-toggle">端野まで表示</button>
       </div>
-      <div class="map-box"><svg id="map" role="img" aria-label="北見市の店舗マップ"></svg></div>
+      <div class="map-box"><svg id="map" role="img" aria-label="北見市の店舗マップ"></svg>
+        <div class="zoom"><button type="button" id="z-in" aria-label="拡大">＋</button><button type="button" id="z-out" aria-label="縮小">−</button><button type="button" id="z-fit" aria-label="全体を表示">全体</button></div></div>
       <div class="map-hint" id="map-hint"></div>
       <div class="legend">
         <span><i style="background:var(--super);border-radius:50%"></i>スーパー</span>
         <span><i style="background:var(--drug)"></i>ドラッグストア</span>
-        <span><i style="background:var(--route)"></i>通勤ルートと寄り道範囲</span>
+        <span><i style="background:var(--route)"></i>通勤ルート</span>
+        <span><i style="background:var(--nat-sign);border-radius:3px"></i>国道</span>
+        <span><i style="background:var(--exp)"></i>北見道路</span>
+        <span><i style="background:var(--water)"></i>川</span>
       </div>
     </div>
   </section>
@@ -190,36 +199,37 @@ footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
   </section>
 
   <footer>
-    おすすめ順は「特売のお得さ（買う物リストの品は3倍で評価）」から「移動の手間（通勤モードでは寄り道距離）」を引いて決めています。距離は直線距離×1.3で道のりを見積もっています。営業時間は目安です。
+    地図の道路・川は概略です。おすすめ順は「特売のお得さ（買う物リストの品は3倍で評価）」から「移動の手間（通勤モードでは寄り道距離）」を引いて決めています。距離は直線距離×1.3で道のりを見積もっています。営業時間は目安です。<br>町丁目の位置：Geolonia 住所データ（CC BY 4.0、国土交通省 位置参照情報を加工）。駅の位置：Wikipedia。
   </footer>
 </div>
 
 <script>
 (() => {
 /* ---------- データ ---------- */
-// 位置は町名からの概算。本番では住所ジオコーディング結果に置き換える。
+// 位置は住所の町丁目の代表点（Geolonia住所データ）。同じ建物・町丁目の店は少しずらして表示。
 const STORES = [
-  { id: "s1", kind: "super", name: "フクハラ タイガー店", area: "美芳町", lat: 43.7935, lon: 143.8800, open: [9, 22] },
-  { id: "s2", kind: "super", name: "フクハラ 三輪店", area: "三輪", lat: 43.8370, lon: 143.8850, open: [9, 22] },
-  { id: "s3", kind: "super", name: "スーパーアークス 桜町店", area: "桜町", lat: 43.7990, lon: 143.9150, open: [9, 22] },
-  { id: "s4", kind: "super", name: "ビッグハウス 小泉店", area: "小泉", lat: 43.8060, lon: 143.8550, open: [9, 22] },
-  { id: "s5", kind: "super", name: "ビッグハウス メッセ店", area: "中央三輪（北見メッセ）", lat: 43.8265, lon: 143.8930, open: [9, 22] },
-  { id: "s6", kind: "super", name: "イオン 北見店", area: "北見駅から約2km", lat: 43.8160, lon: 143.8780, open: [8, 21.75] },
-  { id: "s7", kind: "super", name: "コープさっぽろ みわ店", area: "中央三輪", lat: 43.8215, lon: 143.8870, open: [9, 22] },
-  { id: "s8", kind: "super", name: "コープさっぽろ きよみ店", area: "清見", lat: 43.8000, lon: 143.8700, open: [9, 22] },
-  { id: "s9", kind: "super", name: "東武イーストモール 端野店", area: "端野町", lat: 43.8300, lon: 143.9800, open: [9, 21] },
-  { id: "d1", kind: "drug", name: "ツルハドラッグ 北見公園店", area: "柏陽", lat: 43.7930, lon: 143.9180, open: [9, 22] },
-  { id: "d2", kind: "drug", name: "ツルハドラッグ 北見春光店", area: "春光町", lat: 43.7990, lon: 143.8740, open: [9, 22] },
-  { id: "d3", kind: "drug", name: "ツルハドラッグ 北見東三輪店", area: "東三輪", lat: 43.8320, lon: 143.9030, open: [9, 22] },
-  { id: "d4", kind: "drug", name: "ツルハドラッグ 北見高栄店", area: "高栄", lat: 43.8140, lon: 143.8580, open: [9, 22] },
-  { id: "d5", kind: "drug", name: "ツルハドラッグ 北見北斗店", area: "北斗町", lat: 43.8230, lon: 143.8700, open: [9, 22] },
-  { id: "d6", kind: "drug", name: "ツルハドラッグ 北見三輪北店", area: "三輪", lat: 43.8430, lon: 143.8880, open: [9, 22] },
-  { id: "d7", kind: "drug", name: "ツルハドラッグ 北見メッセ店", area: "中央三輪（北見メッセ）", lat: 43.8270, lon: 143.8945, open: [9, 22] },
-  { id: "d8", kind: "drug", name: "ツルハドラッグ 北見中央三輪店", area: "中央三輪", lat: 43.8235, lon: 143.8850, open: [9, 22] },
-  { id: "d9", kind: "drug", name: "ツルハドラッグ 北見南町店", area: "南町", lat: 43.8010, lon: 143.8990, open: [9, 22] },
-  { id: "d10", kind: "drug", name: "ツルハドラッグ 北見美芳店", area: "美芳町", lat: 43.7920, lon: 143.8830, open: [9, 22] },
+  { id: "s1", kind: "super", name: "フクハラ タイガー店", area: "美芳町6丁目", lat: 43.8054, lon: 143.8787, open: [9, 22] },
+  { id: "s2", kind: "super", name: "フクハラ 三輪店", area: "東三輪2丁目付近", lat: 43.8011, lon: 143.8581, open: [9, 22] },
+  { id: "s3", kind: "super", name: "スーパーアークス 桜町店", area: "桜町6丁目", lat: 43.8071, lon: 143.9083, open: [9, 22] },
+  { id: "s4", kind: "super", name: "ビッグハウス 小泉店", area: "小泉", lat: 43.8413, lon: 143.9043, open: [9, 22] },
+  { id: "s5", kind: "super", name: "ビッグハウス メッセ店", area: "中央三輪5丁目（北見メッセ）", lat: 43.7957, lon: 143.8558, open: [9, 22] },
+  { id: "s6", kind: "super", name: "イオン 北見店", area: "北進町1丁目", lat: 43.8077, lon: 143.8732, open: [8, 21.75] },
+  { id: "s7", kind: "super", name: "コープさっぽろ みわ店", area: "中央三輪2丁目", lat: 43.8006, lon: 143.8510, open: [9, 22] },
+  { id: "s8", kind: "super", name: "コープさっぽろ きよみ店", area: "清見町", lat: 43.8165, lon: 143.8860, open: [9, 22] },
+  { id: "s9", kind: "super", name: "東武イーストモール 端野店", area: "端野町三区（愛し野駅近く）", lat: 43.8430, lon: 143.9305, open: [9, 21] },
+  { id: "d1", kind: "drug", name: "ツルハドラッグ 北見公園店", area: "公園町", lat: 43.8188, lon: 143.9082, open: [9, 22] },
+  { id: "d2", kind: "drug", name: "ツルハドラッグ 北見春光店", area: "春光町1丁目", lat: 43.8222, lon: 143.9152, open: [9, 22] },
+  { id: "d3", kind: "drug", name: "ツルハドラッグ 北見東三輪店", area: "東三輪3丁目", lat: 43.7963, lon: 143.8621, open: [9, 22] },
+  { id: "d4", kind: "drug", name: "ツルハドラッグ 北見高栄店", area: "高栄西町7丁目", lat: 43.8163, lon: 143.8583, open: [9, 22] },
+  { id: "d5", kind: "drug", name: "ツルハドラッグ 北見北斗店", area: "北斗町3丁目", lat: 43.8130, lon: 143.8842, open: [9, 22] },
+  { id: "d6", kind: "drug", name: "ツルハドラッグ 北見三輪北店", area: "中央三輪2丁目", lat: 43.8016, lon: 143.8524, open: [9, 22] },
+  { id: "d7", kind: "drug", name: "ツルハドラッグ 北見メッセ店", area: "中央三輪5丁目（北見メッセ）", lat: 43.7953, lon: 143.8572, open: [9, 22] },
+  { id: "d8", kind: "drug", name: "ツルハドラッグ 北見中央三輪店", area: "中央三輪2丁目", lat: 43.7998, lon: 143.8530, open: [9, 22] },
+  { id: "d9", kind: "drug", name: "ツルハドラッグ 北見南町店", area: "南町1丁目", lat: 43.7980, lon: 143.9018, open: [9, 22] },
+  { id: "d10", kind: "drug", name: "ツルハドラッグ 北見美芳店", area: "美芳町8丁目", lat: 43.8040, lon: 143.8788, open: [9, 22] },
+  { id: "d11", kind: "drug", name: "ツルハドラッグ 北見とん田西町店", area: "とん田西町", lat: 43.7942, lon: 143.8749, open: [9, 22] },
 ];
-const STATION = { lat: 43.8079, lon: 143.8946 };
+const STATION = { lat: 43.8052, lon: 143.8973 };
 
 // サンプル特売の元になる商品（通常価格は目安）。kinds = 扱う店の種類
 const ITEMS = [
@@ -281,12 +291,12 @@ const TRANSPORT = {
 const DEFAULT = {
   mode: "commute", tr: "car", kind: "all", openOnly: false, favOnly: false,
   range: { commute: { car: 3.0, bike: 1.2, walk: 0.5 }, home: { car: 4.0, bike: 2.0, walk: 1.0 } },
-  home: { lat: 43.8245, lon: 143.8660 }, work: { ...STATION }, via: [],
-  wants: ["卵", "玉ねぎ", "トイレットペーパー"], favs: ["s7"], place: "home", wide: false,
+  home: { lat: 43.8226, lon: 143.8714 }, work: { ...STATION }, via: [],
+  wants: ["卵", "玉ねぎ", "トイレットペーパー"], favs: ["s7"], place: "home",
 };
 let st;
-try { st = { ...DEFAULT, ...JSON.parse(localStorage.getItem("kitami-tokubai") || "{}") }; } catch { st = { ...DEFAULT }; }
-const save = () => { try { localStorage.setItem("kitami-tokubai", JSON.stringify(st)); } catch {} };
+try { st = { ...DEFAULT, ...JSON.parse(localStorage.getItem("kitami-tokubai-v2") || "{}") }; } catch { st = { ...DEFAULT }; }
+const save = () => { try { localStorage.setItem("kitami-tokubai-v2", JSON.stringify(st)); } catch {} };
 
 function isOpen(s) { const h = now.getHours() + now.getMinutes() / 60; return h >= s.open[0] && h < s.open[1]; }
 const fmtHour = (h) => `${Math.floor(h)}:${String(Math.round((h % 1) * 60)).padStart(2, "0")}`;
@@ -315,60 +325,181 @@ function evaluate() {
   });
 }
 
-/* ---------- 地図 ---------- */
-const svg = $("map"), NS = "http://www.w3.org/2000/svg";
-function viewBox() {
-  // 市街地：小泉〜柏陽、全域：端野まで
-  const a = toXY({ lat: 43.848, lon: 143.848 }), b = toXY({ lat: 43.786, lon: st.wide ? 143.99 : 143.925 });
-  return { x: a.x, y: a.y, w: b.x - a.x, h: b.y - a.y };
-}
+/* ---------- 地図の目印（道路・川は概略。駅はWikipedia、町名はGeolonia住所データの座標） ---------- */
+const P = (lat, lon) => ({ lat, lon });
+const GEO = {
+  river: [ // 常呂川（概略）
+    { name: "常呂川", pts: [P(43.762, 143.912), P(43.780, 143.918), P(43.795, 143.925), P(43.808, 143.934), P(43.822, 143.950), P(43.840, 143.957), P(43.862, 143.960)] },
+    { name: "無加川", pts: [P(43.786, 143.840), P(43.788, 143.862), P(43.789, 143.884), P(43.792, 143.902), P(43.795, 143.925)] },
+  ],
+  roads: [
+    { name: "北見道路", kind: "exp", label: P(43.788, 143.925), pts: [P(43.766, 143.860), P(43.772, 143.885), P(43.785, 143.915), P(43.799, 143.944), P(43.812, 143.958), P(43.821, 143.969)] },
+    { name: "39", kind: "nat", label: P(43.8005, 143.862), pts: [P(43.799, 143.832), P(43.7995, 143.845), P(43.8010, 143.8615), P(43.8030, 143.8737), P(43.8020, 143.8825), P(43.8015, 143.8915), P(43.8052, 143.8970), P(43.8122, 143.9032), P(43.8197, 143.9069), P(43.8250, 143.9150), P(43.8415, 143.9310), P(43.8512, 143.9410), P(43.858, 143.952)] },
+    { name: "環状線", kind: "pref", label: P(43.8150, 143.8560), pts: [P(43.7965, 143.8430), P(43.8060, 143.8470), P(43.8150, 143.8540), P(43.8226, 143.8714), P(43.8255, 143.8880), P(43.8242, 143.8967), P(43.8197, 143.9069)] },
+    { name: "7", kind: "pref", label: P(43.8380, 143.8740), pts: [P(43.8110, 143.8870), P(43.8226, 143.8714), P(43.8458, 143.8759), P(43.862, 143.878)] },
+  ],
+  rail: [P(43.8055, 143.8102), P(43.8062, 143.8600), P(43.8052, 143.8973), P(43.8250, 143.9170), P(43.8415, 143.9327), P(43.8512, 143.9424)],
+  stations: [
+    { name: "北見駅", ...P(43.8052, 143.8973), main: true }, { name: "柏陽駅", ...P(43.8250, 143.9170) },
+    { name: "愛し野駅", ...P(43.8415, 143.9327) }, { name: "端野駅", ...P(43.8512, 143.9424) }, { name: "東相内駅", ...P(43.8055, 143.8102) },
+  ],
+  spots: [{ name: "北見工大", ...P(43.8197, 143.9069) }],
+  towns: [ // [町名, lat, lon, 表示する最小ズーム(1=常に)]
+    ["中央三輪", 43.7985, 143.8520, 1], ["西三輪", 43.7985, 143.8370, 2], ["東三輪", 43.7975, 143.8605, 2], ["北進町", 43.8055, 143.8700, 2],
+    ["美芳町", 43.8060, 143.8805, 2], ["高栄", 43.8140, 143.8650, 1], ["緑ケ丘", 43.8220, 143.8670, 2], ["清見町", 43.8165, 143.8860, 2],
+    ["北斗町", 43.8120, 143.8850, 3], ["中央町", 43.8102, 143.8892, 3], ["幸町", 43.8075, 143.8870, 3], ["大通", 43.8080, 143.8995, 2],
+    ["桜町", 43.8080, 143.9060, 2], ["南町", 43.7970, 143.9040, 2], ["常盤町", 43.7950, 143.8890, 3], ["中ノ島町", 43.7925, 143.8970, 3],
+    ["とん田", 43.7942, 143.8780, 3], ["春光町", 43.8225, 143.9195, 2], ["柏陽町", 43.8241, 143.9111, 3], ["公園町", 43.8180, 143.9050, 3],
+    ["東陵町", 43.8242, 143.8967, 3], ["小泉", 43.8413, 143.9043, 1], ["昭和", 43.8458, 143.8759, 2], ["川東", 43.7994, 143.9443, 2],
+    ["端野", 43.8490, 143.9520, 1], ["光西町", 43.7947, 143.8679, 3], ["錦町", 43.7865, 143.8770, 3], ["花月町", 43.8171, 143.8790, 3],
+  ],
+};
+
+/* ---------- 地図（ピンチで拡大縮小・ドラッグで移動） ---------- */
+const svg = $("map"), NS = "http://www.w3.org/2000/svg", ASPECT = 1.0;
+const FULL = (() => { const a = toXY(P(43.858, 143.828)), b = toXY(P(43.783, 143.962)); return { cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2, w: b.x - a.x }; })();
+let view = { ...FULL };
+const MIN_W = 1.2, MAX_W = FULL.w * 1.4;
 function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); (parent || svg).appendChild(e); return e; }
+const ptsAttr = (arr) => arr.map(toXY).map((p) => `${p.x.toFixed(3)},${p.y.toFixed(3)}`).join(" ");
+let lastResults = [];
+const BRAND = { "ツルハドラッグ": "ツルハ", "コープさっぽろ": "コープ", "スーパーアークス": "アークス", "東武イーストモール": "東武" };
+const shortName = (s) => { const [b, ...rest] = s.name.split(" "); return `${BRAND[b] || b} ${rest.join(" ").replace(/^北見/, "")}`; };
 function drawMap(results) {
-  const vb = viewBox(), u = vb.w / 100; // 1u = 地図幅の1%
-  svg.setAttribute("viewBox", `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+  if (results) lastResults = results;
+  results = lastResults;
+  const vw = view.w, vh = vw * ASPECT, vx = view.cx - vw / 2, vy = view.cy - vh / 2, u = vw / 100;
+  const zoom = FULL.w / vw; // 1 = 全体表示
+  svg.setAttribute("viewBox", `${vx} ${vy} ${vw} ${vh}`);
   svg.innerHTML = "";
-  for (let gx = Math.ceil(vb.x); gx < vb.x + vb.w; gx++) el("line", { x1: gx, y1: vb.y, x2: gx, y2: vb.y + vb.h, stroke: "var(--map-grid)", "stroke-width": u * 0.15 });
-  for (let gy = Math.ceil(vb.y); gy < vb.y + vb.h; gy++) el("line", { x1: vb.x, y1: gy, x2: vb.x + vb.w, y2: gy, stroke: "var(--map-grid)", "stroke-width": u * 0.15 });
-  // JR石北本線（概略）
-  const rail = [{ lat: 43.8105, lon: 143.84 }, { lat: 43.8079, lon: 143.8946 }, { lat: 43.8165, lon: 143.93 }, { lat: 43.8290, lon: 143.99 }].map(toXY);
-  el("polyline", { points: rail.map((p) => `${p.x},${p.y}`).join(" "), fill: "none", stroke: "var(--muted)", "stroke-width": u * 0.5, "stroke-dasharray": `${u * 1.5} ${u}`, opacity: .55 });
-  const sp = toXY(STATION);
-  el("rect", { x: sp.x - u, y: sp.y - u, width: u * 2, height: u * 2, fill: "var(--ink)" });
-  const sl = el("text", { x: sp.x + u * 1.6, y: sp.y + u * 3.6, "font-size": u * 2.6, fill: "var(--ink)", "font-weight": 700 }); sl.textContent = "北見駅";
+  el("rect", { x: vx, y: vy, width: vw, height: vh, fill: "var(--map-bg)" });
+  // 1km方眼
+  for (let gx = Math.ceil(vx); gx < vx + vw; gx++) el("line", { x1: gx, y1: vy, x2: gx, y2: vy + vh, stroke: "var(--map-grid)", "stroke-width": u * 0.12 });
+  for (let gy = Math.ceil(vy); gy < vy + vh; gy++) el("line", { x1: vx, y1: gy, x2: vx + vw, y2: gy, stroke: "var(--map-grid)", "stroke-width": u * 0.12 });
+  // 川
+  GEO.river.forEach((r) => el("polyline", { points: ptsAttr(r.pts), fill: "none", stroke: "var(--water)", "stroke-width": Math.max(u * 1.4, 0.06), "stroke-linecap": "round", "stroke-linejoin": "round" }));
+  // 町名（ズームに応じて増える）
+  GEO.towns.forEach(([n, lat, lon, z]) => {
+    if (zoom < z * 0.9) return;
+    const p = toXY(P(lat, lon)); const t = el("text", { x: p.x, y: p.y, "font-size": u * 3.4, "text-anchor": "middle", fill: "var(--town)", "font-weight": 500, "pointer-events": "none" }); t.textContent = n;
+  });
+  // 道路（縁取り→本体）
+  const roadStyle = { exp: ["var(--exp)", 1.8], nat: ["var(--nat)", 1.6], pref: ["var(--road)", 1.2] };
+  GEO.roads.forEach((r) => el("polyline", { points: ptsAttr(r.pts), fill: "none", stroke: "var(--road-edge)", "stroke-width": u * (roadStyle[r.kind][1] + 0.6), "stroke-linecap": "round", "stroke-linejoin": "round" }));
+  GEO.roads.forEach((r) => el("polyline", { points: ptsAttr(r.pts), fill: "none", stroke: roadStyle[r.kind][0], "stroke-width": u * roadStyle[r.kind][1], "stroke-linecap": "round", "stroke-linejoin": "round" }));
+  // JR石北本線
+  el("polyline", { points: ptsAttr(GEO.rail), fill: "none", stroke: "var(--ink)", "stroke-width": u * 0.7, opacity: .7 });
+  el("polyline", { points: ptsAttr(GEO.rail), fill: "none", stroke: "var(--map-bg)", "stroke-width": u * 0.4, "stroke-dasharray": `${u * 1.6} ${u * 1.6}` });
+  // 道路番号の札
+  GEO.roads.forEach((r) => {
+    const p = toXY(r.label), txt = r.name, w = u * (txt.length > 2 ? 3.1 * txt.length + 1.6 : 6);
+    el("rect", { x: p.x - w / 2, y: p.y - u * 2.5, width: w, height: u * 5, rx: u * (r.kind === "nat" ? 2.5 : 0.8), fill: r.kind === "exp" ? "var(--exp)" : r.kind === "nat" ? "var(--nat-sign)" : "var(--pref-sign)", stroke: "var(--card)", "stroke-width": u * 0.3 });
+    const t = el("text", { x: p.x, y: p.y + u * 1.1, "font-size": u * 3.2, "text-anchor": "middle", fill: "#fff", "font-weight": 700, "pointer-events": "none" }); t.textContent = txt;
+  });
   // 通勤ルートと寄り道範囲
   if (st.mode === "commute") {
-    const pts = routePoints().map(toXY).map((p) => `${p.x},${p.y}`).join(" ");
-    const lim = st.range.commute[st.tr] / ROAD; // 寄り道距離 ≒ 片道ずれ×2 なので帯の半幅 = lim/2
-    el("polyline", { points: pts, fill: "none", stroke: "var(--route-soft)", "stroke-width": lim, "stroke-linecap": "round", "stroke-linejoin": "round" });
-    el("polyline", { points: pts, fill: "none", stroke: "var(--route)", "stroke-width": u * 0.8, "stroke-linecap": "round", "stroke-linejoin": "round" });
+    const pts = ptsAttr(routePoints());
+    el("polyline", { points: pts, fill: "none", stroke: "var(--route-soft)", "stroke-width": st.range.commute[st.tr] / ROAD, "stroke-linecap": "round", "stroke-linejoin": "round" });
+    el("polyline", { points: pts, fill: "none", stroke: "var(--route)", "stroke-width": u * 0.9, "stroke-linecap": "round", "stroke-linejoin": "round" });
   } else {
     const h = toXY(st.home);
     el("circle", { cx: h.x, cy: h.y, r: st.range.home[st.tr] / ROAD, fill: "var(--route-soft)", stroke: "var(--route)", "stroke-width": u * 0.4 });
   }
+  // 駅・目印
+  [...GEO.stations, ...GEO.spots].forEach((s) => {
+    const p = toXY(s), r = u * (s.main ? 1.7 : 1.2);
+    if (GEO.spots.includes(s)) el("circle", { cx: p.x, cy: p.y, r, fill: "var(--card)", stroke: "var(--ink)", "stroke-width": u * 0.4 });
+    else el("rect", { x: p.x - r, y: p.y - r, width: r * 2, height: r * 2, fill: s.main ? "var(--ink)" : "var(--card)", stroke: "var(--ink)", "stroke-width": u * 0.4 });
+    if (s.main || zoom >= 1.6 || GEO.spots.includes(s)) {
+      const t = el("text", { x: p.x + r + u * 0.6, y: p.y - u * 0.9, "font-size": u * (s.main ? 4 : 3.2), fill: "var(--ink)", "font-weight": 700, "paint-order": "stroke", stroke: "var(--map-bg)", "stroke-width": u * 0.8, "pointer-events": "none" });
+      t.textContent = s.name;
+    }
+  });
   // 店舗
   const top = new Set(results.filter((r) => r.shown).slice(0, 3).map((r) => r.s.id));
   results.forEach((r) => {
-    const p = toXY(r.s), size = top.has(r.s.id) ? u * 2.2 : u * 1.5;
+    const p = toXY(r.s), size = top.has(r.s.id) ? u * 3.2 : u * 2;
     const color = r.s.kind === "super" ? "var(--super)" : "var(--drug)";
-    const common = { fill: color, stroke: "var(--card)", "stroke-width": u * 0.4, opacity: r.shown ? 1 : 0.28 };
-    const m = r.s.kind === "super" ? el("circle", { cx: p.x, cy: p.y, r: size, ...common }) : el("rect", { x: p.x - size, y: p.y - size, width: size * 2, height: size * 2, ...common });
-    if (r.shown) { m.style.cursor = "pointer"; m.addEventListener("click", (e) => { e.stopPropagation(); focusStore(r.s.id); }); }
-    const t = el("title", {}, m); t.textContent = r.s.name;
-    if (top.has(r.s.id)) { const n = el("text", { x: p.x, y: p.y + u * 0.9, "font-size": u * 2.4, "text-anchor": "middle", fill: "#fff", "font-weight": 700, "pointer-events": "none" }); n.textContent = [...top].indexOf(r.s.id) + 1; }
+    const common = { fill: color, stroke: "var(--card)", "stroke-width": u * 0.45, opacity: r.shown ? 1 : 0.3, "data-store": r.shown ? r.s.id : "" };
+    const m = r.s.kind === "super" ? el("circle", { cx: p.x, cy: p.y, r: size, ...common }) : el("rect", { x: p.x - size, y: p.y - size, width: size * 2, height: size * 2, rx: u * 0.4, ...common });
+    if (r.shown) m.style.cursor = "pointer";
+    el("title", {}, m).textContent = r.s.name;
+    if (top.has(r.s.id)) { const n = el("text", { x: p.x, y: p.y + u * 1.25, "font-size": u * 3.5, "text-anchor": "middle", fill: "#fff", "font-weight": 700, "pointer-events": "none" }); n.textContent = [...top].indexOf(r.s.id) + 1; }
+    if (r.shown && zoom >= 2.2) { const t = el("text", { x: p.x, y: p.y + size + u * 3.6, "font-size": u * 3, "text-anchor": "middle", fill: "var(--ink)", "paint-order": "stroke", stroke: "var(--map-bg)", "stroke-width": u * 0.5, "pointer-events": "none" }); t.textContent = shortName(r.s); }
   });
   // 地点マーカー
-  const pin = (pt, label) => { const p = toXY(pt); const t = el("text", { x: p.x, y: p.y + u * 1.4, "font-size": u * 4, "text-anchor": "middle", "pointer-events": "none" }); t.textContent = label; };
+  const pin = (pt, label) => { const p = toXY(pt); const t = el("text", { x: p.x, y: p.y + u * 1.4, "font-size": u * 5.5, "text-anchor": "middle", "pointer-events": "none" }); t.textContent = label; };
   pin(st.home, "🏠");
   if (st.mode === "commute") { st.via.forEach((v) => pin(v, "📍")); pin(st.work, "🏢"); }
+  // 縮尺
+  const sb = 1; const bx = vx + u * 3, by = vy + vh - u * 4;
+  el("line", { x1: bx, y1: by, x2: bx + sb, y2: by, stroke: "var(--ink)", "stroke-width": u * 0.5 });
+  el("text", { x: bx + sb / 2, y: by - u * 1.2, "font-size": u * 3, "text-anchor": "middle", fill: "var(--ink)", "pointer-events": "none" }).textContent = "1km";
 }
-svg.addEventListener("click", (e) => {
-  const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
-  const q = pt.matrixTransform(svg.getScreenCTM().inverse());
-  const ll = fromXY(q);
-  if (st.place === "via") { if (st.via.length < 3) st.via.push(ll); } else st[st.place] = ll;
-  if (st.place !== "home" && st.mode !== "commute") st.mode = "commute";
-  save(); render();
+
+// 操作：1本指＝移動、2本指＝拡大縮小、タップ＝地点を置く／お店を表示、ホイール＝拡大縮小
+const pointers = new Map(); let gesture = null, raf = 0;
+const redraw = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; drawMap(); }); };
+function clampView(v) {
+  v.w = Math.min(MAX_W, Math.max(MIN_W, v.w));
+  const hw = FULL.w * 0.7;
+  v.cx = Math.min(FULL.cx + hw, Math.max(FULL.cx - hw, v.cx)); v.cy = Math.min(FULL.cy + hw * ASPECT, Math.max(FULL.cy - hw * ASPECT, v.cy));
+  return v;
+}
+function screenToKm(sx, sy, v = view) { const r = svg.getBoundingClientRect(); return { x: v.cx + ((sx - r.left) / r.width - 0.5) * v.w, y: v.cy + ((sy - r.top) / r.height - 0.5) * v.w * ASPECT }; }
+function zoomAround(sx, sy, newW, base = view, anchor = screenToKm(sx, sy, base)) {
+  const r = svg.getBoundingClientRect(), w = Math.min(MAX_W, Math.max(MIN_W, newW));
+  view = clampView({ w, cx: anchor.x - ((sx - r.left) / r.width - 0.5) * w, cy: anchor.y - ((sy - r.top) / r.height - 0.5) * w * ASPECT });
+  redraw();
+}
+function startGesture() {
+  const ps = [...pointers.values()];
+  if (ps.length === 1) gesture = { type: "pan", start: { ...ps[0] }, view: { ...view }, moved: gesture?.type === "pinch" };
+  else if (ps.length >= 2) {
+    const [a, b] = ps, mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+    gesture = { type: "pinch", d: Math.hypot(a.x - b.x, a.y - b.y) || 1, view: { ...view }, anchor: screenToKm(mx, my), moved: true };
+  }
+}
+svg.addEventListener("pointerdown", (e) => {
+  svg.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, target: e.target, t: Date.now() });
+  startGesture();
 });
+svg.addEventListener("pointermove", (e) => {
+  if (!pointers.has(e.pointerId) || !gesture) return;
+  pointers.get(e.pointerId).x = e.clientX; pointers.get(e.pointerId).y = e.clientY;
+  const ps = [...pointers.values()];
+  if (gesture.type === "pan" && ps.length === 1) {
+    const dx = ps[0].x - gesture.start.x, dy = ps[0].y - gesture.start.y;
+    if (Math.hypot(dx, dy) > 6) gesture.moved = true;
+    if (!gesture.moved) return;
+    const k = gesture.view.w / svg.getBoundingClientRect().width;
+    view = clampView({ ...gesture.view, cx: gesture.view.cx - dx * k, cy: gesture.view.cy - dy * k }); redraw();
+  } else if (gesture.type === "pinch" && ps.length >= 2) {
+    const [a, b] = ps, d = Math.hypot(a.x - b.x, a.y - b.y) || 1;
+    zoomAround((a.x + b.x) / 2, (a.y + b.y) / 2, gesture.view.w * gesture.d / d, gesture.view, gesture.anchor);
+  }
+});
+function endPointer(e) {
+  const p = pointers.get(e.pointerId); if (!p) return;
+  pointers.delete(e.pointerId);
+  const wasTap = gesture && gesture.type === "pan" && !gesture.moved && pointers.size === 0 && e.type === "pointerup";
+  if (pointers.size) { startGesture(); gesture.moved = true; return; }
+  gesture = null;
+  if (!wasTap) return;
+  const id = p.target?.getAttribute?.("data-store");
+  if (id) { focusStore(id); return; }
+  const q = screenToKm(e.clientX, e.clientY), ll = fromXY(q);
+  if (st.place === "via") { if (st.via.length < 3) st.via.push(ll); } else st[st.place] = ll;
+  save(); render();
+}
+svg.addEventListener("pointerup", endPointer);
+svg.addEventListener("pointercancel", endPointer);
+svg.addEventListener("wheel", (e) => { e.preventDefault(); zoomAround(e.clientX, e.clientY, view.w * Math.exp(e.deltaY * 0.0015)); }, { passive: false });
+function zoomCenter(f) { const r = svg.getBoundingClientRect(); zoomAround(r.left + r.width / 2, r.top + r.height / 2, view.w * f); }
+$("z-in").addEventListener("click", () => zoomCenter(1 / 1.6));
+$("z-out").addEventListener("click", () => zoomCenter(1.6));
+$("z-fit").addEventListener("click", () => { view = { ...FULL }; redraw(); });
 
 /* ---------- 描画 ---------- */
 function focusStore(id) { const li = document.getElementById("store-" + id); if (!li) return; li.scrollIntoView({ behavior: "smooth", block: "center" }); li.classList.add("hl"); setTimeout(() => li.classList.remove("hl"), 1600); }
@@ -381,15 +512,14 @@ function render() {
   document.querySelectorAll("[data-place]").forEach((b) => { b.setAttribute("aria-pressed", b.dataset.place === st.place); b.hidden = st.mode !== "commute" && b.dataset.place !== "home"; });
   $("p-clear").hidden = st.mode !== "commute" || !st.via.length;
   $("f-open").setAttribute("aria-pressed", st.openOnly); $("f-fav").setAttribute("aria-pressed", st.favOnly);
-  $("z-toggle").textContent = st.wide ? "市街地を拡大" : "端野まで表示";
   const lim = st.range[st.mode][st.tr];
   $("range").max = st.mode === "commute" ? 5 : 8; $("range").value = lim;
   $("range-label").textContent = st.mode === "commute" ? "寄り道" : "半径";
   $("range-val").textContent = `${lim.toFixed(1)}km`;
   const placeName = { home: "自宅", work: "職場", via: "経由地（最大3つ）" }[st.place];
   $("map-hint").textContent = st.mode === "commute"
-    ? `地図をタップすると「${placeName}」の位置が変わります。黄色い帯の中のお店が、寄り道${lim.toFixed(1)}km以内です。`
-    : "地図をタップすると自宅の位置が変わります。円の中のお店が対象です。";
+    ? `タップで「${placeName}」を置く。2本指で拡大・縮小、1本指で移動。黄色い帯の中が寄り道${lim.toFixed(1)}km以内です。`
+    : "タップで自宅を置く。2本指で拡大・縮小、1本指で移動。円の中のお店が対象です。";
 
   // 買う物
   $("wants").innerHTML = st.wants.map((w, i) => `<span class="want">${esc(w)}<button type="button" aria-label="${esc(w)}を外す" data-rm="${i}">×</button></span>`).join("") || `<span class="summary">買う物を追加すると、その品が安いお店を優先します。</span>`;
@@ -451,7 +581,6 @@ document.addEventListener("click", (e) => {
   else if (b.id === "f-open") st.openOnly = !st.openOnly;
   else if (b.id === "f-fav") st.favOnly = !st.favOnly;
   else if (b.id === "p-clear") st.via = [];
-  else if (b.id === "z-toggle") st.wide = !st.wide;
   else if (b.dataset.rm) st.wants.splice(+b.dataset.rm, 1);
   else if (b.dataset.fav) { const id = b.dataset.fav; st.favs = st.favs.includes(id) ? st.favs.filter((x) => x !== id) : [...st.favs, id]; }
   else return;

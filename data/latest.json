@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-23T12:34:03.743Z",
-  "asOfDate": "2026-10-23",
-  "price": 62693.16,
-  "sma25": 66281.81,
-  "sma75": 66105.07,
-  "deviationPct": -5.41,
-  "rsi14": 28.8,
-  "vol25AnnualizedPct": 27.3,
+  "updatedAt": "2026-10-26T14:07:25.412Z",
+  "asOfDate": "2026-10-26",
+  "price": 62189.65,
+  "sma25": 66230.03,
+  "sma75": 66004.34,
+  "deviationPct": -6.1,
+  "rsi14": 18,
+  "vol25AnnualizedPct": 27.4,
   "trend": "mixed",
   "overheat": "oversold",
   "highVol": true,
@@ -16,73 +16,67 @@
   },
   "nextTrigger": {
     "direction": "above",
-    "level": 66281.81,
-    "distancePct": 5.72,
+    "level": 66230.03,
+    "distancePct": 6.5,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 156.681,
-      "changePct": -0.92
+      "value": 157.422,
+      "changePct": 0.59
     },
     "sp500": {
-      "value": 7663.43,
-      "changePct": -1.21
+      "value": 7653.6,
+      "changePct": 0.39
     },
     "vix": {
-      "value": 19.74,
-      "changePct": 3.73
+      "value": 18.54,
+      "changePct": -4.68
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bear",
+    "bias": "supportive_bull",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "日経平均終値214円安 拭えぬAIへの疑心、ともる需給警戒サイン",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xbDFtMnVYenNMWFREcUZ1OUVJSXQyYzN4WWdTNEk2a1ExS0szTGhiODg2alk1S2U5X1h3czlac0hHdXgwak5OMUVCTUxuYU5SSHd6emV5Tkt2Yk5NUVZITEJOek9MQUlkNmdfdQ?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Fri, 23 Oct 2026 03:00:40 GMT"
-    },
-    {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月23日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBMSkg4WmxHRy10b2xDemdZT0JPWTdpemxJYnB0QXc3QUM2Uk0tOXpDM2NCdWFVSVNNQUJSenFDa3c3MnpfTW1KNkEtZWxSTDEtblc4N3BvWDFKbm9qWWQwTw?oc=5",
-      "source": "株探",
-      "publishedAt": "Thu, 22 Oct 2026 23:16:26 GMT"
-    },
-    {
-      "title": "決算のディスコ軟調・ブロンコB高値、イオンなど小売株に買い/日経平均続落【今日の注目株＆日本株市場見通し】「デイリーZAi」10月23日号(ダイヤモンド・ザイ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQktUWmlyS2RSX2FlUjBGb3RyYTNSYm1mbEU0d1FuRmhleGRmbkFJcXJNQmQ3WV9jekRJVWVqbzhyNDJCaWlkWU5RaE9tcHc0THIxcDZWdTVjWmNnV2ZEV2hZNHRtU1FMZ3RUdjBteWdHa3prczlwVW9RSEpCbzlRWWNsMHBNSEk?oc=5",
+      "title": "日経平均は3日続落、半導体関連株安が重荷も商社株は堅調／相場概況(フィスコ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWVdScmVGUTVqZWR1VlV2NVFBRFZDRkhHeU5HOFoyWWR6NUppcHA3OFZMVElCeXpndzZzYm9qdUNCU3habWt1NlV6emxjOVVtbUN5V1RoS0pMdEl1MzV3N2dyeW81ZDF3dnNZdTItTHhTZ244NnNSbzZGbVVPbWlEY0hmMXVNaEk?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Fri, 23 Oct 2026 11:10:27 GMT"
+      "publishedAt": "Mon, 26 Oct 2026 06:57:10 GMT"
     },
     {
-      "title": "日経平均週間4.02％安 AI懸念でざわつく相場の森、個別の木に目線移るか",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5PZzhQbkJjdUFqMWxSeS1PS3VhZTIxRXZGRk42Yk5hdm0zNlJKUUhfQzZ5Wm9Bb2Z6clFmU0ltZ213dUVOUWpMOUwyQWFMTEVUTDRSS3FtbVJxQQ?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Fri, 23 Oct 2026 08:45:00 GMT"
+      "title": "日経平均終値、前週末比５０３円安の６万２１８９円…３営業日連続で下落",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1HbFN1ZHBGVmRwOVk2VG5ZQmhvZ3ZBU3JkTk9UNFluSUZDMEdiTWRic21mSUhzaDRwTlRIYWdyaGhTWGtGZ3RrdDU4UGRuaWRyN2c4c2dkVC1NX0lHNWdTWllMcTY?oc=5",
+      "source": "読売新聞",
+      "publishedAt": "Mon, 26 Oct 2026 06:39:00 GMT"
     },
     {
-      "title": "日経平均は小幅続落、韓国株持ち直しで下げ縮小 一時6万2000円割れ",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVDJEajAyV2tFVllVdFIwaWhpUmR5dC1kcGJSZDhhWHVTeGw0VEVqTFN5MmE2a2JJQ00xTmlheGRMTDlXeDAtbDNXbWlfeG9ZVmw5ekx3dEFObzNUN0xRUm9yWS1OcEZkNjFPWUkzWnh1aXJGUVAxcG5DLXh0a3pzR09DRjgyQQ?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Fri, 23 Oct 2026 07:52:43 GMT"
+      "title": "午前の日経平均は続落、複数イベント控え方向感欠く ＴＯＰＩＸはプラス",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBHdllRMXhnY1ZzdVpnRFR1c2VjMDVsaG1DNllfU2ZtNVlDZl8xWG5xcXpkdko4YXZ5TnpMbVJxSzVsM05OM2tEMDRTLUUwR3c5RzBYaUtOU0VDQQ?oc=5",
+      "source": "ニューズウィーク日本版",
+      "publishedAt": "Mon, 26 Oct 2026 02:50:00 GMT"
+    },
+    {
+      "title": "日経平均大引け：前週末比503.51円安の62189.65円｜FX・為替ニュース",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5HTm84OUlBekhjNXprM3hrS05NbVU0dHpXZ19CYU5Cdl9xWjRHVW9kMWZDM0EzM2RCQ1JqMjNHRV9EMU5RUXB5eXVRdVp4TWlHZ1E?oc=5",
+      "source": "ザイFX！",
+      "publishedAt": "Mon, 26 Oct 2026 06:30:00 GMT"
+    },
+    {
+      "title": "日経平均の今週の予想レンジは6万1500円-6万4500円",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5xTmYyRjB0Nkx4eTVyNnlyTF9ZNHF4UW5ZZHNoQXRzZmloMHFKeFhTWkxsczFERWlGcmlYZ29TZ2ZfQ0UyUEhqTUpxRGdBczFjTWpvOFAtMk5DVGpGbks0?oc=5",
+      "source": "ライブドアニュース",
+      "publishedAt": "Mon, 26 Oct 2026 13:15:48 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-13",
-      "close": 56502.77,
-      "sma25": 53823.3,
-      "sma75": 54038.37
-    },
     {
       "date": "2026-04-14",
       "close": 57877.39,
@@ -856,6 +850,12 @@
       "close": 62693.16,
       "sma25": 66281.81,
       "sma75": 66105.07
+    },
+    {
+      "date": "2026-10-26",
+      "close": 62189.65,
+      "sma25": 66230.03,
+      "sma75": 66004.34
     }
   ]
 }

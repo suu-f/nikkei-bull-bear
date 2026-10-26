@@ -1,0 +1,469 @@
+<title>北見とくばいナビ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: 1カラムのチラシ帳。上から「基準（通勤/自宅）→ 地図 → 買う物 → おすすめ店リスト」 */
+:root {
+  --paper: #f6f8f7;      /* 背景：わずかに緑寄りの白 */
+  --card: #ffffff;
+  --ink: #1d2a33;        /* 本文：紺寄りの墨 */
+  --muted: #5d6b73;
+  --line: #d9e1e3;
+  --sale: #d7261e;       /* 特売価格の赤 */
+  --sale-bg: #fff1ef;
+  --super: #1f6f5c;      /* スーパー：深緑 */
+  --drug: #2b5bb8;       /* ドラッグストア：青 */
+  --route: #f2a516;      /* 通勤ルート：黄 */
+  --route-soft: rgba(242,165,22,.22);
+  --ok: #1f7a3a;
+  --off: #8a949a;
+  --map-bg: #e9efee;
+  --map-grid: #d5dedd;
+  --f-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #11181c; --card: #1a2328; --ink: #e8eef0; --muted: #a2afb5; --line: #2d3a40;
+  --sale: #ff6b5e; --sale-bg: #3a1d1b; --super: #4fc3a1; --drug: #7ea6ff; --route: #f5b73b;
+  --route-soft: rgba(245,183,59,.2); --ok: #5bd17f; --off: #6f7b81; --map-bg: #172025; --map-grid: #243137;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #11181c; --card: #1a2328; --ink: #e8eef0; --muted: #a2afb5; --line: #2d3a40;
+  --sale: #ff6b5e; --sale-bg: #3a1d1b; --super: #4fc3a1; --drug: #7ea6ff; --route: #f5b73b;
+  --route-soft: rgba(245,183,59,.2); --ok: #5bd17f; --off: #6f7b81; --map-bg: #172025; --map-grid: #243137;
+  color-scheme: dark }
+
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.6; }
+.wrap { max-width: 720px; margin: 0 auto; padding-block: 16px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 18px; }
+header h1 { font-family: var(--f-display); font-weight: 400; font-size: 1.75rem; line-height: 1.2; margin: 0; letter-spacing: .02em; text-wrap: balance; }
+header h1 span { color: var(--sale); }
+header p { margin: 4px 0 0; color: var(--muted); font-size: .85rem; }
+.notice { font-size: .8rem; color: var(--muted); border: 1px dashed var(--line); border-radius: 8px; padding: 8px 10px; }
+.notice b { color: var(--ink); }
+
+section > h2 { font-size: .78rem; letter-spacing: .12em; color: var(--muted); margin: 0 0 8px; font-weight: 700; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 3px; }
+.seg button { font: inherit; font-size: .9rem; font-weight: 700; border: 0; background: transparent; color: var(--muted); padding: 8px 6px; border-radius: 8px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.label { font-size: .8rem; color: var(--muted); min-width: 5.5em; }
+input[type="range"] { flex: 1; min-width: 140px; accent-color: var(--route); }
+.val { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 4.5em; text-align: right; }
+button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--drug); outline-offset: 2px; }
+
+.chip { font: inherit; font-size: .82rem; border: 1px solid var(--line); background: var(--card); color: var(--ink); padding: 5px 11px; border-radius: 999px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.chip.place[aria-pressed="true"] { background: var(--route); color: #1d2a33; border-color: var(--route); }
+
+.map-box { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--map-bg); }
+.map-box svg { display: block; width: 100%; height: auto; touch-action: manipulation; cursor: crosshair; }
+.map-hint { font-size: .78rem; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .75rem; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; margin-right: 4px; vertical-align: -1px; }
+
+.list-input { display: flex; gap: 8px; }
+.list-input input { flex: 1; min-width: 0; font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); }
+.list-input button { font: inherit; font-weight: 700; border: 0; background: var(--ink); color: var(--paper); border-radius: 8px; padding: 0 14px; cursor: pointer; }
+.want { display: inline-flex; align-items: center; gap: 4px; font-size: .85rem; background: var(--sale-bg); color: var(--ink); border-radius: 999px; padding: 3px 4px 3px 10px; }
+.want button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 1rem; line-height: 1; padding: 2px 6px; }
+
+.best { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.best > div { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: var(--card); min-width: 0; }
+.best .item { font-size: .78rem; color: var(--muted); }
+.best .shop { font-weight: 700; font-size: .9rem; }
+.best .none { color: var(--off); font-size: .85rem; }
+
+.summary { font-size: .85rem; color: var(--muted); }
+.stores { display: flex; flex-direction: column; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.store { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.store.hl { border-color: var(--route); box-shadow: 0 0 0 2px var(--route-soft); }
+.s-head { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: start; }
+.rank { font-family: var(--f-display); font-size: 1.4rem; line-height: 1; color: var(--muted); min-width: 1.4em; font-variant-numeric: tabular-nums; }
+.s-name { font-weight: 700; font-size: 1.02rem; line-height: 1.35; min-width: 0; }
+.s-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; font-size: .75rem; }
+.badge { border-radius: 4px; padding: 1px 6px; font-weight: 700; border: 1px solid currentColor; }
+.badge.super { color: var(--super); } .badge.drug { color: var(--drug); }
+.badge.route { color: #1d2a33; background: var(--route); border-color: var(--route); }
+.badge.open { color: var(--ok); } .badge.closed { color: var(--off); }
+.s-dist { font-size: .8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fav { border: 0; background: transparent; font-size: 1.35rem; line-height: 1; cursor: pointer; color: var(--off); padding: 2px; }
+.fav[aria-pressed="true"] { color: var(--route); }
+
+.deals { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.tag { border-radius: 8px; background: var(--paper); padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tag.match { background: var(--sale-bg); outline: 2px solid var(--sale); outline-offset: -2px; }
+.tag .n { font-size: .82rem; line-height: 1.35; }
+.tag .p { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.tag .now { font-family: var(--f-display); color: var(--sale); font-size: 1.35rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tag .now small { font-family: var(--f-body); font-size: .7rem; font-weight: 700; margin-left: 1px; }
+.tag .was { font-size: .72rem; color: var(--muted); text-decoration: line-through; font-variant-numeric: tabular-nums; }
+.tag .off { font-size: .7rem; font-weight: 700; color: var(--sale); }
+.tag .when { font-size: .7rem; color: var(--muted); }
+details summary { cursor: pointer; font-size: .8rem; color: var(--drug); font-weight: 700; }
+details .deals { margin-top: 8px; }
+.empty { text-align: center; color: var(--muted); padding: 24px 8px; border: 1px dashed var(--line); border-radius: 12px; }
+footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
+@media (prefers-reduced-motion: no-preference) { .store { transition: border-color .2s, box-shadow .2s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>北見<span>とくばい</span>ナビ</h1>
+    <p id="today"></p>
+  </header>
+
+  <div class="notice"><b>試作版です。</b>特売・価格はサンプルデータ、店舗の位置は町名からの概算です。店名は北見市内の実在店舗です。</div>
+
+  <section>
+    <h2>探し方</h2>
+    <div class="panel">
+      <div class="seg" role="group" aria-label="探し方">
+        <button type="button" id="m-commute" data-mode="commute">通勤ルート沿い</button>
+        <button type="button" id="m-home" data-mode="home">自宅のまわり</button>
+      </div>
+      <div class="row">
+        <span class="label">移動手段</span>
+        <div class="seg" role="group" aria-label="移動手段" style="flex:1">
+          <button type="button" id="t-car" data-tr="car">車</button>
+          <button type="button" id="t-bike" data-tr="bike">自転車</button>
+          <button type="button" id="t-walk" data-tr="walk">徒歩</button>
+        </div>
+      </div>
+      <div class="row">
+        <label class="label" for="range" id="range-label">寄り道</label>
+        <input type="range" id="range" min="0.2" max="5" step="0.1">
+        <span class="val" id="range-val"></span>
+      </div>
+      <div class="row" role="group" aria-label="お店の種類">
+        <button type="button" class="chip" id="k-all" data-kind="all">すべて</button>
+        <button type="button" class="chip" id="k-super" data-kind="super">スーパー</button>
+        <button type="button" class="chip" id="k-drug" data-kind="drug">ドラッグストア</button>
+        <button type="button" class="chip" id="f-open">営業中のみ</button>
+        <button type="button" class="chip" id="f-fav">お気に入りのみ</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>地図（タップで地点を置く）</h2>
+    <div class="panel">
+      <div class="row" role="group" aria-label="置く地点">
+        <button type="button" class="chip place" id="p-home" data-place="home">🏠 自宅</button>
+        <button type="button" class="chip place" id="p-work" data-place="work">🏢 職場</button>
+        <button type="button" class="chip place" id="p-via" data-place="via">＋ 経由地</button>
+        <button type="button" class="chip" id="p-clear">経由地を消す</button>
+        <button type="button" class="chip" id="z-toggle">端野まで表示</button>
+      </div>
+      <div class="map-box"><svg id="map" role="img" aria-label="北見市の店舗マップ"></svg></div>
+      <div class="map-hint" id="map-hint"></div>
+      <div class="legend">
+        <span><i style="background:var(--super);border-radius:50%"></i>スーパー</span>
+        <span><i style="background:var(--drug)"></i>ドラッグストア</span>
+        <span><i style="background:var(--route)"></i>通勤ルートと寄り道範囲</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>買う物リスト</h2>
+    <div class="panel">
+      <form class="list-input" id="want-form">
+        <input id="want-input" placeholder="例：卵、玉ねぎ、トイレットペーパー" autocomplete="off" aria-label="買う物を追加">
+        <button type="submit">追加</button>
+      </form>
+      <div class="row" id="wants"></div>
+      <div class="best" id="best"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>おすすめのお店</h2>
+    <p class="summary" id="summary"></p>
+    <ol class="stores" id="stores"></ol>
+  </section>
+
+  <footer>
+    おすすめ順は「特売のお得さ（買う物リストの品は3倍で評価）」から「移動の手間（通勤モードでは寄り道距離）」を引いて決めています。距離は直線距離×1.3で道のりを見積もっています。営業時間は目安です。
+  </footer>
+</div>
+
+<script>
+(() => {
+/* ---------- データ ---------- */
+// 位置は町名からの概算。本番では住所ジオコーディング結果に置き換える。
+const STORES = [
+  { id: "s1", kind: "super", name: "フクハラ タイガー店", area: "美芳町", lat: 43.7935, lon: 143.8800, open: [9, 22] },
+  { id: "s2", kind: "super", name: "フクハラ 三輪店", area: "三輪", lat: 43.8370, lon: 143.8850, open: [9, 22] },
+  { id: "s3", kind: "super", name: "スーパーアークス 桜町店", area: "桜町", lat: 43.7990, lon: 143.9150, open: [9, 22] },
+  { id: "s4", kind: "super", name: "ビッグハウス 小泉店", area: "小泉", lat: 43.8060, lon: 143.8550, open: [9, 22] },
+  { id: "s5", kind: "super", name: "ビッグハウス メッセ店", area: "中央三輪（北見メッセ）", lat: 43.8265, lon: 143.8930, open: [9, 22] },
+  { id: "s6", kind: "super", name: "イオン 北見店", area: "北見駅から約2km", lat: 43.8160, lon: 143.8780, open: [8, 21.75] },
+  { id: "s7", kind: "super", name: "コープさっぽろ みわ店", area: "中央三輪", lat: 43.8215, lon: 143.8870, open: [9, 22] },
+  { id: "s8", kind: "super", name: "コープさっぽろ きよみ店", area: "清見", lat: 43.8000, lon: 143.8700, open: [9, 22] },
+  { id: "s9", kind: "super", name: "東武イーストモール 端野店", area: "端野町", lat: 43.8300, lon: 143.9800, open: [9, 21] },
+  { id: "d1", kind: "drug", name: "ツルハドラッグ 北見公園店", area: "柏陽", lat: 43.7930, lon: 143.9180, open: [9, 22] },
+  { id: "d2", kind: "drug", name: "ツルハドラッグ 北見春光店", area: "春光町", lat: 43.7990, lon: 143.8740, open: [9, 22] },
+  { id: "d3", kind: "drug", name: "ツルハドラッグ 北見東三輪店", area: "東三輪", lat: 43.8320, lon: 143.9030, open: [9, 22] },
+  { id: "d4", kind: "drug", name: "ツルハドラッグ 北見高栄店", area: "高栄", lat: 43.8140, lon: 143.8580, open: [9, 22] },
+  { id: "d5", kind: "drug", name: "ツルハドラッグ 北見北斗店", area: "北斗町", lat: 43.8230, lon: 143.8700, open: [9, 22] },
+  { id: "d6", kind: "drug", name: "ツルハドラッグ 北見三輪北店", area: "三輪", lat: 43.8430, lon: 143.8880, open: [9, 22] },
+  { id: "d7", kind: "drug", name: "ツルハドラッグ 北見メッセ店", area: "中央三輪（北見メッセ）", lat: 43.8270, lon: 143.8945, open: [9, 22] },
+  { id: "d8", kind: "drug", name: "ツルハドラッグ 北見中央三輪店", area: "中央三輪", lat: 43.8235, lon: 143.8850, open: [9, 22] },
+  { id: "d9", kind: "drug", name: "ツルハドラッグ 北見南町店", area: "南町", lat: 43.8010, lon: 143.8990, open: [9, 22] },
+  { id: "d10", kind: "drug", name: "ツルハドラッグ 北見美芳店", area: "美芳町", lat: 43.7920, lon: 143.8830, open: [9, 22] },
+];
+const STATION = { lat: 43.8079, lon: 143.8946 };
+
+// サンプル特売の元になる商品（通常価格は目安）。kinds = 扱う店の種類
+const ITEMS = [
+  ["卵 Mサイズ 10個", 268, "super drug"], ["牛乳 1000ml", 248, "super drug"], ["食パン 6枚切", 178, "super drug"],
+  ["北見産 玉ねぎ 1袋", 298, "super"], ["じゃがいも（男爵）1袋", 298, "super"], ["キャベツ 1玉", 198, "super"],
+  ["にんじん 1袋", 198, "super"], ["もやし 1袋", 39, "super"], ["豚こま切れ 100g", 158, "super"],
+  ["鶏もも肉 100g", 128, "super"], ["秋鮭 切身 1切", 198, "super"], ["ホッケ開き 1枚", 398, "super"],
+  ["納豆 3パック", 98, "super drug"], ["絹豆腐 1丁", 88, "super"], ["バナナ 1房", 198, "super drug"],
+  ["米 ゆめぴりか 5kg", 3480, "super"], ["カップ麺 1個", 168, "super drug"], ["緑茶 2L", 198, "super drug"],
+  ["トイレットペーパー 12ロール", 598, "drug super"], ["ティッシュ 5箱", 448, "drug super"], ["衣料用洗剤 詰替", 398, "drug"],
+  ["食器用洗剤", 228, "drug"], ["シャンプー 詰替", 598, "drug"], ["ハンドソープ 詰替", 298, "drug"],
+  ["マスク 50枚", 698, "drug"], ["ボディソープ 詰替", 498, "drug"], ["栄養ドリンク 10本", 980, "drug"],
+  ["冷凍うどん 5食", 298, "super drug"], ["ヨーグルト 400g", 168, "super drug"],
+];
+const WHEN = ["本日限り", "本日限り", "3日間", "週末まで", "タイムセール 17〜19時", "タイムセール 10〜12時"];
+
+/* ---------- ユーティリティ ---------- */
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const yen = (n) => n.toLocaleString("ja-JP");
+function rng(seedStr) { // 日付と店舗IDで決まる乱数（毎日特売が入れ替わる）
+  let h = 2166136261;
+  for (const c of seedStr) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
+  return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; };
+}
+const now = new Date();
+const dateKey = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+$("today").textContent = `${now.getMonth() + 1}月${now.getDate()}日（${"日月火水木金土"[now.getDay()]}）の特売・北見市内 ${STORES.length}店`;
+
+function dealsFor(store) {
+  const r = rng(dateKey + store.id);
+  const pool = ITEMS.filter((it) => it[2].split(" ").includes(store.kind));
+  const count = 6 + Math.floor(r() * 4);
+  const picked = [...pool].sort(() => r() - 0.5).slice(0, count);
+  return picked.map(([name, base, kinds]) => {
+    const primary = kinds.split(" ")[0] === store.kind;
+    const off = 0.08 + r() * (primary ? 0.35 : 0.22);
+    let price = Math.round(base * (1 - off));
+    price = price >= 100 ? Math.floor(price / 10) * 10 + 8 : price; // 〜8円のチラシ価格
+    if (price >= base) price = base - 10;
+    return { name, was: base, now: price, off: Math.round((1 - price / base) * 100), when: WHEN[Math.floor(r() * WHEN.length)] };
+  }).sort((a, b) => b.off - a.off);
+}
+STORES.forEach((s) => { s.deals = dealsFor(s); });
+
+/* ---------- 位置計算（km平面に投影） ---------- */
+const LAT0 = 43.81, LON0 = 143.86, KX = 111.32 * Math.cos(LAT0 * Math.PI / 180), KY = 110.57;
+const toXY = (p) => ({ x: (p.lon - LON0) * KX, y: (LAT0 - p.lat) * KY });
+const fromXY = (q) => ({ lon: q.x / KX + LON0, lat: LAT0 - q.y / KY });
+const dist = (a, b) => { const p = toXY(a), q = toXY(b); return Math.hypot(p.x - q.x, p.y - q.y); };
+const ROAD = 1.3; // 直線→道のりの係数
+const TRANSPORT = {
+  car: { kmh: 30, detour: 3.0, radius: 4.0, perKm: 1.2 },
+  bike: { kmh: 12, detour: 0.8, radius: 2.0, perKm: 3.0 },
+  walk: { kmh: 4.5, detour: 0.3, radius: 1.0, perKm: 7.0 },
+};
+
+/* ---------- 状態 ---------- */
+const DEFAULT = {
+  mode: "commute", tr: "car", kind: "all", openOnly: false, favOnly: false,
+  range: { commute: { car: 3.0, bike: 1.2, walk: 0.5 }, home: { car: 4.0, bike: 2.0, walk: 1.0 } },
+  home: { lat: 43.8245, lon: 143.8660 }, work: { ...STATION }, via: [],
+  wants: ["卵", "玉ねぎ", "トイレットペーパー"], favs: ["s7"], place: "home", wide: false,
+};
+let st;
+try { st = { ...DEFAULT, ...JSON.parse(localStorage.getItem("kitami-tokubai") || "{}") }; } catch { st = { ...DEFAULT }; }
+const save = () => { try { localStorage.setItem("kitami-tokubai", JSON.stringify(st)); } catch {} };
+
+function isOpen(s) { const h = now.getHours() + now.getMinutes() / 60; return h >= s.open[0] && h < s.open[1]; }
+const fmtHour = (h) => `${Math.floor(h)}:${String(Math.round((h % 1) * 60)).padStart(2, "0")}`;
+
+function routePoints() { return [st.home, ...st.via, st.work]; }
+function detourKm(s) { // 通勤ルートから外れて店に寄り、ルートに戻るまでの往復の道のり
+  const pts = routePoints().map(toXY), p = toXY(s); let best = Infinity;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const a = pts[i], b = pts[i + 1], dx = b.x - a.x, dy = b.y - a.y, L2 = dx * dx + dy * dy;
+    const t = L2 ? Math.max(0, Math.min(1, ((p.x - a.x) * dx + (p.y - a.y) * dy) / L2)) : 0;
+    best = Math.min(best, Math.hypot(p.x - (a.x + t * dx), p.y - (a.y + t * dy)));
+  }
+  return best * 2 * ROAD;
+}
+const matches = (deal) => st.wants.some((w) => deal.name.includes(w));
+
+function evaluate() {
+  const t = TRANSPORT[st.tr], lim = st.range[st.mode][st.tr];
+  return STORES.map((s) => {
+    const cost = st.mode === "commute" ? detourKm(s) : dist(st.home, s) * ROAD;
+    const hits = s.deals.filter(matches);
+    const value = s.deals.reduce((sum, d) => sum + d.off * (matches(d) ? 3 : 1), 0) / 10;
+    const fav = st.favs.includes(s.id) ? 4 : 0;
+    const score = value + fav - cost * t.perKm * 4;
+    return { s, cost, hits, score, inRange: cost <= lim, minutes: Math.max(1, Math.round(cost / t.kmh * 60)) };
+  });
+}
+
+/* ---------- 地図 ---------- */
+const svg = $("map"), NS = "http://www.w3.org/2000/svg";
+function viewBox() {
+  // 市街地：小泉〜柏陽、全域：端野まで
+  const a = toXY({ lat: 43.848, lon: 143.848 }), b = toXY({ lat: 43.786, lon: st.wide ? 143.99 : 143.925 });
+  return { x: a.x, y: a.y, w: b.x - a.x, h: b.y - a.y };
+}
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); (parent || svg).appendChild(e); return e; }
+function drawMap(results) {
+  const vb = viewBox(), u = vb.w / 100; // 1u = 地図幅の1%
+  svg.setAttribute("viewBox", `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+  svg.innerHTML = "";
+  for (let gx = Math.ceil(vb.x); gx < vb.x + vb.w; gx++) el("line", { x1: gx, y1: vb.y, x2: gx, y2: vb.y + vb.h, stroke: "var(--map-grid)", "stroke-width": u * 0.15 });
+  for (let gy = Math.ceil(vb.y); gy < vb.y + vb.h; gy++) el("line", { x1: vb.x, y1: gy, x2: vb.x + vb.w, y2: gy, stroke: "var(--map-grid)", "stroke-width": u * 0.15 });
+  // JR石北本線（概略）
+  const rail = [{ lat: 43.8105, lon: 143.84 }, { lat: 43.8079, lon: 143.8946 }, { lat: 43.8165, lon: 143.93 }, { lat: 43.8290, lon: 143.99 }].map(toXY);
+  el("polyline", { points: rail.map((p) => `${p.x},${p.y}`).join(" "), fill: "none", stroke: "var(--muted)", "stroke-width": u * 0.5, "stroke-dasharray": `${u * 1.5} ${u}`, opacity: .55 });
+  const sp = toXY(STATION);
+  el("rect", { x: sp.x - u, y: sp.y - u, width: u * 2, height: u * 2, fill: "var(--ink)" });
+  const sl = el("text", { x: sp.x + u * 1.6, y: sp.y + u * 3.6, "font-size": u * 2.6, fill: "var(--ink)", "font-weight": 700 }); sl.textContent = "北見駅";
+  // 通勤ルートと寄り道範囲
+  if (st.mode === "commute") {
+    const pts = routePoints().map(toXY).map((p) => `${p.x},${p.y}`).join(" ");
+    const lim = st.range.commute[st.tr] / ROAD; // 寄り道距離 ≒ 片道ずれ×2 なので帯の半幅 = lim/2
+    el("polyline", { points: pts, fill: "none", stroke: "var(--route-soft)", "stroke-width": lim, "stroke-linecap": "round", "stroke-linejoin": "round" });
+    el("polyline", { points: pts, fill: "none", stroke: "var(--route)", "stroke-width": u * 0.8, "stroke-linecap": "round", "stroke-linejoin": "round" });
+  } else {
+    const h = toXY(st.home);
+    el("circle", { cx: h.x, cy: h.y, r: st.range.home[st.tr] / ROAD, fill: "var(--route-soft)", stroke: "var(--route)", "stroke-width": u * 0.4 });
+  }
+  // 店舗
+  const top = new Set(results.filter((r) => r.shown).slice(0, 3).map((r) => r.s.id));
+  results.forEach((r) => {
+    const p = toXY(r.s), size = top.has(r.s.id) ? u * 2.2 : u * 1.5;
+    const color = r.s.kind === "super" ? "var(--super)" : "var(--drug)";
+    const common = { fill: color, stroke: "var(--card)", "stroke-width": u * 0.4, opacity: r.shown ? 1 : 0.28 };
+    const m = r.s.kind === "super" ? el("circle", { cx: p.x, cy: p.y, r: size, ...common }) : el("rect", { x: p.x - size, y: p.y - size, width: size * 2, height: size * 2, ...common });
+    if (r.shown) { m.style.cursor = "pointer"; m.addEventListener("click", (e) => { e.stopPropagation(); focusStore(r.s.id); }); }
+    const t = el("title", {}, m); t.textContent = r.s.name;
+    if (top.has(r.s.id)) { const n = el("text", { x: p.x, y: p.y + u * 0.9, "font-size": u * 2.4, "text-anchor": "middle", fill: "#fff", "font-weight": 700, "pointer-events": "none" }); n.textContent = [...top].indexOf(r.s.id) + 1; }
+  });
+  // 地点マーカー
+  const pin = (pt, label) => { const p = toXY(pt); const t = el("text", { x: p.x, y: p.y + u * 1.4, "font-size": u * 4, "text-anchor": "middle", "pointer-events": "none" }); t.textContent = label; };
+  pin(st.home, "🏠");
+  if (st.mode === "commute") { st.via.forEach((v) => pin(v, "📍")); pin(st.work, "🏢"); }
+}
+svg.addEventListener("click", (e) => {
+  const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+  const q = pt.matrixTransform(svg.getScreenCTM().inverse());
+  const ll = fromXY(q);
+  if (st.place === "via") { if (st.via.length < 3) st.via.push(ll); } else st[st.place] = ll;
+  if (st.place !== "home" && st.mode !== "commute") st.mode = "commute";
+  save(); render();
+});
+
+/* ---------- 描画 ---------- */
+function focusStore(id) { const li = document.getElementById("store-" + id); if (!li) return; li.scrollIntoView({ behavior: "smooth", block: "center" }); li.classList.add("hl"); setTimeout(() => li.classList.remove("hl"), 1600); }
+const tagHTML = (d) => `<div class="tag${matches(d) ? " match" : ""}"><span class="n">${esc(d.name)}</span><span class="p"><span class="now">${yen(d.now)}<small>円</small></span><span class="was">${yen(d.was)}円</span><span class="off">${d.off}%引</span></span><span class="when">${esc(d.when)}</span></div>`;
+
+function render() {
+  document.querySelectorAll("[data-mode]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.mode === st.mode));
+  document.querySelectorAll("[data-tr]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.tr === st.tr));
+  document.querySelectorAll("[data-kind]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.kind === st.kind));
+  document.querySelectorAll("[data-place]").forEach((b) => { b.setAttribute("aria-pressed", b.dataset.place === st.place); b.hidden = st.mode !== "commute" && b.dataset.place !== "home"; });
+  $("p-clear").hidden = st.mode !== "commute" || !st.via.length;
+  $("f-open").setAttribute("aria-pressed", st.openOnly); $("f-fav").setAttribute("aria-pressed", st.favOnly);
+  $("z-toggle").textContent = st.wide ? "市街地を拡大" : "端野まで表示";
+  const lim = st.range[st.mode][st.tr];
+  $("range").max = st.mode === "commute" ? 5 : 8; $("range").value = lim;
+  $("range-label").textContent = st.mode === "commute" ? "寄り道" : "半径";
+  $("range-val").textContent = `${lim.toFixed(1)}km`;
+  const placeName = { home: "自宅", work: "職場", via: "経由地（最大3つ）" }[st.place];
+  $("map-hint").textContent = st.mode === "commute"
+    ? `地図をタップすると「${placeName}」の位置が変わります。黄色い帯の中のお店が、寄り道${lim.toFixed(1)}km以内です。`
+    : "地図をタップすると自宅の位置が変わります。円の中のお店が対象です。";
+
+  // 買う物
+  $("wants").innerHTML = st.wants.map((w, i) => `<span class="want">${esc(w)}<button type="button" aria-label="${esc(w)}を外す" data-rm="${i}">×</button></span>`).join("") || `<span class="summary">買う物を追加すると、その品が安いお店を優先します。</span>`;
+
+  const results = evaluate().map((r) => ({ ...r, shown: r.inRange && (st.kind === "all" || r.s.kind === st.kind) && (!st.openOnly || isOpen(r.s)) && (!st.favOnly || st.favs.includes(r.s.id)) }));
+  const shown = results.filter((r) => r.shown).sort((a, b) => b.score - a.score);
+  results.sort((a, b) => b.score - a.score);
+
+  // 品目ごとの最安
+  $("best").innerHTML = st.wants.map((w) => {
+    let best = null;
+    shown.forEach((r) => r.s.deals.forEach((d) => { if (d.name.includes(w) && (!best || d.now < best.d.now)) best = { d, r }; }));
+    return best
+      ? `<div><div class="item">${esc(w)}の最安 · ${esc(best.d.name)}</div><div class="shop">${esc(best.r.s.name)}</div><div class="tag match" style="margin-top:4px"><span class="p"><span class="now">${yen(best.d.now)}<small>円</small></span><span class="was">${yen(best.d.was)}円</span></span></div></div>`
+      : `<div><div class="item">${esc(w)}</div><div class="none">範囲内のお店に特売なし</div></div>`;
+  }).join("");
+
+  const hidden = STORES.length - shown.length;
+  $("summary").textContent = shown.length
+    ? `${shown.length}店が見つかりました${hidden ? `（範囲外・絞り込みで${hidden}店を除外）` : ""}。`
+    : "";
+  $("stores").innerHTML = shown.length ? shown.map((r, i) => {
+    const s = r.s, open = isOpen(s), fav = st.favs.includes(s.id);
+    const onRoute = st.mode === "commute" && r.cost <= 0.3;
+    const distText = st.mode === "commute"
+      ? (onRoute ? `ルート上（寄り道 約${r.cost.toFixed(1)}km）` : `寄り道 +${r.cost.toFixed(1)}km・約${r.minutes}分`)
+      : `自宅から ${r.cost.toFixed(1)}km・約${r.minutes}分`;
+    const first = s.deals.filter(matches).concat(s.deals.filter((d) => !matches(d))).slice(0, 4);
+    const rest = s.deals.filter((d) => !first.includes(d));
+    return `<li class="store" id="store-${s.id}">
+      <div class="s-head">
+        <div class="rank">${i + 1}</div>
+        <div style="min-width:0">
+          <div class="s-name">${esc(s.name)}</div>
+          <div class="s-meta">
+            <span class="badge ${s.kind}">${s.kind === "super" ? "スーパー" : "ドラッグ"}</span>
+            ${onRoute ? `<span class="badge route">通勤ルート上</span>` : ""}
+            <span class="badge ${open ? "open" : "closed"}">${open ? "営業中" : "営業時間外"} ${fmtHour(s.open[0])}〜${fmtHour(s.open[1])}</span>
+            ${r.hits.length ? `<span class="badge" style="color:var(--sale)">リストの品 ${r.hits.length}件</span>` : ""}
+          </div>
+          <div class="s-dist">${esc(s.area)} ・ ${distText}</div>
+        </div>
+        <button type="button" class="fav" data-fav="${s.id}" aria-pressed="${fav}" aria-label="お気に入り">${fav ? "★" : "☆"}</button>
+      </div>
+      <div class="deals">${first.map(tagHTML).join("")}</div>
+      ${rest.length ? `<details><summary>ほかの特売 ${rest.length}件</summary><div class="deals">${rest.map(tagHTML).join("")}</div></details>` : ""}
+    </li>`;
+  }).join("") : `<li class="empty">条件に合うお店がありません。${st.mode === "commute" ? "寄り道の距離" : "半径"}を広げるか、絞り込みを外してください。</li>`;
+  drawMap(results);
+}
+
+/* ---------- 操作 ---------- */
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.mode) { st.mode = b.dataset.mode; if (st.mode === "home") st.place = "home"; }
+  else if (b.dataset.tr) st.tr = b.dataset.tr;
+  else if (b.dataset.kind) st.kind = b.dataset.kind;
+  else if (b.dataset.place) st.place = b.dataset.place;
+  else if (b.id === "f-open") st.openOnly = !st.openOnly;
+  else if (b.id === "f-fav") st.favOnly = !st.favOnly;
+  else if (b.id === "p-clear") st.via = [];
+  else if (b.id === "z-toggle") st.wide = !st.wide;
+  else if (b.dataset.rm) st.wants.splice(+b.dataset.rm, 1);
+  else if (b.dataset.fav) { const id = b.dataset.fav; st.favs = st.favs.includes(id) ? st.favs.filter((x) => x !== id) : [...st.favs, id]; }
+  else return;
+  save(); render();
+});
+$("range").addEventListener("input", (e) => { st.range = { ...st.range, [st.mode]: { ...st.range[st.mode], [st.tr]: +e.target.value } }; save(); render(); });
+$("want-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const v = $("want-input").value.trim();
+  v.split(/[、,\s]+/).filter(Boolean).forEach((w) => { if (!st.wants.includes(w)) st.wants.push(w); });
+  $("want-input").value = ""; save(); render();
+});
+render();
+})();
+</script>

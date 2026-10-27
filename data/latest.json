@@ -1,38 +1,35 @@
 {
-  "updatedAt": "2026-10-26T14:07:25.412Z",
-  "asOfDate": "2026-10-26",
-  "price": 62189.65,
-  "sma25": 66230.03,
-  "sma75": 66004.34,
-  "deviationPct": -6.1,
-  "rsi14": 18,
-  "vol25AnnualizedPct": 27.4,
+  "updatedAt": "2026-10-27T13:07:41.424Z",
+  "asOfDate": "2026-10-27",
+  "price": 63268.37,
+  "sma25": 66203.85,
+  "sma75": 65918.09,
+  "deviationPct": -4.43,
+  "rsi14": 20.2,
+  "vol25AnnualizedPct": 27.9,
   "trend": "mixed",
   "overheat": "oversold",
   "highVol": true,
-  "crossSignal": {
-    "type": "golden",
-    "date": "2026-10-20"
-  },
+  "crossSignal": null,
   "nextTrigger": {
     "direction": "above",
-    "level": 66230.03,
-    "distancePct": 6.5,
+    "level": 66203.85,
+    "distancePct": 4.64,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.422,
-      "changePct": 0.59
+      "value": 157.785,
+      "changePct": 0.61
     },
     "sp500": {
-      "value": 7653.6,
-      "changePct": 0.39
+      "value": 7676.77,
+      "changePct": 0.7
     },
     "vix": {
-      "value": 18.54,
-      "changePct": -4.68
+      "value": 17.73,
+      "changePct": -3.59
     }
   },
   "macroAssessment": {
@@ -43,46 +40,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均は3日続落、半導体関連株安が重荷も商社株は堅調／相場概況(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWVdScmVGUTVqZWR1VlV2NVFBRFZDRkhHeU5HOFoyWWR6NUppcHA3OFZMVElCeXpndzZzYm9qdUNCU3habWt1NlV6emxjOVVtbUN5V1RoS0pMdEl1MzV3N2dyeW81ZDF3dnNZdTItTHhTZ244NnNSbzZGbVVPbWlEY0hmMXVNaEk?oc=5",
+      "title": "日経平均終値1078円高 アンソロピックIPO目論見書でAIラリー再点火",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1tV05nNVVsMGtfWnJzWFBMUGpmTm1CbGFHbnZoNXJyVzhjWkFSak9zb1hXZjRGS0huUWVMbTBZNTFuV0VQQWpHazNucVRjTUFKN1pUSjRrT3R1Vm1DdzUzTXA2LW43RWVoWmxvbw?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Tue, 27 Oct 2026 02:53:53 GMT"
+    },
+    {
+      "title": "日経平均、2週連続の急落で下げ幅6,300円超…半導体企業決算などイベント集中で反発は期待できる？【アナリストが分析】",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9kT3ktV1dJUmVrT21YX2RwUnhvdXhIeDg2azBRY1N5enM1Q2RJMjdiLXFlX1FpSk1uZmczS0xJekt0VXNDNkZXT01UbWlEQVQ2ZlZVS0hRUkJQdw?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Mon, 26 Oct 2026 03:00:00 GMT"
+    },
+    {
+      "title": "日経平均は１０７８円高と４日ぶり大幅反発、ＦＯＭＣや決算控え積極的な買い限られる＝２７日大引け(ウエルスアドバイザー)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPOXpmNFhUdWZyQmM5ZmZ2ZlFkYjIyNU9kcVVYM0o0a2NYdGN1X0VKTzhJUUJ5bEx5b0ZvTXBSTnNuU1hvbF9UNFBhWU5EY0U1YVc4SlhFLU5oYlJtd1lGM1pZMEJldll6ZW56eXpBVlhvZmYtYXBkeFRGb21veXFFUlA0cW1qNGs?oc=5",
       "source": "Yahoo!ファイナンス",
-      "publishedAt": "Mon, 26 Oct 2026 06:57:10 GMT"
+      "publishedAt": "Tue, 27 Oct 2026 06:56:11 GMT"
     },
     {
-      "title": "日経平均終値、前週末比５０３円安の６万２１８９円…３営業日連続で下落",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1HbFN1ZHBGVmRwOVk2VG5ZQmhvZ3ZBU3JkTk9UNFluSUZDMEdiTWRic21mSUhzaDRwTlRIYWdyaGhTWGtGZ3RrdDU4UGRuaWRyN2c4c2dkVC1NX0lHNWdTWllMcTY?oc=5",
-      "source": "読売新聞",
-      "publishedAt": "Mon, 26 Oct 2026 06:39:00 GMT"
+      "title": "東京株式（後場寄り付き）＝日経平均株価は前場終値比でもみ合い圏推移",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1XSGs2aVdvRVFZY3JlY1A4SnJCbTZnd25KMy1XZ0FmUGRSaUp0NTd1SlJNNlZINWJCQWxNYWtkWGdCVGE5aV9BM3JsWk1mbG5xb2RlVmN3b3ZoV2VIdFlmaw?oc=5",
+      "source": "株探",
+      "publishedAt": "Tue, 27 Oct 2026 03:31:00 GMT"
     },
     {
-      "title": "午前の日経平均は続落、複数イベント控え方向感欠く ＴＯＰＩＸはプラス",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBHdllRMXhnY1ZzdVpnRFR1c2VjMDVsaG1DNllfU2ZtNVlDZl8xWG5xcXpkdko4YXZ5TnpMbVJxSzVsM05OM2tEMDRTLUUwR3c5RzBYaUtOU0VDQQ?oc=5",
-      "source": "ニューズウィーク日本版",
-      "publishedAt": "Mon, 26 Oct 2026 02:50:00 GMT"
-    },
-    {
-      "title": "日経平均大引け：前週末比503.51円安の62189.65円｜FX・為替ニュース",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5HTm84OUlBekhjNXprM3hrS05NbVU0dHpXZ19CYU5Cdl9xWjRHVW9kMWZDM0EzM2RCQ1JqMjNHRV9EMU5RUXB5eXVRdVp4TWlHZ1E?oc=5",
-      "source": "ザイFX！",
-      "publishedAt": "Mon, 26 Oct 2026 06:30:00 GMT"
-    },
-    {
-      "title": "日経平均の今週の予想レンジは6万1500円-6万4500円",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5xTmYyRjB0Nkx4eTVyNnlyTF9ZNHF4UW5ZZHNoQXRzZmloMHFKeFhTWkxsczFERWlGcmlYZ29TZ2ZfQ0UyUEhqTUpxRGdBczFjTWpvOFAtMk5DVGpGbks0?oc=5",
-      "source": "ライブドアニュース",
-      "publishedAt": "Mon, 26 Oct 2026 13:15:48 GMT"
+      "title": "（まとめ）AI・半導体銘柄が買い戻された日経平均は1,078円高の63,268円で反発",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5NWXVVTTh3QnRiLWtmOWhSRkJOeW5NcjRuTWRMN3JaWTdQcldReDdjLVA1NVJ4b3VjYnFmOW4zNHZPaTZ0YU5yWnk2Zi1COWhaYXZrYdIBV0FVX3lxTE9sSUo0TVVUaVd5Rl9EQ1N1WklEY3Fac1dFU3JOdXBjY0ttZDlaemV2SFA5WUdrS1FQd0RmOWdKY3BhMHY4ZUc5Q181T3FyUmhkUHJTbVY5dw?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Tue, 27 Oct 2026 07:21:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-14",
-      "close": 57877.39,
-      "sma25": 54029.25,
-      "sma75": 54149.97
-    },
     {
       "date": "2026-04-15",
       "close": 58134.24,
@@ -856,6 +847,12 @@
       "close": 62189.65,
       "sma25": 66230.03,
       "sma75": 66004.34
+    },
+    {
+      "date": "2026-10-27",
+      "close": 63268.37,
+      "sma25": 66203.85,
+      "sma75": 65918.09
     }
   ]
 }

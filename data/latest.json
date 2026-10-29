@@ -1,85 +1,79 @@
 {
-  "updatedAt": "2026-10-28T13:57:26.208Z",
-  "asOfDate": "2026-10-28",
-  "price": 63954.19,
-  "sma25": 66196.57,
-  "sma75": 65860.71,
-  "deviationPct": -3.39,
-  "rsi14": 25.7,
-  "vol25AnnualizedPct": 28.1,
+  "updatedAt": "2026-10-29T14:07:41.169Z",
+  "asOfDate": "2026-10-29",
+  "price": 64659.47,
+  "sma25": 66182.19,
+  "sma75": 65831.92,
+  "deviationPct": -2.3,
+  "rsi14": 32.1,
+  "vol25AnnualizedPct": 28,
   "trend": "mixed",
-  "overheat": "oversold",
+  "overheat": "neutral",
   "highVol": true,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "above",
-    "level": 66196.57,
-    "distancePct": 3.51,
+    "level": 66182.19,
+    "distancePct": 2.35,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 158.08,
-      "changePct": 0.35
+      "value": 157.866,
+      "changePct": -0.08
     },
     "sp500": {
-      "value": 7729.34,
-      "changePct": 0.09
+      "value": 7720.23,
+      "changePct": -0.31
     },
     "vix": {
-      "value": 17.54,
-      "changePct": 0.11
+      "value": 17.09,
+      "changePct": 1.06
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "supportive_bear",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "東証大引け 日経平均は続伸 半導体関連に海外勢の買い",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE44cVFMSEVzdk9KQW5Ec3NIYW45OFhmbl9hemNacURFRjYwdThQS0xSTFUwSFdpZEM5YjhNdnpNWk1NdzJ3elVWMDdrTHpvN0tWUHRCQm14a2k0MjRKNkNmcU1qOWkzcFUtdnk5bA?oc=5",
+      "title": "日経平均終値705円高、出直る半導体株 引けは「リバランス」の大商い",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE15eGNobkR3LUs5X0V5WUIwNnVWUXk4OUZJbV9QLU5HNUNfaU5kTkxuem9UaTNMOFNDMFhuTkpWWllNcXViRkdVeF83U3NCQXlUMFRZakVnMzFKSmlWeFAzNldNTFUya0lzMGtsSg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Wed, 28 Oct 2026 06:52:49 GMT"
+      "publishedAt": "Thu, 29 Oct 2026 02:56:54 GMT"
     },
     {
-      "title": "日経平均前引け 続伸 798円高の6万4067円",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBGZW9wSlE0bzVOTjdocGNuVUMyV25HZ2laVk1IWGdzZ3BJTmxsX25FT1JGeHV6dnozYlNQdkdGdlc5Q2FLV0JacGVaVG1jZUllTlVSUnBkN2V5Z0J4ZjVxX013ZGdsWVBGbWNWTQ?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Wed, 28 Oct 2026 02:36:18 GMT"
-    },
-    {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月28日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9KeHNFLXR5dWJIZDBBREszN0pubEJtaWE4YjZmQUtkXzlwMUhTOTZiaEdkX2NERTFudXp2VjE2N2tVUnRsZzJHUUlybjZKeUNhNjAzUDZwUTU2bVViT3pYTw?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月29日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBCbEtlZHhWZWhkbm10N3ZhN3ZXa2R1ZDFHRy1MeDFTYUEwOHhNd3RReE9fQUdLNlpybmRPV0hJY2FsSlNUajZXa2lCeU5zeXByTm52WVBLVHVxa1BiOU12TA?oc=5",
       "source": "株探",
-      "publishedAt": "Tue, 27 Oct 2026 23:11:44 GMT"
+      "publishedAt": "Wed, 28 Oct 2026 23:12:25 GMT"
     },
     {
-      "title": "【2008（平成20）年10月28日】日経平均一時7,000円割れ、バブル後最安値",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9weWhlSW1IWi1KSEh4Tlk4SlhVaGJqdzYxMUJ6T05JMVlJNlpvMlNYUG5lNWg5SXo4WXhELXVOYkM4WDNZRlh1SUpuZUVpT0I3QUtoMjFxZ1h4QQ?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Tue, 27 Oct 2026 22:30:00 GMT"
+      "title": "日経平均なぜ7万円越え？髙橋洋一が明かす「高市トレード」と日本株高騰の背景（THE21オンライン）",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9hZDRCRWJWTU1JZHpIRVktallOSlY2WUY4T3dGN0dETlE5RlZKLUN1X0RYUC00VXl0MHdzVzNoZF9tNDR2RFJIOVZ4UVlqSjhEUzQxZGQwN1NhZU9ka0Z3OTFLLXFaYUVqUWpycUcwOU1iNVFzNk8tX09YaVhvMTQ?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Thu, 29 Oct 2026 02:53:34 GMT"
     },
     {
-      "title": "日経平均+1.92%でも、値下がり銘柄多い【今日の市場はどう動いた？】",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5iU3V6cXFVOGg0OTV6NVA2VHhzeG9QMWlGVnZiajFsVTlaWkZ5eU5HcHR6TGNpQzc5RFViczFIWTNOaG9vcnUzQnFub3JaQ1JqZ2k0YlN5YWdRTXN4VUFoeWR6WEs?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Tue, 27 Oct 2026 02:58:01 GMT"
+      "title": "日経平均は3日続伸、ＦＯＭＣ通過で安心感 好決算銘柄買われる",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVmQ3R0M0bGozX1o3QUhsYktMWHBxS0pUV3NjODN3a1dVQlZqdDBhTlBhWDMzdHIwTTNBTE5fbE9JZUdFMVNVVDlHX2tTdk0ySVhsdmp2WG5RT0ktX3NrcUdXRW12WlNtTTloR19jVWZHamNUb2JhV2w4UWVmejNJUTV2eXluZw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Thu, 29 Oct 2026 07:20:55 GMT"
+    },
+    {
+      "title": "（まとめ）アドテスト中心に半導体株が堅調で日経平均は705円高の64,659円で3日続伸　明日は日銀金融政策決定会合",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5MU3lXaGRVbHQzeUM2X2t5M09lc092VXV5ZklRZlBoX1lEWTJybnZOSmJselp0MG90Z3I3bzlGbDVBNmZ4U3NuaERuaVJUdTV4T2FOY9IBV0FVX3lxTE1iZ2xLcW52S1RhbzRBQVByaTVWS3h5SG1LbE12WEZFUnl4OFpTa0w0eUFPYU9mdzUwZ19Ra3VGQndUOWN5OElDZFAwTFBRUlo4ZEtlSjVsSQ?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Thu, 29 Oct 2026 07:26:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-16",
-      "close": 59518.34,
-      "sma25": 54364.4,
-      "sma75": 54374.47
-    },
     {
       "date": "2026-04-17",
       "close": 58475.9,
@@ -853,6 +847,12 @@
       "close": 63954.19,
       "sma25": 66196.57,
       "sma75": 65860.71
+    },
+    {
+      "date": "2026-10-29",
+      "close": 64659.47,
+      "sma25": 66182.19,
+      "sma75": 65831.92
     }
   ]
 }

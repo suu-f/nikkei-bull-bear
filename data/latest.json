@@ -1,35 +1,35 @@
 {
-  "updatedAt": "2026-10-29T14:07:41.169Z",
-  "asOfDate": "2026-10-29",
-  "price": 64659.47,
-  "sma25": 66182.19,
-  "sma75": 65831.92,
-  "deviationPct": -2.3,
-  "rsi14": 32.1,
-  "vol25AnnualizedPct": 28,
+  "updatedAt": "2026-10-30T13:59:30.755Z",
+  "asOfDate": "2026-10-30",
+  "price": 63290.11,
+  "sma25": 66093.23,
+  "sma75": 65772.54,
+  "deviationPct": -4.24,
+  "rsi14": 28.8,
+  "vol25AnnualizedPct": 28.6,
   "trend": "mixed",
-  "overheat": "neutral",
+  "overheat": "oversold",
   "highVol": true,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "above",
-    "level": 66182.19,
-    "distancePct": 2.35,
+    "level": 66093.23,
+    "distancePct": 4.43,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.866,
-      "changePct": -0.08
+      "value": 157.25,
+      "changePct": -0.37
     },
     "sp500": {
-      "value": 7720.23,
-      "changePct": -0.31
+      "value": 7634.44,
+      "changePct": -1.11
     },
     "vix": {
-      "value": 17.09,
-      "changePct": 1.06
+      "value": 19.01,
+      "changePct": 10.52
     }
   },
   "macroAssessment": {
@@ -40,46 +40,40 @@
   "conviction": null,
   "news": [
     {
-      "title": "日経平均終値705円高、出直る半導体株 引けは「リバランス」の大商い",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE15eGNobkR3LUs5X0V5WUIwNnVWUXk4OUZJbV9QLU5HNUNfaU5kTkxuem9UaTNMOFNDMFhuTkpWWllNcXViRkdVeF83U3NCQXlUMFRZakVnMzFKSmlWeFAzNldNTFUya0lzMGtsSg?oc=5",
+      "title": "日経平均終値1369円安 インテル急落、半導体関連が総崩れ",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBqMFFfVmtEYmdWOEV3d0g3c09aYTFwRWNGODBaNlBBd3llWkdmQzhuMEpqdjM3djZSV1I3RXRjei0zZHN1YWZVXzJ4SU1FN3h5aWw0d1BRR3lQckFmb2ZtX3l2MENXM1N2dUJZdg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Thu, 29 Oct 2026 02:56:54 GMT"
+      "publishedAt": "Fri, 30 Oct 2026 02:46:45 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (10月29日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBCbEtlZHhWZWhkbm10N3ZhN3ZXa2R1ZDFHRy1MeDFTYUEwOHhNd3RReE9fQUdLNlpybmRPV0hJY2FsSlNUajZXa2lCeU5zeXByTm52WVBLVHVxa1BiOU12TA?oc=5",
-      "source": "株探",
-      "publishedAt": "Wed, 28 Oct 2026 23:12:25 GMT"
+      "title": "【速報】日経平均一時1900円超下落 米IT大手決算に失望 午前10時25分現在",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE4wR1o4dG1LS1JjT0w5SWRQUFBBX1BjSFczQmRScTAzV3NLY1drTlRJaHVYTFJKNnhaZjNrRFU1cGNjXzJHYm5xVXROay10MGlwVkZiUHNqbHFXU3dVY0d3TEFXNU11ektxaVBVSzBuWXRtUQ?oc=5",
+      "source": "テレ朝NEWS",
+      "publishedAt": "Fri, 30 Oct 2026 01:28:53 GMT"
     },
     {
-      "title": "日経平均なぜ7万円越え？髙橋洋一が明かす「高市トレード」と日本株高騰の背景（THE21オンライン）",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9hZDRCRWJWTU1JZHpIRVktallOSlY2WUY4T3dGN0dETlE5RlZKLUN1X0RYUC00VXl0MHdzVzNoZF9tNDR2RFJIOVZ4UVlqSjhEUzQxZGQwN1NhZU9ka0Z3OTFLLXFaYUVqUWpycUcwOU1iNVFzNk8tX09YaVhvMTQ?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Thu, 29 Oct 2026 02:53:34 GMT"
+      "title": "日経平均VIは大幅に上昇、株価大幅安で警戒感強まる(フィスコ)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPX1BmN25xcjZXUGhOdW5CZFJRbFNKZHZCOWNSNklHSm1BalVfX2JMaHJLQTNucVFVZGJEUlNLNTQ1NDBWMzBZbkdFN09HaWxXNjdyXzZJdmo3WHA2bTJMVVdqYkFROU5wZG9EZDVsX09FUmlmcDJNNDhXSUhFdnltRHpMejZiYk0?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Fri, 30 Oct 2026 05:08:24 GMT"
     },
     {
-      "title": "日経平均は3日続伸、ＦＯＭＣ通過で安心感 好決算銘柄買われる",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVmQ3R0M0bGozX1o3QUhsYktMWHBxS0pUV3NjODN3a1dVQlZqdDBhTlBhWDMzdHIwTTNBTE5fbE9JZUdFMVNVVDlHX2tTdk0ySVhsdmp2WG5RT0ktX3NrcUdXRW12WlNtTTloR19jVWZHamNUb2JhV2w4UWVmejNJUTV2eXluZw?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Thu, 29 Oct 2026 07:20:55 GMT"
+      "title": "来週（11/2〜11/6）の日経平均株価の予想レンジは6万1000～6万5000円！ 米・中間選挙や雇用統計、アップル決算、さらに金融政策や金利の動向に注目！",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE45YVR6OUVDMVhVZUJiMEJ1RGYxaWFuVzJCbWdMNEEzdHNwa2ZmSmNEV3I4cHp1RkliYnVrbW5BQmhTN1RPUHNreFdmQWE2aDV0M0sw?oc=5",
+      "source": "ダイヤモンド・オンライン",
+      "publishedAt": "Fri, 30 Oct 2026 13:50:50 GMT"
     },
     {
-      "title": "（まとめ）アドテスト中心に半導体株が堅調で日経平均は705円高の64,659円で3日続伸　明日は日銀金融政策決定会合",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5MU3lXaGRVbHQzeUM2X2t5M09lc092VXV5ZklRZlBoX1lEWTJybnZOSmJselp0MG90Z3I3bzlGbDVBNmZ4U3NuaERuaVJUdTV4T2FOY9IBV0FVX3lxTE1iZ2xLcW52S1RhbzRBQVByaTVWS3h5SG1LbE12WEZFUnl4OFpTa0w0eUFPYU9mdzUwZ19Ra3VGQndUOWN5OElDZFAwTFBRUlo4ZEtlSjVsSQ?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Thu, 29 Oct 2026 07:26:00 GMT"
+      "title": "日経平均、一時1800円超値下がり 米主要株価指数下落や「アマゾン・ドット・コム」決算受け AI・半導体関連に売り注文",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1hNC1zNXR0YXM2cmF2aVc2dlhTWl9VcDJQdG13NzlEZ01UeGNYN2VyMElDd3FPQmZnR3BDZGJxblNxLXdtMjdoYXFLaVRtcklTZEE4emllOA?oc=5",
+      "source": "TBS NEWS DIG",
+      "publishedAt": "Fri, 30 Oct 2026 01:14:28 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-17",
-      "close": 58475.9,
-      "sma25": 54525.32,
-      "sma75": 54482.89
-    },
     {
       "date": "2026-04-20",
       "close": 58824.89,
@@ -853,6 +847,12 @@
       "close": 64659.47,
       "sma25": 66182.19,
       "sma75": 65831.92
+    },
+    {
+      "date": "2026-10-30",
+      "close": 63290.11,
+      "sma25": 66093.23,
+      "sma75": 65772.54
     }
   ]
 }

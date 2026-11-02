@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T13:59:30.755Z",
+  "updatedAt": "2026-11-02T16:58:38.198Z",
   "asOfDate": "2026-10-30",
   "price": 63290.11,
   "sma25": 66093.23,
@@ -20,54 +20,54 @@
   },
   "macro": {
     "usdjpy": {
-      "value": 157.25,
-      "changePct": -0.37
+      "value": 157.807,
+      "changePct": 0
     },
     "sp500": {
-      "value": 7634.44,
-      "changePct": -1.11
+      "value": 7621.42,
+      "changePct": 0.55
     },
     "vix": {
-      "value": 19.01,
-      "changePct": 10.52
+      "value": 18.83,
+      "changePct": -3.04
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bear",
+    "bias": "mixed",
     "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "日経平均終値1369円安 インテル急落、半導体関連が総崩れ",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBqMFFfVmtEYmdWOEV3d0g3c09aYTFwRWNGODBaNlBBd3llWkdmQzhuMEpqdjM3djZSV1I3RXRjei0zZHN1YWZVXzJ4SU1FN3h5aWw0d1BRR3lQckFmb2ZtX3l2MENXM1N2dUJZdg?oc=5",
+      "title": "東証前引け 日経平均は続落、キオクシア急落で 決算手掛かりの物色は支え",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1sNFI2azJ0ZEN3a3hKVThoTWlISHVpWHpMSk1tZFR2MURzVl9YOXkyMG9PUU0yOVg5eHFHVVFQakhGbmEzYU9CbVdNWktLcGxvejFGWEhSUHktRUpWb0FjdGJ0Sl9CVmNhRS1fWg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Fri, 30 Oct 2026 02:46:45 GMT"
+      "publishedAt": "Mon, 02 Nov 2026 02:57:36 GMT"
     },
     {
-      "title": "【速報】日経平均一時1900円超下落 米IT大手決算に失望 午前10時25分現在",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE4wR1o4dG1LS1JjT0w5SWRQUFBBX1BjSFczQmRScTAzV3NLY1drTlRJaHVYTFJKNnhaZjNrRFU1cGNjXzJHYm5xVXROay10MGlwVkZiUHNqbHFXU3dVY0d3TEFXNU11ektxaVBVSzBuWXRtUQ?oc=5",
-      "source": "テレ朝NEWS",
-      "publishedAt": "Fri, 30 Oct 2026 01:28:53 GMT"
+      "title": "米中間選挙で株式市場はどう動く？日経平均、今週末が分岐点に（窪田真之）",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByNkc3Vk9RNXRKMUhNWmQyRHZGTEZNTlA3cS1LdmdqLVdBWFhqNmY4TU8zLVB1eklhYkpFNFc1UEk4N3NFaE5PaWFRRF9EUW1KTzNfN0NFeDY2dw?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Sun, 01 Nov 2026 23:00:00 GMT"
     },
     {
-      "title": "日経平均VIは大幅に上昇、株価大幅安で警戒感強まる(フィスコ)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPX1BmN25xcjZXUGhOdW5CZFJRbFNKZHZCOWNSNklHSm1BalVfX2JMaHJLQTNucVFVZGJEUlNLNTQ1NDBWMzBZbkdFN09HaWxXNjdyXzZJdmo3WHA2bTJMVVdqYkFROU5wZG9EZDVsX09FUmlmcDJNNDhXSUhFdnltRHpMejZiYk0?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Fri, 30 Oct 2026 05:08:24 GMT"
+      "title": "【テクニカル】日経平均株価テクニカル分析－小陽線で下げ渋る",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1kYlFqa3RBZjJYZEtZcEJxMmc1bGlaZ2hmQmNQVGlEakVKZS1Kb1p2VVZscFA5Rm84QmhHRHlFczM2cnpXOEEzWHF3emNscWhsampUbnFENWFQS3A1VUFQYnpmMA?oc=5",
+      "source": "外為どっとコム",
+      "publishedAt": "Mon, 02 Nov 2026 15:43:27 GMT"
     },
     {
-      "title": "来週（11/2〜11/6）の日経平均株価の予想レンジは6万1000～6万5000円！ 米・中間選挙や雇用統計、アップル決算、さらに金融政策や金利の動向に注目！",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE45YVR6OUVDMVhVZUJiMEJ1RGYxaWFuVzJCbWdMNEEzdHNwa2ZmSmNEV3I4cHp1RkliYnVrbW5BQmhTN1RPUHNreFdmQWE2aDV0M0sw?oc=5",
-      "source": "ダイヤモンド・オンライン",
-      "publishedAt": "Fri, 30 Oct 2026 13:50:50 GMT"
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月2日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4xWHhfX0ZxOEYxU3dyNFZpd0NqckQ2LU5rS3JWUjQ4bTBRMG4xVGZWQzZsN2xBbklERy1JV3dDcEdURWdJVHo4M2dna2ZXcVZfcVROLXZCVlo0QUZpVHpDZQ?oc=5",
+      "source": "株探",
+      "publishedAt": "Sun, 01 Nov 2026 22:56:15 GMT"
     },
     {
-      "title": "日経平均、一時1800円超値下がり 米主要株価指数下落や「アマゾン・ドット・コム」決算受け AI・半導体関連に売り注文",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1hNC1zNXR0YXM2cmF2aVc2dlhTWl9VcDJQdG13NzlEZ01UeGNYN2VyMElDd3FPQmZnR3BDZGJxblNxLXdtMjdoYXFLaVRtcklTZEE4emllOA?oc=5",
-      "source": "TBS NEWS DIG",
-      "publishedAt": "Fri, 30 Oct 2026 01:14:28 GMT"
+      "title": "日経平均は続落、米株安を嫌気 米中間選挙前で後半は模様眺め",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNa2dyZTVDN0JYS19Fa1E2NklqTnY4X19mZVFjNkt4NmRNM1hRcVMzZjMwUi1HOTlBSllwZmhzNXJqRVBYNHpyUF9Ja0pyaW9fbkZldnZHNEhuQlJPZlBrdU94bTJadmJTQUFrVi1QYjNyTE00ZVRjNFdQa1p5TU90Tnk0Q1Z1QQ?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Mon, 02 Nov 2026 07:20:00 GMT"
     }
   ],
   "signal": "wait",

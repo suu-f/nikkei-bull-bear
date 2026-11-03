@@ -1,50 +1,44 @@
 {
-  "updatedAt": "2026-11-02T16:58:38.198Z",
-  "asOfDate": "2026-10-30",
-  "price": 63290.11,
-  "sma25": 66093.23,
-  "sma75": 65772.54,
-  "deviationPct": -4.24,
-  "rsi14": 28.8,
-  "vol25AnnualizedPct": 28.6,
+  "updatedAt": "2026-11-03T14:59:11.003Z",
+  "asOfDate": "2026-11-02",
+  "price": 63081.86,
+  "sma25": 65961.94,
+  "sma75": 65699.53,
+  "deviationPct": -4.37,
+  "rsi14": 31.3,
+  "vol25AnnualizedPct": 28.2,
   "trend": "mixed",
-  "overheat": "oversold",
+  "overheat": "neutral",
   "highVol": true,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "above",
-    "level": 66093.23,
-    "distancePct": 4.43,
+    "level": 65961.94,
+    "distancePct": 4.57,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 157.807,
-      "changePct": 0
+      "value": 158.281,
+      "changePct": 0.38
     },
     "sp500": {
-      "value": 7621.42,
-      "changePct": 0.55
+      "value": 7561.15,
+      "changePct": 0.26
     },
     "vix": {
-      "value": 18.83,
-      "changePct": -3.04
+      "value": 20.83,
+      "changePct": -1.51
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
-    "vixStatus": "calm"
+    "bias": "supportive_bull",
+    "vixStatus": "caution"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
-    {
-      "title": "東証前引け 日経平均は続落、キオクシア急落で 決算手掛かりの物色は支え",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1sNFI2azJ0ZEN3a3hKVThoTWlISHVpWHpMSk1tZFR2MURzVl9YOXkyMG9PUU0yOVg5eHFHVVFQakhGbmEzYU9CbVdNWktLcGxvejFGWEhSUHktRUpWb0FjdGJ0Sl9CVmNhRS1fWg?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Mon, 02 Nov 2026 02:57:36 GMT"
-    },
     {
       "title": "米中間選挙で株式市場はどう動く？日経平均、今週末が分岐点に（窪田真之）",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByNkc3Vk9RNXRKMUhNWmQyRHZGTEZNTlA3cS1LdmdqLVdBWFhqNmY4TU8zLVB1eklhYkpFNFc1UEk4N3NFaE5PaWFRRF9EUW1KTzNfN0NFeDY2dw?oc=5",
@@ -52,34 +46,34 @@
       "publishedAt": "Sun, 01 Nov 2026 23:00:00 GMT"
     },
     {
-      "title": "【テクニカル】日経平均株価テクニカル分析－小陽線で下げ渋る",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1kYlFqa3RBZjJYZEtZcEJxMmc1bGlaZ2hmQmNQVGlEakVKZS1Kb1p2VVZscFA5Rm84QmhHRHlFczM2cnpXOEEzWHF3emNscWhsampUbnFENWFQS3A1VUFQYnpmMA?oc=5",
-      "source": "外為どっとコム",
-      "publishedAt": "Mon, 02 Nov 2026 15:43:27 GMT"
+      "title": "日経平均、6万円の「売る権利」建玉が急増 節目割れに備え",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBGaXdPZEMzM1lHam9LaEdwVFZFM3dtb010eFRPVzVBMlhhaV9YNThLSHZTcjRtTzVDS2pEd0JRVHIwNlhSdjVFRURqaV92VEZyTVlTelF1N2RBN0xqM3MzcEk1WUdFWmczYWRUVA?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Mon, 02 Nov 2026 09:02:39 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月2日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4xWHhfX0ZxOEYxU3dyNFZpd0NqckQ2LU5rS3JWUjQ4bTBRMG4xVGZWQzZsN2xBbklERy1JV3dDcEdURWdJVHo4M2dna2ZXcVZfcVROLXZCVlo0QUZpVHpDZQ?oc=5",
-      "source": "株探",
-      "publishedAt": "Sun, 01 Nov 2026 22:56:15 GMT"
+      "title": "10月に｢年初来高値｣を記録､それでもPERが低い17銘柄",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5DTGxVMHFwSVdUT0ljUUQteGMxZll2YjQxTmxub0s5X2stLTk0NzVvMURZVVltSWNMbEFBYnVqNFBDQV9NVy1JUHNCNXluQmpiV09QSzdIOA?oc=5",
+      "source": "四季報オンライン",
+      "publishedAt": "Mon, 02 Nov 2026 22:00:00 GMT"
     },
     {
-      "title": "日経平均は続落、米株安を嫌気 米中間選挙前で後半は模様眺め",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNa2dyZTVDN0JYS19Fa1E2NklqTnY4X19mZVFjNkt4NmRNM1hRcVMzZjMwUi1HOTlBSllwZmhzNXJqRVBYNHpyUF9Ja0pyaW9fbkZldnZHNEhuQlJPZlBrdU94bTJadmJTQUFrVi1QYjNyTE00ZVRjNFdQa1p5TU90Tnk0Q1Z1QQ?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Mon, 02 Nov 2026 07:20:00 GMT"
+      "title": "シカゴ日経平均先物 大取終値比 480円安 （11月2日）(株探ニュース)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNYlhkV2JMR1RGS1EtRG5fdkFPMXFvbHFXdG02NzFHMUJNYTlhV3Vlb1QyR01ZUWxVV3RvZC1VOVNFdXIzMmpVY1QxMWFjWHE2YXR2WUdWX3hreVU5YWxJeG83TlBIa3Vmb2tHX2Q5Q3VyRnAtSk5wZGNnVUtPLU5ER1ZucXhyS2M?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Mon, 02 Nov 2026 22:46:12 GMT"
+    },
+    {
+      "title": "（まとめ）日経平均は方向感に欠ける展開で208円安の63,081円で続落　明日は米国で中間選挙",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBVZXlyNmRLY29oNVZnYTd6Y0RfeDhzYVVoMUgwS0c1a3ZvQnBXSXFpcjZ6akRtT3piOXFtLVNIN040ZS1sdWwxM3Q1SmM3SDB5SXRaLdIBV0FVX3lxTE1JaEN0S2dsTjhUWFpqUlNwRXVCMHNtVUJfam53OE9Oay14amp6SUFFWDdycS0wbkJVUHRlX25PZXVQR0ZHQnpUT2ZqWXYzTFZWREhhLXByaw?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Mon, 02 Nov 2026 07:22:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-20",
-      "close": 58824.89,
-      "sma25": 54725.53,
-      "sma75": 54595.12
-    },
     {
       "date": "2026-04-21",
       "close": 59349.17,
@@ -853,6 +847,12 @@
       "close": 63290.11,
       "sma25": 66093.23,
       "sma75": 65772.54
+    },
+    {
+      "date": "2026-11-02",
+      "close": 63081.86,
+      "sma25": 65961.94,
+      "sma75": 65699.53
     }
   ]
 }

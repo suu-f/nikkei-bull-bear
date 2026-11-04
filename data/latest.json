@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T14:59:11.003Z",
+  "updatedAt": "2026-11-04T15:20:19.876Z",
   "asOfDate": "2026-11-02",
   "price": 63081.86,
   "sma25": 65961.94,
@@ -20,54 +20,54 @@
   },
   "macro": {
     "usdjpy": {
-      "value": 158.281,
-      "changePct": 0.38
+      "value": 158.588,
+      "changePct": 0.43
     },
     "sp500": {
-      "value": 7561.15,
-      "changePct": 0.26
+      "value": 7700.54,
+      "changePct": 1.74
     },
     "vix": {
-      "value": 20.83,
-      "changePct": -1.51
+      "value": 17,
+      "changePct": -18.39
     }
   },
   "macroAssessment": {
     "bias": "supportive_bull",
-    "vixStatus": "caution"
+    "vixStatus": "calm"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "米中間選挙で株式市場はどう動く？日経平均、今週末が分岐点に（窪田真之）",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByNkc3Vk9RNXRKMUhNWmQyRHZGTEZNTlA3cS1LdmdqLVdBWFhqNmY4TU8zLVB1eklhYkpFNFc1UEk4N3NFaE5PaWFRRF9EUW1KTzNfN0NFeDY2dw?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Sun, 01 Nov 2026 23:00:00 GMT"
+      "title": "日経平均 一時3000円超値下がり",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBKUFZlMHdocE1kS3FVNGVUdnBET1FiVTBXLVIyRTlHTi1IT1JaMTBUbnBfQV9MeV94ZUJGdVZVbElvOGdqLTZLbEFDMXFLUHRC?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Wed, 04 Nov 2026 04:59:45 GMT"
     },
     {
-      "title": "日経平均、6万円の「売る権利」建玉が急増 節目割れに備え",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBGaXdPZEMzM1lHam9LaEdwVFZFM3dtb010eFRPVzVBMlhhaV9YNThLSHZTcjRtTzVDS2pEd0JRVHIwNlhSdjVFRURqaV92VEZyTVlTelF1N2RBN0xqM3MzcEk1WUdFWmczYWRUVA?oc=5",
+      "title": "日経平均終値893円安 米中間選挙「民主優勢」で一時6万円割れ迫る",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBxQUQ0Z2hpN2JORlY4TUlEWk1DSlFuWE1mUkdJclc2U0hyUHk4X1RzRkhiOVdxcl9sbHQzOEI0b2MzTFVJM1VYSUpwUmUxelhtQzMtNlJxVW1TYVlxTnZWNDBXRnVyV2gzVlhmUg?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Mon, 02 Nov 2026 09:02:39 GMT"
+      "publishedAt": "Wed, 04 Nov 2026 02:46:21 GMT"
     },
     {
-      "title": "10月に｢年初来高値｣を記録､それでもPERが低い17銘柄",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5DTGxVMHFwSVdUT0ljUUQteGMxZll2YjQxTmxub0s5X2stLTk0NzVvMURZVVltSWNMbEFBYnVqNFBDQV9NVy1JUHNCNXluQmpiV09QSzdIOA?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Mon, 02 Nov 2026 22:00:00 GMT"
+      "title": "米中間選挙開票速報受け日経平均株価が急落、今後は？",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5WZHMyUUpvR01HR1NkTWpqOTJqb2RUOEJrWVpobFAxYkRaOTFySE1ySHgxUFk5OC0xUlgyT2lxMkdXby1KajhpS2h1RTNQcHdrZEdMX1pDMG1EMHozLVVPemZYYUNIeHg5U1UzclpDemJXajhE?oc=5",
+      "source": "SBI証券",
+      "publishedAt": "Wed, 04 Nov 2026 04:42:22 GMT"
     },
     {
-      "title": "シカゴ日経平均先物 大取終値比 480円安 （11月2日）(株探ニュース)",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNYlhkV2JMR1RGS1EtRG5fdkFPMXFvbHFXdG02NzFHMUJNYTlhV3Vlb1QyR01ZUWxVV3RvZC1VOVNFdXIzMmpVY1QxMWFjWHE2YXR2WUdWX3hreVU5YWxJeG83TlBIa3Vmb2tHX2Q5Q3VyRnAtSk5wZGNnVUtPLU5ER1ZucXhyS2M?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "publishedAt": "Mon, 02 Nov 2026 22:46:12 GMT"
+      "title": "日経平均は一時3％超安、ハイテク株が大幅下落 キオクシアＨＤ13％超安",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMWhtcm9IUVpjOFJYd3Jyd2xOTG8ySlN5ZThCQnlQZGtwWURPRmtuOUZRQnk0aENuZlBjT1F1S0ZueVVXMXB1QW9IaVdUbVc1c0ZMWXlRSENLMURraUZYRTRQQW15MW9fTUNSWkdJRjktT3BUTGM5S3JMWjNSMVFLdDB6aXptZw?oc=5",
+      "source": "Reuters",
+      "publishedAt": "Wed, 04 Nov 2026 02:07:00 GMT"
     },
     {
-      "title": "（まとめ）日経平均は方向感に欠ける展開で208円安の63,081円で続落　明日は米国で中間選挙",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBVZXlyNmRLY29oNVZnYTd6Y0RfeDhzYVVoMUgwS0c1a3ZvQnBXSXFpcjZ6akRtT3piOXFtLVNIN040ZS1sdWwxM3Q1SmM3SDB5SXRaLdIBV0FVX3lxTE1JaEN0S2dsTjhUWFpqUlNwRXVCMHNtVUJfam53OE9Oay14amp6SUFFWDdycS0wbkJVUHRlX25PZXVQR0ZHQnpUT2ZqWXYzTFZWREhhLXByaw?oc=5",
-      "source": "マネクリ",
-      "publishedAt": "Mon, 02 Nov 2026 07:22:00 GMT"
+      "title": "日本株にも米中間選ショック、日経平均は一時３０００円超下落…キオクシアやアドバンテストなど売られる",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5xVnN4Qmo4eU1COHhZYmNUeS0wOThiR25GdmlfaFB4ZTVnMmdZTFRTaHpNc1Q5RFBlNWNFRl8xa1pKb0VzQWJkLXNCQVFpSWFSTzhhVlVVcnZEUGp4UlNXcEtpMzc?oc=5",
+      "source": "読売新聞",
+      "publishedAt": "Wed, 04 Nov 2026 10:53:00 GMT"
     }
   ],
   "signal": "wait",

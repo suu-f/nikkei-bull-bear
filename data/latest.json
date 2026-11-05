@@ -1,85 +1,79 @@
 {
-  "updatedAt": "2026-11-04T15:20:19.876Z",
-  "asOfDate": "2026-11-02",
-  "price": 63081.86,
-  "sma25": 65961.94,
-  "sma75": 65699.53,
-  "deviationPct": -4.37,
-  "rsi14": 31.3,
-  "vol25AnnualizedPct": 28.2,
+  "updatedAt": "2026-11-05T15:21:29.260Z",
+  "asOfDate": "2026-11-04",
+  "price": 62188.63,
+  "sma25": 65814.38,
+  "sma75": 65632.14,
+  "deviationPct": -5.51,
+  "rsi14": 29.2,
+  "vol25AnnualizedPct": 28.5,
   "trend": "mixed",
-  "overheat": "neutral",
+  "overheat": "oversold",
   "highVol": true,
   "crossSignal": null,
   "nextTrigger": {
     "direction": "above",
-    "level": 65961.94,
-    "distancePct": 4.57,
+    "level": 65814.38,
+    "distancePct": 5.83,
     "resultingSignal": "bull",
     "note": "終値が25日線を上抜けるとブル型優勢に転換します"
   },
   "macro": {
     "usdjpy": {
-      "value": 158.588,
-      "changePct": 0.43
+      "value": 157.992,
+      "changePct": -0.3
     },
     "sp500": {
-      "value": 7700.54,
-      "changePct": 1.74
+      "value": 7509.2,
+      "changePct": -2.33
     },
     "vix": {
-      "value": 17,
-      "changePct": -18.39
+      "value": 21.22,
+      "changePct": 27.75
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
-    "vixStatus": "calm"
+    "bias": "supportive_bear",
+    "vixStatus": "caution"
   },
   "macroNote": null,
   "conviction": null,
   "news": [
     {
-      "title": "日経平均 一時3000円超値下がり",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBKUFZlMHdocE1kS3FVNGVUdnBET1FiVTBXLVIyRTlHTi1IT1JaMTBUbnBfQV9MeV94ZUJGdVZVbElvOGdqLTZLbEFDMXFLUHRC?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Wed, 04 Nov 2026 04:59:45 GMT"
-    },
-    {
-      "title": "日経平均終値893円安 米中間選挙「民主優勢」で一時6万円割れ迫る",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBxQUQ0Z2hpN2JORlY4TUlEWk1DSlFuWE1mUkdJclc2U0hyUHk4X1RzRkhiOVdxcl9sbHQzOEI0b2MzTFVJM1VYSUpwUmUxelhtQzMtNlJxVW1TYVlxTnZWNDBXRnVyV2gzVlhmUg?oc=5",
+      "title": "日経平均終値1110円安 米中間選挙受け半導体売り、戻り試す機運そぐ",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9Ba0MtcnQ4LUgtVnJVZFdzLWlnWVNaTWc0eHVSNFBOYWFld2xwTjNhVW84NGpwZUMzM3hfckZRSXNXeFBJN0dlbWlZaHU0bnhCYUZmVk15T1JlTU5iRTk0cktKTUNRMnFrUkJ2cw?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Wed, 04 Nov 2026 02:46:21 GMT"
+      "publishedAt": "Thu, 05 Nov 2026 02:58:20 GMT"
     },
     {
-      "title": "米中間選挙開票速報受け日経平均株価が急落、今後は？",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5WZHMyUUpvR01HR1NkTWpqOTJqb2RUOEJrWVpobFAxYkRaOTFySE1ySHgxUFk5OC0xUlgyT2lxMkdXby1KajhpS2h1RTNQcHdrZEdMX1pDMG1EMHozLVVPemZYYUNIeHg5U1UzclpDemJXajhE?oc=5",
-      "source": "SBI証券",
-      "publishedAt": "Wed, 04 Nov 2026 04:42:22 GMT"
+      "title": "日経平均は１１１０円安と大幅に４日続落、取引終了にかけ下げ幅縮小＝５日大引け(ウエルスアドバイザー)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPVzhuQzV2bXNnd252V180SDUzbWRKLUF3ZHNDQnBuWGtRNnk2WnhQMU4ya3FkWF9FOG1nMHdWaWx2NDFDclMyZTYyTGRKS18zSko2VEYyUF94V2U4ZmRsSU5aSDRYYk9fbW9kWFVtX0kzZ0J0Y2dKaGc0VEZjLVRlM3R4R2xoaTg?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Thu, 05 Nov 2026 06:45:47 GMT"
     },
     {
-      "title": "日経平均は一時3％超安、ハイテク株が大幅下落 キオクシアＨＤ13％超安",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMWhtcm9IUVpjOFJYd3Jyd2xOTG8ySlN5ZThCQnlQZGtwWURPRmtuOUZRQnk0aENuZlBjT1F1S0ZueVVXMXB1QW9IaVdUbVc1c0ZMWXlRSENLMURraUZYRTRQQW15MW9fTUNSWkdJRjktT3BUTGM5S3JMWjNSMVFLdDB6aXptZw?oc=5",
-      "source": "Reuters",
-      "publishedAt": "Wed, 04 Nov 2026 02:07:00 GMT"
+      "title": "原油価格が大幅下落 米イラン戦闘終結に期待 日経平均一時1400円超下落…AI投資への不透明感で",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9JQnRvZE1HTXgxNURLODYxdWhlZ0VPOGo5NWp2SGt1ajN2b3VMU3BjY01LVmNkdFFuNkppTEhTdTZDbmE3QzhJek82cHFtdTR4dm1tZEk3MEtXaXZIbHY4cXA3RFJpNXh5aG5PeTk0QVdNcHJpNzlrM3FLRURScjA?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Thu, 05 Nov 2026 14:52:19 GMT"
     },
     {
-      "title": "日本株にも米中間選ショック、日経平均は一時３０００円超下落…キオクシアやアドバンテストなど売られる",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5xVnN4Qmo4eU1COHhZYmNUeS0wOThiR25GdmlfaFB4ZTVnMmdZTFRTaHpNc1Q5RFBlNWNFRl8xa1pKb0VzQWJkLXNCQVFpSWFSTzhhVlVVcnZEUGp4UlNXcEtpMzc?oc=5",
-      "source": "読売新聞",
-      "publishedAt": "Wed, 04 Nov 2026 10:53:00 GMT"
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月5日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1HVktoVk84blB5NHpTZlRiTkhiZUhQckR6VlVZTUlOYkhldVZaaUtFcGh3Nmt6Mjl5TmZHT3duYXg2YTRsaW1rR1FSellHSkR2LWpEVW1LNFhlQXVJdV9fWg?oc=5",
+      "source": "株探",
+      "publishedAt": "Wed, 04 Nov 2026 23:15:54 GMT"
+    },
+    {
+      "title": "米中間選挙、民主党優勢でデータセンター規制に警戒 日経平均急落、キオクシア一時1万円割れ",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SbE03T1k1OHJxbm9CWGZRaEZKUHhaNTkyYnRIclR4Q1llRlJ2dnNMd3NRdWM3cGplSG50WTl3TEFDekYwWGF1UlhEc0Y2dUtoQ1BYN2VUV2lDZw?oc=5",
+      "source": "トウシル",
+      "publishedAt": "Wed, 04 Nov 2026 08:30:00 GMT"
     }
   ],
   "signal": "wait",
   "headline": "様子見(トレンド不明瞭)",
   "rationale": "終値・25日線・75日線の並びが揃っておらず、方向感がはっきりしません。",
   "history": [
-    {
-      "date": "2026-04-21",
-      "close": 59349.17,
-      "sma25": 54949.45,
-      "sma75": 54709.77
-    },
     {
       "date": "2026-04-22",
       "close": 59585.86,
@@ -853,6 +847,12 @@
       "close": 63081.86,
       "sma25": 65961.94,
       "sma75": 65699.53
+    },
+    {
+      "date": "2026-11-04",
+      "close": 62188.63,
+      "sma25": 65814.38,
+      "sma75": 65632.14
     }
   ]
 }

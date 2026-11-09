@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T14:56:34.717Z",
+  "updatedAt": "2026-11-09T17:22:44.421Z",
   "asOfDate": "2026-11-06",
   "price": 57434.77,
   "sma25": 65265.48,
@@ -17,23 +17,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 158.332,
-      "changePct": -0.02
+      "value": 157.954,
+      "changePct": 0.29
     },
     "sp500": {
-      "value": 7421.79,
-      "changePct": 0.93
+      "value": 7546.58,
+      "changePct": 2.3
     },
     "vix": {
-      "value": 24.99,
-      "changePct": -11.32
+      "value": 20.48,
+      "changePct": -20.12
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bull",
     "vixStatus": "caution"
   },
-  "macroNote": null,
+  "macroNote": "テクニカルはベア型優勢ですが、為替・米国株など外部環境は逆風気味です。",
   "conviction": {
     "level": 1,
     "levelLabel": "弱い",
@@ -46,34 +46,34 @@
   },
   "news": [
     {
-      "title": "【速報】日経平均、終値は3600円超下落 5万8000円を割り込む 過去3番目の下げ幅",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5PQU5oalZJeVExRGJWU2ZWMDNtOTVELV9rTlk2V3JEV0RXUnBxaGdzd1hHMHhWa1FDYnVLU2RNendSQnJMNC0xQnRBc1dRVEhT?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Fri, 06 Nov 2026 06:53:25 GMT"
-    },
-    {
-      "title": "日経平均株価の終値3643円安、下げ幅歴代3位 半年ぶり6万円割れ",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE95TVRpXzBSUWktOGdMSlprMTI5d3RINUFCMEdOWUduaHlUSmRvd0R4c1VEa1hqZExaYXpQNVJfdnhMcGhtVFVIcHRaRUIxeFdpRjVaNTJkSnllQTMxR1Q3QmZqd1Vpd3ZzSnAyUg?oc=5",
+      "title": "日経平均終値1340円高 三菱重工「3本柱」がつないだ業績期待の買い",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9lZm81NTRJUU5hZFpkWlZnMXJ2QW5MX3Z5X1U2bHAtNzRqdW0yNEloem9nWWxKc1hMdlFYdkp4NThIX19Rd0F1a2JuczVVYmNNOUpRUENRT2RFTHVWMHZFa0czczZGRk9aZ2lpag?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Fri, 06 Nov 2026 02:48:44 GMT"
+      "publishedAt": "Mon, 09 Nov 2026 02:58:37 GMT"
     },
     {
-      "title": "日経平均株価一時4,000円超下落 目先の下値メドと今後の展開は 野村證券ストラテジストが解説",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9HY19Lamk3N1Q4Um9XWjJZUGxLQXNjV2pVU2VzLWdCRGxnWkNhVkVkOTBTbE1SYWlvMTROMUdpTFpIUkZ4TERHR3llUjM4VTZGaGJGdEtxTVdzVGxNek9r?oc=5",
-      "source": "野村證券",
-      "publishedAt": "Fri, 06 Nov 2026 07:00:00 GMT"
-    },
-    {
-      "title": "日経平均株価が急落 高市総理「一時的か予断許さず」",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4zdzdndFR1Y3RXWk1qNUhPUW9wSG44aDAwaXdFSzJtSFloN05NMkpkVTRVX1VQdXQ3SEkzbG5CMkpESXNoRVlKdlcxUTZNV0pJV1c2YXd2ekZjd1U3TFFTVjFfMmJVbHFhSlFrZ2RzVlE5enc?oc=5",
-      "source": "テレ朝NEWS",
-      "publishedAt": "Fri, 06 Nov 2026 02:37:57 GMT"
-    },
-    {
-      "title": "AIショック→日経平均株価は一時4,332円下落も…積立投資家が「市場からの撤退」だけは避けたい理由",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9WZTA0czNVS3lQVEkxOWhnZE1oOEo3UXQyXzBySmJvZUdtQXQ4LUpZWjd4MnlieEhjTWRUTy15N25yWThJckE4WFJuOFdfaEhfWlFEcVRZaERFZw?oc=5",
+      "title": "日経平均5,856円安の急落…「6万5,000円」までの上昇は期待できる？【アナリストが予測する三つの方向性】",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9zOTl5YlpaeWNCTy1xbXViSTFCdE5XUEV3QWRtcF91TVU1RGhxQkNlM1lkRVE3YVpjeG1vN01WQnliSGdLSE1DME1SMlU4TEd3RkFDOUNfcGx0UQ?oc=5",
       "source": "トウシル",
-      "publishedAt": "Fri, 06 Nov 2026 09:05:00 GMT"
+      "publishedAt": "Mon, 09 Nov 2026 03:30:00 GMT"
+    },
+    {
+      "title": "【テクニカル】日経平均株価テクニカル分析－陽線はらみ足を形成",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1VakhpdW9qdFJDTE1KQzFxSHo1Vm9mRUgxLXRnV0doMUFZNXZvN0JEQzJubHZSeW1ZTkNWOWR3Q0hrWjhxdUhxc0N0SFNGMmpPRWFYV3RpTnREbUtWcF9mR29XQQ?oc=5",
+      "source": "外為どっとコム",
+      "publishedAt": "Mon, 09 Nov 2026 15:54:48 GMT"
+    },
+    {
+      "title": "日経平均株価 一時2000円超上昇",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PQVZfOFRkOHBNMkY3RnZMRXp6OVB1SjRnSnRDMEN5Qmh2NEhlYXhhQV80UG83WVFwdEhCZHhUb3djUjFkTWMydzFSTnN2NmNpMXBIeg?oc=5",
+      "source": "テレ東BIZ",
+      "publishedAt": "Mon, 09 Nov 2026 15:51:34 GMT"
+    },
+    {
+      "title": "日経平均 一時2000円以上値上がり",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5BUXVnbV84c3hPYW5nV3QzR1pWNzJoT2ppNW5kVjYzX1RCeERsZG0zS2ZlTHJqWGJWYWxrM0p1V2tnS3ZwQWNwTHR0MHhTUUlB?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Mon, 09 Nov 2026 02:36:24 GMT"
     }
   ],
   "signal": "bear_caution",

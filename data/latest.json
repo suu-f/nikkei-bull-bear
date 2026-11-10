@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-09T17:22:44.421Z",
-  "asOfDate": "2026-11-06",
-  "price": 57434.77,
-  "sma25": 65265.48,
-  "sma75": 65392.37,
-  "deviationPct": -12,
-  "rsi14": 21.7,
-  "vol25AnnualizedPct": 33.4,
+  "updatedAt": "2026-11-10T15:31:15.057Z",
+  "asOfDate": "2026-11-09",
+  "price": 58775.5,
+  "sma25": 64858.24,
+  "sma75": 65284.91,
+  "deviationPct": -9.38,
+  "rsi14": 29.3,
+  "vol25AnnualizedPct": 32.4,
   "trend": "down",
   "overheat": "oversold",
   "highVol": true,
@@ -17,23 +17,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 157.954,
-      "changePct": 0.29
+      "value": 158.577,
+      "changePct": 0.18
     },
     "sp500": {
-      "value": 7546.58,
-      "changePct": 2.3
+      "value": 7517.92,
+      "changePct": -0.42
     },
     "vix": {
-      "value": 20.48,
-      "changePct": -20.12
+      "value": 20.09,
+      "changePct": 0.85
     }
   },
   "macroAssessment": {
-    "bias": "supportive_bull",
+    "bias": "mixed",
     "vixStatus": "caution"
   },
-  "macroNote": "テクニカルはベア型優勢ですが、為替・米国株など外部環境は逆風気味です。",
+  "macroNote": null,
   "conviction": {
     "level": 1,
     "levelLabel": "弱い",
@@ -46,46 +46,40 @@
   },
   "news": [
     {
-      "title": "日経平均終値1340円高 三菱重工「3本柱」がつないだ業績期待の買い",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9lZm81NTRJUU5hZFpkWlZnMXJ2QW5MX3Z5X1U2bHAtNzRqdW0yNEloem9nWWxKc1hMdlFYdkp4NThIX19Rd0F1a2JuczVVYmNNOUpRUENRT2RFTHVWMHZFa0czczZGRk9aZ2lpag?oc=5",
+      "title": "日経平均終値1684円高、「トランプ発言」後押し 非鉄株高が映す楽観",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8xOFdtTGJoc2xtcnBUTldrUHEzYjJ4RW1nUjQ4U1FrNlNfX2QtOGJ1eXlWcnlobFdZUU5NZUQ5QmVrV0xydUhLd0F1a3hnWVN5WHQtTDFtUUoyMFR4bVM3VlJDSVpESjlQSzdJNw?oc=5",
       "source": "日本経済新聞",
-      "publishedAt": "Mon, 09 Nov 2026 02:58:37 GMT"
+      "publishedAt": "Tue, 10 Nov 2026 02:47:48 GMT"
     },
     {
-      "title": "日経平均5,856円安の急落…「6万5,000円」までの上昇は期待できる？【アナリストが予測する三つの方向性】",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9zOTl5YlpaeWNCTy1xbXViSTFCdE5XUEV3QWRtcF91TVU1RGhxQkNlM1lkRVE3YVpjeG1vN01WQnliSGdLSE1DME1SMlU4TEd3RkFDOUNfcGx0UQ?oc=5",
-      "source": "トウシル",
-      "publishedAt": "Mon, 09 Nov 2026 03:30:00 GMT"
+      "title": "野村証が日経平均の見通し下げる、最高値奪回後ずれで「全治2年超」",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBDdzBkamlyaTNOZHRkS0tUYjJyOFJxODlwTnlKeDlhRHBMM1hBQmg3N1JSN2MxRmlvWVUxTkhacm90VFdTYjZQbWtZcVlHYnJndDduNEVpb0dIcHZrb2xxeUZnT2IyQUJ0Q1I0czlEZ0dndmV4clk0?oc=5",
+      "source": "Bloomberg.com",
+      "publishedAt": "Tue, 10 Nov 2026 04:05:00 GMT"
     },
     {
-      "title": "【テクニカル】日経平均株価テクニカル分析－陽線はらみ足を形成",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1VakhpdW9qdFJDTE1KQzFxSHo1Vm9mRUgxLXRnV0doMUFZNXZvN0JEQzJubHZSeW1ZTkNWOWR3Q0hrWjhxdUhxc0N0SFNGMmpPRWFYV3RpTnREbUtWcF9mR29XQQ?oc=5",
-      "source": "外為どっとコム",
-      "publishedAt": "Mon, 09 Nov 2026 15:54:48 GMT"
+      "title": "日本株見通しを変更 目先下振れも株高基調は継続 野村證券ストラテジストが解説",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBsRk5jWnd4RnJQT0NhaUdUa2xtTlZaNWo5UVNUVjBvWHBSUHNiV1hwUXpLTTU5X0NSemNGSWt1MUI5R2laSm1XTWtyR3BtWnlNSTZlOG9aZVlSbmt3MFgw?oc=5",
+      "source": "野村證券",
+      "publishedAt": "Tue, 10 Nov 2026 04:00:00 GMT"
     },
     {
-      "title": "日経平均株価 一時2000円超上昇",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PQVZfOFRkOHBNMkY3RnZMRXp6OVB1SjRnSnRDMEN5Qmh2NEhlYXhhQV80UG83WVFwdEhCZHhUb3djUjFkTWMydzFSTnN2NmNpMXBIeg?oc=5",
-      "source": "テレ東BIZ",
-      "publishedAt": "Mon, 09 Nov 2026 15:51:34 GMT"
+      "title": "日経平均6万円台回復 買い戻しで続伸 JT株は3営業日ぶり取引時間中に売買成立",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBISmFzczh4SE5LZU5vZWEwUzM3VzNCWS1oQ2M2Tm13eEdGazExUG8yTW9zcGlDVkJHM1EyU1dUejNWVlRNZVVzN2ZuTW04SmE5d2ZvVjZXUks1VlZUWExRSjVhT1ZNd2VXMnFCTEF1azJTUQ?oc=5",
+      "source": "テレ朝NEWS",
+      "publishedAt": "Tue, 10 Nov 2026 06:53:44 GMT"
     },
     {
-      "title": "日経平均 一時2000円以上値上がり",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5BUXVnbV84c3hPYW5nV3QzR1pWNzJoT2ppNW5kVjYzX1RCeERsZG0zS2ZlTHJqWGJWYWxrM0p1V2tnS3ZwQWNwTHR0MHhTUUlB?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Mon, 09 Nov 2026 02:36:24 GMT"
+      "title": "１０日の東京株式市場見通し＝日経平均６万円回復へ、ＴＳＭＣ月次売上を注視(ウエルスアドバイザー)",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPSEJIMDczb1NwNXIzZGkybEJIRE9ocE5MaG9Cekd2RDFRNWl4WkU1WjF0bDhrLWlIcW1fZXFIbkRPcGNyUmpZaGpqY0tzOW90amhxTEItdnhGanJvdjQ0X1dNRGk2RUo0THp6Q21meUtZQWlwR3NHTl9ZQnY3NFFGNmdNaXl5b0k?oc=5",
+      "source": "Yahoo!ファイナンス",
+      "publishedAt": "Mon, 09 Nov 2026 22:48:16 GMT"
     }
   ],
   "signal": "bear_caution",
   "headline": "ベア型優勢だが過熱感あり",
   "rationale": "下降トレンドですがRSIが30以下で売られすぎ気味です。反発リスクに注意してください。",
   "history": [
-    {
-      "date": "2026-04-24",
-      "close": 59716.18,
-      "sma25": 55594.65,
-      "sma75": 55053.01
-    },
     {
       "date": "2026-04-27",
       "close": 60537.36,
@@ -859,6 +853,12 @@
       "close": 57434.77,
       "sma25": 65265.48,
       "sma75": 65392.37
+    },
+    {
+      "date": "2026-11-09",
+      "close": 58775.5,
+      "sma25": 64858.24,
+      "sma75": 65284.91
     }
   ]
 }

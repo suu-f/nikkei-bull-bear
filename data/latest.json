@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-12T15:54:57.273Z",
-  "asOfDate": "2026-11-11",
-  "price": 61248.59,
-  "sma25": 64196.31,
-  "sma75": 65169.37,
-  "deviationPct": -4.59,
-  "rsi14": 39.4,
-  "vol25AnnualizedPct": 33.4,
+  "updatedAt": "2026-11-13T15:17:25.480Z",
+  "asOfDate": "2026-11-12",
+  "price": 60819.36,
+  "sma25": 63801.72,
+  "sma75": 65098.75,
+  "deviationPct": -4.67,
+  "rsi14": 42.9,
+  "vol25AnnualizedPct": 33,
   "trend": "down",
   "overheat": "neutral",
   "highVol": true,
@@ -17,16 +17,16 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.912,
-      "changePct": 0.76
+      "value": 159.812,
+      "changePct": 0.05
     },
     "sp500": {
-      "value": 7616.65,
-      "changePct": -0.04
+      "value": 7512.28,
+      "changePct": -1.06
     },
     "vix": {
-      "value": 18.09,
-      "changePct": 3.43
+      "value": 19.57,
+      "changePct": 4.65
     }
   },
   "macroAssessment": {
@@ -46,46 +46,40 @@
   },
   "news": [
     {
-      "title": "日経平均終値429円安、NVIDIA報道に揺れるAI株 買いは商社へ",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE13c05HVy1DYmpXa3FsVHdiT3hvbmZvUDJ3WXU4R3RuYzEyRWFqUnJ3LXhnLUdyR3lxUTVGanpIeEdVdzRZXzFSQ1dkbWk4VWFmTUJ0LU1IdHlRX2dkTFlWQUxQYkFfLXc1YkI1UQ?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Thu, 12 Nov 2026 02:47:20 GMT"
-    },
-    {
-      "title": "（まとめ）日経平均は789円高の3日続伸で急落前の61,000円台を回復",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1hYjBiQVZfTXBNZnBRT0ZQaGRIN0JsWWhURGpMTklyNjRGNzQ3ZURMejBuTW1Ja3hHV2plLWtLLWp2WFRpeEszU29KYVU4VmZja2tCcdIBV0FVX3lxTE90SHBNbVk5d3NaYWRPT2ctVGpaNkowdTJvLVdLeTFxZTAzM01iaGl2QmdEVlhfVl9iUmZhdGJ5R0s3WUVRYU1uZkowRThMN1JkdlZBaENfNA?oc=5",
+      "title": "（まとめ）日経平均は一時1,000円超高も最終的には322円高の61,142円で反発",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9DVVB2Wl9kbFB0dlptR0FtOG1VSHhMN0szU3pRNVlaS2t5NW5OS05Mb19xY3dzLXNCMU43bWxqSnVqX1NzdGp2MlBBbkY4aW51a0kzQdIBV0FVX3lxTE5pQlFoWWJHR1RVNHY2eGdSY3hlZE5EcUVoU1lGSkNaSThHZ3VRRFMxemZkVzVrZmp3X1QyLXh2MnBPY2pkeWlBdU95eG5Odmt0czlXNkhlYw?oc=5",
       "source": "マネクリ",
-      "publishedAt": "Wed, 11 Nov 2026 07:18:00 GMT"
+      "publishedAt": "Fri, 13 Nov 2026 07:22:00 GMT"
     },
     {
-      "title": "【テクニカル】日経平均株価テクニカル分析－定石通りに10日線下に押し戻される",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9wYWhSWGFxNzdvZ3dhVTRyQmlFQU9MSVhHT3U5ckthZmV6N2NKNlFqLW9WYnd0SElhLU5qamtteFIwSUhONmg0UVVsczl4SmVSb3hNMzBhLUZMcDF5enFzcGxXcw?oc=5",
-      "source": "外為どっとコム",
-      "publishedAt": "Thu, 12 Nov 2026 15:48:25 GMT"
+      "title": "証券大手、相次ぎ日経平均見通し下げ 大和は「8万円は1年おあずけ」",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5KODdEeml0MlUtMlRBRWhtczUxUW8taklDX055VDVIS2IzZkxsTlJDR2xUOUUxbDN1ZWJGcllIQUd0cTk0d0tMYkg0cE95TUFCRTYxY3QxRUM1R1hHSnpSM2JLeHhSNm9KaTJqSA?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Thu, 12 Nov 2026 10:16:42 GMT"
     },
     {
-      "title": "日経平均寄与度ランキング（前引け）～日経平均は4日続伸、東エレクが1銘柄で約205円分押し上げ",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE81V2VESGFqLUxLeC1NOVhBekNfUHBOYU93anlzXzRONnAwYzJwTkhSVV9VWUxKQ0hISWUyVk1LVi1oMFhTYm0wWlRic09Jd09wdFpPOXktWnFvNjRtSV9VUA?oc=5",
+      "title": "【↑】日経平均 大引け｜ 反発、AI・半導体関連株などに買い戻し優勢 (11月13日)",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8yZG12dVczYXU4Zm4ydldqcnNzMXdWODhmZHVKS21LcV9NbDVYa2MxV2Y3RXduc04wekhOMk9aWHBsT0pYSi1yemRGaVFRYUY3aGNtYUZVVFBhMF9SRXM0Vw?oc=5",
       "source": "株探",
-      "publishedAt": "Thu, 12 Nov 2026 03:29:20 GMT"
+      "publishedAt": "Fri, 13 Nov 2026 07:33:33 GMT"
     },
     {
-      "title": "日経平均3600円安の6日､DAIBOUCHOU氏が取った投資行動",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE12OGtIYlFVX2dqNW9ER1FrREsxNkw2b2ZuMllVeUpiakNsVnNjbkdiMFZQa2dnek9lVGIxenZCRzMwRjNQUzF1ZFBwX2NqdWR6cUJDMUc0RQ?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Wed, 11 Nov 2026 22:00:00 GMT"
+      "title": "今こそ日経平均株価以外を見る TOPIXや読売333に注目した日本株の傾向 野村證券ストラテジストが解説",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBpVGpIcDZXdElGS0NBeHBDeFpEMF9xcnI3YkVGa0RGZHd0ZjhxSkpFTklhZGJRUmN3NDNGeV9oZmVxWDFHX3RyZjBWUDdzYXhlaHZFLVI2UkUxcmdSSTZZ?oc=5",
+      "source": "野村證券",
+      "publishedAt": "Fri, 13 Nov 2026 07:00:00 GMT"
+    },
+    {
+      "title": "来週（11/16～20）の日経平均株価の予想レンジは、5万9500～6万3500円！ 6万2000円(200日移動平均線)近辺での攻防や、好決算の内需株･金融株に注目",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBoSk9wSU5EU1JHRnRGUVdDd01Vb3FvOFNETmZOdlIxTm1EUDh0X1pvRzNXUHVPaGVOakh0eEdJZ3N2SVUtVmlyMXRVS0FmYmlwbkRJ?oc=5",
+      "source": "ダイヤモンド・オンライン",
+      "publishedAt": "Fri, 13 Nov 2026 13:00:00 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-04-30",
-      "close": 59284.92,
-      "sma25": 56483.54,
-      "sma75": 55374.91
-    },
     {
       "date": "2026-05-01",
       "close": 59513.12,
@@ -859,6 +853,12 @@
       "close": 61248.59,
       "sma25": 64196.31,
       "sma75": 65169.37
+    },
+    {
+      "date": "2026-11-12",
+      "close": 60819.36,
+      "sma25": 63801.72,
+      "sma75": 65098.75
     }
   ]
 }

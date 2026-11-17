@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-16T16:55:59.922Z",
-  "asOfDate": "2026-11-13",
-  "price": 61142.35,
-  "sma25": 63445.99,
-  "sma75": 65028.35,
-  "deviationPct": -3.63,
-  "rsi14": 44.7,
-  "vol25AnnualizedPct": 33.2,
+  "updatedAt": "2026-11-17T16:49:54.510Z",
+  "asOfDate": "2026-11-16",
+  "price": 59662.02,
+  "sma25": 63070.79,
+  "sma75": 64962.36,
+  "deviationPct": -5.4,
+  "rsi14": 42,
+  "vol25AnnualizedPct": 33.6,
   "trend": "down",
   "overheat": "neutral",
   "highVol": true,
@@ -14,23 +14,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.627,
-      "changePct": -0.16
+      "value": 159.242,
+      "changePct": -0.34
     },
     "sp500": {
-      "value": 7469.94,
-      "changePct": -1.21
+      "value": 7312.44,
+      "changePct": -1.4
     },
     "vix": {
-      "value": 20.96,
-      "changePct": 8.6
+      "value": 26.39,
+      "changePct": 15.19
     }
   },
   "macroAssessment": {
     "bias": "supportive_bear",
-    "vixStatus": "caution"
+    "vixStatus": "risk_off"
   },
-  "macroNote": null,
+  "macroNote": "VIX(米国の恐怖指数)が高水準で、市場全体がリスクオフ気味です。値動きが荒くなりやすい点に注意してください。",
   "conviction": {
     "level": 1,
     "levelLabel": "弱い",
@@ -43,10 +43,10 @@
   },
   "news": [
     {
-      "title": "日経平均は反落、ＡＩ株が下げ主導 エヌビディア決算前に手掛けにくさ",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1pcFdoZzU1UEgwOG9WUWhjUzZ4WVV3dGVuUEs4R2xsZHZ3Mmlac2FyS29mR0JDODVVU1ZrVTdULVVpM05iNG9sQzFXVmJpd2w2?oc=5",
-      "source": "Yahoo!ニュース",
-      "publishedAt": "Mon, 16 Nov 2026 07:24:08 GMT"
+      "title": "東証大引け 日経平均は続落、5万9000円割れ 半導体関連に売り",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE51V09DQThkTHJZblFVYVFBVkR0NV80VVVZMjFocVRtTUR4dnpwMk1DejQ4alJNMWEtZFFDNVhGUEpLZmNZd2pOZV90Qk4xLUNBWGlkN0FWTW13RWEtOW1nUndSa3Ezc001amlrbw?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Tue, 17 Nov 2026 06:57:32 GMT"
     },
     {
       "title": "日経平均、「3,708円高」で下げ幅の6割超を回復…相場を動かす米国の重要イベントに注目",
@@ -55,34 +55,28 @@
       "publishedAt": "Mon, 16 Nov 2026 02:45:00 GMT"
     },
     {
-      "title": "【テクニカル】日経平均株価テクニカル分析－上値抵抗線からの揺り戻し",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9iU0xjZlpCQWNSNUk5c0tEaXliRjBFMUNnZnBvSzBuQVVzY2pIVjl2eElyVnN4c25ScHZrS2dEQmIyQlNYTlVZZFdIdlhQSVpWc3J0a29XR1kwX0ZqQVJUejJWZw?oc=5",
+      "title": "【テクニカル】日経平均株価テクニカル分析－下値模索もモメンタムは減速",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBKbXpNejdjVXpsck42RzFQa3pGNGtRa0x4a3lmUENZdDhIMWV3cHRCMkp0Z0ZlQ21jOG1HNWl0eE5fT2NKVHFuTGRpNXlhNEdVXzF4bWk5UmxhWnNnLUFSN3A3RQ?oc=5",
       "source": "外為どっとコム",
-      "publishedAt": "Mon, 16 Nov 2026 15:56:56 GMT"
+      "publishedAt": "Tue, 17 Nov 2026 16:06:57 GMT"
     },
     {
-      "title": "【ランキング】キオクシアは？日経平均急落から｢値戻し｣が大きかった14銘柄",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9xRkNZUEZhaE5ETnJLaGxLUUl4TC1zQjhpX2plcHhZT0FEcGlrVDZaalhwWk9pcGRkZWx1VXlsOHRaNlltSWVoU0hPem1XWDJuRzBWZ0hPSQ?oc=5",
+      "title": "【ランキング】日経平均､TOPIX下落でも年初来高値の小売銘柄16",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBPbTFJZG1xYnNVbWNTdjNxdUluMzJoXzVxSkxSYUNuaEtYRlBrZldvbk9zbGVDTkNCeWlWcjJ2YnlHWjlVN0tudFFQUmp2dEFOQkxIQUlKYw?oc=5",
       "source": "四季報オンライン",
-      "publishedAt": "Mon, 16 Nov 2026 03:00:00 GMT"
+      "publishedAt": "Tue, 17 Nov 2026 02:30:00 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月16日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1rV1RibHlWY0RKeEZldlJNbVlpVmVZSnJ5M3NRYlg4MUpyd3FEUXhueG84SElfVk5HLW14MTZIVDNFczRrRkI2dGY2WU5fVTZOSUtORHFTbEtXd3BmLVRvUA?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月17日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE84RWVfSUJNUTNiVUM3czJIWkR6MFNDYXRjeGNvX1FFX1ZieVFLdVdkMWljVmtSakJmUGh6NjRGUkVwMEhVU3FCeFpmdXNIQlZscnppVzRucURkVUtaM1o2Sw?oc=5",
       "source": "株探",
-      "publishedAt": "Sun, 15 Nov 2026 22:42:52 GMT"
+      "publishedAt": "Mon, 16 Nov 2026 23:09:50 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-05-07",
-      "close": 62833.84,
-      "sma25": 57098.35,
-      "sma75": 55599.69
-    },
     {
       "date": "2026-05-08",
       "close": 62713.65,
@@ -856,6 +850,12 @@
       "close": 61142.35,
       "sma25": 63445.99,
       "sma75": 65028.35
+    },
+    {
+      "date": "2026-11-16",
+      "close": 59662.02,
+      "sma25": 63070.79,
+      "sma75": 64962.36
     }
   ]
 }

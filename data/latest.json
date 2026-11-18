@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-17T16:49:54.510Z",
-  "asOfDate": "2026-11-16",
-  "price": 59662.02,
-  "sma25": 63070.79,
-  "sma75": 64962.36,
-  "deviationPct": -5.4,
-  "rsi14": 42,
-  "vol25AnnualizedPct": 33.6,
+  "updatedAt": "2026-11-18T16:21:57.169Z",
+  "asOfDate": "2026-11-17",
+  "price": 58860.43,
+  "sma25": 62663.97,
+  "sma75": 64881.42,
+  "deviationPct": -6.07,
+  "rsi14": 35.7,
+  "vol25AnnualizedPct": 33.7,
   "trend": "down",
   "overheat": "neutral",
   "highVol": true,
@@ -14,23 +14,23 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.242,
-      "changePct": -0.34
+      "value": 159.233,
+      "changePct": -0.18
     },
     "sp500": {
-      "value": 7312.44,
-      "changePct": -1.4
+      "value": 7295.32,
+      "changePct": -0.62
     },
     "vix": {
-      "value": 26.39,
-      "changePct": 15.19
+      "value": 24.76,
+      "changePct": -2.75
     }
   },
   "macroAssessment": {
     "bias": "supportive_bear",
-    "vixStatus": "risk_off"
+    "vixStatus": "caution"
   },
-  "macroNote": "VIX(米国の恐怖指数)が高水準で、市場全体がリスクオフ気味です。値動きが荒くなりやすい点に注意してください。",
+  "macroNote": null,
   "conviction": {
     "level": 1,
     "levelLabel": "弱い",
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "東証大引け 日経平均は続落、5万9000円割れ 半導体関連に売り",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE51V09DQThkTHJZblFVYVFBVkR0NV80VVVZMjFocVRtTUR4dnpwMk1DejQ4alJNMWEtZFFDNVhGUEpLZmNZd2pOZV90Qk4xLUNBWGlkN0FWTW13RWEtOW1nUndSa3Ezc001amlrbw?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Tue, 17 Nov 2026 06:57:32 GMT"
-    },
-    {
-      "title": "日経平均、「3,708円高」で下げ幅の6割超を回復…相場を動かす米国の重要イベントに注目",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9vWlh3RGRCYndDQlFxbThnSkQ1NmpyekZWbUxsb0lRdUZfZXJvbXR5QW9sRDVvdXdlOVh3dDlVaDVFbThjX1NfbTFxcW9iVUpGT1cycF8zUDFsQQ?oc=5",
+      "title": "7-9月期GDPから読み取る日経平均株価の先行きと金融政策の今後（愛宕伸康）",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JQzY4bjdBYVY2eVhSRDBQajRnZXdxU1FRdEEyUXgtZGlWa3JkRkR6RFgwZ2I0bFdZVlQtWE1pbklITGZveDdlT1JaUHh0WkpRZnB5LVBOY00tdw?oc=5",
       "source": "トウシル",
-      "publishedAt": "Mon, 16 Nov 2026 02:45:00 GMT"
+      "publishedAt": "Tue, 17 Nov 2026 23:00:00 GMT"
     },
     {
-      "title": "【テクニカル】日経平均株価テクニカル分析－下値模索もモメンタムは減速",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBKbXpNejdjVXpsck42RzFQa3pGNGtRa0x4a3lmUENZdDhIMWV3cHRCMkp0Z0ZlQ21jOG1HNWl0eE5fT2NKVHFuTGRpNXlhNEdVXzF4bWk5UmxhWnNnLUFSN3A3RQ?oc=5",
+      "title": "日経平均株価163円高の5万9024円、NVIDIA好決算でも高揚感乏しく",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00WVJWdmVCQkNNdXNQRW1nbE1DVWQ0ZmdFdWxuTDNxb0ZCTU52eS1TVERLaGFyNFV2QU1sUVQxemU3NnNkbFROZzBnNlV5QTJ2QUhEUkNldm9hWmpEVEItX1ZnMWZNZDR0NTdLTw?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Wed, 18 Nov 2026 02:51:05 GMT"
+    },
+    {
+      "title": "【テクニカル】日経平均株価テクニカル分析－十字足で下げ止まれるか",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB2U2RzR2dWSkQ3dHUwQzFLU0JGLUFhOUM4MjlZaTdZd2xwQUVGbUo1VUpkakNPNV9pbnpVSjVUQk5ETzVVQ1AwbVNsbEUwZ3E0eUgyTjZRTExkZ3hwcnNwVDhJOA?oc=5",
       "source": "外為どっとコム",
-      "publishedAt": "Tue, 17 Nov 2026 16:06:57 GMT"
+      "publishedAt": "Wed, 18 Nov 2026 15:58:38 GMT"
     },
     {
-      "title": "【ランキング】日経平均､TOPIX下落でも年初来高値の小売銘柄16",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBPbTFJZG1xYnNVbWNTdjNxdUluMzJoXzVxSkxSYUNuaEtYRlBrZldvbk9zbGVDTkNCeWlWcjJ2YnlHWjlVN0tudFFQUmp2dEFOQkxIQUlKYw?oc=5",
-      "source": "四季報オンライン",
-      "publishedAt": "Tue, 17 Nov 2026 02:30:00 GMT"
+      "title": "（まとめ）日経平均は163円高の59,024円で反発　APECや米中露首脳会談に注目",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBMVTd4NFBEMlhKVGlnU25kYVlIeEk2aUYyZnl5VTJzakFqX0RpaWZTTVpMcUdZZzZnLWliVk9oYUJJbW9xamxESDlTaERDT2hsQ1BPRtIBV0FVX3lxTE1FX3E0WFFyQmFjT0lJZzhJaUh4YXI5bGdOVWxyRVZfYl82MmZLZElxVXFROU80Y255LVQxYWNMeFdqM25lTDZkbVZwM0RVNDlkQnM5UGlWRQ?oc=5",
+      "source": "マネクリ",
+      "publishedAt": "Wed, 18 Nov 2026 08:33:00 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月17日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE84RWVfSUJNUTNiVUM3czJIWkR6MFNDYXRjeGNvX1FFX1ZieVFLdVdkMWljVmtSakJmUGh6NjRGUkVwMEhVU3FCeFpmdXNIQlZscnppVzRucURkVUtaM1o2Sw?oc=5",
+      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月18日記）",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9pRmlOMEV6V0NkcVlENWJ1V0Q1RmhfUTJkYUxycmtzVGozZFpzRkNndzJ4NXd4RG1ick4xYm1BZDNvQ2tDcy13VlIzRmVwT2xkSklpRzhRcW9HWkRlUWNJNQ?oc=5",
       "source": "株探",
-      "publishedAt": "Mon, 16 Nov 2026 23:09:50 GMT"
+      "publishedAt": "Tue, 17 Nov 2026 23:22:35 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-05-08",
-      "close": 62713.65,
-      "sma25": 57531.46,
-      "sma75": 55711.32
-    },
     {
       "date": "2026-05-11",
       "close": 62417.88,
@@ -856,6 +850,12 @@
       "close": 59662.02,
       "sma25": 63070.79,
       "sma75": 64962.36
+    },
+    {
+      "date": "2026-11-17",
+      "close": 58860.43,
+      "sma25": 62663.97,
+      "sma75": 64881.42
     }
   ]
 }

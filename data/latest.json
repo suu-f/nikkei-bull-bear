@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-19T16:29:19.024Z",
-  "asOfDate": "2026-11-18",
-  "price": 59024.28,
-  "sma25": 62313.84,
-  "sma75": 64836.88,
-  "deviationPct": -5.28,
-  "rsi14": 33.5,
-  "vol25AnnualizedPct": 33.5,
+  "updatedAt": "2026-11-20T16:01:45.207Z",
+  "asOfDate": "2026-11-19",
+  "price": 59444.21,
+  "sma25": 61981.83,
+  "sma75": 64810.34,
+  "deviationPct": -4.09,
+  "rsi14": 32.2,
+  "vol25AnnualizedPct": 33.7,
   "trend": "down",
   "overheat": "neutral",
   "highVol": true,
@@ -14,20 +14,20 @@
   "nextTrigger": null,
   "macro": {
     "usdjpy": {
-      "value": 159.852,
-      "changePct": 0.22
+      "value": 158.718,
+      "changePct": -0.42
     },
     "sp500": {
-      "value": 7304.85,
-      "changePct": -0.26
+      "value": 7078.47,
+      "changePct": -1.36
     },
     "vix": {
-      "value": 25.39,
-      "changePct": 3.38
+      "value": 30.5,
+      "changePct": 7.24
     }
   },
   "macroAssessment": {
-    "bias": "mixed",
+    "bias": "supportive_bear",
     "vixStatus": "risk_off"
   },
   "macroNote": "VIX(米国の恐怖指数)が高水準で、市場全体がリスクオフ気味です。値動きが荒くなりやすい点に注意してください。",
@@ -43,46 +43,40 @@
   },
   "news": [
     {
-      "title": "日経平均終値419円高 気迷い相場、アンソロピックIPOで打破なるか",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1GT3FtLXlFLUZ1NUhsaUNUTXpRRmxJUW5QWGdGMXQ3ZE8zV2VNdkw0TGFEYVYxdWxDblh0WXVVSmNxMUhWWUdjM2pEWHNqdWxqdlRFenh6QUJqSWZYOHl2elVsLWMzNnNpQVBGaA?oc=5",
-      "source": "日本経済新聞",
-      "publishedAt": "Thu, 19 Nov 2026 02:54:41 GMT"
+      "title": "日経平均終値3007円安 AI巡り混乱",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5hTTRHWnBwSVNKUkt3WkxTS1NlWmVkYUdtZGxKcmRhSFRPTmY4S0JxeFdDZ0ZNcHpveE8yMmJSdmhhTUxwWkJiSTNvTDlBZnJw?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Fri, 20 Nov 2026 06:48:16 GMT"
     },
     {
-      "title": "伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月19日記）",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5IdkxlSFVFR2xQRXRWLU0wcmZEWmE4dlRlazVrM3BPbnh6ejBaUGFoSDh1bm5vZ3h4azkzTTM4N1B0VjRpWFlocUNEMlZHZk1GNFU2d3pSdWFZVjJiY0Y5Vg?oc=5",
-      "source": "株探",
-      "publishedAt": "Wed, 18 Nov 2026 23:18:03 GMT"
+      "title": "日経平均 一時2800円以上値下がり",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5iNXAzb19vTF9raGpIMWJfV0did1dwOVc4SVk2VHRudVhhV19oQkNQVnJnUF9ubmFSZFJxZFB1SUtBSWppZ2lXMjVjMG95dUNl?oc=5",
+      "source": "Yahoo!ニュース",
+      "publishedAt": "Fri, 20 Nov 2026 01:12:04 GMT"
     },
     {
-      "title": "【テクニカル】日経平均株価テクニカル分析－転換線が上向きに転じる",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE94WUhxMHQwZkoyYUF0TVNsWllvS2pHQnlFTml5QllpVWVlUW9qWWpwVW9EWk1WZk1jYXdrTGNGYVVsWElaZTlYaEVDUDlsYkZEZ294QWdYSS1mY0VjOFJWZEQ2OA?oc=5",
-      "source": "外為どっとコム",
-      "publishedAt": "Thu, 19 Nov 2026 15:51:50 GMT"
+      "title": "日経平均株価 午後にかけて下げ幅拡大 3000円以上下落 AI大手「アンソロピック」新規上場も AI・半導体関連などで売り注文",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8zZG9XOTZINHFqdnR0MVE0NGtOMzFHMzMtbWVRWjJwZDYyVE1PNFdUVTdscE50MXZhMUNfY3NuWklxMkE3LVBZaEZEemx5eEZVX05MdWw0Zw?oc=5",
+      "source": "TBS NEWS DIG",
+      "publishedAt": "Fri, 20 Nov 2026 05:07:22 GMT"
     },
     {
-      "title": "7-9月期GDPから読み取る日経平均株価の先行きと金融政策の今後（愛宕伸康）",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JQzY4bjdBYVY2eVhSRDBQajRnZXdxU1FRdEEyUXgtZGlWa3JkRkR6RFgwZ2I0bFdZVlQtWE1pbklITGZveDdlT1JaUHh0WkpRZnB5LVBOY00tdw?oc=5",
+      "title": "日経平均7カ月ぶり安値、AI一極集中の大幅修正と明暗",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE80MFpuQTQ4ZFhhN1ZLSU14d1I1dnhiVUFYQ0owcFVRVEtYZjN1NEMyUFF4dnRqSFMwSHdURkpTX2RYMTBVV3NzdEpLUW1WQ18td2tuRUlVemIyUQ?oc=5",
       "source": "トウシル",
-      "publishedAt": "Tue, 17 Nov 2026 23:00:00 GMT"
+      "publishedAt": "Fri, 20 Nov 2026 08:00:00 GMT"
     },
     {
-      "title": "日経平均株価値上がり AI・半導体関連銘柄 期待感から買う動き",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9CTFlIRGlHUDZyU2ZvMWwzZjJlcW55ZG8wV3R0ekZKc0ZPMUwzN0hDTFlJTUFoSEl2VkRzaUx1VExiTDFRajBjcmNTNGltVVZleWprZlowYjQ1ZTdhRVh3?oc=5",
-      "source": "NHKニュース",
-      "publishedAt": "Thu, 19 Nov 2026 03:12:44 GMT"
+      "title": "日経平均株価、一時2800円超下げ 取引時間中で7カ月ぶり安値",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5XMWNxMzQzVmpZVVBmdnlQUmlPVFU2Ul96RDR1enBsT2h2bndyMGM5Zko3b3pIeEtlUWtpQktvNjZ6eTlMNkZjeWdub1VnRW1ZZGItVXNQd2hKc1U1cGx1cXk3N21rRWdwMGZBeA?oc=5",
+      "source": "日本経済新聞",
+      "publishedAt": "Fri, 20 Nov 2026 00:27:35 GMT"
     }
   ],
   "signal": "bear",
   "headline": "ベア型優勢",
   "rationale": "日経平均は下降トレンド(終値<25日線<75日線)で、RSIも売られすぎではありません。",
   "history": [
-    {
-      "date": "2026-05-12",
-      "close": 62742.57,
-      "sma25": 58345.74,
-      "sma75": 55939.5
-    },
     {
       "date": "2026-05-13",
       "close": 63272.11,
@@ -856,6 +850,12 @@
       "close": 59024.28,
       "sma25": 62313.84,
       "sma75": 64836.88
+    },
+    {
+      "date": "2026-11-19",
+      "close": 59444.21,
+      "sma25": 61981.83,
+      "sma75": 64810.34
     }
   ]
 }
